@@ -1,0 +1,36 @@
+<DOMSymbolItem xmlns="http://ns.adobe.com/xfl/2008/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Symbol 1484" lastModified="1701669489">
+     <timeline>
+          <DOMTimeline name="Symbol 1484">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#c8c3a8" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape isFloating="true">
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <LinearGradient>
+                                                            <matrix>
+                                                                 <Matrix tx="193.75" ty="92.7" a="0.0" d="0.0" b="0.11517333984375" c="-0.1131591796875"/>
+                                                            </matrix>
+                                                            <GradientEntry color="#ffffff" alpha="0.7529412" ratio="0.0"/>
+                                                            <GradientEntry color="#b7b7b7" alpha="0.5019608" ratio="1.0"/>
+                                                       </LinearGradient>
+                                                  </FillStyle>
+                                             </fills>
+                                             <strokes/>
+                                             <edges>
+                                                  <Edge fillStyle0="0" fillStyle1="1" strokeStyle="0" edges="! 7750 1928[ 7750 2000 7674 2082| 7669 2087| 7519 2274| 7222 2618[ 7192 2608 7187 2593| 7262 2458| 7252 2453[ 7196 2520 7171 2586| 7170 2588[ 7127 2707 7154 2946| 7190 3233[ 7190 3249 7175 3266[ 7199 3274 7220 3288[ 6922 3423 6488 3515[ 5951 3629 5800 3678[ 5770 3668 5660 3648[ 5667 3641 5896 3566[ 5105 3668 4355 3668[ 3532 3668 3098 3458| 2841 3314[ 2721 3248 2610 3248[ 2504 3248 2398 3320[ 2345 3356 2214 3478[ 2096 3589 2014 3636[ 1891 3708 1755 3708[ 1536 3708 1342 3583[ 1217 3502 1031 3308[ 832 3100 741 3033[ 571 2908 390 2908[ 132 2908 41 2689[ 0 2590 0 2448[ 0 2204 231 1938[ 493 1635 960 1428[ 773 1287 710 1222[ 640 1148 640 1083[ 640 993 1265 727[ 1913 451 2635 246[ 3487 3 3994 0[ 4606 -3 4585 353[ 4733 331 5020 223[ 5287 123 5320 123[ 6154 123 7030 999[ 7318 1287 7556 1616[ 7750 1885 7750 1928"/>
+                                                  <Edge fillStyle0="0" fillStyle1="1" strokeStyle="0" edges="! 7517 2183| 7551 2156| 7582 2128[ 7567 2128 7517 2178| 7517 2183"/>
+                                                  <Edge fillStyle0="0" fillStyle1="1" strokeStyle="0" edges="! 5643 3574| 5898 3560| 5921 3558[ 6125 3492 6150 3488| 6180 3478| 6151 3481| 6150 3481| 6048 3494[ 5979 3524 5695 3564| 5614 3575| 5641 3574| 5643 3574"/>
+                                                  <Edge fillStyle0="1" fillStyle1="0" strokeStyle="0" edges="! 5277 3587| 5275 3587| 5275 3585| 5277 3587"/>
+                                             </edges>
+                                        </DOMShape>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timeline>
+</DOMSymbolItem>

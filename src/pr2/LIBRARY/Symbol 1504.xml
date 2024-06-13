@@ -1,0 +1,47 @@
+<DOMSymbolItem xmlns="http://ns.adobe.com/xfl/2008/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Symbol 1504" lastModified="1701669489" linkageClassName="SquareBG" linkageExportForAS="true" scaleGridLeft="5.05" scaleGridRight="95.05" scaleGridTop="5.05" scaleGridBottom="95.15">
+     <timeline>
+          <DOMTimeline name="Symbol 1504">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#6193b6" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMShape isFloating="true">
+                                             <fills>
+                                                  <FillStyle index="1">
+                                                       <LinearGradient>
+                                                            <matrix>
+                                                                 <Matrix tx="49.95" ty="50.0" a="0.0" d="0.0" b="-0.06103515625" c="0.06103515625"/>
+                                                            </matrix>
+                                                            <GradientEntry color="#9d9d9d" alpha="0.4" ratio="0.0"/>
+                                                            <GradientEntry color="#ffffff" alpha="0.64705884" ratio="1.0"/>
+                                                       </LinearGradient>
+                                                  </FillStyle>
+                                             </fills>
+                                             <strokes>
+                                                  <StrokeStyle index="1">
+                                                       <SolidStroke weight="0.05" pixelHinting="true" solidStyle="hairline" scaleMode="normal">
+                                                            <fill>
+                                                                 <LinearGradient>
+                                                                      <matrix>
+                                                                           <Matrix tx="49.95" ty="50.0" a="0.0" d="0.0" b="-0.06103515625" c="0.06103515625"/>
+                                                                      </matrix>
+                                                                      <GradientEntry color="#333333" alpha="1.0" ratio="0.0"/>
+                                                                      <GradientEntry color="#999999" alpha="1.0" ratio="1.0"/>
+                                                                 </LinearGradient>
+                                                            </fill>
+                                                       </SolidStroke>
+                                                  </StrokeStyle>
+                                             </strokes>
+                                             <edges>
+                                                  <Edge fillStyle0="0" fillStyle1="1" strokeStyle="1" edges="! 0 1901| 0 100| 0 99[ 0 0 99 0| 100 0| 1901 0[ 2000 0 2000 99| 2000 100| 2000 1901[ 2000 2000 1901 2000| 100 2000| 99 2000[ 0 2000 0 1901"/>
+                                             </edges>
+                                        </DOMShape>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timeline>
+</DOMSymbolItem>
