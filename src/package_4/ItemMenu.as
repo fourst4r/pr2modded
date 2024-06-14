@@ -7,9 +7,9 @@ package package_4
    {
        
       
-      private var m:ItemMenuGraphic;
+      protected var m:ItemMenuGraphic;
       
-      private var numItems:int;
+      protected var numItems:int;
       
       public function ItemMenu(param1:String, param2:DisplayObject)
       {
@@ -26,7 +26,7 @@ package package_4
          super(param2);
       }
       
-      private function parseItems(param1:String) : *
+      protected function parseItems(param1:String) : *
       {
          var _loc2_:Vector.<int> = null;
          var _loc3_:Array = null;

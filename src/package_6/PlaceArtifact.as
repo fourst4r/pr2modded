@@ -12,21 +12,21 @@ package package_6
       public static var instance:PlaceArtifact;
        
       
-      private var levelId:int;
+      protected var levelId:int;
       
-      private var xPos:int;
+      protected var xPos:int;
       
-      private var yPos:int;
+      protected var yPos:int;
       
-      private var rot:int;
+      protected var rot:int;
       
-      private var setTime:int = 0;
+      protected var setTime:int = 0;
       
-      private var overrideSched:Boolean = false;
+      protected var overrideSched:Boolean = false;
       
-      private var uploading:UploadingPopup;
+      protected var uploading:UploadingPopup;
       
-      private var m:PlaceArtifactGraphic;
+      protected var m:PlaceArtifactGraphic;
       
       public function PlaceArtifact(param1:int, param2:int, param3:int, param4:int)
       {
@@ -53,7 +53,7 @@ package package_6
          this.m.cancel_bt.addEventListener(MouseEvent.CLICK,this.clickCancel,false,0,true);
       }
       
-      private function populateOptions(param1:Boolean = false) : *
+      protected function populateOptions(param1:Boolean = false) : *
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
@@ -120,23 +120,23 @@ package package_6
          }
       }
       
-      private function validateText(param1:* = null) : *
+      protected function validateText(param1:* = null) : *
       {
          this.m.hourBox.text = Data.numLimit(int(this.m.hourBox.text),1,12);
          this.m.minBox.text = (int(this.m.minBox.text) < 10 ? "0" : "") + Data.numLimit(int(this.m.minBox.text),0,59);
       }
       
-      private function selChange(param1:Event) : *
+      protected function selChange(param1:Event) : *
       {
          this.populateOptions();
       }
       
-      private function checkNowBox(param1:Event) : *
+      protected function checkNowBox(param1:Event) : *
       {
          this.m.monthSel.enabled = this.m.daySel.enabled = this.m.yearSel.enabled = this.m.hourBox.enabled = this.m.minBox.enabled = this.m.meridSel.enabled = !this.m.now_chk.selected;
       }
       
-      private function showTime(param1:Date) : *
+      protected function showTime(param1:Date) : *
       {
          var _loc2_:int = param1.month;
          var _loc3_:int = param1.date;
@@ -152,7 +152,7 @@ package package_6
          this.m.meridSel.selectedIndex = _loc6_;
       }
       
-      private function getDateFromInput() : *
+      protected function getDateFromInput() : *
       {
          this.validateText();
          var _loc1_:int = int(this.m.hourBox.text) + int(this.m.meridSel.selectedItem.data) * 12;
@@ -161,7 +161,7 @@ package package_6
          return new Date(this.m.yearSel.selectedItem.data,this.m.monthSel.selectedItem.data,this.m.daySel.selectedItem.data,_loc1_,Data.numLimit(int(this.m.minBox.text),0,59));
       }
       
-      private function clickPlace(param1:MouseEvent) : *
+      protected function clickPlace(param1:MouseEvent) : *
       {
          var _loc2_:Date = this.getDateFromInput();
          this.setTime = _loc2_.time / 1000 < Data.getTimestamp() || Boolean(this.m.now_chk.selected) ? 0 : int(_loc2_.time / 1000);
@@ -169,7 +169,7 @@ package package_6
          new ConfirmPopup(this.placeArtifact,"Are you sure you want to place the artifact " + _loc3_ + "?");
       }
       
-      private function placeArtifact() : *
+      protected function placeArtifact() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.level_id = this.levelId;
@@ -185,7 +185,7 @@ package package_6
          this.uploading.addEventListener(SuperLoader.d,this.handleResponse,false,0,true);
       }
       
-      private function handleResponse(param1:Event) : *
+      protected function handleResponse(param1:Event) : *
       {
          var e:Event = param1;
          var ret:Object = this.uploading.parsedData;
@@ -201,7 +201,7 @@ package package_6
          startFadeOut();
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

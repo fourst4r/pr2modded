@@ -10,9 +10,9 @@ package com.jiggmin.ColorPicker
       
       public var color:int;
       
-      private var var_352:Array;
+      protected var var_352:Array;
       
-      private var cursorContainer:BitmapData;
+      protected var cursorContainer:BitmapData;
       
       public function CursorEyedropper()
       {
@@ -41,7 +41,7 @@ package com.jiggmin.ColorPicker
          this.var_352.push(param1);
       }
       
-      private function maybeUpdate(param1:Event) : *
+      protected function maybeUpdate(param1:Event) : *
       {
          var _loc4_:Boolean = false;
          var _loc2_:MouseEvent = getMouse();
@@ -91,7 +91,7 @@ package com.jiggmin.ColorPicker
          super.mouseDownHandler(param1);
       }
       
-      private function drawEyedropper(param1:TimerEvent = null) : *
+      protected function drawEyedropper(param1:TimerEvent = null) : *
       {
          if(visible)
          {
@@ -101,12 +101,12 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      private function method_612(param1:DisplayObject) : Boolean
+      protected function method_612(param1:DisplayObject) : Boolean
       {
          return this.var_352.indexOf(param1) != -1;
       }
       
-      private function updateColor() : *
+      protected function updateColor() : *
       {
          var _loc1_:MouseEvent = getMouse();
          this.color = this.cursorContainer.getPixel(Math.floor(_loc1_.stageX),Math.floor(_loc1_.stageY));

@@ -7,11 +7,11 @@ package package_4
    {
        
       
-      private var m:TempModMenuGraphic;
+      protected var m:TempModMenuGraphic;
       
-      private var target:Popup;
+      protected var target:Popup;
       
-      private var userName:String;
+      protected var userName:String;
       
       public function TempModMenu(param1:String, param2:Popup)
       {
@@ -26,33 +26,33 @@ package package_4
          addChild(this.m);
       }
       
-      private function clickWarning1(param1:MouseEvent) : *
+      protected function clickWarning1(param1:MouseEvent) : *
       {
          this.warnUser(1);
       }
       
-      private function clickWarning2(param1:MouseEvent) : *
+      protected function clickWarning2(param1:MouseEvent) : *
       {
          this.warnUser(2);
       }
       
-      private function clickWarning3(param1:MouseEvent) : *
+      protected function clickWarning3(param1:MouseEvent) : *
       {
          this.warnUser(3);
       }
       
-      private function warnUser(param1:int) : *
+      protected function warnUser(param1:int) : *
       {
          Main.socket.write("warn`" + this.userName + "`" + param1);
          this.target.startFadeOut();
       }
       
-      private function clickKick(param1:MouseEvent) : *
+      protected function clickKick(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.kickUser,"Are you sure you want to kick " + Data.escapeString(this.userName) + "? They will not be able to re-enter this server for 30 minutes.");
       }
       
-      private function kickUser() : *
+      protected function kickUser() : *
       {
          Main.socket.write("kick`" + this.userName);
          this.target.startFadeOut();

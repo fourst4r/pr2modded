@@ -16,9 +16,9 @@ package
    public class Main extends Sprite
    {
       
-      private static var initialized:Boolean = false;
+      protected static var initialized:Boolean = false;
       
-      private static const clientWidth:int = 550;
+      protected static const clientWidth:int = 550;
       
       public static const clientHeight:int = 400;
       
@@ -106,9 +106,9 @@ package
       
       public static var domain:String;
       
-      private static var url:String;
+      protected static var url:String;
       
-      private static var protocol:String;
+      protected static var protocol:String;
        
       
       public var kongAPI:*;
@@ -153,7 +153,7 @@ package
          }
       }
       
-      private function init(param1:Event = null) : *
+      protected function init(param1:Event = null) : *
       {
          removeEventListener(Event.ADDED_TO_STAGE,this.init);
          Main.betaLoader = !!LoaderInfo(root.loaderInfo).parameters.hasOwnProperty("betaLoader") ? Boolean(int(LoaderInfo(root.loaderInfo).parameters.betaLoader)) : false;
@@ -185,14 +185,14 @@ package
          }
       }
       
-      private function hideContextMenu() : *
+      protected function hideContextMenu() : *
       {
          var _loc1_:ContextMenu = new ContextMenu();
          _loc1_.hideBuiltInItems();
          contextMenu = _loc1_;
       }
       
-      private function determineSite() : *
+      protected function determineSite() : *
       {
          var _loc2_:Number = NaN;
          var _loc1_:String = "local";
@@ -227,7 +227,7 @@ package
          }
       }
       
-      private function getKongApiOnTesting() : *
+      protected function getKongApiOnTesting() : *
       {
          var _loc1_:Object = null;
          var _loc2_:String = null;
@@ -245,7 +245,7 @@ package
          }
       }
       
-      private function receiveKongAPI(param1:Event) : *
+      protected function receiveKongAPI(param1:Event) : *
       {
          var _loc2_:* = param1.target.content;
          Main.instance.kongAPI = _loc2_;

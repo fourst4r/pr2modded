@@ -12,21 +12,21 @@ package blocks
    {
        
       
-      private var size:Number = 30;
+      protected var size:Number = 30;
       
-      private var posX:Number;
+      protected var posX:Number;
       
-      private var posY:Number;
+      protected var posY:Number;
       
-      private var segX:int;
+      protected var segX:int;
       
-      private var segY:int;
+      protected var segY:int;
       
-      private var removed:Boolean = false;
+      protected var removed:Boolean = false;
       
-      private var var_177:Point;
+      protected var var_177:Point;
       
-      private var m:Bitmap;
+      protected var m:Bitmap;
       
       protected var blockCode:int = 0;
       
@@ -42,13 +42,13 @@ package blocks
       
       protected var optionsMenu:Class = null;
       
-      private var _options:String = "";
+      protected var _options:String = "";
       
-      private var var_110:Bitmap;
+      protected var var_110:Bitmap;
       
-      private var var_455:Number = 0.1;
+      protected var var_455:Number = 0.1;
       
-      private var var_600:int = 0;
+      protected var var_600:int = 0;
       
       public function Block(param1:int)
       {
@@ -317,13 +317,13 @@ package blocks
          this.hit(_loc2_,_loc3_);
       }
       
-      private function method_315(param1:Number, param2:Number) : *
+      protected function method_315(param1:Number, param2:Number) : *
       {
          var _loc3_:Point = Data.method_9(param1,param2,this.map.rotation);
          this.hit(_loc3_.x,_loc3_.y);
       }
       
-      private function hit(param1:Number, param2:Number) : *
+      protected function hit(param1:Number, param2:Number) : *
       {
          var _loc4_:Point = null;
          this.var_177 = new Point(param1,param2);
@@ -336,7 +336,7 @@ package blocks
          }
       }
       
-      private function method_153(param1:Event) : *
+      protected function method_153(param1:Event) : *
       {
          if(this.var_110 != null)
          {
@@ -350,7 +350,7 @@ package blocks
          }
       }
       
-      private function method_161(param1:Event) : *
+      protected function method_161(param1:Event) : *
       {
          this.var_177.x *= 0.5;
          this.var_177.y *= 0.5;
@@ -382,7 +382,7 @@ package blocks
          this.map.moveBlock(_loc4_,_loc5_);
       }
       
-      private function method_406() : *
+      protected function method_406() : *
       {
          if(this.var_110 != null)
          {

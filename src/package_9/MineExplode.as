@@ -6,7 +6,7 @@ package package_9
    {
        
       
-      private var m:MineExplodeAnimation;
+      protected var m:MineExplodeAnimation;
       
       public function MineExplode(param1:Number, param2:Number)
       {

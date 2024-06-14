@@ -8,13 +8,13 @@ package package_19
    {
        
       
-      private var size:Number;
+      protected var size:Number;
       
-      private var tools:Tools;
+      protected var tools:Tools;
       
-      private var m:SizePickerGraphic;
+      protected var m:SizePickerGraphic;
       
-      private var menu:SizePickerMenu;
+      protected var menu:SizePickerMenu;
       
       public function SizePicker(param1:Tools, param2:int = 4)
       {
@@ -26,7 +26,7 @@ package package_19
          addEventListener(MouseEvent.MOUSE_DOWN,this.downHandler);
       }
       
-      private function downHandler(param1:MouseEvent) : *
+      protected function downHandler(param1:MouseEvent) : *
       {
          this.menu = new SizePickerMenu(this,this.size);
       }

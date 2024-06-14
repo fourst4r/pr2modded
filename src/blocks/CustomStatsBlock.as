@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      private var customStats:Array;
+      protected var customStats:Array;
       
       public function CustomStatsBlock()
       {

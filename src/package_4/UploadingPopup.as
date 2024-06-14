@@ -10,7 +10,7 @@ package package_4
       
       protected var loader:SuperLoader;
       
-      private var progressBar:ProgressBar;
+      protected var progressBar:ProgressBar;
       
       protected var m:UploadingPopupGraphic;
       
@@ -66,7 +66,7 @@ package package_4
          this.progressBar.incProgress(param1.bytesLoaded / param1.bytesTotal);
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

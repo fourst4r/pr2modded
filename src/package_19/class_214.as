@@ -9,9 +9,9 @@ package package_19
    {
        
       
-      private var bg:MovieClip;
+      protected var bg:MovieClip;
       
-      private var m:DisplayObject;
+      protected var m:DisplayObject;
       
       public function class_214(param1:DisplayObject, param2:String = "", param3:String = "")
       {

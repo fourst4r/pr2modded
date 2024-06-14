@@ -15,13 +15,13 @@ package com.jiggmin.data
       public static var commandHandler:CommandHandler;
        
       
-      private var EOL:String;
+      protected var EOL:String;
       
-      private var inBuffer:String = "";
+      protected var inBuffer:String = "";
       
-      private var commands:Object;
+      protected var commands:Object;
       
-      private var md5:MD5;
+      protected var md5:MD5;
       
       public var sendNum:int = -1;
       
@@ -70,7 +70,7 @@ package com.jiggmin.data
          }
       }
       
-      private function handleResponse(param1:String) : *
+      protected function handleResponse(param1:String) : *
       {
          var _loc2_:Array = param1.split("`");
          var _loc3_:String = String(_loc2_[0]);
@@ -102,12 +102,12 @@ package com.jiggmin.data
          }
       }
       
-      private function message(param1:Array) : *
+      protected function message(param1:Array) : *
       {
          new MessagePopup(param1[0]);
       }
       
-      private function startGame(param1:Array) : *
+      protected function startGame(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          if(Main.filledSlotCourseID == _loc2_)
@@ -116,7 +116,7 @@ package com.jiggmin.data
          }
       }
       
-      private function setRank(param1:Array) : *
+      protected function setRank(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          class_33.setNumber("userRank",_loc2_);
@@ -126,70 +126,70 @@ package com.jiggmin.data
          }
       }
       
-      private function setGroup(param1:Array) : *
+      protected function setGroup(param1:Array) : *
       {
          Main.group = param1[0];
       }
       
-      private function pmNotify(param1:Array) : *
+      protected function pmNotify(param1:Array) : *
       {
          UnreadNotif.notifyUser(int(param1[0]));
       }
       
-      private function becomeSpecialUser(param1:Array) : *
+      protected function becomeSpecialUser(param1:Array) : *
       {
          Main.isSpecialUser = true;
       }
       
-      private function becomePrizer(param1:Array) : *
+      protected function becomePrizer(param1:Array) : *
       {
          Main.isPrizer = true;
       }
       
-      private function demotePrizer(param1:Array) : *
+      protected function demotePrizer(param1:Array) : *
       {
          Main.isPrizer = false;
       }
       
-      private function becomeTempMod(param1:Array) : *
+      protected function becomeTempMod(param1:Array) : *
       {
          Main.group = 1;
          Main.isTempMod = true;
          Main.isTrialMod = false;
       }
       
-      private function becomeTrialMod(param1:Array) : *
+      protected function becomeTrialMod(param1:Array) : *
       {
          Main.group = 2;
          Main.isTempMod = false;
          Main.isTrialMod = true;
       }
       
-      private function becomeFullMod(param1:Array) : *
+      protected function becomeFullMod(param1:Array) : *
       {
          Main.group = 2;
          Main.isTempMod = false;
          Main.isTrialMod = false;
       }
       
-      private function demoteMod(param1:Array) : *
+      protected function demoteMod(param1:Array) : *
       {
          Main.group = 1;
          Main.isTempMod = false;
          Main.isTrialMod = false;
       }
       
-      private function areYouHuman(param1:Array) : *
+      protected function areYouHuman(param1:Array) : *
       {
          new CatCaptcha();
       }
       
-      private function tournamentMode(param1:Array) : *
+      protected function tournamentMode(param1:Array) : *
       {
          Main.server.tournament = Boolean(int(param1[0]));
       }
       
-      private function guildChange(param1:Array) : *
+      protected function guildChange(param1:Array) : *
       {
          var _loc2_:Object = JSON.parse(param1[0]);
          Main.guild = _loc2_.guild_id;
@@ -198,12 +198,12 @@ package com.jiggmin.data
          Main.instance.dispatchEvent(new Event(Main.accountChange));
       }
       
-      private function setServerOwner(param1:Array) : *
+      protected function setServerOwner(param1:Array) : *
       {
          Main.server.server_owner = int(param1[0]);
       }
       
-      private function wearingHat(param1:Array) : *
+      protected function wearingHat(param1:Array) : *
       {
          AccountInfo.currentHat = int(param1[0]);
          if(LevelListing.levelListing != null)

@@ -6,9 +6,9 @@ package blocks
    {
        
       
-      private var arrowMC:ArrowBlockGraphic;
+      protected var arrowMC:ArrowBlockGraphic;
       
-      private var rot:Number;
+      protected var rot:Number;
       
       public function ArrowBlock(param1:int, param2:Number)
       {
@@ -84,7 +84,7 @@ package blocks
          }
       }
       
-      private function method_125() : Number
+      protected function method_125() : Number
       {
          var _loc1_:Number = map.rotation + this.rot;
          rotation = _loc1_;
@@ -93,7 +93,7 @@ package blocks
          return _loc1_;
       }
       
-      private function push(param1:LocalCharacter, param2:Number) : *
+      protected function push(param1:LocalCharacter, param2:Number) : *
       {
          if(param2 == 0 && param1.crouching == false)
          {

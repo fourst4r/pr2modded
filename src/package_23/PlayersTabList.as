@@ -7,17 +7,17 @@ package package_23
    {
        
       
-      private var m:PlayersTabListGraphic;
+      protected var m:PlayersTabListGraphic;
       
-      private var names:Array;
+      protected var names:Array;
       
-      private var sortInterval:uint;
+      protected var sortInterval:uint;
       
-      private var sortMode:String = "rank";
+      protected var sortMode:String = "rank";
       
-      private var sortOrder:String = "desc";
+      protected var sortOrder:String = "desc";
       
-      private var updateSort:Boolean = false;
+      protected var updateSort:Boolean = false;
       
       public function PlayersTabList()
       {
@@ -31,17 +31,17 @@ package package_23
          this.sortInterval = setInterval(this.sortListener,500);
       }
       
-      private function clickName(param1:MouseEvent) : *
+      protected function clickName(param1:MouseEvent) : *
       {
          this.sortPlayersBy("userName");
       }
       
-      private function clickRank(param1:MouseEvent) : *
+      protected function clickRank(param1:MouseEvent) : *
       {
          this.sortPlayersBy("rank");
       }
       
-      private function clickHats(param1:MouseEvent) : *
+      protected function clickHats(param1:MouseEvent) : *
       {
          this.sortPlayersBy("hats");
       }
@@ -58,7 +58,7 @@ package package_23
          this.updateSort = true;
       }
       
-      private function sortListener() : *
+      protected function sortListener() : *
       {
          if(this.updateSort)
          {
@@ -67,7 +67,7 @@ package package_23
          }
       }
       
-      private function sortPlayersBy(param1:String = null) : *
+      protected function sortPlayersBy(param1:String = null) : *
       {
          var _loc2_:String = null;
          var _loc3_:String = null;

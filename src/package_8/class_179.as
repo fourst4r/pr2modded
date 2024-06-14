@@ -8,13 +8,13 @@ package package_8
    {
        
       
-      private var var_128:Object;
+      protected var var_128:Object;
       
-      private var var_567:Number;
+      protected var var_567:Number;
       
-      private var var_608:Number;
+      protected var var_608:Number;
       
-      private var holder:DisplayObjectContainer;
+      protected var holder:DisplayObjectContainer;
       
       public function class_179(param1:int, param2:int, param3:DisplayObject, param4:DisplayObjectContainer, param5:Object, param6:Number = 0, param7:Number = 0)
       {
@@ -50,7 +50,7 @@ package package_8
          return this.method_470().y;
       }
       
-      private function method_470() : Object
+      protected function method_470() : Object
       {
          if(!this.holder || !target || !target.parent)
          {

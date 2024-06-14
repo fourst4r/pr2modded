@@ -13,17 +13,17 @@ package package_18.PartInfo
       public static var instance:PartPopup;
        
       
-      private var m:PartPopupGraphic;
+      protected var m:PartPopupGraphic;
       
-      private var listing:Object;
+      protected var listing:Object;
       
-      private var hasEE:Boolean = false;
+      protected var hasEE:Boolean = false;
       
-      private var target:MovieClip;
+      protected var target:MovieClip;
       
-      private var epicFlash:EpicFlash;
+      protected var epicFlash:EpicFlash;
       
-      private var nameMaker:HTMLNameMaker;
+      protected var nameMaker:HTMLNameMaker;
       
       public function PartPopup(param1:Object, param2:Boolean = false)
       {
@@ -47,7 +47,7 @@ package package_18.PartInfo
          this.m.close_bt.addEventListener(MouseEvent.CLICK,this.clickClose);
       }
       
-      private function dynamicObtain() : *
+      protected function dynamicObtain() : *
       {
          var _loc1_:String = String(this.listing.name);
          var _loc2_:* = this.listing.type.toLowerCase() === "hat";
@@ -116,7 +116,7 @@ package package_18.PartInfo
          this.nameMaker.listenForLink(this.m.obtainBox);
       }
       
-      private function showPart() : *
+      protected function showPart() : *
       {
          var _loc1_:String = Parts.validateType(this.listing.type);
          this.m.ownedBox.text = "You don\'t own this part.";
@@ -190,7 +190,7 @@ package package_18.PartInfo
          }
       }
       
-      private function handleDjinn(param1:String, param2:Boolean) : *
+      protected function handleDjinn(param1:String, param2:Boolean) : *
       {
          var _loc5_:Character = null;
          var _loc3_:int = param1 == "BODY" ? 35 : 33;
@@ -208,7 +208,7 @@ package package_18.PartInfo
          }
       }
       
-      private function equipPart(param1:MouseEvent) : *
+      protected function equipPart(param1:MouseEvent) : *
       {
          AccountInfo.partToSet = [this.listing.type.toLowerCase(),int(this.listing.id)];
          Main.instance.dispatchEvent(new Event(AccountInfo.SET_MANUAL_PART));
@@ -216,7 +216,7 @@ package package_18.PartInfo
          PartInfoPopup.instance.startFadeOut();
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

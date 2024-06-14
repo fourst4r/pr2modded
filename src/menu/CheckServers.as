@@ -8,15 +8,15 @@ package menu
    public class CheckServers
    {
       
-      private static var interval:uint;
+      protected static var interval:uint;
       
-      private static var target:ComboBox;
+      protected static var target:ComboBox;
       
-      private static var servers:Array;
+      protected static var servers:Array;
       
-      private static var superLoader:SuperLoader = new SuperLoader(true,SuperLoader.j);
+      protected static var superLoader:SuperLoader = new SuperLoader(true,SuperLoader.j);
       
-      private static var active:Boolean = false;
+      protected static var active:Boolean = false;
        
       
       public function CheckServers()
@@ -46,7 +46,7 @@ package menu
          load();
       }
       
-      private static function maybeLoad() : *
+      protected static function maybeLoad() : *
       {
          if(servers == null || servers.length == 0)
          {
@@ -59,7 +59,7 @@ package menu
          }
       }
       
-      private static function load() : *
+      protected static function load() : *
       {
          if(target != null)
          {
@@ -72,7 +72,7 @@ package menu
          superLoader.load(_loc1_);
       }
       
-      private static function parseData(param1:Event) : *
+      protected static function parseData(param1:Event) : *
       {
          var _loc2_:Object = null;
          servers = superLoader.parsedData.servers;
@@ -100,7 +100,7 @@ package menu
          }
       }
       
-      private static function handleError(param1:Event) : *
+      protected static function handleError(param1:Event) : *
       {
          if(target != null)
          {
@@ -124,7 +124,7 @@ package menu
          target = null;
       }
       
-      private static function selectServer(param1:ComboBox) : *
+      protected static function selectServer(param1:ComboBox) : *
       {
          var _loc4_:Object = null;
          var _loc5_:Object = null;
@@ -169,7 +169,7 @@ package menu
          }
       }
       
-      private static function sortServers(param1:Object, param2:Object) : int
+      protected static function sortServers(param1:Object, param2:Object) : int
       {
          if(Main.guild != 0)
          {
@@ -208,7 +208,7 @@ package menu
          }
       }
       
-      private static function addToList(param1:ComboBox, param2:Object) : *
+      protected static function addToList(param1:ComboBox, param2:Object) : *
       {
          var _loc3_:Object = getServerFromId(param2.server_id,param1);
          var _loc4_:*;
@@ -238,7 +238,7 @@ package menu
          }
       }
       
-      private static function getServerFromId(param1:int, param2:ComboBox) : Object
+      protected static function getServerFromId(param1:int, param2:ComboBox) : Object
       {
          var _loc5_:Object = null;
          var _loc6_:Object = null;

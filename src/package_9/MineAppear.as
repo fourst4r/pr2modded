@@ -9,7 +9,7 @@ package package_9
    {
        
       
-      private var m:MineAppearAnimation;
+      protected var m:MineAppearAnimation;
       
       public function MineAppear(param1:Number, param2:Number)
       {

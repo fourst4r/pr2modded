@@ -7,7 +7,7 @@ package package_19
    {
        
       
-      private var color:Number;
+      protected var color:Number;
       
       public function class_222(param1:int, param2:Number = 0)
       {

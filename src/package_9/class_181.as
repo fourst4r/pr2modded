@@ -6,9 +6,9 @@ package package_9
    {
        
       
-      private var m:Arrow2Graphic;
+      protected var m:Arrow2Graphic;
       
-      private var velY:int = 0;
+      protected var velY:int = 0;
       
       public function class_181(param1:Number, param2:Number)
       {
@@ -22,7 +22,7 @@ package package_9
          addEventListener(Event.ENTER_FRAME,this.method_152);
       }
       
-      private function method_152(param1:Event) : *
+      protected function method_152(param1:Event) : *
       {
          this.velY -= 0.1;
          y -= this.velY;

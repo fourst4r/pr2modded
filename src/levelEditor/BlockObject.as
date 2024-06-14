@@ -8,13 +8,13 @@ package levelEditor
    {
        
       
-      private var segSize:Number;
+      protected var segSize:Number;
       
-      private var optionsButton:BlockOptionsButton;
+      protected var optionsButton:BlockOptionsButton;
       
-      private var lastX:Number;
+      protected var lastX:Number;
       
-      private var lastY:Number;
+      protected var lastY:Number;
       
       public var segX:int;
       
@@ -118,14 +118,14 @@ package levelEditor
          this.hideOptionsButton();
       }
       
-      private function showOptionsButton() : *
+      protected function showOptionsButton() : *
       {
          this.optionsButton = new BlockOptionsButton();
          this.optionsButton.addEventListener(MouseEvent.MOUSE_DOWN,this.onOptionsPress,false,0,true);
          addChild(this.optionsButton);
       }
       
-      private function hideOptionsButton() : *
+      protected function hideOptionsButton() : *
       {
          if(this.optionsButton != null)
          {
@@ -147,7 +147,7 @@ package levelEditor
          }
       }
       
-      private function method_103(param1:Number) : Number
+      protected function method_103(param1:Number) : Number
       {
          return Math.round(param1 / this.segSize) * this.segSize;
       }

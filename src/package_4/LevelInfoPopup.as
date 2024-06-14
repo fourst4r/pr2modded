@@ -16,77 +16,77 @@ package package_4
       public static var instance:*;
        
       
-      private var superLoader:SuperLoader;
+      protected var superLoader:SuperLoader;
       
-      private var m:LevelInfoPopupGraphic;
+      protected var m:LevelInfoPopupGraphic;
       
-      private var htmlNameMaker:HTMLNameMaker;
+      protected var htmlNameMaker:HTMLNameMaker;
       
-      private var levelId:int = 0;
+      protected var levelId:int = 0;
       
-      private var live:Boolean = false;
+      protected var live:Boolean = false;
       
-      private var hasPass:Boolean = true;
+      protected var hasPass:Boolean = true;
       
-      private var userId:int = 0;
+      protected var userId:int = 0;
       
-      private var userName:String = "";
+      protected var userName:String = "";
       
-      private var userGroup:String = "0";
+      protected var userGroup:String = "0";
       
-      private var title:String = "";
+      protected var title:String = "";
       
-      private var note:String = "";
+      protected var note:String = "";
       
-      private var version:int = 1;
+      protected var version:int = 1;
       
-      private var time:int = 0;
+      protected var time:int = 0;
       
-      private var updated:Date;
+      protected var updated:Date;
       
-      private var plays:int = 0;
+      protected var plays:int = 0;
       
-      private var rating:Number = 0;
+      protected var rating:Number = 0;
       
-      private var maxTime:int = 120;
+      protected var maxTime:int = 120;
       
-      private var minRank:int = 0;
+      protected var minRank:int = 0;
       
-      private var gravity:Number = 1;
+      protected var gravity:Number = 1;
       
-      private var items:String = "Laser Gun`Mine`Lightning`Teleport`Super Jump`Jet Pack`Speed Burst`Sword`Ice Wave";
+      protected var items:String = "Laser Gun`Mine`Lightning`Teleport`Super Jump`Jet Pack`Speed Burst`Sword`Ice Wave";
       
-      private var song:String = "";
+      protected var song:String = "";
       
-      private var gameMode:String = "race";
+      protected var gameMode:String = "race";
       
-      private var cowboyChance:int = 5;
+      protected var cowboyChance:int = 5;
       
-      private var badHats:String = "";
+      protected var badHats:String = "";
       
-      private var hoverUpdated:HoverPopup;
+      protected var hoverUpdated:HoverPopup;
       
-      private var hoverRating:HoverPopup;
+      protected var hoverRating:HoverPopup;
       
-      private var hoverGameMode:HoverPopup;
+      protected var hoverGameMode:HoverPopup;
       
-      private var hoverSong:HoverPopup;
+      protected var hoverSong:HoverPopup;
       
-      private var hoverCowboyChance:HoverPopup;
+      protected var hoverCowboyChance:HoverPopup;
       
-      private var hoverMaxTime:HoverPopup;
+      protected var hoverMaxTime:HoverPopup;
       
-      private var hoverGravity:HoverPopup;
+      protected var hoverGravity:HoverPopup;
       
-      private var hoverItems:InfoPopup;
+      protected var hoverItems:InfoPopup;
       
-      private var hoverHats:InfoPopup;
+      protected var hoverHats:InfoPopup;
       
-      private var hoverActionBt:HoverPopup;
+      protected var hoverActionBt:HoverPopup;
       
-      private var actionBtTimer:uint;
+      protected var actionBtTimer:uint;
       
-      private var actionType:String;
+      protected var actionType:String;
       
       public function LevelInfoPopup(param1:int)
       {
@@ -114,7 +114,7 @@ package package_4
          this.superLoader.addEventListener(SuperLoader.e,this.clickClose,false,0,true);
       }
       
-      private function applyReturnData(param1:Event) : *
+      protected function applyReturnData(param1:Event) : *
       {
          var _loc2_:Object = SuperLoader(param1.target).parsedData;
          this.live = _loc2_.live;
@@ -191,7 +191,7 @@ package package_4
          this.m.levelInfo.visible = true;
       }
       
-      private function overUpdatedHandler(param1:MouseEvent) : *
+      protected function overUpdatedHandler(param1:MouseEvent) : *
       {
          Mouse.cursor = MouseCursor.BUTTON;
          this.m.levelInfo.updated.textColor = 6710886;
@@ -199,7 +199,7 @@ package package_4
          this.hoverUpdated.x += this.hoverUpdated.width * 1.5 + 10;
       }
       
-      private function outUpdatedHandler(param1:*) : *
+      protected function outUpdatedHandler(param1:*) : *
       {
          Mouse.cursor = MouseCursor.AUTO;
          this.m.levelInfo.updated.textColor = 0;
@@ -207,7 +207,7 @@ package package_4
          this.hoverUpdated = null;
       }
       
-      private function overRatingHandler(param1:MouseEvent) : *
+      protected function overRatingHandler(param1:MouseEvent) : *
       {
          this.m.levelInfo.rating.cover.visible = true;
          this.hoverRating = new HoverPopup("",this.rating,this.m.levelInfo.rating);
@@ -216,94 +216,94 @@ package package_4
          this.hoverRating.width /= 2;
       }
       
-      private function outRatingHandler(param1:*) : *
+      protected function outRatingHandler(param1:*) : *
       {
          this.m.levelInfo.rating.cover.visible = false;
          this.hoverRating.remove();
          this.hoverRating = null;
       }
       
-      private function overGameModeHandler(param1:MouseEvent) : *
+      protected function overGameModeHandler(param1:MouseEvent) : *
       {
          this.m.levelInfo.gameMode.cover.visible = true;
          this.hoverGameMode = new HoverPopup("Game Mode",this.gameMode,this.m.levelInfo.gameMode);
       }
       
-      private function outGameModeHandler(param1:*) : *
+      protected function outGameModeHandler(param1:*) : *
       {
          this.m.levelInfo.gameMode.cover.visible = false;
          this.hoverGameMode.remove();
          this.hoverGameMode = null;
       }
       
-      private function overSongHandler(param1:MouseEvent) : *
+      protected function overSongHandler(param1:MouseEvent) : *
       {
          this.hoverSong = new HoverPopup("Music",this.song,this.m.levelInfo.song);
          this.hoverSong.x += 193;
       }
       
-      private function outSongHandler(param1:*) : *
+      protected function outSongHandler(param1:*) : *
       {
          this.hoverSong.remove();
          this.hoverSong = null;
       }
       
-      private function overCowboyChanceHandler(param1:MouseEvent) : *
+      protected function overCowboyChanceHandler(param1:MouseEvent) : *
       {
          this.hoverCowboyChance = new HoverPopup("Chance of Cowboy Mode",this.cowboyChance + "%",this.m.levelInfo.cowboyChance);
       }
       
-      private function outCowboyChanceHandler(param1:*) : *
+      protected function outCowboyChanceHandler(param1:*) : *
       {
          this.hoverCowboyChance.remove();
          this.hoverCowboyChance = null;
       }
       
-      private function overMaxTimeHandler(param1:MouseEvent) : *
+      protected function overMaxTimeHandler(param1:MouseEvent) : *
       {
          this.hoverMaxTime = new HoverPopup("Time Limit",this.maxTime == 0 || this.maxTime == 999 && this.time < 1358640000 ? "Infinite" : Data.formatTime(this.maxTime) + " (" + Data.formatNumber(this.maxTime) + " seconds)",this.m.levelInfo.maxTime);
       }
       
-      private function outMaxTimeHandler(param1:*) : *
+      protected function outMaxTimeHandler(param1:*) : *
       {
          this.hoverMaxTime.remove();
          this.hoverMaxTime = null;
       }
       
-      private function overGravityHandler(param1:MouseEvent) : *
+      protected function overGravityHandler(param1:MouseEvent) : *
       {
          this.hoverGravity = new HoverPopup("Gravity Multiplier",this.gravity,this.m.levelInfo.gravity);
       }
       
-      private function outGravityHandler(param1:*) : *
+      protected function outGravityHandler(param1:*) : *
       {
          this.hoverGravity.remove();
          this.hoverGravity = null;
       }
       
-      private function overItemsHandler(param1:MouseEvent) : *
+      protected function overItemsHandler(param1:MouseEvent) : *
       {
          this.hoverItems = new ItemMenu(this.items,this.m.levelInfo.items);
       }
       
-      private function outItemsHandler(param1:*) : *
+      protected function outItemsHandler(param1:*) : *
       {
          this.hoverItems.remove();
          this.hoverItems = null;
       }
       
-      private function overHatsHandler(param1:MouseEvent) : *
+      protected function overHatsHandler(param1:MouseEvent) : *
       {
          this.hoverHats = new HatsMenu(this.badHats,this.gameMode,this.m.levelInfo.hatsAllowed);
       }
       
-      private function outHatsHandler(param1:*) : *
+      protected function outHatsHandler(param1:*) : *
       {
          this.hoverHats.remove();
          this.hoverHats = null;
       }
       
-      private function determineMode(param1:String) : *
+      protected function determineMode(param1:String) : *
       {
          if(param1 == Modes.dm || param1 == "dm" || param1 == "d")
          {
@@ -333,7 +333,7 @@ package package_4
          return param1;
       }
       
-      private function determineSong(param1:String) : *
+      protected function determineSong(param1:String) : *
       {
          if(param1 == "" || param1 == "random")
          {
@@ -348,19 +348,19 @@ package package_4
          return _loc2_[param1];
       }
       
-      private function overShareBt(param1:MouseEvent) : *
+      protected function overShareBt(param1:MouseEvent) : *
       {
          this.actionType = "share";
          this.actionBtTimer = setTimeout(this.showActionPopup,500);
       }
       
-      private function overActionBt(param1:MouseEvent) : *
+      protected function overActionBt(param1:MouseEvent) : *
       {
          this.actionType = !!this.m.levelInfo.contains(this.m.levelInfo.report_bt) ? "report" : "unpublish";
          this.actionBtTimer = setTimeout(this.showActionPopup,500);
       }
       
-      private function showActionPopup() : *
+      protected function showActionPopup() : *
       {
          var _loc1_:String = null;
          var _loc2_:String = null;
@@ -384,7 +384,7 @@ package package_4
          this.hoverActionBt = new HoverPopup(_loc1_,_loc2_,_loc3_);
       }
       
-      private function outActionBt(param1:MouseEvent) : *
+      protected function outActionBt(param1:MouseEvent) : *
       {
          this.actionType = null;
          clearTimeout(this.actionBtTimer);
@@ -395,23 +395,23 @@ package package_4
          }
       }
       
-      private function clickShare(param1:MouseEvent) : *
+      protected function clickShare(param1:MouseEvent) : *
       {
          var _loc2_:* = "Hey, check out this level! \n\n[level=" + this.levelId + "]" + this.title + "[/level] by [user]" + this.userName + "[/user]";
          new SendMessagePopup("",_loc2_,false,true);
       }
       
-      private function clickReport(param1:MouseEvent) : *
+      protected function clickReport(param1:MouseEvent) : *
       {
          new LevelReportPopup(this.levelId,this.version);
       }
       
-      private function clickRemove(param1:MouseEvent) : *
+      protected function clickRemove(param1:MouseEvent) : *
       {
          new ChooseLevelModModePopup(this.levelId);
       }
       
-      private function clickPlay(param1:MouseEvent) : *
+      protected function clickPlay(param1:MouseEvent) : *
       {
          if(PartPopup.instance != null)
          {
@@ -428,12 +428,12 @@ package package_4
          startFadeOut();
       }
       
-      private function clickClose(param1:*) : *
+      protected function clickClose(param1:*) : *
       {
          startFadeOut();
       }
       
-      private function closeHoverPopups() : *
+      protected function closeHoverPopups() : *
       {
          if(this.hoverUpdated != null)
          {

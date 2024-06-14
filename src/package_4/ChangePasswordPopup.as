@@ -8,7 +8,7 @@ package package_4
    {
        
       
-      private var m:ChangePasswordPopupGraphic;
+      protected var m:ChangePasswordPopupGraphic;
       
       public function ChangePasswordPopup()
       {
@@ -22,7 +22,7 @@ package package_4
          addChild(this.m);
       }
       
-      private function listenForEnterKey(param1:KeyboardEvent) : *
+      protected function listenForEnterKey(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -30,7 +30,7 @@ package package_4
          }
       }
       
-      private function clickOk(param1:MouseEvent) : *
+      protected function clickOk(param1:MouseEvent) : *
       {
          var _loc2_:Object = null;
          var _loc3_:String = null;
@@ -64,7 +64,7 @@ package package_4
          }
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

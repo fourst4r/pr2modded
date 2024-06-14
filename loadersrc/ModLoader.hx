@@ -3,11 +3,7 @@ package;
 import page.HookedPageHolder;
 import menu.LoginPage;
 import flash.events.UncaughtErrorEvent;
-import haxe.io.StringInput;
-import flash.events.HTTPStatusEvent;
-import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
-import flash.errors.SecurityError;
 import flash.net.URLLoader;
 import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
@@ -18,23 +14,13 @@ import flash.net.URLRequest;
 import flash.display.Loader;
 import package_4.MessagePopup;
 import flash.system.Security;
-import flash.events.MouseEvent;
 import flash.Lib;
-import io.github.fourst4r.modhub.*;
 
 class ModLoader {
     
 
     static function main() {
         final stage = Lib.current.stage;
-
-        trace("main");
-
-        Lib.current.stage.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e) -> {
-            new MessagePopup("ERROR FFS: "+e);
-        });
-
-        // flash.Lib.fscommand("exec", "2nd.exe");
 
         Security.allowDomain("*");
         Security.allowInsecureDomain("*");
@@ -49,14 +35,19 @@ class ModLoader {
         // ctx.allowCodeImport = true;
         // loader.load(new URLRequest("file:///C:/Users/oxyge/Documents/pr2dec/src/pr2.swf"), ctx);
 
+        // Initialize the game
         Main.instance = new Main();
         Lib.current.stage.addChild(Main.instance);
         
-        postInitHook();
+        // Hook useful classes
+        hookPageHolder();
+
+        // Load the mods!
+        loadAllMods();
 
     }
 
-    static function postInitHook() {
+    static function hookPageHolder() {
         Main.pageHolder.remove();
         Main.pageHolder = new HookedPageHolder(new LoginPage());
         Lib.current.stage.addChild(Main.pageHolder);
@@ -102,9 +93,9 @@ class ModLoader {
             Security.allowInsecureDomain(loaderInfo.loaderURL);
             Security.allowDomain(loaderInfo.url);
             Security.allowInsecureDomain(loaderInfo.url);
-            loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e) -> {
-                new MessagePopup("ERROR FFS: "+e);
-            });
+            // loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e) -> {
+            //     new MessagePopup("ERROR FFS: "+e);
+            // });
             Lib.current.stage.addChild(loaderInfo.content);
             
         });

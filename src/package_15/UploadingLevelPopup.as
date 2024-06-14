@@ -13,13 +13,13 @@ package package_15
    {
        
       
-      private var editor:LevelEditor;
+      protected var editor:LevelEditor;
       
-      private var waitTimeout:uint;
+      protected var waitTimeout:uint;
       
-      private var overrideBanConfirmed:Boolean = false;
+      protected var overrideBanConfirmed:Boolean = false;
       
-      private var overwriteExistingConfirmed:Boolean = false;
+      protected var overwriteExistingConfirmed:Boolean = false;
       
       public function UploadingLevelPopup(param1:Boolean = false, param2:Boolean = false)
       {
@@ -30,7 +30,7 @@ package package_15
          this.uploadLevel();
       }
       
-      private function uploadLevel() : *
+      protected function uploadLevel() : *
       {
          var _loc1_:MD5 = null;
          var _loc2_:URLVariables = null;
@@ -68,7 +68,7 @@ package package_15
          }
       }
       
-      private function onParse(param1:Event) : *
+      protected function onParse(param1:Event) : *
       {
          var _loc2_:String = null;
          super.parsedDataHandler(param1);
@@ -83,18 +83,18 @@ package package_15
          }
       }
       
-      private function onError(param1:Event) : *
+      protected function onError(param1:Event) : *
       {
          this.remove();
       }
       
-      private function overrideBanConfirmUploadLevel() : *
+      protected function overrideBanConfirmUploadLevel() : *
       {
          this.overrideBanConfirmed = true;
          new UploadingLevelPopup(this.overrideBanConfirmed,this.overwriteExistingConfirmed);
       }
       
-      private function overwriteConfirmUploadLevel() : *
+      protected function overwriteConfirmUploadLevel() : *
       {
          this.overwriteExistingConfirmed = true;
          new UploadingLevelPopup(this.overrideBanConfirmed,this.overwriteExistingConfirmed);

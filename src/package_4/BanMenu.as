@@ -9,15 +9,15 @@ package package_4
    {
        
       
-      private var m:BanMenuGraphic;
+      protected var m:BanMenuGraphic;
       
-      private var target:Popup;
+      protected var target:Popup;
       
-      private var userName:String;
+      protected var userName:String;
       
-      private var banSecs:int;
+      protected var banSecs:int;
       
-      private var uploading:UploadingPopup;
+      protected var uploading:UploadingPopup;
       
       public function BanMenu(param1:String, param2:Popup)
       {
@@ -66,7 +66,7 @@ package package_4
          addChild(this.m);
       }
       
-      private function viewPriors(param1:MouseEvent) : *
+      protected function viewPriors(param1:MouseEvent) : *
       {
          if(Main.socket.connected)
          {
@@ -78,7 +78,7 @@ package package_4
          }
       }
       
-      private function confirmBan(param1:MouseEvent) : *
+      protected function confirmBan(param1:MouseEvent) : *
       {
          this.banSecs = this.m.duration.selectedItem.data;
          if(this.banSecs == 0)
@@ -124,40 +124,40 @@ package package_4
          this.uploading.addEventListener(SuperLoader.e,this.method_238,false,0,true);
       }
       
-      private function method_238(param1:Event) : *
+      protected function method_238(param1:Event) : *
       {
          this.target.startFadeOut();
       }
       
-      private function onBanSuccess(param1:Event) : *
+      protected function onBanSuccess(param1:Event) : *
       {
          var _loc2_:int = this.uploading.parsedData.ban_id != null ? int(this.uploading.parsedData.ban_id) : 0;
          Main.socket.write("ban`" + this.userName + "`" + this.banSecs + "`" + this.m.scope.selectedItem.data + "`" + _loc2_ + "`" + this.m.reason.text);
          this.target.startFadeOut();
       }
       
-      private function clickWarning1(param1:MouseEvent) : *
+      protected function clickWarning1(param1:MouseEvent) : *
       {
          this.warnUser(1);
       }
       
-      private function clickWarning2(param1:MouseEvent) : *
+      protected function clickWarning2(param1:MouseEvent) : *
       {
          this.warnUser(2);
       }
       
-      private function clickWarning3(param1:MouseEvent) : *
+      protected function clickWarning3(param1:MouseEvent) : *
       {
          this.warnUser(3);
       }
       
-      private function warnUser(param1:int) : *
+      protected function warnUser(param1:int) : *
       {
          Main.socket.write("warn`" + this.userName + "`" + param1);
          this.target.startFadeOut();
       }
       
-      private function clickKick(param1:MouseEvent) : *
+      protected function clickKick(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.kickUser,"Are you sure you want to kick " + Data.escapeString(this.userName) + "? They will not be able to re-enter this server for 30 minutes.");
       }

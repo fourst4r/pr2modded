@@ -6,11 +6,11 @@ package ui
    {
        
       
-      private var m:TextButtonGraphic;
+      protected var m:TextButtonGraphic;
       
-      private var clickHandler:Function;
+      protected var clickHandler:Function;
       
-      private var str:String;
+      protected var str:String;
       
       public function LoginPageMenuButton(param1:String, param2:Function)
       {
@@ -27,13 +27,13 @@ package ui
          addChild(this.m);
       }
       
-      private function overHandler(param1:MouseEvent) : *
+      protected function overHandler(param1:MouseEvent) : *
       {
          this.m.textBox1.text = this.m.textBox2.text = "- " + this.str + " -";
          this.m.alpha = 1;
       }
       
-      private function outHandler(param1:MouseEvent) : *
+      protected function outHandler(param1:MouseEvent) : *
       {
          if(this.m != null && this.str != null)
          {

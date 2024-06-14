@@ -27,29 +27,29 @@ package package_8
       public static const GravityMultiplied:String = "grm";
        
       
-      private var socket:PR2Socket;
+      protected var socket:PR2Socket;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
-      private var course:Course;
+      protected var course:Course;
       
-      private var map:Map;
+      protected var map:Map;
       
-      private var mapDot:MiniMapDot;
+      protected var mapDot:MiniMapDot;
       
-      private var itemDisplay:ItemDisplay;
+      protected var itemDisplay:ItemDisplay;
       
-      private var var_573:uint;
+      protected var var_573:uint;
       
-      private var var_535:uint;
+      protected var var_535:uint;
       
-      private var var_390:DisplayObject;
+      protected var var_390:DisplayObject;
       
-      private var speedStat:int;
+      protected var speedStat:int;
       
-      private var accelStat:int;
+      protected var accelStat:int;
       
-      private var jumpnStat:int;
+      protected var jumpnStat:int;
       
       public var accel:Number;
       
@@ -59,9 +59,9 @@ package package_8
       
       public var var_669:Number = 0;
       
-      private var var_523:Number = 0.35;
+      protected var var_523:Number = 0.35;
       
-      private var var_599:Number = 1;
+      protected var var_599:Number = 1;
       
       public var var_147:Number;
       
@@ -81,7 +81,7 @@ package package_8
       
       public var var_157:Number = 28;
       
-      private var initialized:Boolean = false;
+      protected var initialized:Boolean = false;
       
       public var testMode:Boolean = false;
       
@@ -99,73 +99,73 @@ package package_8
       
       public var space:Boolean = false;
       
-      private var friction:Number = 0.985;
+      protected var friction:Number = 0.985;
       
-      private var var_281:Boolean = false;
+      protected var var_281:Boolean = false;
       
-      private var var_150:Number = 0;
+      protected var var_150:Number = 0;
       
-      private var segSize:Number = 30;
+      protected var segSize:Number = 30;
       
-      private var hurtTime:Number = 0;
+      protected var hurtTime:Number = 0;
       
-      private var squashedTime:Number = 0;
+      protected var squashedTime:Number = 0;
       
-      private var stingCooldown:int = 135;
+      protected var stingCooldown:int = 135;
       
       public var var_240:Number = 0;
       
-      private var var_630:Block = null;
+      protected var var_630:Block = null;
       
-      private var var_469:Block = null;
+      protected var var_469:Block = null;
       
-      private var var_657:Block = null;
+      protected var var_657:Block = null;
       
-      private var var_329:Block = null;
+      protected var var_329:Block = null;
       
-      private var var_658:Block = null;
+      protected var var_658:Block = null;
       
-      private var var_296:Block = null;
+      protected var var_296:Block = null;
       
-      private var var_654:Block = null;
+      protected var var_654:Block = null;
       
-      private var var_262:Block = null;
+      protected var var_262:Block = null;
       
-      private var var_631:Block = null;
+      protected var var_631:Block = null;
       
-      private var var_306:Block = null;
+      protected var var_306:Block = null;
       
-      private var var_297:Block = null;
+      protected var var_297:Block = null;
       
       public var mode:String = "wait";
       
-      private var curItem:Item;
+      protected var curItem:Item;
       
-      private var speedBurst:SpeedBurst;
+      protected var speedBurst:SpeedBurst;
       
-      private var life:int = 3;
+      protected var life:int = 3;
       
-      private var invincible:Boolean = false;
+      protected var invincible:Boolean = false;
       
-      private var frozenSolid:Boolean = false;
+      protected var frozenSolid:Boolean = false;
       
-      private var unfreezeTimer:uint;
+      protected var unfreezeTimer:uint;
       
-      private var var_530:Number;
+      protected var var_530:Number;
       
-      private var exactX:int;
+      protected var exactX:int;
       
-      private var exactY:int;
+      protected var exactY:int;
       
-      private var var_577:String;
+      protected var var_577:String;
       
-      private var var_623:int;
+      protected var var_623:int;
       
-      private var exactPosNextUpdate:Boolean = false;
+      protected var exactPosNextUpdate:Boolean = false;
       
-      private var altCtrl:Object;
+      protected var altCtrl:Object;
       
-      private var startingStats:Array = null;
+      protected var startingStats:Array = null;
       
       public function LocalCharacter(param1:int, param2:Course, param3:Map, param4:MovieClip, param5:ItemDisplay, param6:Number, param7:int = 50, param8:int = 50, param9:int = 50, param10:int = 1, param11:int = 1, param12:int = 1, param13:int = 1, param14:String = "0")
       {
@@ -279,7 +279,7 @@ package package_8
          var_4.setNumber(GravityMultiplied,var_4.getNumber(DefaultGravity) * param1);
       }
       
-      private function resetGravity() : *
+      protected function resetGravity() : *
       {
          var_4.setNumber(GravityMultiplied,var_4.getNumber(DefaultGravity) * GamePage.course.gravity);
       }
@@ -330,7 +330,7 @@ package package_8
          }
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          var _loc4_:Point = null;
          var _loc5_:int = 0;
@@ -407,12 +407,12 @@ package package_8
          }
       }
       
-      private function setEPNU() : *
+      protected function setEPNU() : *
       {
          this.exactPosNextUpdate = true;
       }
       
-      private function maybeSquash() : *
+      protected function maybeSquash() : *
       {
          var _loc1_:Character = null;
          for each(_loc1_ in this.course.playerArray)
@@ -428,7 +428,7 @@ package package_8
          }
       }
       
-      private function maybeSting() : *
+      protected function maybeSting() : *
       {
          var _loc1_:Character = null;
          for each(_loc1_ in this.course.playerArray)
@@ -441,13 +441,13 @@ package package_8
          }
       }
       
-      private function waitGo(param1:Event) : *
+      protected function waitGo(param1:Event) : *
       {
          this.position();
          this.method_76();
       }
       
-      private function hurtGo(param1:Event) : *
+      protected function hurtGo(param1:Event) : *
       {
          this.var_24 = 0;
          this.position();
@@ -458,7 +458,7 @@ package package_8
          }
       }
       
-      private function frozenSolidGo(param1:Event) : *
+      protected function frozenSolidGo(param1:Event) : *
       {
          this.var_24 = 0;
          this.position();
@@ -481,7 +481,7 @@ package package_8
          }
       }
       
-      private function squashedGo(param1:Event) : *
+      protected function squashedGo(param1:Event) : *
       {
          this.crouching = true;
          this.landGo(param1);
@@ -493,11 +493,11 @@ package package_8
          }
       }
       
-      private function freezeGo(param1:Event) : *
+      protected function freezeGo(param1:Event) : *
       {
       }
       
-      private function waterGo(param1:Event) : *
+      protected function waterGo(param1:Event) : *
       {
          this.updateKeys();
          if(this.right)
@@ -541,7 +541,7 @@ package package_8
          }
       }
       
-      private function landGo(param1:Event) : *
+      protected function landGo(param1:Event) : *
       {
          this.updateKeys();
          if(this.right)
@@ -633,7 +633,7 @@ package package_8
          }
       }
       
-      private function updateKeys() : *
+      protected function updateKeys() : *
       {
          var _loc1_:Boolean = false;
          this.up = this.down = this.right = this.left = this.space = false;
@@ -674,7 +674,7 @@ package package_8
          }
       }
       
-      private function position() : *
+      protected function position() : *
       {
          var _loc1_:Number = NaN;
          var _loc2_:Point = null;
@@ -730,7 +730,7 @@ package package_8
          this.bumpPlayer();
       }
       
-      private function checkLooseHats() : *
+      protected function checkLooseHats() : *
       {
          var _loc1_:Hat = null;
          var _loc2_:Point = null;
@@ -747,7 +747,7 @@ package package_8
          }
       }
       
-      private function returnHatToStart(param1:int) : *
+      protected function returnHatToStart(param1:int) : *
       {
          var _loc2_:Hat = this.course.looseHats[param1];
          if(_loc2_ != null)
@@ -757,7 +757,7 @@ package package_8
          }
       }
       
-      private function method_76() : *
+      protected function method_76() : *
       {
          var _loc1_:Block = null;
          var _loc2_:Block = null;
@@ -856,7 +856,7 @@ package package_8
          }
       }
       
-      private function method_261() : *
+      protected function method_261() : *
       {
          if(this.var_469 != null && this.var_262 == null)
          {
@@ -870,7 +870,7 @@ package package_8
          }
       }
       
-      private function method_41() : *
+      protected function method_41() : *
       {
          if(y < 0)
          {
@@ -889,7 +889,7 @@ package package_8
          this.var_297 = this.getBlock(x,y - this.var_325);
       }
       
-      private function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false) : Block
+      protected function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false) : Block
       {
          var _loc5_:Block = null;
          if(this.map != null)
@@ -928,7 +928,7 @@ package package_8
          }
       }
       
-      private function bumpPlayer() : *
+      protected function bumpPlayer() : *
       {
          if(this.hurtTime <= 0)
          {
@@ -1083,7 +1083,7 @@ package package_8
          this.exactPosNextUpdate = true;
       }
       
-      private function playersInPosUpdateRange() : Boolean
+      protected function playersInPosUpdateRange() : Boolean
       {
          return Course.course.playerArray.length > 1;
       }
@@ -1200,7 +1200,7 @@ package package_8
          }
       }
       
-      private function ensureCowboyStats() : *
+      protected function ensureCowboyStats() : *
       {
          if(var_4.getBool(COWBOY))
          {
@@ -1210,7 +1210,7 @@ package package_8
          }
       }
       
-      private function ensureSantaStats() : *
+      protected function ensureSantaStats() : *
       {
          if(var_4.getBool(SANTA))
          {
@@ -1234,7 +1234,7 @@ package package_8
          }
       }
       
-      private function unfreeze() : *
+      protected function unfreeze() : *
       {
          clearTimeout(this.unfreezeTimer);
          this.frozenSolid = false;

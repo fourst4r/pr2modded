@@ -9,13 +9,13 @@ package background
    {
        
       
-      private var bitmapData:BitmapData;
+      protected var bitmapData:BitmapData;
       
-      private var bitmap:Bitmap;
+      protected var bitmap:Bitmap;
       
-      private var color:Number;
+      protected var color:Number;
       
-      private var displayCode:int;
+      protected var displayCode:int;
       
       public function class_10(param1:GamePage)
       {
@@ -52,7 +52,7 @@ package background
          method_59();
       }
       
-      private function method_536(param1:DisplayObject) : *
+      protected function method_536(param1:DisplayObject) : *
       {
          var _loc2_:MovieClip = null;
          var _loc3_:int = 0;

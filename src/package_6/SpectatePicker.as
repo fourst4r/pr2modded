@@ -9,13 +9,13 @@ package package_6
    {
        
       
-      private var game:Course;
+      protected var game:Course;
       
-      private var m:SpectatePickerGraphic;
+      protected var m:SpectatePickerGraphic;
       
-      private var htmlNameMaker:HTMLNameMaker;
+      protected var htmlNameMaker:HTMLNameMaker;
       
-      private var pickedID:int = -1;
+      protected var pickedID:int = -1;
       
       public function SpectatePicker()
       {
@@ -30,7 +30,7 @@ package package_6
          this.stopSpectating();
       }
       
-      private function clickLeft(param1:MouseEvent) : *
+      protected function clickLeft(param1:MouseEvent) : *
       {
          var _loc2_:int = this.pickedID - 1;
          if(_loc2_ < 0)
@@ -40,7 +40,7 @@ package package_6
          this.setPlayer(_loc2_);
       }
       
-      private function clickRight(param1:MouseEvent) : *
+      protected function clickRight(param1:MouseEvent) : *
       {
          var _loc2_:int = this.pickedID + 1;
          if(_loc2_ >= this.game.playerArray.length)
@@ -50,7 +50,7 @@ package package_6
          this.setPlayer(_loc2_);
       }
       
-      private function setPlayer(param1:int = -1) : *
+      protected function setPlayer(param1:int = -1) : *
       {
          var _loc2_:Character = null;
          if(param1 == this.pickedID)

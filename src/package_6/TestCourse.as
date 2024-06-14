@@ -15,17 +15,17 @@ package package_6
    {
        
       
-      private var m:TestCourseGraphic;
+      protected var m:TestCourseGraphic;
       
-      private var variables:URLVariables;
+      protected var variables:URLVariables;
       
-      private var isMod:Boolean = false;
+      protected var isMod:Boolean = false;
       
-      private var reportsMode:Boolean = false;
+      protected var reportsMode:Boolean = false;
       
-      private var statsSelect:StatsSelect;
+      protected var statsSelect:StatsSelect;
       
-      private var hatPicker:HatPicker;
+      protected var hatPicker:HatPicker;
       
       public function TestCourse(param1:URLVariables, param2:Boolean = false, param3:Boolean = false)
       {
@@ -80,7 +80,7 @@ package package_6
          addEggs([1]);
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          Main.stage.focus = Main.stage;
       }
@@ -91,12 +91,12 @@ package package_6
          beginRace(new Array());
       }
       
-      private function clickBack(param1:MouseEvent) : *
+      protected function clickBack(param1:MouseEvent) : *
       {
          Main.pageHolder.changePage(new LevelEditor(this.variables,this.isMod,this.reportsMode));
       }
       
-      private function clickRestart(param1:MouseEvent) : *
+      protected function clickRestart(param1:MouseEvent) : *
       {
          this.restart();
       }
@@ -114,7 +114,7 @@ package package_6
          SoundEffects.playSound(new VictorySound(),1 * (Settings.soundLevel / 100));
       }
       
-      private function teleportToClickPos(param1:MouseEvent) : *
+      protected function teleportToClickPos(param1:MouseEvent) : *
       {
          var _loc2_:Point = var_14.globalToLocal(new Point(param1.stageX,param1.stageY));
          var _loc3_:int = -frontBackground.x + _loc2_.x;
@@ -129,7 +129,7 @@ package package_6
          this.statsSelect.setStatsFromCharacter();
       }
       
-      private function restart() : *
+      protected function restart() : *
       {
          Main.stage.focus = Main.stage;
          TeleportBlock.resetAll();

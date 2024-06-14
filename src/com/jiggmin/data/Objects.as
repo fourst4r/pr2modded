@@ -6,25 +6,25 @@ package com.jiggmin.data
    public class Objects
    {
       
-      private static const STAMP_TREE:int = 0;
+      protected static const STAMP_TREE:int = 0;
       
-      private static const STAMP_TREE2:int = 1;
+      protected static const STAMP_TREE2:int = 1;
       
-      private static const STAMP_TREE3:int = 2;
+      protected static const STAMP_TREE3:int = 2;
       
-      private static const STAMP_PETRIFIED_TREE:int = 3;
+      protected static const STAMP_PETRIFIED_TREE:int = 3;
       
-      private static const STAMP_CACTUS:int = 4;
+      protected static const STAMP_CACTUS:int = 4;
       
-      private static const STAMP_ROCK:int = 5;
+      protected static const STAMP_ROCK:int = 5;
       
-      private static const STAMP_ROCK2:int = 6;
+      protected static const STAMP_ROCK2:int = 6;
       
-      private static const STAMP_SPIRE:int = 7;
+      protected static const STAMP_SPIRE:int = 7;
       
-      private static const STAMP_SPIRE2:int = 8;
+      protected static const STAMP_SPIRE2:int = 8;
       
-      private static const STAMP_BUILDING1:int = 9;
+      protected static const STAMP_BUILDING1:int = 9;
       
       public static const BLOCK_BASIC1:int = 100;
       

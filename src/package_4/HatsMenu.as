@@ -6,9 +6,9 @@ package package_4
    {
        
       
-      private var m:HatsMenuGraphic;
+      protected var m:HatsMenuGraphic;
       
-      private var highestHatID:int;
+      protected var highestHatID:int;
       
       public function HatsMenu(param1:String, param2:String, param3:DisplayObject)
       {
@@ -25,7 +25,7 @@ package package_4
          super(param3);
       }
       
-      private function parseHats(param1:String, param2:String) : *
+      protected function parseHats(param1:String, param2:String) : *
       {
          var _loc3_:Array = null;
          var _loc4_:int = 0;

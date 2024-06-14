@@ -6,7 +6,7 @@ class HookedPageHolder extends page.PageHolder {
     }
 
     public override function changePage(to:Page):Dynamic {
-        final from = getCurrentPage();
+        final from = this.currentPage;
         if (dispatchEvent(new PageChangeEvent(from, to))) {
             super.changePage(to);
         }

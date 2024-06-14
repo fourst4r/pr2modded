@@ -8,11 +8,11 @@ package package_9
    {
        
       
-      private var m:HatGraphic;
+      protected var m:HatGraphic;
       
-      private var id:int;
+      protected var id:int;
       
-      private var sentReturnToStart:Boolean = false;
+      protected var sentReturnToStart:Boolean = false;
       
       public function Hat(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int)
       {

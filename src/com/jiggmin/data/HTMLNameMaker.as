@@ -7,7 +7,7 @@ package com.jiggmin.data
    {
        
       
-      private var array:Array;
+      protected var array:Array;
       
       public function HTMLNameMaker()
       {
@@ -93,7 +93,7 @@ package com.jiggmin.data
          param1.addEventListener(TextEvent.LINK,this.clickLink,false,0,true);
       }
       
-      private function clickLink(param1:TextEvent) : *
+      protected function clickLink(param1:TextEvent) : *
       {
          var _loc2_:int = 0;
          var _loc5_:String = null;

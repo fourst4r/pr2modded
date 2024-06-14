@@ -11,15 +11,15 @@ package package_9
    {
        
       
-      private var m:SlashAnimation;
+      protected var m:SlashAnimation;
       
-      private var course:Course;
+      protected var course:Course;
       
-      private var character:LocalCharacter;
+      protected var character:LocalCharacter;
       
-      private var var_154:int = 29;
+      protected var var_154:int = 29;
       
-      private var var_609:int;
+      protected var var_609:int;
       
       public function Slash(param1:int, param2:int, param3:String, param4:int)
       {
@@ -44,7 +44,7 @@ package package_9
          SoundEffects.playGameSound(new SwishSound(),param1,param2);
       }
       
-      private function method_66(param1:int, param2:int) : *
+      protected function method_66(param1:int, param2:int) : *
       {
          var _loc3_:Point = Data.method_9(param1,param2,this.course.blockBackground.rotation);
          var _loc4_:Block;

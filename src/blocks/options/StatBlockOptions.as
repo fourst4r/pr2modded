@@ -17,7 +17,7 @@ package blocks.options
          m.slider.addEventListener(SliderEvent.THUMB_DRAG,this.updateStatDisplay,false,0,true);
       }
       
-      private function updateStatDisplay(param1:SliderEvent) : *
+      protected function updateStatDisplay(param1:SliderEvent) : *
       {
          m.statBox.text = m.slider.value;
       }

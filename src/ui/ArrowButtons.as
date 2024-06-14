@@ -7,11 +7,11 @@ package ui
    {
        
       
-      private var m:ArrowButtonsGraphic;
+      protected var m:ArrowButtonsGraphic;
       
-      private var array:Array;
+      protected var array:Array;
       
-      private var index:int = 0;
+      protected var index:int = 0;
       
       public var value:int;
       
@@ -26,19 +26,19 @@ package ui
          this.m.right.addEventListener(MouseEvent.CLICK,this.clickRight);
       }
       
-      private function clickLeft(param1:MouseEvent) : *
+      protected function clickLeft(param1:MouseEvent) : *
       {
          --this.index;
          this.wrapCheck();
       }
       
-      private function clickRight(param1:MouseEvent) : *
+      protected function clickRight(param1:MouseEvent) : *
       {
          ++this.index;
          this.wrapCheck();
       }
       
-      private function wrapCheck() : *
+      protected function wrapCheck() : *
       {
          var _loc1_:int = this.array.length - 1;
          this.index = this.index < 0 ? _loc1_ : (this.index > _loc1_ ? 0 : int(this.index));

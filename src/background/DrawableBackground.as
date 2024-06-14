@@ -12,17 +12,17 @@ package background
    {
        
       
-      private var var_210:Number = 200;
+      protected var var_210:Number = 200;
       
-      private var var_541:int = 750;
+      protected var var_541:int = 750;
       
-      private var losslessQuality:Boolean = false;
+      protected var losslessQuality:Boolean = false;
       
-      private var fromLE:Boolean;
+      protected var fromLE:Boolean;
       
-      private var rasterCycles:Number = 1;
+      protected var rasterCycles:Number = 1;
       
-      private var bitmapArray:Array;
+      protected var bitmapArray:Array;
       
       public var brushCanvas:Sprite;
       
@@ -30,15 +30,15 @@ package background
       
       public var objCanvas:Sprite;
       
-      private var brushSize:Number = 4;
+      protected var brushSize:Number = 4;
       
-      private var color:Number = 0;
+      protected var color:Number = 0;
       
-      private var mode:String = "draw";
+      protected var mode:String = "draw";
       
-      private var brushX:Number;
+      protected var brushX:Number;
       
-      private var brushY:Number;
+      protected var brushY:Number;
       
       public var drawing:Boolean = false;
       
@@ -72,7 +72,7 @@ package background
          this.method_268(true);
       }
       
-      private function method_268(param1:Boolean) : *
+      protected function method_268(param1:Boolean) : *
       {
          var _loc3_:DisplayObject = null;
          var _loc2_:int = 0;
@@ -104,14 +104,14 @@ package background
          this.method_446(this.var_122,this.bitmapArray);
       }
       
-      private function method_446(param1:Sprite, param2:Array) : *
+      protected function method_446(param1:Sprite, param2:Array) : *
       {
          this.method_607(param1,param2,this.brushCanvas);
          this.brushCanvas.graphics.clear();
          this.brushCanvas.graphics.lineStyle(this.brushSize,this.color);
       }
       
-      private function method_607(param1:Sprite, param2:Array, param3:Sprite) : *
+      protected function method_607(param1:Sprite, param2:Array, param3:Sprite) : *
       {
          var _loc4_:Rectangle = param3.getBounds(this);
          var _loc5_:int = this.var_210 * this.rasterCycles;
@@ -143,7 +143,7 @@ package background
          }
       }
       
-      private function method_208(param1:Number, param2:Number, param3:Sprite, param4:Array, param5:Sprite) : *
+      protected function method_208(param1:Number, param2:Number, param3:Sprite, param4:Array, param5:Sprite) : *
       {
          var _loc6_:Number = NaN;
          var _loc7_:Number = NaN;
@@ -219,7 +219,7 @@ package background
          addChildAt(this.brushCanvas,1);
       }
       
-      private function method_553(param1:Sprite, param2:Array, param3:Array) : *
+      protected function method_553(param1:Sprite, param2:Array, param3:Array) : *
       {
          var _loc5_:int = 0;
          var _loc4_:int = 0;
@@ -363,7 +363,7 @@ package background
          this.objCanvas.addChild(_loc9_);
       }
       
-      private function placeStroke(param1:String) : *
+      protected function placeStroke(param1:String) : *
       {
          var _loc2_:Array = param1.split(";");
          this.initBrushMove(_loc2_[0],_loc2_[1]);
@@ -424,7 +424,7 @@ package background
          }
       }
       
-      private function initBrushMove(param1:Number, param2:Number) : *
+      protected function initBrushMove(param1:Number, param2:Number) : *
       {
          this.brushCanvas.graphics.moveTo(param1,param2);
          this.brushCanvas.graphics.lineTo(param1 - 0.15,param2);
@@ -433,7 +433,7 @@ package background
          this.brushY = param2;
       }
       
-      private function drawLine(param1:Number, param2:Number) : *
+      protected function drawLine(param1:Number, param2:Number) : *
       {
          this.brushX += param1;
          this.brushY += param2;
@@ -495,7 +495,7 @@ package background
          }
       }
       
-      private function method_812(param1:Array) : *
+      protected function method_812(param1:Array) : *
       {
          var _loc2_:Array = null;
          var _loc3_:DisplayObject = null;
@@ -513,7 +513,7 @@ package background
          }
       }
       
-      private function method_248(param1:Bitmap) : *
+      protected function method_248(param1:Bitmap) : *
       {
          if(param1 != null)
          {

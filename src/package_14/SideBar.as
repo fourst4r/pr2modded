@@ -8,17 +8,17 @@ package package_14
    {
        
       
-      private var scrollBar:CustomScrollBar;
+      protected var scrollBar:CustomScrollBar;
       
-      private var scroll:Sprite;
+      protected var scroll:Sprite;
       
-      private var var_126:Sprite;
+      protected var var_126:Sprite;
       
-      private var posX:Number = 0;
+      protected var posX:Number = 0;
       
-      private var posY:Number = 0;
+      protected var posY:Number = 0;
       
-      private var var_388:Number = 10;
+      protected var var_388:Number = 10;
       
       public function SideBar()
       {
@@ -38,7 +38,7 @@ package package_14
          this.method_711();
       }
       
-      private function method_711() : *
+      protected function method_711() : *
       {
          var _loc1_:Number = 0;
          var _loc2_:Number = 2;

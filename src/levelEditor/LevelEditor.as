@@ -16,7 +16,7 @@ package levelEditor
       public static var editor:LevelEditor;
        
       
-      private var drawingPop:DrawingPopup;
+      protected var drawingPop:DrawingPopup;
       
       public var var_364:Sprite;
       
@@ -64,11 +64,11 @@ package levelEditor
       
       public var toNewest:Boolean = true;
       
-      private var variables:URLVariables;
+      protected var variables:URLVariables;
       
-      private var isMod:Boolean = false;
+      protected var isMod:Boolean = false;
       
-      private var reportsMode:Boolean = false;
+      protected var reportsMode:Boolean = false;
       
       public function LevelEditor(param1:URLVariables, param2:Boolean = false, param3:Boolean = false)
       {
@@ -265,7 +265,7 @@ package levelEditor
          return _loc1_.join("`");
       }
       
-      private function setStartPos() : *
+      protected function setStartPos() : *
       {
          var _loc1_:Point = this.blockBG.getStartPos();
          posX = -_loc1_.x - 100;

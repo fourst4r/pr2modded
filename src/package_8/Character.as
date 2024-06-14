@@ -36,15 +36,15 @@ package package_8
       public static const CHEESE:String = "ch";
        
       
-      private var var_387:class_127;
+      protected var var_387:class_127;
       
-      private var var_140:SoundChannel;
+      protected var var_140:SoundChannel;
       
       public var m:CharacterGraphic;
       
       public var var_301:MovieClip;
       
-      private var characterStatesArray:Array;
+      protected var characterStatesArray:Array;
       
       public var curWeapon:MovieClip;
       
@@ -126,7 +126,7 @@ package package_8
       
       public var var_4:class_20;
       
-      private var var_375:class_125;
+      protected var var_375:class_125;
       
       public function Character(param1:int = 1, param2:int = 1, param3:int = 1, param4:int = 1)
       {
@@ -157,7 +157,7 @@ package package_8
          this.setFeetColors(param7,param8);
       }
       
-      private function resetHats() : *
+      protected function resetHats() : *
       {
          this.var_4.setBool(PROP,false);
          this.var_4.setBool(CROWN,false);
@@ -327,7 +327,7 @@ package package_8
          this.applyItem();
       }
       
-      private function applyAppearance() : *
+      protected function applyAppearance() : *
       {
          this.updatePartMC("head","head");
          this.updatePartMC("body","body");
@@ -342,7 +342,7 @@ package package_8
          this.var_387.update();
       }
       
-      private function updatePartMC(param1:String, param2:String) : *
+      protected function updatePartMC(param1:String, param2:String) : *
       {
          var _loc3_:MovieClip = null;
          var _loc4_:int = 0;
@@ -394,7 +394,7 @@ package package_8
          }
       }
       
-      private function hideHeadFeetIfFredBody() : *
+      protected function hideHeadFeetIfFredBody() : *
       {
          var _loc1_:MovieClip = null;
          for each(_loc1_ in this.characterStatesArray)
@@ -414,14 +414,14 @@ package package_8
          }
       }
       
-      private function applyPartColor(param1:MovieClip, param2:int) : *
+      protected function applyPartColor(param1:MovieClip, param2:int) : *
       {
          var _loc3_:ColorTransform = new ColorTransform();
          _loc3_.color = param2;
          param1.transform.colorTransform = _loc3_;
       }
       
-      private function applyItem() : *
+      protected function applyItem() : *
       {
          var _loc1_:MovieClip = null;
          for each(_loc1_ in this.characterStatesArray)
@@ -508,7 +508,7 @@ package package_8
          addEventListener(Event.ENTER_FRAME,this.method_106,false,0,true);
       }
       
-      private function method_106(param1:Event) : *
+      protected function method_106(param1:Event) : *
       {
          var _loc2_:Number = this.var_269 % 8;
          if(!this.fadeOutStarted)
@@ -612,7 +612,7 @@ package package_8
          scaleY = 1;
       }
       
-      private function method_156(param1:Event) : *
+      protected function method_156(param1:Event) : *
       {
          var _loc2_:Number = this.m.superJumpAnim.currentFrame / 2;
          scaleY = (Math.random() * _loc2_ + (100 - _loc2_ / 2)) / 100;
@@ -650,7 +650,7 @@ package package_8
          }
       }
       
-      private function method_207(param1:Event) : *
+      protected function method_207(param1:Event) : *
       {
          var _loc2_:MovieClip = null;
          if(this.curWeapon != null && this.curWeapon.jetPack != null && this.curWeapon.jetPack.anim != null && this.var_140 != null)
@@ -693,13 +693,13 @@ package package_8
          this.method_200(new class_129(33,5000,this));
       }
       
-      private function method_200(param1:class_125) : *
+      protected function method_200(param1:class_125) : *
       {
          this.method_190();
          this.var_375 = param1;
       }
       
-      private function method_190() : *
+      protected function method_190() : *
       {
          if(this.var_375 != null)
          {
@@ -708,7 +708,7 @@ package package_8
          }
       }
       
-      private function fadeOut(param1:Event) : *
+      protected function fadeOut(param1:Event) : *
       {
          alpha -= 0.02;
          if(alpha <= 0)

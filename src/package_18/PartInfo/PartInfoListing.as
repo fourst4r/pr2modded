@@ -9,13 +9,13 @@ package package_18.PartInfo
    {
        
       
-      private var m:PartInfoListingGraphic;
+      protected var m:PartInfoListingGraphic;
       
-      private var listing:Object;
+      protected var listing:Object;
       
-      private var hasEE:Boolean = false;
+      protected var hasEE:Boolean = false;
       
-      private var target:MovieClip;
+      protected var target:MovieClip;
       
       public function PartInfoListing(param1:Object, param2:Boolean = false)
       {
@@ -32,7 +32,7 @@ package package_18.PartInfo
          this.m.bg.mouseEnabled = this.m.titleBox.mouseEnabled = false;
       }
       
-      private function showPart() : *
+      protected function showPart() : *
       {
          var _loc1_:String = null;
          _loc1_ = Parts.validateType(this.listing.type);
@@ -100,7 +100,7 @@ package package_18.PartInfo
          }
       }
       
-      private function handleDjinn(param1:String, param2:Boolean) : *
+      protected function handleDjinn(param1:String, param2:Boolean) : *
       {
          var _loc3_:int = param1 == "BODY" ? 35 : 33;
          var _loc4_:int = param1 == "FEET" ? 35 : 33;
@@ -132,7 +132,7 @@ package package_18.PartInfo
          alpha = 1;
       }
       
-      private function clickHandler(param1:MouseEvent) : *
+      protected function clickHandler(param1:MouseEvent) : *
       {
          new PartPopup(this.listing,this.hasEE);
       }
@@ -152,12 +152,12 @@ package package_18.PartInfo
          return this.listing;
       }
       
-      private function method_269(param1:MouseEvent) : *
+      protected function method_269(param1:MouseEvent) : *
       {
          this.m.bg.visible = true;
       }
       
-      private function method_378(param1:MouseEvent) : *
+      protected function method_378(param1:MouseEvent) : *
       {
          this.m.bg.visible = false;
       }

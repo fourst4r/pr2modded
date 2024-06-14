@@ -39,9 +39,9 @@ package com.jiggmin.data
          "jumping":50
       };
       
-      private static const SETTINGS:Array = [PRESETS,DISABLED_SONGS,MUSIC_VOLUME,SOUND_VOLUME,DRAW_ART,ART_LOSSLESS_QUALITY,FILTER_SWEARS,ALTERNATE_CONTROLS,LE_TEST_STATS,LE_TEST_HAT];
+      protected static const SETTINGS:Array = [PRESETS,DISABLED_SONGS,MUSIC_VOLUME,SOUND_VOLUME,DRAW_ART,ART_LOSSLESS_QUALITY,FILTER_SWEARS,ALTERNATE_CONTROLS,LE_TEST_STATS,LE_TEST_HAT];
       
-      private static var presets:Object = null;
+      protected static var presets:Object = null;
       
       public static var disabledSongs:Array = [];
       
@@ -49,13 +49,13 @@ package com.jiggmin.data
       
       public static var soundLevel:int = 100;
       
-      private static var drawArt:Boolean = true;
+      protected static var drawArt:Boolean = true;
       
-      private static var losslessQuality:Boolean = false;
+      protected static var losslessQuality:Boolean = false;
       
-      private static var filterSwears:Boolean = true;
+      protected static var filterSwears:Boolean = true;
       
-      private static var altCtrl:Object = {
+      protected static var altCtrl:Object = {
          "up":87,
          "right":68,
          "down":83,
@@ -63,17 +63,17 @@ package com.jiggmin.data
          "item":73
       };
       
-      private static var leTestStats:Object = {
+      protected static var leTestStats:Object = {
          "speed":50,
          "acceleration":50,
          "jumping":50
       };
       
-      private static var leTestHat:int = 2;
+      protected static var leTestHat:int = 2;
       
-      private static var userName:String;
+      protected static var userName:String;
       
-      private static var dataArr:Object;
+      protected static var dataArr:Object;
        
       
       public function Settings()
@@ -107,7 +107,7 @@ package com.jiggmin.data
          dataArr = null;
       }
       
-      private static function handleControls(param1:Object) : *
+      protected static function handleControls(param1:Object) : *
       {
          var _loc3_:String = null;
          if(!canSaveCookie())
@@ -123,7 +123,7 @@ package com.jiggmin.data
          _loc2_.flush();
       }
       
-      private static function handleStats(param1:Object) : *
+      protected static function handleStats(param1:Object) : *
       {
          var _loc3_:String = null;
          if(!canSaveCookie())
@@ -144,7 +144,7 @@ package com.jiggmin.data
          return userName != null;
       }
       
-      private static function canSaveCookie() : Boolean
+      protected static function canSaveCookie() : Boolean
       {
          var cookie:SharedObject = null;
          try

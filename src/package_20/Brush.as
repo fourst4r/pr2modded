@@ -11,13 +11,13 @@ package package_20
    {
        
       
-      private var circle:Circle;
+      protected var circle:Circle;
       
-      private var drawableBG:DrawableBackground;
+      protected var drawableBG:DrawableBackground;
       
-      private var mousePos:Point;
+      protected var mousePos:Point;
       
-      private var rdInt:uint;
+      protected var rdInt:uint;
       
       protected var size:Number = 4;
       
@@ -29,13 +29,13 @@ package package_20
       
       protected var drawing:Boolean = false;
       
-      private var lastX:Number = -1;
+      protected var lastX:Number = -1;
       
-      private var lastY:Number = -1;
+      protected var lastY:Number = -1;
       
-      private var drawStartX:int;
+      protected var drawStartX:int;
       
-      private var drawStartY:int;
+      protected var drawStartY:int;
       
       public function Brush()
       {
@@ -62,7 +62,7 @@ package package_20
          clearInterval(this.rdInt);
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          var _loc2_:Point = null;
          if(this.drawing == true)
@@ -88,7 +88,7 @@ package package_20
          }
       }
       
-      private function restartDrawing() : *
+      protected function restartDrawing() : *
       {
          if(this.drawing == true)
          {
@@ -171,7 +171,7 @@ package package_20
          LevelEditor.editor.var_220.rasterize();
       }
       
-      private function roundPoint(param1:Point) : Point
+      protected function roundPoint(param1:Point) : Point
       {
          param1 = this.drawableBG.globalToLocal(param1);
          param1.x = Math.round(param1.x);

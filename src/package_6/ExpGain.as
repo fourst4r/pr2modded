@@ -7,15 +7,15 @@ package package_6
    {
        
       
-      private var m:ExpGainGraphic;
+      protected var m:ExpGainGraphic;
       
-      private var expStart:Number;
+      protected var expStart:Number;
       
-      private var expEnd:Number;
+      protected var expEnd:Number;
       
-      private var expToRank:Number;
+      protected var expToRank:Number;
       
-      private var var_575:Number;
+      protected var var_575:Number;
       
       public function ExpGain()
       {
@@ -45,7 +45,7 @@ package package_6
          }
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          this.expStart += this.var_575;
          if(this.expStart >= this.expEnd)

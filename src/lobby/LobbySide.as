@@ -8,9 +8,9 @@ package lobby
    {
        
       
-      private var bg:HalfSquareBG;
+      protected var bg:HalfSquareBG;
       
-      private var tabsHolder:TabsHolder;
+      protected var tabsHolder:TabsHolder;
       
       public function LobbySide(param1:Array, param2:String = "", param3:Number = 0, param4:Number = 100, param5:Number = 100)
       {

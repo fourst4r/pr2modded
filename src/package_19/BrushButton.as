@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      private var editor:LevelEditor;
+      protected var editor:LevelEditor;
       
       public function BrushButton()
       {
@@ -18,7 +18,7 @@ package package_19
          addChild(new BrushGraphic());
       }
       
-      private function mouseDownHandler(param1:MouseEvent) : *
+      protected function mouseDownHandler(param1:MouseEvent) : *
       {
          this.editor.menu.changeSideBar(this.editor.menu.tools);
          this.editor.focusOn(this.editor.var_220);

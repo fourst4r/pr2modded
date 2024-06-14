@@ -11,13 +11,13 @@ package ui
    {
        
       
-      private var soundChannel:SoundChannel;
+      protected var soundChannel:SoundChannel;
       
-      private var inLE:Boolean;
+      protected var inLE:Boolean;
       
-      private var enableMusicInt:uint;
+      protected var enableMusicInt:uint;
       
-      private var url:String;
+      protected var url:String;
       
       public function GameSound(param1:Boolean = false)
       {
@@ -140,7 +140,7 @@ package ui
          this.enableMusicInt = setInterval(this.checkSetting,500);
       }
       
-      private function addSong(param1:Object) : *
+      protected function addSong(param1:Object) : *
       {
          var _loc3_:* = undefined;
          var _loc2_:Array = Settings.getValue(Settings.DISABLED_SONGS);
@@ -157,7 +157,7 @@ package ui
          addItem(param1);
       }
       
-      private function focusStage(param1:Event = null) : *
+      protected function focusStage(param1:Event = null) : *
       {
          Main.stage.focus = Main.stage;
       }
@@ -172,7 +172,7 @@ package ui
          this.setSong("16");
       }
       
-      private function checkSetting() : *
+      protected function checkSetting() : *
       {
          if(this.musicEnabled())
          {
@@ -180,7 +180,7 @@ package ui
          }
       }
       
-      private function musicEnabled() : Boolean
+      protected function musicEnabled() : Boolean
       {
          if(Settings.musicLevel > 0 && MuteButton.muted == false && selectedItem != null && selectedItem.id != 0 && this.soundChannel == null)
          {
@@ -226,7 +226,7 @@ package ui
          }
       }
       
-      private function startSong(param1:Event = null) : *
+      protected function startSong(param1:Event = null) : *
       {
          var _loc2_:String = null;
          var _loc3_:URLRequest = null;
@@ -247,13 +247,13 @@ package ui
          Main.stage.focus = Main.stage;
       }
       
-      private function loopSong(param1:Event) : *
+      protected function loopSong(param1:Event) : *
       {
          this.soundChannel.removeEventListener(Event.SOUND_COMPLETE,this.loopSong);
          this.startSong();
       }
       
-      private function stopSong() : *
+      protected function stopSong() : *
       {
          if(this.soundChannel != null)
          {

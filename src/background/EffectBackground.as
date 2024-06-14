@@ -74,7 +74,7 @@ package background
          }
       }
       
-      private function generateIceWaveShots(param1:int, param2:int, param3:int, param4:int, param5:int) : *
+      protected function generateIceWaveShots(param1:int, param2:int, param3:int, param4:int, param5:int) : *
       {
          new IceWaveShot(param1,param2,param3,param4,param5,param3);
          new IceWaveShot(param1,param2,param3 + 30,param4,param5,param3);

@@ -6,7 +6,7 @@ package package_19
    {
        
       
-      private var song:String = "random";
+      protected var song:String = "random";
       
       public function MusicMenuButton()
       {

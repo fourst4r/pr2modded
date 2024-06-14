@@ -10,11 +10,11 @@ package package_15
    {
        
       
-      private var levelID:int;
+      protected var levelID:int;
       
-      private var version:int;
+      protected var version:int;
       
-      private var report:Boolean = false;
+      protected var report:Boolean = false;
       
       public function LoadingLevelPopup(param1:int, param2:int, param3:Boolean = false)
       {

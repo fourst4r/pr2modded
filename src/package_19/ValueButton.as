@@ -6,23 +6,23 @@ package package_19
    {
        
       
-      private var value:String;
+      protected var value:String;
       
-      private var title:String;
+      protected var title:String;
       
-      private var description:String;
+      protected var description:String;
       
-      private var defineCommand:Function;
+      protected var defineCommand:Function;
       
-      private var maxChars:Number;
+      protected var maxChars:Number;
       
-      private var restrictTo:String;
+      protected var restrictTo:String;
       
-      private var defaultVal:String;
+      protected var defaultVal:String;
       
-      private var displayAsPassword:Boolean;
+      protected var displayAsPassword:Boolean;
       
-      private var m:ValueButtonGraphic;
+      protected var m:ValueButtonGraphic;
       
       public function ValueButton(param1:String, param2:String, param3:String, param4:String, param5:Function, param6:Number = 9, param7:String = "0123456789", param8:String = "0", param9:Boolean = false)
       {

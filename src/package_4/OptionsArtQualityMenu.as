@@ -9,7 +9,7 @@ package package_4
       public static var instance:*;
        
       
-      private var m:OptionsArtQualityMenuGraphic;
+      protected var m:OptionsArtQualityMenuGraphic;
       
       public function OptionsArtQualityMenu(param1:DisplayObject)
       {

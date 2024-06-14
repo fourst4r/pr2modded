@@ -54,7 +54,7 @@ package com.hurlant.crypto.hash
          return _loc7_;
       }
       
-      private function core_md5(param1:Array, param2:uint) : Array
+      protected function core_md5(param1:Array, param2:uint) : Array
       {
          var _loc8_:uint = 0;
          var _loc9_:uint = 0;
@@ -162,32 +162,32 @@ package com.hurlant.crypto.hash
          return [_loc3_,_loc4_,_loc5_,_loc6_];
       }
       
-      private function rol(param1:uint, param2:uint) : uint
+      protected function rol(param1:uint, param2:uint) : uint
       {
          return param1 << param2 | param1 >>> 32 - param2;
       }
       
-      private function cmn(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint) : uint
+      protected function cmn(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint) : uint
       {
          return this.rol(param2 + param1 + param4 + param6,param5) + param3;
       }
       
-      private function ff(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
+      protected function ff(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
       {
          return this.cmn(param2 & param3 | ~param2 & param4,param1,param2,param5,param6,param7);
       }
       
-      private function gg(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
+      protected function gg(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
       {
          return this.cmn(param2 & param4 | param3 & ~param4,param1,param2,param5,param6,param7);
       }
       
-      private function hh(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
+      protected function hh(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
       {
          return this.cmn(param2 ^ param3 ^ param4,param1,param2,param5,param6,param7);
       }
       
-      private function ii(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
+      protected function ii(param1:uint, param2:uint, param3:uint, param4:uint, param5:uint, param6:uint, param7:uint) : uint
       {
          return this.cmn(param3 ^ (param2 | ~param4),param1,param2,param5,param6,param7);
       }

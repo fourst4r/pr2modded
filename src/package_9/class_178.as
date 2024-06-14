@@ -4,7 +4,7 @@ package package_9
    {
        
       
-      private var m:class_239;
+      protected var m:class_239;
       
       public function class_178(param1:Number, param2:Number)
       {

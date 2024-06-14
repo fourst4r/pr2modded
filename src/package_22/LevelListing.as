@@ -23,7 +23,7 @@ package package_22
       
       protected var var_280:uint;
       
-      private var levelArray:Array;
+      protected var levelArray:Array;
       
       public var levels:Object;
       
@@ -33,7 +33,7 @@ package package_22
       
       protected var superLoader:SuperLoader;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
       public function LevelListing()
       {
@@ -182,7 +182,7 @@ package package_22
          }
       }
       
-      private function testLevelAccess(param1:Event) : *
+      protected function testLevelAccess(param1:Event) : *
       {
          var _loc2_:String = null;
          for(_loc2_ in this.levels)

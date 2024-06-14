@@ -7,13 +7,13 @@ package package_18
    {
        
       
-      private var preset:Preset;
+      protected var preset:Preset;
       
-      private var character:Character;
+      protected var character:Character;
       
-      private var playerDisplay:PlayerDisplay;
+      protected var playerDisplay:PlayerDisplay;
       
-      private var m:PresetListingGraphic;
+      protected var m:PresetListingGraphic;
       
       public function PresetListing(param1:Preset, param2:PlayerDisplay)
       {

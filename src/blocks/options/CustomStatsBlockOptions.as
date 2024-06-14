@@ -9,13 +9,13 @@ package blocks.options
    {
        
       
-      private var speedSlider:StatSlider;
+      protected var speedSlider:StatSlider;
       
-      private var accelSlider:StatSlider;
+      protected var accelSlider:StatSlider;
       
-      private var jumpnSlider:StatSlider;
+      protected var jumpnSlider:StatSlider;
       
-      private var resetPop:HoverPopup;
+      protected var resetPop:HoverPopup;
       
       public function CustomStatsBlockOptions(param1:Block)
       {
@@ -45,14 +45,14 @@ package blocks.options
          m.resetChk.addEventListener(MouseEvent.MOUSE_OUT,this.onResetMouse,false,0,true);
       }
       
-      private function onResetClick(param1:Event) : *
+      protected function onResetClick(param1:Event) : *
       {
          this.speedSlider.alpha = this.accelSlider.alpha = this.jumpnSlider.alpha = !!m.resetChk.selected ? 0.25 : 1;
          this.speedSlider.mouseEnabled = this.accelSlider.mouseEnabled = this.jumpnSlider.mouseEnabled = !m.resetChk.selected;
          this.speedSlider.mouseChildren = this.accelSlider.mouseChildren = this.jumpnSlider.mouseChildren = !m.resetChk.selected;
       }
       
-      private function onResetMouse(param1:MouseEvent = null) : *
+      protected function onResetMouse(param1:MouseEvent = null) : *
       {
          if(param1 != null && param1.type == MouseEvent.MOUSE_OVER && this.resetPop == null)
          {

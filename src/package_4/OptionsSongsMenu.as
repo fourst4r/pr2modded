@@ -9,7 +9,7 @@ package package_4
       public static var instance:*;
        
       
-      private var m:OptionsSongsMenuGraphic;
+      protected var m:OptionsSongsMenuGraphic;
       
       public function OptionsSongsMenu(param1:DisplayObject)
       {

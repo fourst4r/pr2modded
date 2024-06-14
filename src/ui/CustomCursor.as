@@ -18,13 +18,13 @@ package ui
       public static var instance:CustomCursor;
        
       
-      private var active:Boolean = false;
+      protected var active:Boolean = false;
       
-      private var me:MouseEvent;
+      protected var me:MouseEvent;
       
-      private var mouseDown:Boolean;
+      protected var mouseDown:Boolean;
       
-      private var mouseHidden:Boolean = false;
+      protected var mouseHidden:Boolean = false;
       
       public var var_411:Boolean = true;
       
@@ -102,7 +102,7 @@ package ui
          stageRef.addEventListener(KeyboardEvent.KEY_UP,this.keyUpHandler);
       }
       
-      private function touchHandler(param1:TouchEvent) : *
+      protected function touchHandler(param1:TouchEvent) : *
       {
          var _loc2_:String = null;
          if(param1.type == TouchEvent.TOUCH_MOVE)

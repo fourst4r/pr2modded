@@ -10,11 +10,11 @@ package package_19
    {
        
       
-      private var m:ModeMenuGraphic;
+      protected var m:ModeMenuGraphic;
       
-      private var modeSelect:ComboBox;
+      protected var modeSelect:ComboBox;
       
-      private var open:Boolean = false;
+      protected var open:Boolean = false;
       
       public function ModeMenu(param1:DisplayObject)
       {
@@ -39,18 +39,18 @@ package package_19
          super(param1);
       }
       
-      private function onOpen(param1:Event) : *
+      protected function onOpen(param1:Event) : *
       {
          this.open = true;
       }
       
-      private function onClose(param1:Event) : *
+      protected function onClose(param1:Event) : *
       {
          this.open = false;
          this.onChange(param1);
       }
       
-      private function onChange(param1:Event) : *
+      protected function onChange(param1:Event) : *
       {
          LevelEditor.editor.setGameMode(this.modeSelect.selectedItem.data);
       }

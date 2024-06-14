@@ -11,23 +11,23 @@ package package_21
    {
        
       
-      private var m:MessagesGraphic;
+      protected var m:MessagesGraphic;
       
-      private var scrollBar:CustomScrollBar;
+      protected var scrollBar:CustomScrollBar;
       
-      private var loadingGraphic:LoadingGraphic;
+      protected var loadingGraphic:LoadingGraphic;
       
-      private var pageNavigation:PageNavigation;
+      protected var pageNavigation:PageNavigation;
       
-      private var loader:SuperLoader;
+      protected var loader:SuperLoader;
       
-      private var messagesArray:Array;
+      protected var messagesArray:Array;
       
-      private var uploading:UploadingPopup;
+      protected var uploading:UploadingPopup;
       
-      private var var_167:int = 1;
+      protected var var_167:int = 1;
       
-      private var var_564:int = 10;
+      protected var var_564:int = 10;
       
       public function Messages()
       {
@@ -53,12 +53,12 @@ package package_21
          UnreadNotif.updateLastRead();
       }
       
-      private function clickSend(param1:MouseEvent) : *
+      protected function clickSend(param1:MouseEvent) : *
       {
          new SendMessagePopup();
       }
       
-      private function getMessages() : *
+      protected function getMessages() : *
       {
          this.removeMessages();
          var _loc1_:URLVariables = new URLVariables();
@@ -70,7 +70,7 @@ package package_21
          addChild(this.loadingGraphic);
       }
       
-      private function handleData(param1:Event) : *
+      protected function handleData(param1:Event) : *
       {
          var _loc2_:Object = null;
          var _loc3_:MessagesItem = null;
@@ -86,7 +86,7 @@ package package_21
          this.populateMessages();
       }
       
-      private function populateMessages() : *
+      protected function populateMessages() : *
       {
          var _loc3_:MessagesItem = null;
          var _loc1_:Number = 0;
@@ -102,7 +102,7 @@ package package_21
          this.pageNavigation.y = _loc1_ + 10;
       }
       
-      private function removeMessages() : *
+      protected function removeMessages() : *
       {
          var _loc2_:MessagesItem = null;
          var _loc1_:int = 0;
@@ -141,12 +141,12 @@ package package_21
          this.uploading = new UploadingPopup(_loc3_,"json","Deleting message...");
       }
       
-      private function handleError(param1:Event) : *
+      protected function handleError(param1:Event) : *
       {
          removeChild(this.loadingGraphic);
       }
       
-      private function clickDeleteAll(param1:MouseEvent) : *
+      protected function clickDeleteAll(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.doDeleteAll,"Are you sure you want to delete all of your messages?");
       }

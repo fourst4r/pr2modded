@@ -10,7 +10,7 @@ package ui
       public static var muted:Boolean = true;
        
       
-      private var m:MuteButtonGraphic;
+      protected var m:MuteButtonGraphic;
       
       public function MuteButton()
       {
@@ -44,18 +44,18 @@ package ui
          SoundMixer.soundTransform = _loc2_;
       }
       
-      private function onClick(param1:MouseEvent) : *
+      protected function onClick(param1:MouseEvent) : *
       {
          this.toggle();
       }
       
-      private function hoverOverColorChange(param1:MouseEvent) : *
+      protected function hoverOverColorChange(param1:MouseEvent) : *
       {
          var _loc2_:ColorTransform = new ColorTransform(0.5,0.5,0.5,1,127,127,127,0);
          this.m.button.transform.colorTransform = _loc2_;
       }
       
-      private function hoverOutColorChange(param1:MouseEvent) : *
+      protected function hoverOutColorChange(param1:MouseEvent) : *
       {
          var _loc2_:ColorTransform = new ColorTransform(1,1,1,1,0,0,0,0);
          this.m.button.transform.colorTransform = _loc2_;

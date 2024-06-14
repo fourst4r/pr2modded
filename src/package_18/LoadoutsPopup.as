@@ -10,11 +10,11 @@ package package_18
    {
        
       
-      private var character:Character;
+      protected var character:Character;
       
-      private var statsSelect:StatsSelect;
+      protected var statsSelect:StatsSelect;
       
-      private var playerDisplay:PlayerDisplay;
+      protected var playerDisplay:PlayerDisplay;
       
       public function LoadoutsPopup(param1:Character, param2:StatsSelect, param3:PlayerDisplay)
       {
@@ -29,7 +29,7 @@ package package_18
          this.populate();
       }
       
-      private function populate() : *
+      protected function populate() : *
       {
          var _loc2_:Preset = null;
          var _loc3_:PresetListing = null;

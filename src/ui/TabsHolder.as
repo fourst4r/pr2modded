@@ -5,14 +5,14 @@ package ui
    public class TabsHolder extends Removable
    {
       
-      private static var memory:Object = new Object();
+      protected static var memory:Object = new Object();
        
       
       public var tabArr:Array;
       
-      private var selected:Number;
+      protected var selected:Number;
       
-      private var holderId:String;
+      protected var holderId:String;
       
       public function TabsHolder(param1:Array, param2:String = "", param3:Number = 0, param4:Number = 100)
       {
@@ -70,7 +70,7 @@ package ui
          }
       }
       
-      private function resetTabPositions(param1:MouseEvent = null) : *
+      protected function resetTabPositions(param1:MouseEvent = null) : *
       {
          var _loc2_:Number = 0;
          while(_loc2_ < this.selected)

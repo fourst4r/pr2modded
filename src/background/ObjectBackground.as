@@ -14,7 +14,7 @@ package background
       
       public var objArray:Array;
       
-      private var objLimit:int = 50000;
+      protected var objLimit:int = 50000;
       
       protected var var_0379:int = 0;
       

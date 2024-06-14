@@ -17,9 +17,9 @@ package background
       
       protected var course:GamePage;
       
-      private var var_394:uint;
+      protected var var_394:uint;
       
-      private var bgColor:Number = 13092571;
+      protected var bgColor:Number = 13092571;
       
       public var scale:Number = 1;
       

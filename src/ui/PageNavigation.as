@@ -7,17 +7,17 @@ package ui
    {
        
       
-      private var target:*;
+      protected var target:*;
       
-      private var navButtonArray:Array;
+      protected var navButtonArray:Array;
       
       public var selected:int;
       
-      private var count:int;
+      protected var count:int;
       
-      private var w:Number;
+      protected var w:Number;
       
-      private var mode:String;
+      protected var mode:String;
       
       public function PageNavigation(param1:*, param2:String = "full", param3:int = 1, param4:int = 9, param5:Number = 200)
       {
@@ -31,7 +31,7 @@ package ui
          this.draw();
       }
       
-      private function draw() : *
+      protected function draw() : *
       {
          var _loc2_:int = 0;
          this.clear();
@@ -59,7 +59,7 @@ package ui
          this.position(this.mode != "vertical" ? "horizontal" : "vertical");
       }
       
-      private function position(param1:String) : *
+      protected function position(param1:String) : *
       {
          var _loc3_:PageNumberGraphic = null;
          var _loc2_:int = 0;
@@ -89,7 +89,7 @@ package ui
          }
       }
       
-      private function clear() : *
+      protected function clear() : *
       {
          var _loc2_:PageNumberGraphic = null;
          var _loc1_:int = 0;
@@ -104,7 +104,7 @@ package ui
          this.navButtonArray = new Array();
       }
       
-      private function makeNavButton(param1:String, param2:int, param3:Boolean = true) : *
+      protected function makeNavButton(param1:String, param2:int, param3:Boolean = true) : *
       {
          var _loc4_:PageNumberGraphic;
          (_loc4_ = new PageNumberGraphic()).textBox.autoSize = "left";
@@ -121,7 +121,7 @@ package ui
          this.navButtonArray.push(_loc4_);
       }
       
-      private function clickPage(param1:TextEvent) : *
+      protected function clickPage(param1:TextEvent) : *
       {
          this.setPageNum(int(param1.text));
          Main.stage.focus = Main.stage;

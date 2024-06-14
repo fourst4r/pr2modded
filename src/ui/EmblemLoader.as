@@ -14,31 +14,31 @@ package ui
       public static const FINISH_LOADING:String = "FINISH_LOADING";
        
       
-      private var eWidth:int;
+      protected var eWidth:int;
       
-      private var eHeight:int;
+      protected var eHeight:int;
       
-      private var file:FileReference;
+      protected var file:FileReference;
       
-      private var loader:Loader;
+      protected var loader:Loader;
       
-      private var superLoader:SuperLoader;
+      protected var superLoader:SuperLoader;
       
-      private var bitmap:Bitmap;
+      protected var bitmap:Bitmap;
       
-      private var bitmapData:BitmapData;
+      protected var bitmapData:BitmapData;
       
-      private var defaultColor:int = 16777215;
+      protected var defaultColor:int = 16777215;
       
-      private var encoder:JPEGEncoder;
+      protected var encoder:JPEGEncoder;
       
-      private var uploadURL:String;
+      protected var uploadURL:String;
       
-      private var imgDirURL:String;
+      protected var imgDirURL:String;
       
-      private var fileName:String;
+      protected var fileName:String;
       
-      private var loading:Boolean = false;
+      protected var loading:Boolean = false;
       
       public function EmblemLoader(param1:int, param2:int, param3:String, param4:String)
       {
@@ -84,17 +84,17 @@ package ui
          return this.loading;
       }
       
-      private function fileSelected(param1:Event) : *
+      protected function fileSelected(param1:Event) : *
       {
          this.file.load();
       }
       
-      private function fileComplete(param1:Event) : *
+      protected function fileComplete(param1:Event) : *
       {
          this.loader.loadBytes(this.file.data);
       }
       
-      private function drawAndUpload(param1:Event) : *
+      protected function drawAndUpload(param1:Event) : *
       {
          this.drawImage();
          if(this.fileName != null && this.fileName != "" && this.loader.contentLoaderInfo.url.indexOf(this.fileName) == -1)
@@ -103,7 +103,7 @@ package ui
          }
       }
       
-      private function uploadImage() : *
+      protected function uploadImage() : *
       {
          var _loc1_:URLRequest = null;
          if(!this.loading)
@@ -118,20 +118,20 @@ package ui
          }
       }
       
-      private function gotFileName(param1:Event) : *
+      protected function gotFileName(param1:Event) : *
       {
          this.loading = false;
          this.fileName = this.superLoader.parsedData.filename;
          dispatchEvent(new Event(EmblemLoader.FINISH_LOADING));
       }
       
-      private function fileNameError(param1:Event) : *
+      protected function fileNameError(param1:Event) : *
       {
          this.loading = false;
          dispatchEvent(new Event(EmblemLoader.FINISH_LOADING));
       }
       
-      private function drawImage() : *
+      protected function drawImage() : *
       {
          var _loc1_:Number = 1;
          var _loc2_:Number = 1;
@@ -160,7 +160,7 @@ package ui
          this.bitmapData.draw(this.loader,_loc6_,null,null,null,true);
       }
       
-      private function makeDefault() : *
+      protected function makeDefault() : *
       {
          this.bitmapData.fillRect(new Rectangle(0,0,this.bitmapData.width,this.bitmapData.height),this.defaultColor);
       }

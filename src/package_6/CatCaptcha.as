@@ -8,19 +8,19 @@ package package_6
    {
        
       
-      private var m:CatCaptchaPopupGraphic;
+      protected var m:CatCaptchaPopupGraphic;
       
-      private var var_567:int = -215;
+      protected var var_567:int = -215;
       
-      private var var_608:int = -91;
+      protected var var_608:int = -91;
       
-      private var var_639:int = 220;
+      protected var var_639:int = 220;
       
-      private var var_629:int = 2;
+      protected var var_629:int = 2;
       
-      private var var_181:SuperLoader;
+      protected var var_181:SuperLoader;
       
-      private var var_191:SuperLoader;
+      protected var var_191:SuperLoader;
       
       public function CatCaptcha()
       {
@@ -36,17 +36,17 @@ package package_6
          this.method_694();
       }
       
-      private function method_694() : *
+      protected function method_694() : *
       {
          this.var_181.load(new URLRequest(Main.baseURL + "/cat/cat-captcha.php"));
       }
       
-      private function method_441(param1:Event) : *
+      protected function method_441(param1:Event) : *
       {
          this.method_561();
       }
       
-      private function method_561() : *
+      protected function method_561() : *
       {
          var _loc2_:class_101 = null;
          var _loc1_:int = 0;
@@ -61,7 +61,7 @@ package package_6
          }
       }
       
-      private function clickHandler(param1:MouseEvent) : *
+      protected function clickHandler(param1:MouseEvent) : *
       {
          var _loc2_:class_101 = null;
          if(!fadeOutStarted && param1.currentTarget is class_101)
@@ -71,7 +71,7 @@ package package_6
          }
       }
       
-      private function submit(param1:int) : *
+      protected function submit(param1:int) : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.answer = param1;
@@ -81,12 +81,12 @@ package package_6
          startFadeOut();
       }
       
-      private function method_465(param1:Event) : *
+      protected function method_465(param1:Event) : *
       {
          startFadeOut();
       }
       
-      private function method_99(param1:Event) : *
+      protected function method_99(param1:Event) : *
       {
          startFadeOut();
       }

@@ -11,21 +11,21 @@ package package_9
    {
        
       
-      private var course:Course;
+      protected var course:Course;
       
-      private var var_154:Number = 5;
+      protected var var_154:Number = 5;
       
-      private var posX:Number;
+      protected var posX:Number;
       
-      private var posY:Number;
+      protected var posY:Number;
       
-      private var velX:Number;
+      protected var velX:Number;
       
-      private var velY:Number;
+      protected var velY:Number;
       
-      private var var_278:Number = 0;
+      protected var var_278:Number = 0;
       
-      private var type:String;
+      protected var type:String;
       
       protected var var_377:int;
       
@@ -88,7 +88,7 @@ package package_9
          y = _loc1_.y;
       }
       
-      private function method_253() : *
+      protected function method_253() : *
       {
          var _loc1_:Block = this.course.blockBackground.getBlockFromPos(x,y,true);
          if(_loc1_ != null && (Boolean(this.var_493) || _loc1_.isActive()))

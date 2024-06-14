@@ -9,17 +9,17 @@ package package_18
    {
        
       
-      private var arrows:ArrowButtons;
+      protected var arrows:ArrowButtons;
       
-      private var cp:ColorPicker;
+      protected var cp:ColorPicker;
       
-      private var cp2:ColorPicker;
+      protected var cp2:ColorPicker;
       
-      private var color:int = 0;
+      protected var color:int = 0;
       
-      private var color2:int = 0;
+      protected var color2:int = 0;
       
-      private var value:int = 0;
+      protected var value:int = 0;
       
       public var infoButton:InfoButton;
       
@@ -27,7 +27,7 @@ package package_18
       
       public var epicArray:Array;
       
-      private var var_182:DisplayObject;
+      protected var var_182:DisplayObject;
       
       public function PartSelector(param1:Array, param2:int, param3:int, param4:Array, param5:int = -1)
       {
@@ -120,7 +120,7 @@ package package_18
          return this.epicArray.indexOf(param1 != null ? param1.toString() : this.value.toString()) != -1 || this.epicArray.indexOf("*") != -1;
       }
       
-      private function method_737(param1:int, param2:int) : DisplayObject
+      protected function method_737(param1:int, param2:int) : DisplayObject
       {
          var _loc3_:Sprite = new Sprite();
          _loc3_.graphics.beginFill(0);
@@ -132,7 +132,7 @@ package package_18
          return _loc3_;
       }
       
-      private function method_809(param1:int, param2:int) : DisplayObject
+      protected function method_809(param1:int, param2:int) : DisplayObject
       {
          var _loc3_:Sprite = new Sprite();
          _loc3_.graphics.lineStyle(1,0);
@@ -144,21 +144,21 @@ package package_18
          return _loc3_;
       }
       
-      private function onColorChange(param1:Event) : *
+      protected function onColorChange(param1:Event) : *
       {
          this.color = this.cp.getColor();
          this.color2 = this.cp2.getColor();
          dispatchEvent(new Event(Event.CHANGE));
       }
       
-      private function onArrowClick(param1:Event) : *
+      protected function onArrowClick(param1:Event) : *
       {
          this.value = this.arrows.value;
          this.cpEpicCheck();
          dispatchEvent(new Event(Event.CHANGE));
       }
       
-      private function cpEpicCheck() : *
+      protected function cpEpicCheck() : *
       {
          if(this.isPartEpic())
          {

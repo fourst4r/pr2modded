@@ -21,13 +21,13 @@ package package_9
       
       public var rot:int;
       
-      private var time:Number;
+      protected var time:Number;
       
-      private var var_681:Number;
+      protected var var_681:Number;
       
-      private var var_683:Number;
+      protected var var_683:Number;
       
-      private var grounded:Boolean = false;
+      protected var grounded:Boolean = false;
       
       public function class_81(param1:int, param2:int, param3:int)
       {

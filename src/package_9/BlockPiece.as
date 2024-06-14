@@ -7,17 +7,17 @@ package package_9
    {
        
       
-      private var velX:Number;
+      protected var velX:Number;
       
-      private var velY:Number;
+      protected var velY:Number;
       
-      private var var_372:Number;
+      protected var var_372:Number;
       
-      private var gravity:Number;
+      protected var gravity:Number;
       
-      private var friction:Number;
+      protected var friction:Number;
       
-      private var name_3:Number;
+      protected var name_3:Number;
       
       public function BlockPiece(param1:DisplayObject, param2:Number = 1, param3:Number = 0.95, param4:Number = 0.01, param5:Number = 10, param6:Number = 10, param7:Number = 10, param8:Number = 0, param9:Number = 0)
       {
@@ -35,7 +35,7 @@ package package_9
          addEventListener(Event.ENTER_FRAME,this.go,false,0,true);
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          this.velX *= this.friction;
          this.velY *= this.friction;

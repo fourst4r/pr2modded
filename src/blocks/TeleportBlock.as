@@ -17,11 +17,11 @@ package blocks
       
       public var blockNum:int;
       
-      private var color:int = 16744272;
+      protected var color:int = 16744272;
       
-      private var blockBG:Bitmap;
+      protected var blockBG:Bitmap;
       
-      private var resetTimeout:uint;
+      protected var resetTimeout:uint;
       
       public function TeleportBlock()
       {
@@ -101,7 +101,7 @@ package blocks
          this.maybeTeleport(param1);
       }
       
-      private function maybeTeleport(param1:LocalCharacter) : *
+      protected function maybeTeleport(param1:LocalCharacter) : *
       {
          if(!frozen && TeleportBlock["DISABLED_" + this.color] !== true)
          {
@@ -149,7 +149,7 @@ package blocks
          clearTimeout(this.resetTimeout);
       }
       
-      private function resetAllOfColor() : *
+      protected function resetAllOfColor() : *
       {
          var _loc1_:Array = null;
          var _loc2_:int = 0;

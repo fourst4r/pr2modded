@@ -8,25 +8,25 @@ package package_6
    {
        
       
-      private var bitmapData:BitmapData;
+      protected var bitmapData:BitmapData;
       
-      private var bitmap:Bitmap;
+      protected var bitmap:Bitmap;
       
-      private var holder:Sprite;
+      protected var holder:Sprite;
       
-      private var var_16:Sprite;
+      protected var var_16:Sprite;
       
-      private var var_49:Sprite;
+      protected var var_49:Sprite;
       
-      private var playerDots:Sprite;
+      protected var playerDots:Sprite;
       
-      private var m:MiniMapGraphic;
+      protected var m:MiniMapGraphic;
       
-      private var maxSpaceWidth:int = 400;
+      protected var maxSpaceWidth:int = 400;
       
-      private var maxSpaceHeight:int = 44;
+      protected var maxSpaceHeight:int = 44;
       
-      private var scale:Number;
+      protected var scale:Number;
       
       public function MiniMap()
       {
@@ -67,7 +67,7 @@ package package_6
          }
       }
       
-      private function drawBlock(param1:int, param2:int) : *
+      protected function drawBlock(param1:int, param2:int) : *
       {
          this.var_16.graphics.beginFill(0);
          this.var_16.graphics.moveTo(param1,param2);
@@ -117,7 +117,7 @@ package package_6
          this.method_263();
       }
       
-      private function method_263() : *
+      protected function method_263() : *
       {
          this.holder.scaleX = this.holder.scaleY = 1;
          var _loc1_:Rectangle = this.bitmap.getBounds(this);
@@ -135,7 +135,7 @@ package package_6
          this.method_182(this.var_49,this.scale,4);
       }
       
-      private function method_182(param1:Sprite, param2:Number, param3:Number) : *
+      protected function method_182(param1:Sprite, param2:Number, param3:Number) : *
       {
          var _loc5_:DisplayObject = null;
          var _loc4_:int = 0;

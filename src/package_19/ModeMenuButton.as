@@ -6,9 +6,9 @@ package package_19
    {
        
       
-      private var m:ValueButtonGraphic;
+      protected var m:ValueButtonGraphic;
       
-      private var value:String;
+      protected var value:String;
       
       public function ModeMenuButton()
       {

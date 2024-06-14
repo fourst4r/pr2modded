@@ -6,7 +6,7 @@ package levelEditor
    {
        
       
-      private var m:DrawingPopupGraphic;
+      protected var m:DrawingPopupGraphic;
       
       public function DrawingPopup()
       {

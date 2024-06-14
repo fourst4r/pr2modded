@@ -10,7 +10,7 @@ package package_20
    {
        
       
-      private var blockBackground:BlockBackground;
+      protected var blockBackground:BlockBackground;
       
       public function class_275(param1:int)
       {
@@ -48,7 +48,7 @@ package package_20
          }
       }
       
-      private function getBlock(param1:int, param2:int) : BlockObject
+      protected function getBlock(param1:int, param2:int) : BlockObject
       {
          var _loc3_:Point = new Point(param1,param2);
          _loc3_ = this.blockBackground.globalToLocal(_loc3_);

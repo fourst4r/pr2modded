@@ -7,11 +7,11 @@ package package_6
    {
        
       
-      private var totalHearts:int = 0;
+      protected var totalHearts:int = 0;
       
-      private var yInc:int = 20;
+      protected var yInc:int = 20;
       
-      private var scale:Number = 0.2;
+      protected var scale:Number = 0.2;
       
       public function Hearts()
       {
@@ -36,7 +36,7 @@ package package_6
          return this.totalHearts;
       }
       
-      private function addHeart() : *
+      protected function addHeart() : *
       {
          var _loc1_:HeartGraphic = null;
          _loc1_ = new HeartGraphic();
@@ -47,7 +47,7 @@ package package_6
          ++this.totalHearts;
       }
       
-      private function removeHeart() : *
+      protected function removeHeart() : *
       {
          removeChildAt(this.numChildren - 1);
          --this.totalHearts;

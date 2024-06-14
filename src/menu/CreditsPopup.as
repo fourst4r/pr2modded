@@ -7,13 +7,13 @@ package menu
    {
        
       
-      private const artPgs:int = 3;
+      protected const artPgs:int = 3;
       
-      private var artPg:int = 1;
+      protected var artPg:int = 1;
       
-      private var musicPg:int = 1;
+      protected var musicPg:int = 1;
       
-      private var m:CreditsPopupGraphic;
+      protected var m:CreditsPopupGraphic;
       
       public function CreditsPopup()
       {
@@ -31,7 +31,7 @@ package menu
          addChild(this.m);
       }
       
-      private function clickArtNav(param1:TextEvent) : *
+      protected function clickArtNav(param1:TextEvent) : *
       {
          if(this.artPg == 1 && param1.text == "artBack" || this.artPg == this.artPgs && param1.text == "artNext")
          {
@@ -52,7 +52,7 @@ package menu
          this.m.art_nav_bts.htmlText = _loc2_;
       }
       
-      private function clickMusicNav(param1:TextEvent) : *
+      protected function clickMusicNav(param1:TextEvent) : *
       {
          this.m["musicPg" + this.musicPg].visible = false;
          this.musicPg = this.musicPg === 1 ? 2 : 1;
@@ -60,7 +60,7 @@ package menu
          this.m.music_nav_bt.htmlText = "<a href=\"event:musicToggle\">" + (this.musicPg === 2 ? "(&lt;- back)" : "(more -&gt;)") + "</a>";
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

@@ -9,15 +9,15 @@ package
    {
        
       
-      private var title:String;
+      protected var title:String;
       
-      private var content:String;
+      protected var content:String;
       
-      private var time:int = 500;
+      protected var time:int = 500;
       
-      private var delayTimer:uint;
+      protected var delayTimer:uint;
       
-      private var hover:HoverPopup;
+      protected var hover:HoverPopup;
       
       public function HoverDelayPopup(param1:String = "", param2:String = "", param3:int = 500)
       {
@@ -49,13 +49,13 @@ package
          this.hidePopupIfShown();
       }
       
-      private function showPopup() : *
+      protected function showPopup() : *
       {
          this.hidePopupIfShown();
          this.hover = new HoverPopup(this.title,this.content,this);
       }
       
-      private function hidePopupIfShown() : *
+      protected function hidePopupIfShown() : *
       {
          if(this.hover != null)
          {

@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      private var m:TextToolButtonGraphic;
+      protected var m:TextToolButtonGraphic;
       
       public function TextToolButton()
       {

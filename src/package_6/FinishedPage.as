@@ -10,17 +10,17 @@ package package_6
    {
        
       
-      private var m:FinishedPageGraphic;
+      protected var m:FinishedPageGraphic;
       
-      private var stars:RatingSelect;
+      protected var stars:RatingSelect;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
-      private var curAwardLine:int = 1;
+      protected var curAwardLine:int = 1;
       
-      private var game:Game;
+      protected var game:Game;
       
-      private var expGain:ExpGain;
+      protected var expGain:ExpGain;
       
       public function FinishedPage(param1:Game)
       {
@@ -67,7 +67,7 @@ package package_6
          }
       }
       
-      private function clickReturn(param1:MouseEvent) : *
+      protected function clickReturn(param1:MouseEvent) : *
       {
          if(Main.socket.connected)
          {
@@ -77,7 +77,7 @@ package package_6
          startFadeOut();
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

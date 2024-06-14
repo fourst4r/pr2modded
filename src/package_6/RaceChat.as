@@ -13,7 +13,7 @@ package package_6
       public static var textBox:TextField;
        
       
-      private var m:RaceChatGraphic;
+      protected var m:RaceChatGraphic;
       
       public function RaceChat()
       {
@@ -35,12 +35,12 @@ package package_6
          displayMessage("<i><font color=\'#3E8697\'>" + param1[0] + "</font></i><br/>");
       }
       
-      private function ensureBottom(param1:MouseEvent) : *
+      protected function ensureBottom(param1:MouseEvent) : *
       {
          this.m.top.textBox1.scrollV = this.m.bg.textBox2.scrollV = this.m.top.textBox1.maxScrollV;
       }
       
-      private function mouseDownHandler(param1:MouseEvent) : *
+      protected function mouseDownHandler(param1:MouseEvent) : *
       {
          if(param1.target != this && param1.target != this.m.chatInput && Main.stage.focus == this.m.chatInput)
          {
@@ -48,7 +48,7 @@ package package_6
          }
       }
       
-      private function focusOrSend(param1:KeyboardEvent) : *
+      protected function focusOrSend(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13 && !(param1.target.parent is TextArea))
          {
@@ -85,7 +85,7 @@ package package_6
          this.m.top.textBox1.scrollV = this.m.bg.textBox2.scrollV = this.m.top.textBox1.maxScrollV;
       }
       
-      private function focusOnRace() : *
+      protected function focusOnRace() : *
       {
          Main.stage.focus = Main.stage;
       }

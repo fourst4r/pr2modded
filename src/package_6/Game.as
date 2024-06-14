@@ -17,25 +17,25 @@ package package_6
    {
        
       
-      private var superLoader:SuperLoader;
+      protected var superLoader:SuperLoader;
       
-      private var quitButton:QuitButton;
+      protected var quitButton:QuitButton;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
-      private var spectatePicker:SpectatePicker;
+      protected var spectatePicker:SpectatePicker;
       
       protected var drawingInfo:DrawingInfo;
       
       public var prize:Object;
       
-      private var luxPop:LuxPopup;
+      protected var luxPop:LuxPopup;
       
-      private var levelHash:String = "";
+      protected var levelHash:String = "";
       
-      private var specialEvent:SpecialEvent;
+      protected var specialEvent:SpecialEvent;
       
-      private var var_634:Array;
+      protected var var_634:Array;
       
       public var var_202:FinishedPage;
       
@@ -47,7 +47,7 @@ package package_6
       
       public var var_347:int;
       
-      private var hatCountdown:uint;
+      protected var hatCountdown:uint;
       
       public function Game(param1:int, param2:int)
       {
@@ -94,7 +94,7 @@ package package_6
          this.getLevelData();
       }
       
-      private function initSpectate() : *
+      protected function initSpectate() : *
       {
          this.spectatePicker = new SpectatePicker();
          this.spectatePicker.x = -265;
@@ -129,14 +129,14 @@ package package_6
          super.onCountdownFinish(param1);
       }
       
-      private function getLevelData() : *
+      protected function getLevelData() : *
       {
          var _loc1_:URLRequest = new URLRequest(Main.levelsURL + "/" + courseID + ".txt?version=" + version);
          this.superLoader.addEventListener(Event.COMPLETE,this.loadHandler,false,0,true);
          this.superLoader.load(_loc1_);
       }
       
-      private function loadHandler(param1:Event) : *
+      protected function loadHandler(param1:Event) : *
       {
          var _loc7_:URLVariables = null;
          this.superLoader.removeEventListener(Event.COMPLETE,this.loadHandler);
@@ -230,14 +230,14 @@ package package_6
          addChild(new HappyHour());
       }
       
-      private function superBooster(param1:Array) : *
+      protected function superBooster(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:Character = playerArray[_loc2_];
          _loc3_.method_576();
       }
       
-      private function maybeReturnHatToStart(param1:Array) : *
+      protected function maybeReturnHatToStart(param1:Array) : *
       {
          var _loc3_:Point = null;
          var _loc4_:int = 0;
@@ -254,7 +254,7 @@ package package_6
          }
       }
       
-      private function returnHatToStart(param1:Hat) : *
+      protected function returnHatToStart(param1:Hat) : *
       {
          var _loc2_:Object = param1.getInfo();
          param1.remove();
@@ -264,24 +264,24 @@ package package_6
          }
       }
       
-      private function startHatCountdown(param1:Array = null) : *
+      protected function startHatCountdown(param1:Array = null) : *
       {
          this.cm.defineCommand("cancelHatCountdown",this.cancelHatCountdown);
          this.hatCountdown = setInterval(this.checkHatCountdown,1000);
       }
       
-      private function checkHatCountdown() : *
+      protected function checkHatCountdown() : *
       {
          Main.socket.write("check_hat_countdown`");
       }
       
-      private function cancelHatCountdown(param1:Array = null) : *
+      protected function cancelHatCountdown(param1:Array = null) : *
       {
          this.cm.defineCommand("cancelHatCountdown",null);
          clearInterval(this.hatCountdown);
       }
       
-      private function createRemoteCharacter(param1:Array) : *
+      protected function createRemoteCharacter(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:String = String(param1[1]);
@@ -305,7 +305,7 @@ package package_6
          positionPlayersAtStart();
       }
       
-      private function createLocalCharacter(param1:Array) : *
+      protected function createLocalCharacter(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:Number = Number(param1[1]);
@@ -356,7 +356,7 @@ package package_6
          super.endIntro();
       }
       
-      private function getFinishBlockPositions() : String
+      protected function getFinishBlockPositions() : String
       {
          return finishBlocks.length > 5 ? "all" : JSON.stringify(finishBlocks);
       }
@@ -419,7 +419,7 @@ package package_6
          this.method_196();
       }
       
-      private function method_682() : *
+      protected function method_682() : *
       {
          var _loc1_:int = 0;
          var _loc2_:int = 0;
@@ -442,7 +442,7 @@ package package_6
          }
       }
       
-      private function method_185() : *
+      protected function method_185() : *
       {
          if(!playerDone)
          {

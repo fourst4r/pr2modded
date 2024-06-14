@@ -9,7 +9,7 @@ package package_18
       
       public static const NUM_PRESETS:int = 10;
       
-      private static var presets:Vector.<Preset>;
+      protected static var presets:Vector.<Preset>;
        
       
       public function Presets()

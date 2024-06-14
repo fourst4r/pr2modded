@@ -7,11 +7,11 @@ package com.jiggmin.data
    {
        
       
-      private var lastReset:Number;
+      protected var lastReset:Number;
       
-      private var lagArray:Array;
+      protected var lagArray:Array;
       
-      private var keepCount:int = 30;
+      protected var keepCount:int = 30;
       
       public function SWFStats()
       {
@@ -21,7 +21,7 @@ package com.jiggmin.data
          setInterval(this.resetStats,1000);
       }
       
-      private function resetStats() : *
+      protected function resetStats() : *
       {
          var _loc4_:int = 0;
          var _loc6_:Number = NaN;

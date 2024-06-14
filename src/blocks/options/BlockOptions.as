@@ -7,7 +7,7 @@ package blocks.options
    public class BlockOptions extends class_264
    {
       
-      private static var instance:BlockOptions;
+      protected static var instance:BlockOptions;
        
       
       protected var block:Block;

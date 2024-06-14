@@ -8,13 +8,13 @@ package package_6
    {
        
       
-      private var m:StatsDisplayGraphic;
+      protected var m:StatsDisplayGraphic;
       
-      private var target:Course;
+      protected var target:Course;
       
-      private var pop:HoverPopup;
+      protected var pop:HoverPopup;
       
-      private var hoverTimeout:uint;
+      protected var hoverTimeout:uint;
       
       public function StatsDisplay(param1:Course)
       {
@@ -41,7 +41,7 @@ package package_6
          }
       }
       
-      private function showHover() : *
+      protected function showHover() : *
       {
          clearTimeout(this.hoverTimeout);
          this.pop = new HoverPopup("Current Stats","Speed: " + this.m.speedBox.text + "\nAcceleration: " + this.m.accelBox.text + "\nJumping: " + this.m.jumpBox.text,this);

@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      private var changeAmt:int = -5;
+      protected var changeAmt:int = -5;
       
       public function SadBlock()
       {

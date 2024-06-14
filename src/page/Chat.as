@@ -15,9 +15,9 @@ package page
       
       protected var htmlNameMaker:HTMLNameMaker;
       
-      private var hint:ArtifactHint;
+      protected var hint:ArtifactHint;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
       public function Chat()
       {

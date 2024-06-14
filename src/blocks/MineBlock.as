@@ -71,7 +71,7 @@ package blocks
          remove();
       }
       
-      private function method_81(param1:LocalCharacter) : *
+      protected function method_81(param1:LocalCharacter) : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;

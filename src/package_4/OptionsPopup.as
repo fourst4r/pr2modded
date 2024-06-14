@@ -11,21 +11,21 @@ package package_4
    {
        
       
-      private var m:OptionsPopupGraphic;
+      protected var m:OptionsPopupGraphic;
       
-      private var filterSwears:Boolean;
+      protected var filterSwears:Boolean;
       
-      private var drawArt:Boolean;
+      protected var drawArt:Boolean;
       
-      private var altCtrl:Object;
+      protected var altCtrl:Object;
       
-      private var hTrueY:Number = -71.5;
+      protected var hTrueY:Number = -71.5;
       
-      private var hFalseY:Number = -43.5;
+      protected var hFalseY:Number = -43.5;
       
-      private var buttonStartPos:int = 80;
+      protected var buttonStartPos:int = 80;
       
-      private var hoverActive:HoverPopup;
+      protected var hoverActive:HoverPopup;
       
       public function OptionsPopup()
       {
@@ -89,7 +89,7 @@ package package_4
          this.m.close_bt.addEventListener(MouseEvent.CLICK,this.clickClose,false,0,true);
       }
       
-      private function toggleArtBtnListeners(param1:Boolean) : *
+      protected function toggleArtBtnListeners(param1:Boolean) : *
       {
          this.m.artOffText.visible = !param1;
          this.m.art_bt.visible = param1;
@@ -104,7 +104,7 @@ package package_4
          }
       }
       
-      private function musicSliderChange(param1:SliderEvent) : *
+      protected function musicSliderChange(param1:SliderEvent) : *
       {
          var _loc2_:int = int(Data.numLimit(param1.value,0,100));
          if(Settings.musicLevel === 0 && _loc2_ > 0)
@@ -116,66 +116,66 @@ package package_4
          Main.noodleTown.setTargetVolume(0.6 * (Settings.musicLevel / 100));
       }
       
-      private function soundSliderChange(param1:SliderEvent) : *
+      protected function soundSliderChange(param1:SliderEvent) : *
       {
          Settings.setValue(Settings.SOUND_VOLUME,Data.numLimit(param1.value,0,100));
          this.m.soundPercentBox.text = Settings.soundLevel + "%";
       }
       
-      private function soundSliderRelease(param1:SliderEvent) : *
+      protected function soundSliderRelease(param1:SliderEvent) : *
       {
          SoundEffects.playSound(new JumpSound(),0.75 * (Settings.soundLevel / 100));
       }
       
-      private function toggleFilterOn(param1:MouseEvent) : *
+      protected function toggleFilterOn(param1:MouseEvent) : *
       {
          this.m.filterHighlight.y = this.hTrueY;
          this.filterSwears = true;
       }
       
-      private function toggleFilterOff(param1:MouseEvent) : *
+      protected function toggleFilterOff(param1:MouseEvent) : *
       {
          this.m.filterHighlight.y = this.hFalseY;
          this.filterSwears = false;
       }
       
-      private function toggleArtOn(param1:MouseEvent) : *
+      protected function toggleArtOn(param1:MouseEvent) : *
       {
          this.m.artHighlight.y = this.hTrueY;
          this.drawArt = true;
          this.toggleArtBtnListeners(true);
       }
       
-      private function toggleArtOff(param1:MouseEvent) : *
+      protected function toggleArtOff(param1:MouseEvent) : *
       {
          this.m.artHighlight.y = this.hFalseY;
          this.drawArt = false;
          this.toggleArtBtnListeners(false);
       }
       
-      private function clickArt(param1:MouseEvent) : *
+      protected function clickArt(param1:MouseEvent) : *
       {
          new OptionsArtQualityMenu(param1.currentTarget);
       }
       
-      private function hoverArt(param1:MouseEvent) : *
+      protected function hoverArt(param1:MouseEvent) : *
       {
          this.hoverActive = new HoverPopup("Choose Art Quality","Choose whether to draw art with lossless quality. This setting may degrade performance on some systems.",this.m.art_bt);
          this.hoverActive.x += 5;
       }
       
-      private function clickMusic(param1:MouseEvent) : *
+      protected function clickMusic(param1:MouseEvent) : *
       {
          new OptionsSongsMenu(param1.currentTarget);
       }
       
-      private function hoverMusic(param1:MouseEvent) : *
+      protected function hoverMusic(param1:MouseEvent) : *
       {
          this.hoverOut();
          this.hoverActive = new HoverPopup("Choose Music","Choose which songs are allowed to play in a level.",this.m.music_bt);
       }
       
-      private function hoverOut(param1:* = null) : *
+      protected function hoverOut(param1:* = null) : *
       {
          if(this.hoverActive != null)
          {
@@ -184,7 +184,7 @@ package package_4
          }
       }
       
-      private function addOptionsButton(param1:DisplayObject, param2:Function) : *
+      protected function addOptionsButton(param1:DisplayObject, param2:Function) : *
       {
          this.m.addChild(param1);
          param1.y = this.buttonStartPos;
@@ -192,25 +192,25 @@ package package_4
          param1.addEventListener(MouseEvent.CLICK,param2,false,0,true);
       }
       
-      private function clickChangePass(param1:MouseEvent) : *
+      protected function clickChangePass(param1:MouseEvent) : *
       {
          new ChangePasswordPopup();
          startFadeOut();
       }
       
-      private function clickChangeEmail(param1:MouseEvent) : *
+      protected function clickChangeEmail(param1:MouseEvent) : *
       {
          new SetEmailPopup();
          Main.hasEmail = true;
          startFadeOut();
       }
       
-      private function clickLeaveGuild(param1:MouseEvent) : *
+      protected function clickLeaveGuild(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.confirmLeaveGuild,"Are you sure you want to leave your guild?");
       }
       
-      private function confirmLeaveGuild() : *
+      protected function confirmLeaveGuild() : *
       {
          var _loc1_:URLRequest = new URLRequest(Main.baseURL + "/guild_leave.php");
          _loc1_.data = new URLVariables();
@@ -220,7 +220,7 @@ package package_4
          startFadeOut();
       }
       
-      private function doLeaveGuild(param1:Event) : *
+      protected function doLeaveGuild(param1:Event) : *
       {
          var _loc2_:Object = JSON.parse(param1.target.data);
          if(Boolean(_loc2_) && _loc2_.success === true)
@@ -233,25 +233,25 @@ package package_4
          }
       }
       
-      private function clickGuildCreate(param1:MouseEvent) : *
+      protected function clickGuildCreate(param1:MouseEvent) : *
       {
          new CreateGuildPopup(0);
          startFadeOut();
       }
       
-      private function clickGuildEdit(param1:MouseEvent) : *
+      protected function clickGuildEdit(param1:MouseEvent) : *
       {
          new CreateGuildPopup(Main.guild);
          startFadeOut();
       }
       
-      private function clickGuildTransfer(param1:MouseEvent) : *
+      protected function clickGuildTransfer(param1:MouseEvent) : *
       {
          new TransferGuildPopup();
          startFadeOut();
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

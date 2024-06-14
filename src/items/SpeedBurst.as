@@ -7,9 +7,9 @@ package items
    {
        
       
-      private var expireListener:uint;
+      protected var expireListener:uint;
       
-      private var used:Boolean = false;
+      protected var used:Boolean = false;
       
       public var duration:Number = 5000;
       
@@ -35,7 +35,7 @@ package items
          return this.used;
       }
       
-      private function slowDown() : *
+      protected function slowDown() : *
       {
          character.setItem(0);
       }

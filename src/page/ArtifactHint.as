@@ -8,9 +8,9 @@ package page
    {
        
       
-      private var superLoader:SuperLoader;
+      protected var superLoader:SuperLoader;
       
-      private var chatRoom:Chat;
+      protected var chatRoom:Chat;
       
       public function ArtifactHint(param1:Chat)
       {
@@ -25,7 +25,7 @@ package page
          this.superLoader.load(new URLRequest(Main.baseURL + "/files/level_of_the_week.json"));
       }
       
-      private function parseHint(param1:Event) : *
+      protected function parseHint(param1:Event) : *
       {
          var _loc7_:Array = null;
          var _loc8_:* = null;

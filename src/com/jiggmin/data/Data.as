@@ -17,19 +17,19 @@ package com.jiggmin.data
       
       public static var df:DateTimeFormatter = new DateTimeFormatter(LocaleID.DEFAULT,DateTimeStyle.MEDIUM,DateTimeStyle.NONE);
       
-      private static var groupColors:Array = [["676666"],["047B7B","BC9055"],["006400","0092FF","1C369F"],["870A6F"]];
+      protected static var groupColors:Array = [["676666"],["047B7B","BC9055"],["006400","0092FF","1C369F"],["870A6F"]];
       
-      private static var modGroupColors:Array = new Array("#006400","#0092FF","#1C369F");
+      protected static var modGroupColors:Array = new Array("#006400","#0092FF","#1C369F");
       
-      private static var damnArray:Array = new Array("dang","dingy-goo","condemnation");
+      protected static var damnArray:Array = new Array("dang","dingy-goo","condemnation");
       
-      private static var fuckArray:Array = new Array("fooey","fingilly","funk-master","freak monster","jiminy cricket");
+      protected static var fuckArray:Array = new Array("fooey","fingilly","funk-master","freak monster","jiminy cricket");
       
-      private static var shitArray:Array = new Array("shoot","shewet");
+      protected static var shitArray:Array = new Array("shoot","shewet");
       
-      private static var niggaArray:Array = new Array("someone cooler than me","ladies magnet","cooler race");
+      protected static var niggaArray:Array = new Array("someone cooler than me","ladies magnet","cooler race");
       
-      private static var bitchArray:Array = new Array("cooler gender","female dog");
+      protected static var bitchArray:Array = new Array("cooler gender","female dog");
        
       
       public function Data()
@@ -98,7 +98,7 @@ package com.jiggmin.data
          return _loc3_ + " " + _loc2_.date;
       }
       
-      private static function getMonthStr(param1:int) : String
+      protected static function getMonthStr(param1:int) : String
       {
          var _loc2_:Array = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
          return _loc2_[param1];
@@ -238,7 +238,7 @@ package com.jiggmin.data
          return param1.replace(/(\[big\])(.+)(\[\/big\])/gi,"<font size=\'24\'>$2</font>");
       }
       
-      private static function parseUser(param1:String) : String
+      protected static function parseUser(param1:String) : String
       {
          var _loc5_:* = undefined;
          var _loc6_:Array = null;
@@ -266,7 +266,7 @@ package com.jiggmin.data
          return _loc3_.join("");
       }
       
-      private static function parseURL(param1:String) : String
+      protected static function parseURL(param1:String) : String
       {
          var _loc2_:String = param1.replace(/\[[uU][rR][lL]\](https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(((?:&amp;)|[-a-zA-Z0-9@:%_\+.~#?&\/=])*))\[\/[uU][rR][lL]\]/g,"<a href=\'event:url`<*>$1<*>\'><u><font color=\'#0000FF\'><*>$1<*></font></u></a>");
          _loc2_ = _loc2_.replace(/\[[uU][rR][lL]=(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(((?:&amp;)|[-a-zA-Z0-9@:%_\+.~#?&\/=])*))\](.+?)\[\/[uU][rR][lL]\]/g,"<a href=\'event:url`$1\'><u><font color=\'#0000FF\'>$5</font></u></a>");

@@ -6,15 +6,15 @@ package package_22
    {
        
       
-      private var target:LevelItem;
+      protected var target:LevelItem;
       
       public var courseMenu:CourseMenu;
       
-      private var m:SlotGraphic;
+      protected var m:SlotGraphic;
       
-      private var status:String = "empty";
+      protected var status:String = "empty";
       
-      private var num:Number;
+      protected var num:Number;
       
       public function Slot(param1:int, param2:LevelItem)
       {
@@ -53,23 +53,23 @@ package package_22
          this.changeStatus("empty");
       }
       
-      private function changeStatus(param1:String) : *
+      protected function changeStatus(param1:String) : *
       {
          this.status = param1;
          this.m.bg.gotoAndStop(this.status + "Up");
       }
       
-      private function overHandler(param1:MouseEvent) : *
+      protected function overHandler(param1:MouseEvent) : *
       {
          this.m.bg.gotoAndStop(this.status + "Over");
       }
       
-      private function outHandler(param1:MouseEvent) : *
+      protected function outHandler(param1:MouseEvent) : *
       {
          this.m.bg.gotoAndStop(this.status + "Up");
       }
       
-      private function clickHandler(param1:MouseEvent) : *
+      protected function clickHandler(param1:MouseEvent) : *
       {
          this.m.bg.gotoAndStop("pending");
          this.target.sendFillSlot(this.num);

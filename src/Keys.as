@@ -6,9 +6,9 @@ package
    public class Keys
    {
       
-      private static var initialized:Boolean = false;
+      protected static var initialized:Boolean = false;
       
-      private static var keys:Object = new Object();
+      protected static var keys:Object = new Object();
        
       
       public function Keys()
@@ -34,12 +34,12 @@ package
          return Boolean(param1 in keys);
       }
       
-      private static function keyPressed(param1:KeyboardEvent) : *
+      protected static function keyPressed(param1:KeyboardEvent) : *
       {
          keys[param1.keyCode] = true;
       }
       
-      private static function keyReleased(param1:KeyboardEvent) : *
+      protected static function keyReleased(param1:KeyboardEvent) : *
       {
          if(param1.keyCode in keys)
          {
@@ -47,7 +47,7 @@ package
          }
       }
       
-      private static function resetKeys(param1:*) : *
+      protected static function resetKeys(param1:*) : *
       {
          keys = new Object();
       }

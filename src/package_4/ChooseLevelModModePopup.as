@@ -7,11 +7,11 @@ package package_4
    {
        
       
-      private var levelId:int;
+      protected var levelId:int;
       
-      private var uploading:UploadingPopup;
+      protected var uploading:UploadingPopup;
       
-      private var m:ChooseLevelModModePopupGraphic;
+      protected var m:ChooseLevelModModePopupGraphic;
       
       public function ChooseLevelModModePopup(param1:int)
       {
@@ -24,7 +24,7 @@ package package_4
          addChild(this.m);
       }
       
-      private function clickUnpublish(param1:MouseEvent) : *
+      protected function clickUnpublish(param1:MouseEvent) : *
       {
          var e:MouseEvent = param1;
          new ConfirmPopup(function():*
@@ -33,7 +33,7 @@ package package_4
          },"Are you sure you want to unpublish this level? The author will need to re-publish it from their account.");
       }
       
-      private function clickRestrict(param1:MouseEvent) : *
+      protected function clickRestrict(param1:MouseEvent) : *
       {
          var e:MouseEvent = param1;
          new ConfirmPopup(function():*
@@ -42,7 +42,7 @@ package package_4
          },"Are you sure you want to restrict this level? The level will remain playable but will not appear in any level lists except Search and Favorites.");
       }
       
-      private function confirmAction(param1:String = "unpublish") : *
+      protected function confirmAction(param1:String = "unpublish") : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.level_id = this.levelId;
@@ -54,7 +54,7 @@ package package_4
          this.uploading.addEventListener(SuperLoader.d,this.returnAction,false,0,true);
       }
       
-      private function returnAction(param1:*) : *
+      protected function returnAction(param1:*) : *
       {
          if(this.uploading.parsedData.success === true)
          {
@@ -66,7 +66,7 @@ package package_4
          }
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

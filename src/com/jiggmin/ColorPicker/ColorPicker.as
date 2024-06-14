@@ -17,9 +17,9 @@ package com.jiggmin.ColorPicker
       
       protected var color:int;
       
-      private var popup:ColorPickerPopup;
+      protected var popup:ColorPickerPopup;
       
-      private var m:ColorPickerGraphic;
+      protected var m:ColorPickerGraphic;
       
       public function ColorPicker()
       {
@@ -50,7 +50,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      private function clickHandler(param1:MouseEvent) : *
+      protected function clickHandler(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          if(this.popup != null && !this.popup.isRemoved())
@@ -63,7 +63,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      private function openPopup() : *
+      protected function openPopup() : *
       {
          this.closePopup();
          var _loc1_:Point = this.localToGlobal(new Point(0,0));

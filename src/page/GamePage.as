@@ -17,7 +17,7 @@ package page
       public static var course:GamePage;
        
       
-      private var segSize:int = 30;
+      protected var segSize:int = 30;
       
       public var allowedItems:Vector.<int>;
       
@@ -53,13 +53,13 @@ package page
       
       public var cowboyChance:String = "5";
       
-      private var accel:Number = 10;
+      protected var accel:Number = 10;
       
-      private var friction:Number = 0.6;
+      protected var friction:Number = 0.6;
       
-      private var velX:Number = 0;
+      protected var velX:Number = 0;
       
-      private var velY:Number = 0;
+      protected var velY:Number = 0;
       
       public var posX:Number = -20000;
       
@@ -73,7 +73,7 @@ package page
       
       protected var altCtrl:Object;
       
-      private var rasterStopNotified:Boolean = false;
+      protected var rasterStopNotified:Boolean = false;
       
       public function GamePage()
       {
@@ -375,7 +375,7 @@ package page
          return param1;
       }
       
-      private function decodeObjectString(param1:String) : String
+      protected function decodeObjectString(param1:String) : String
       {
          var _loc7_:int = 0;
          var _loc8_:Number = NaN;
@@ -405,7 +405,7 @@ package page
          return _loc2_.join(",");
       }
       
-      private function decodeObjectString2(param1:String, param2:int = 1) : String
+      protected function decodeObjectString2(param1:String, param2:int = 1) : String
       {
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -469,7 +469,7 @@ package page
          return _loc6_;
       }
       
-      private function decodeBlockString(param1:String) : *
+      protected function decodeBlockString(param1:String) : *
       {
          var _loc3_:String = null;
          var _loc4_:int = 0;

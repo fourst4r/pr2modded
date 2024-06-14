@@ -5,9 +5,9 @@ package com.jiggmin.data
    public class SavedAccounts
    {
       
-      private static var cookieId:*;
+      protected static var cookieId:*;
       
-      private static var accounts:Array = null;
+      protected static var accounts:Array = null;
        
       
       public function SavedAccounts()
@@ -21,7 +21,7 @@ package com.jiggmin.data
          getCookie();
       }
       
-      private static function getCookie() : *
+      protected static function getCookie() : *
       {
          var _loc1_:SharedObject = null;
          var _loc2_:int = 0;
@@ -47,7 +47,7 @@ package com.jiggmin.data
          }
       }
       
-      private static function setCookie() : *
+      protected static function setCookie() : *
       {
          var _loc1_:SharedObject = null;
          var _loc2_:int = 0;
@@ -74,7 +74,7 @@ package com.jiggmin.data
          return accounts;
       }
       
-      private static function getArrayPos(param1:String, param2:String = "name") : *
+      protected static function getArrayPos(param1:String, param2:String = "name") : *
       {
          var _loc4_:Object = null;
          var _loc3_:int = 0;
@@ -126,7 +126,7 @@ package com.jiggmin.data
          setCookie();
       }
       
-      private static function updateToken(param1:String, param2:String) : *
+      protected static function updateToken(param1:String, param2:String) : *
       {
          var _loc3_:int = int(getArrayPos(param1));
          if(_loc3_ === -1)
@@ -137,7 +137,7 @@ package com.jiggmin.data
          setCookie();
       }
       
-      private static function moveToTop(param1:String) : *
+      protected static function moveToTop(param1:String) : *
       {
          var _loc2_:int = int(getArrayPos(param1));
          if(_loc2_ <= -1)

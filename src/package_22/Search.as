@@ -9,13 +9,13 @@ package package_22
    {
        
       
-      private var m:SearchGraphic;
+      protected var m:SearchGraphic;
       
-      private var memory:Object;
+      protected var memory:Object;
       
-      private var var_421:uint;
+      protected var var_421:uint;
       
-      private var firstRun:Boolean = true;
+      protected var firstRun:Boolean = true;
       
       public function Search(param1:String = "", param2:String = "user")
       {
@@ -51,7 +51,7 @@ package package_22
          }
       }
       
-      private function setSearchMode(param1:String = "user") : *
+      protected function setSearchMode(param1:String = "user") : *
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;
@@ -112,7 +112,7 @@ package package_22
          }
       }
       
-      private function doSearch(param1:Event) : *
+      protected function doSearch(param1:Event) : *
       {
          if(param1 is KeyboardEvent)
          {
@@ -128,7 +128,7 @@ package package_22
          }
       }
       
-      private function focusStage(param1:Event) : *
+      protected function focusStage(param1:Event) : *
       {
          Main.stage.focus = Main.stage;
       }

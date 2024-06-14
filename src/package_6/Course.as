@@ -78,9 +78,9 @@ package package_6
       
       protected var var_678:Number = 0;
       
-      private var rotateDirection:String;
+      protected var rotateDirection:String;
       
-      private var varsSet:Boolean = false;
+      protected var varsSet:Boolean = false;
       
       public var countdownFinished:Boolean = false;
       
@@ -166,7 +166,7 @@ package package_6
          }
       }
       
-      private function getStartPos(param1:int) : Point
+      protected function getStartPos(param1:int) : Point
       {
          param1 = Main.server.tournament == 1 ? 0 : param1;
          return this.startPosArray[param1] != null ? this.startPosArray[param1] : new Point();
@@ -323,7 +323,7 @@ package package_6
          }
       }
       
-      private function onCountdownCount(param1:Event) : *
+      protected function onCountdownCount(param1:Event) : *
       {
          SoundEffects.playSound(new ReadySound(),0.4 * (Settings.soundLevel / 100));
       }
@@ -483,7 +483,7 @@ package package_6
          Main.stage.quality = StageQuality.LOW;
       }
       
-      private function rotate(param1:Event) : *
+      protected function rotate(param1:Event) : *
       {
          var _loc2_:* = false;
          var _loc4_:Character = null;

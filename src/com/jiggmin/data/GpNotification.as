@@ -5,7 +5,7 @@ package com.jiggmin.data
    public class GpNotification
    {
       
-      private static var holder:DisplayObjectContainer;
+      protected static var holder:DisplayObjectContainer;
        
       
       public function GpNotification()

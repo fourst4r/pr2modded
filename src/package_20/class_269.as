@@ -32,13 +32,13 @@ package package_20
          addEventListener(Event.ENTER_FRAME,this.method_152,false,0,true);
       }
       
-      private function method_458() : *
+      protected function method_458() : *
       {
          scaleX = this.editor.scaleX * this.editor.cur.scaleX;
          scaleY = this.editor.scaleY * this.editor.cur.scaleY;
       }
       
-      private function method_152(param1:Event) : *
+      protected function method_152(param1:Event) : *
       {
          this.method_458();
       }

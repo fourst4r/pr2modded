@@ -9,27 +9,27 @@ package com.jiggmin.pixelEffects
    {
        
       
-      private var src:BitmapData;
+      protected var src:BitmapData;
       
-      private var product:BitmapData;
+      protected var product:BitmapData;
       
-      private var productBitmap:Bitmap;
+      protected var productBitmap:Bitmap;
       
-      private var bgColor:Number;
+      protected var bgColor:Number;
       
-      private var spread:Number;
+      protected var spread:Number;
       
-      private var pull:Number;
+      protected var pull:Number;
       
-      private var pixels:Number;
+      protected var pixels:Number;
       
-      private var scaleRange:Number;
+      protected var scaleRange:Number;
       
-      private var interval:Number;
+      protected var interval:Number;
       
-      private var segArray:Array;
+      protected var segArray:Array;
       
-      private var drawInterval:uint;
+      protected var drawInterval:uint;
       
       public function PixelEffect1(param1:BitmapData, param2:Number = 0, param3:Number = 500, param4:Number = 0.19, param5:Number = 15, param6:Number = 15, param7:Number = 55)
       {
@@ -47,7 +47,7 @@ package com.jiggmin.pixelEffects
          this.drawInterval = setInterval(this.drawPixels,param7);
       }
       
-      private function createSegArray() : *
+      protected function createSegArray() : *
       {
          var _loc3_:int = 0;
          var _loc1_:Array = new Array();
@@ -66,14 +66,14 @@ package com.jiggmin.pixelEffects
          return _loc1_;
       }
       
-      private function drawPixels() : *
+      protected function drawPixels() : *
       {
          this.drawPixel();
          this.drawPixel();
          this.drawPixel();
       }
       
-      private function drawPixel() : *
+      protected function drawPixel() : *
       {
          var _loc1_:Number = NaN;
          var _loc2_:Number = NaN;
@@ -115,12 +115,12 @@ package com.jiggmin.pixelEffects
          }
       }
       
-      private function finishDrawing() : *
+      protected function finishDrawing() : *
       {
          clearInterval(this.drawInterval);
       }
       
-      private function remove() : *
+      protected function remove() : *
       {
          this.src.dispose();
          this.product.dispose();

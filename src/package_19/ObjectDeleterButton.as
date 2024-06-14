@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      private var m:ObjectDeleterButtonGraphic;
+      protected var m:ObjectDeleterButtonGraphic;
       
       public function ObjectDeleterButton()
       {

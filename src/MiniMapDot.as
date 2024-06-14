@@ -10,19 +10,19 @@ package
    {
        
       
-      private const remote0Color:uint = 1095390;
+      protected const remote0Color:uint = 1095390;
       
-      private const remote1Color:uint = 16711680;
+      protected const remote1Color:uint = 16711680;
       
-      private const remote2Color:uint = 65280;
+      protected const remote2Color:uint = 65280;
       
-      private const remote3Color:uint = 10066329;
+      protected const remote3Color:uint = 10066329;
       
-      private const localColor:uint = 16776960;
+      protected const localColor:uint = 16776960;
       
-      private var tempID:int = -1;
+      protected var tempID:int = -1;
       
-      private var infoHover:HoverPopup;
+      protected var infoHover:HoverPopup;
       
       public function MiniMapDot()
       {

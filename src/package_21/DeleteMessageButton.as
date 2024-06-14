@@ -4,7 +4,7 @@ package package_21
    {
        
       
-      private var m:DeleteMessageButtonGraphic;
+      protected var m:DeleteMessageButtonGraphic;
       
       public function DeleteMessageButton()
       {

@@ -8,9 +8,9 @@ package menu
    {
        
       
-      private var m:CreateAccountPopupGraphic;
+      protected var m:CreateAccountPopupGraphic;
       
-      private var uploadingPopup:UploadingPopup;
+      protected var uploadingPopup:UploadingPopup;
       
       public function CreateAccountPopup()
       {
@@ -21,7 +21,7 @@ package menu
          this.m.cancel_bt.addEventListener(MouseEvent.CLICK,this.clickCancel);
       }
       
-      private function clickCreateAccount(param1:MouseEvent) : *
+      protected function clickCreateAccount(param1:MouseEvent) : *
       {
          var _loc2_:* = undefined;
          if(this.m.passBox1.text != this.m.passBox2.text)
@@ -42,7 +42,7 @@ package menu
          }
       }
       
-      private function receiveCreateAccountResult(param1:Event) : *
+      protected function receiveCreateAccountResult(param1:Event) : *
       {
          if(this.uploadingPopup.parsedData.success == true)
          {
@@ -53,7 +53,7 @@ package menu
          }
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

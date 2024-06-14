@@ -8,13 +8,13 @@ package package_8
    {
        
       
-      private var var_416:uint;
+      protected var var_416:uint;
       
-      private var var_444:int;
+      protected var var_444:int;
       
-      private var duration:int;
+      protected var duration:int;
       
-      private var life:int;
+      protected var life:int;
       
       protected var target:DisplayObject;
       

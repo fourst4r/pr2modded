@@ -21,33 +21,33 @@ package package_18
       public static var partToSet:Array;
        
       
-      private var character:Character;
+      protected var character:Character;
       
-      private var statsSelect:StatsSelect;
+      protected var statsSelect:StatsSelect;
       
-      private var playerDisplay:PlayerDisplay;
+      protected var playerDisplay:PlayerDisplay;
       
-      private var stageRef:Stage;
+      protected var stageRef:Stage;
       
-      private var m:AccountInfoGraphic;
+      protected var m:AccountInfoGraphic;
       
-      private var rankTokensUsed:int = 0;
+      protected var rankTokensUsed:int = 0;
       
-      private var rankTokensAvailable:int = 0;
+      protected var rankTokensAvailable:int = 0;
       
-      private var rank:int = 0;
+      protected var rank:int = 0;
       
-      private var guildName:GuildName;
+      protected var guildName:GuildName;
       
-      private var var_510:int = 65;
+      protected var var_510:int = 65;
       
-      private var var_635:int = 95;
+      protected var var_635:int = 95;
       
-      private var customizeInfo:String;
+      protected var customizeInfo:String;
       
-      private var loadoutsHover:HoverPopup;
+      protected var loadoutsHover:HoverPopup;
       
-      private var loadoutsHoverTimer:uint;
+      protected var loadoutsHoverTimer:uint;
       
       public function AccountInfo()
       {
@@ -155,7 +155,7 @@ package package_18
          addChild(this.m);
       }
       
-      private function parsePartArray(param1:String) : Array
+      protected function parsePartArray(param1:String) : Array
       {
          if(param1 != null && param1 != "")
          {
@@ -164,7 +164,7 @@ package package_18
          return new Array();
       }
       
-      private function updatePosRankTokenButtons() : *
+      protected function updatePosRankTokenButtons() : *
       {
          var _loc1_:int = this.rankTokensAvailable - this.rankTokensUsed;
          this.m.rankTokenUp_bt.visible = false;
@@ -191,12 +191,12 @@ package package_18
          }
       }
       
-      private function updateRankText() : *
+      protected function updateRankText() : *
       {
          this.m.rankBox.htmlText = "Rank: <b>" + this.rank + "</b>";
       }
       
-      private function update(param1:Event) : *
+      protected function update(param1:Event) : *
       {
          var _loc2_:Character = this.character;
          var _loc3_:int = partToSet.length == 2 && partToSet[0] == "hat" ? int(partToSet[1]) : _loc2_.hat1;
@@ -216,7 +216,7 @@ package package_18
          }
       }
       
-      private function clickRankTokenUp(param1:MouseEvent) : *
+      protected function clickRankTokenUp(param1:MouseEvent) : *
       {
          if(this.rankTokensUsed < this.rankTokensAvailable)
          {
@@ -229,7 +229,7 @@ package package_18
          this.updatePosRankTokenButtons();
       }
       
-      private function clickRankTokenDown(param1:MouseEvent) : *
+      protected function clickRankTokenDown(param1:MouseEvent) : *
       {
          if(this.rankTokensUsed > 0)
          {
@@ -242,7 +242,7 @@ package package_18
          this.updatePosRankTokenButtons();
       }
       
-      private function keyDownHandler(param1:KeyboardEvent, param2:Boolean = false) : *
+      protected function keyDownHandler(param1:KeyboardEvent, param2:Boolean = false) : *
       {
          var presetNum:int;
          var preset:Preset = null;
@@ -275,7 +275,7 @@ package package_18
          }
       }
       
-      private function loadoutsMouseEvent(param1:MouseEvent = null) : *
+      protected function loadoutsMouseEvent(param1:MouseEvent = null) : *
       {
          if(this.loadoutsHover != null)
          {
@@ -302,7 +302,7 @@ package package_18
          }
       }
       
-      private function reset() : *
+      protected function reset() : *
       {
          partToSet = [];
          if(this.character != null)
@@ -322,7 +322,7 @@ package package_18
          this.loadoutsMouseEvent(new MouseEvent(MouseEvent.MOUSE_OUT));
       }
       
-      private function getCustomizeInfo(param1:Event) : *
+      protected function getCustomizeInfo(param1:Event) : *
       {
          this.reset();
          Main.socket.write("get_customize_info`");

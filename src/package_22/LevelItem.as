@@ -12,57 +12,57 @@ package package_22
    {
        
       
-      private var m:LevelItemGraphic;
+      protected var m:LevelItemGraphic;
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
-      private var htmlNameMaker:HTMLNameMaker;
+      protected var htmlNameMaker:HTMLNameMaker;
       
-      private var infoPopup:HoverPopup;
+      protected var infoPopup:HoverPopup;
       
-      private var favBtPopup:HoverPopup;
+      protected var favBtPopup:HoverPopup;
       
-      private var favBtTimer:uint;
+      protected var favBtTimer:uint;
       
-      private var slotArray:Array;
+      protected var slotArray:Array;
       
-      private var coverActive:* = true;
+      protected var coverActive:* = true;
       
       public var courseID:int;
       
       public var version:int;
       
-      private var title:String;
+      protected var title:String;
       
-      private var rating:Number;
+      protected var rating:Number;
       
-      private var playCount:Number;
+      protected var playCount:Number;
       
-      private var myRank:Number;
+      protected var myRank:Number;
       
-      private var minRank:Number;
+      protected var minRank:Number;
       
-      private var note:String;
+      protected var note:String;
       
-      private var userName:String;
+      protected var userName:String;
       
-      private var group:String;
+      protected var group:String;
       
-      private var pass:Boolean;
+      protected var pass:Boolean;
       
-      private var passOK:Boolean = false;
+      protected var passOK:Boolean = false;
       
-      private var type:String;
+      protected var type:String;
       
-      private var badHats:Vector.<int>;
+      protected var badHats:Vector.<int>;
       
-      private var lastUpdated:int;
+      protected var lastUpdated:int;
       
-      private var maxSlots:Number = 4;
+      protected var maxSlots:Number = 4;
       
-      private var superLoader:SuperLoader;
+      protected var superLoader:SuperLoader;
       
-      private var uploading:UploadingPopup;
+      protected var uploading:UploadingPopup;
       
       public function LevelItem(param1:int, param2:int, param3:String, param4:Number, param5:int, param6:int, param7:String, param8:String, param9:String, param10:Boolean, param11:String, param12:String, param13:int)
       {
@@ -208,7 +208,7 @@ package package_22
          this.toggleCover(false);
       }
       
-      private function toggleCover(param1:Boolean) : *
+      protected function toggleCover(param1:Boolean) : *
       {
          if(param1 && !this.m.contains(this.m.accessCover))
          {
@@ -225,7 +225,7 @@ package package_22
          this.coverActive = param1;
       }
       
-      private function clickPassEnter(param1:MouseEvent) : *
+      protected function clickPassEnter(param1:MouseEvent) : *
       {
          var _loc2_:String = null;
          var _loc3_:String = null;
@@ -248,7 +248,7 @@ package package_22
          }
       }
       
-      private function validatePassResponse(param1:Event) : *
+      protected function validatePassResponse(param1:Event) : *
       {
          var _loc3_:Encryptor = null;
          var _loc4_:String = null;
@@ -281,7 +281,7 @@ package package_22
          this.superLoader = null;
       }
       
-      private function passResponseError(param1:Event) : *
+      protected function passResponseError(param1:Event) : *
       {
          this.m.accessCover.passBox.text = "";
          this.m.accessCover.passButton.enabled = this.m.accessCover.passBox.enabled = true;
@@ -291,7 +291,7 @@ package package_22
          this.superLoader = null;
       }
       
-      private function addSlots() : *
+      protected function addSlots() : *
       {
          var _loc3_:Slot = null;
          var _loc1_:Number = 0;
@@ -308,7 +308,7 @@ package package_22
          }
       }
       
-      private function removeSlots() : *
+      protected function removeSlots() : *
       {
          var _loc1_:Slot = null;
          var _loc2_:int = 0;
@@ -320,7 +320,7 @@ package package_22
          }
       }
       
-      private function clickPlus(param1:MouseEvent) : *
+      protected function clickPlus(param1:MouseEvent) : *
       {
          if(this.uploading == null)
          {
@@ -328,7 +328,7 @@ package package_22
          }
       }
       
-      private function clickMinus(param1:MouseEvent) : *
+      protected function clickMinus(param1:MouseEvent) : *
       {
          if(this.uploading == null)
          {
@@ -336,7 +336,7 @@ package package_22
          }
       }
       
-      private function handleFavorite(param1:String) : *
+      protected function handleFavorite(param1:String) : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.mode = param1;
@@ -348,7 +348,7 @@ package package_22
          this.uploading.addEventListener(SuperLoader.d,this.onFavoriteResult,false,0,true);
       }
       
-      private function onFavoriteResult(param1:Event) : *
+      protected function onFavoriteResult(param1:Event) : *
       {
          var _loc2_:Object = this.uploading.parsedData;
          if(_loc2_.mode === "add")
@@ -383,12 +383,12 @@ package package_22
          }
       }
       
-      private function overFavBt(param1:MouseEvent) : *
+      protected function overFavBt(param1:MouseEvent) : *
       {
          this.favBtTimer = setTimeout(this.showFavHover,500);
       }
       
-      private function showFavHover() : *
+      protected function showFavHover() : *
       {
          clearTimeout(this.favBtTimer);
          var _loc1_:DisplayObject = !!this.m.contains(this.m.plusButton) ? this.m.plusButton : this.m.minusButton;
@@ -398,7 +398,7 @@ package package_22
          this.favBtPopup = new HoverPopup(_loc3_,_loc4_,_loc1_);
       }
       
-      private function outFavBt(param1:MouseEvent) : *
+      protected function outFavBt(param1:MouseEvent) : *
       {
          clearTimeout(this.favBtTimer);
          if(this.favBtPopup != null)
@@ -424,7 +424,7 @@ package package_22
          Main.socket.write("confirm_slot`");
       }
       
-      private function fillSlot(param1:Array) : *
+      protected function fillSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = NaN;
@@ -450,7 +450,7 @@ package package_22
          }
       }
       
-      private function confirmSlot(param1:Array) : *
+      protected function confirmSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = Number(param1[0]);
@@ -461,7 +461,7 @@ package package_22
          }
       }
       
-      private function clearSlot(param1:Array) : *
+      protected function clearSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = Number(param1[0]);
@@ -472,7 +472,7 @@ package package_22
          }
       }
       
-      private function overInfoHandler(param1:MouseEvent) : *
+      protected function overInfoHandler(param1:MouseEvent) : *
       {
          var _loc2_:* = "-- " + Data.escapeString(this.title) + " --";
          var _loc3_:* = "By: " + Data.escapeString(this.userName) + "<br/>";
@@ -491,13 +491,13 @@ package package_22
          this.infoPopup = new HoverPopup(_loc2_,_loc11_,this.m.infoButton);
       }
       
-      private function outInfoHandler(param1:MouseEvent) : *
+      protected function outInfoHandler(param1:MouseEvent) : *
       {
          this.infoPopup.remove();
          this.infoPopup = null;
       }
       
-      private function clickInfoHandler(param1:MouseEvent) : *
+      protected function clickInfoHandler(param1:MouseEvent) : *
       {
          new LevelInfoPopup(this.courseID);
       }

@@ -7,9 +7,9 @@ package package_23
    {
        
       
-      private var tabsHolder:TabsHolder;
+      protected var tabsHolder:TabsHolder;
       
-      private var pageHolder:PageHolder;
+      protected var pageHolder:PageHolder;
       
       public function PlayersTab()
       {
@@ -27,27 +27,27 @@ package package_23
          addChild(this.pageHolder);
       }
       
-      private function clickOnline() : *
+      protected function clickOnline() : *
       {
          this.pageHolder.changePage(new Online());
       }
       
-      private function clickFriends() : *
+      protected function clickFriends() : *
       {
          this.pageHolder.changePage(new Friends());
       }
       
-      private function clickFollowing() : *
+      protected function clickFollowing() : *
       {
          this.pageHolder.changePage(new Following());
       }
       
-      private function clickIgnored() : *
+      protected function clickIgnored() : *
       {
          this.pageHolder.changePage(new Ignored());
       }
       
-      private function clickGuilds() : *
+      protected function clickGuilds() : *
       {
          this.pageHolder.changePage(new Guilds());
       }

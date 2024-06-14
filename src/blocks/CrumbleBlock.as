@@ -9,7 +9,7 @@ package blocks
    {
        
       
-      private var life:int = 10;
+      protected var life:int = 10;
       
       public function CrumbleBlock()
       {
@@ -102,7 +102,7 @@ package blocks
          }
       }
       
-      private function cheeseHandler(param1:LocalCharacter, param2:Number, param3:Boolean = false) : *
+      protected function cheeseHandler(param1:LocalCharacter, param2:Number, param3:Boolean = false) : *
       {
          if(param2 > 1 && param1.var_4.getBool(Character.CHEESE))
          {
@@ -111,13 +111,13 @@ package blocks
          return param2;
       }
       
-      private function doCrumble() : *
+      protected function doCrumble() : *
       {
          this.throwPieces(10);
          remove();
       }
       
-      private function throwPieces(param1:Number) : *
+      protected function throwPieces(param1:Number) : *
       {
          var _loc4_:CrumblePieceGraphic = null;
          var _loc5_:Number = NaN;

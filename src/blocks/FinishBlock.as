@@ -10,7 +10,7 @@ package blocks
       public static var var_228:int = 1;
        
       
-      private var id:int;
+      protected var id:int;
       
       public function FinishBlock()
       {

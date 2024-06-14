@@ -17,11 +17,11 @@ package package_17
       public static const EVENT_INFO:String = "itemInfo";
        
       
-      private var m:StoreListingGraphic;
+      protected var m:StoreListingGraphic;
       
-      private var _listing:Object;
+      protected var _listing:Object;
       
-      private var loader:Loader;
+      protected var loader:Loader;
       
       public function StoreListing(param1:Object, param2:EpicFlash = null)
       {
@@ -83,7 +83,7 @@ package package_17
          this.m.bg.mouseEnabled = this.m.titleBox.mouseEnabled = this.m.coin.mouseEnabled = this.m.priceBG.mouseEnabled = this.m.picHolder.mouseEnabled = false;
       }
       
-      private function generateRandomCharacter(param1:Number) : *
+      protected function generateRandomCharacter(param1:Number) : *
       {
          var _loc2_:int = int(Math.ceil(Math.random() * 12));
          var _loc3_:int = int(Math.ceil(Math.random() * 39));
@@ -133,14 +133,14 @@ package package_17
          return this._listing;
       }
       
-      private function makeTextButtons(param1:Object) : String
+      protected function makeTextButtons(param1:Object) : String
       {
          var _loc2_:* = "<u><font color=\"#4E4EFE\"><a href=\"event:itemPurchase\">" + (param1.price == 0 ? "use" : "buy") + "</a></font></u>";
          var _loc3_:String = "<u><font color=\"#4E4EFE\"><a href=\"event:itemInfo\">more info</a></font></u>";
          return (!!param1.available ? _loc2_ + " / " : "") + _loc3_;
       }
       
-      private function clickTextLink(param1:TextEvent) : *
+      protected function clickTextLink(param1:TextEvent) : *
       {
          if(param1.text == "itemPurchase")
          {
@@ -152,7 +152,7 @@ package package_17
          }
       }
       
-      private function clickHandler(param1:MouseEvent) : *
+      protected function clickHandler(param1:MouseEvent) : *
       {
          dispatchEvent(new Event(StoreListing.EVENT_PURCHASE));
       }
@@ -182,12 +182,12 @@ package package_17
          return int(this.m.priceBox.text);
       }
       
-      private function onMouseOver(param1:MouseEvent) : *
+      protected function onMouseOver(param1:MouseEvent) : *
       {
          this.m.bg.visible = true;
       }
       
-      private function onMouseOut(param1:MouseEvent) : *
+      protected function onMouseOut(param1:MouseEvent) : *
       {
          this.m.bg.visible = false;
       }

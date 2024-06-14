@@ -3,7 +3,7 @@ package com.jiggmin.data
    public class class_33
    {
       
-      private static var h:class_20 = new class_20();
+      protected static var h:class_20 = new class_20();
        
       
       public function class_33()

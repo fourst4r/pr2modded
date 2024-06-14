@@ -8,9 +8,9 @@ package package_9
    {
        
       
-      private var m:StingGraphic;
+      protected var m:StingGraphic;
       
-      private var character:Character;
+      protected var character:Character;
       
       public function Sting(param1:Character, param2:String = "")
       {
@@ -31,7 +31,7 @@ package package_9
          SoundEffects.playGameSound(new StingSound(),x,y,0.66);
       }
       
-      private function go(param1:Event) : *
+      protected function go(param1:Event) : *
       {
          this.pos();
          alpha -= 0.05;
@@ -41,7 +41,7 @@ package package_9
          }
       }
       
-      private function pos() : *
+      protected function pos() : *
       {
          x = this.character.x;
          y = this.character.y;

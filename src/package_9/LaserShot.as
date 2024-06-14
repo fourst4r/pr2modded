@@ -7,7 +7,7 @@ package package_9
    {
        
       
-      private var m:LaserShotGraphic;
+      protected var m:LaserShotGraphic;
       
       public function LaserShot(param1:Number, param2:Number, param3:String, param4:int, param5:int)
       {

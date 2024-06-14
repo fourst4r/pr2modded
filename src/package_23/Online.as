@@ -6,7 +6,7 @@ package package_23
    {
        
       
-      private var cm:CommandHandler;
+      protected var cm:CommandHandler;
       
       public function Online()
       {

@@ -10,9 +10,9 @@ package com.jcward.workers
       
       protected var ZigZag:Array;
       
-      private var quality:Number;
+      protected var quality:Number;
       
-      private var asyncOutstanding:Boolean = false;
+      protected var asyncOutstanding:Boolean = false;
       
       protected var YTable:Array;
       

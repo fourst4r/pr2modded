@@ -9,17 +9,17 @@ package ui
    {
        
       
-      private var m:StatSliderGraphic;
+      protected var m:StatSliderGraphic;
       
-      private var target:StatsSelect;
+      protected var target:StatsSelect;
       
       internal var value:Number;
       
-      private var holdStart:Number = 0;
+      protected var holdStart:Number = 0;
       
-      private var holdSpeed:int = 0;
+      protected var holdSpeed:int = 0;
       
-      private var updateInterval:uint;
+      protected var updateInterval:uint;
       
       public function StatSlider(param1:String, param2:StatsSelect)
       {
@@ -41,13 +41,13 @@ package ui
          }
       }
       
-      private function arrowBtnDown(param1:MouseEvent) : *
+      protected function arrowBtnDown(param1:MouseEvent) : *
       {
          this.holdStart = Data.getMS();
          this.updateHoldSpeed(param1.target === this.m.incBtn ? "inc" : "dec");
       }
       
-      private function arrowBtnUp(param1:* = null) : *
+      protected function arrowBtnUp(param1:* = null) : *
       {
          this.holdStart = this.holdSpeed = 0;
          clearInterval(this.updateInterval);
@@ -58,7 +58,7 @@ package ui
          }
       }
       
-      private function updateHoldSpeed(param1:String) : *
+      protected function updateHoldSpeed(param1:String) : *
       {
          var mode:String = param1;
          var now:Number = Number(Data.getMS());
@@ -86,7 +86,7 @@ package ui
          },Math.floor(1000 / this.holdSpeed));
       }
       
-      private function updateStatFromHeld(param1:String) : *
+      protected function updateStatFromHeld(param1:String) : *
       {
          var _loc2_:int = Data.getMS() - this.holdStart;
          var _loc3_:int = param1 === "inc" ? int(this.value + 1) : int(this.value - 1);
@@ -101,7 +101,7 @@ package ui
          }
       }
       
-      private function onSliderChange(param1:Event) : *
+      protected function onSliderChange(param1:Event) : *
       {
          this.setValue(param1.target.value);
          if(this.target != null)
@@ -110,7 +110,7 @@ package ui
          }
       }
       
-      private function onTextChange(param1:Event) : *
+      protected function onTextChange(param1:Event) : *
       {
          this.setValue(int(param1.target.text));
          if(this.target != null)

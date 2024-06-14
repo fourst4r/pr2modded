@@ -13,9 +13,9 @@ package package_4
       
       protected var listings:Vector.<class_229>;
       
-      private var scroll:CustomScrollBar;
+      protected var scroll:CustomScrollBar;
       
-      private var selected:class_229;
+      protected var selected:class_229;
       
       public function GetLevelsPopup()
       {
@@ -98,12 +98,12 @@ package package_4
       {
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      private function clickLoad(param1:MouseEvent) : *
+      protected function clickLoad(param1:MouseEvent) : *
       {
          if(this.selected != null)
          {
@@ -111,7 +111,7 @@ package package_4
          }
       }
       
-      private function clickDelete(param1:MouseEvent) : *
+      protected function clickDelete(param1:MouseEvent) : *
       {
          if(this.selected != null)
          {
@@ -119,7 +119,7 @@ package package_4
          }
       }
       
-      private function method_401(param1:MouseEvent) : *
+      protected function method_401(param1:MouseEvent) : *
       {
          var _loc2_:class_229 = null;
          if(param1.target is class_229)
@@ -129,7 +129,7 @@ package package_4
          }
       }
       
-      private function method_222(param1:MouseEvent) : *
+      protected function method_222(param1:MouseEvent) : *
       {
          var _loc2_:class_229 = null;
          if(param1.target is class_229)
@@ -139,7 +139,7 @@ package package_4
          }
       }
       
-      private function method_394() : *
+      protected function method_394() : *
       {
          this.m.load_bt.enabled = this.m.delete_bt.enabled = this.selected != null;
       }

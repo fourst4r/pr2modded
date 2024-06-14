@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      private var editor:LevelEditor;
+      protected var editor:LevelEditor;
       
       public function Landscape()
       {
@@ -18,7 +18,7 @@ package package_19
          addChild(new LandscapeGraphic());
       }
       
-      private function mouseDownHandler(param1:MouseEvent) : *
+      protected function mouseDownHandler(param1:MouseEvent) : *
       {
          this.editor.menu.changeSideBar(this.editor.menu.stamps);
          this.editor.focusOn(this.editor.cur);

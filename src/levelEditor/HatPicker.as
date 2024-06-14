@@ -9,15 +9,15 @@ package levelEditor
    {
        
       
-      private var m:HatPickerGraphic;
+      protected var m:HatPickerGraphic;
       
-      private var c:LocalCharacter;
+      protected var c:LocalCharacter;
       
-      private var min:int = 1;
+      protected var min:int = 1;
       
-      private var max:int = 16;
+      protected var max:int = 16;
       
-      private var pickedHat:int = 2;
+      protected var pickedHat:int = 2;
       
       public function HatPicker(param1:LocalCharacter)
       {
@@ -31,7 +31,7 @@ package levelEditor
          this.display();
       }
       
-      private function clickLeft(param1:MouseEvent) : *
+      protected function clickLeft(param1:MouseEvent) : *
       {
          --this.pickedHat;
          if(this.pickedHat === 14)
@@ -45,7 +45,7 @@ package levelEditor
          this.display();
       }
       
-      private function clickRight(param1:MouseEvent) : *
+      protected function clickRight(param1:MouseEvent) : *
       {
          ++this.pickedHat;
          if(this.pickedHat === 14)
@@ -59,7 +59,7 @@ package levelEditor
          this.display();
       }
       
-      private function display() : *
+      protected function display() : *
       {
          this.m.hat.gotoAndStop(this.pickedHat);
          this.m.hat.colorMC.gotoAndStop(this.pickedHat);

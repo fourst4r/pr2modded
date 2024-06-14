@@ -10,37 +10,37 @@ package levelEditor
    {
        
       
-      private var var_621:Number;
+      protected var var_621:Number;
       
-      private var var_603:Number;
+      protected var var_603:Number;
       
-      private var var_625:Number;
+      protected var var_625:Number;
       
-      private var var_582:Number;
+      protected var var_582:Number;
       
       protected var startWidth:Number;
       
       protected var startHeight:Number;
       
-      private var textObj:Boolean = false;
+      protected var textObj:Boolean = false;
       
       public var deleteable:Boolean = true;
       
       protected var resizable:Boolean = true;
       
-      private var deleteButton:DeleteButton;
+      protected var deleteButton:DeleteButton;
       
-      private var resizeButton:ResizeButton;
+      protected var resizeButton:ResizeButton;
       
       public var m:DisplayObject;
       
-      private var highlightOutline:Sprite;
+      protected var highlightOutline:Sprite;
       
       protected var editor:LevelEditor;
       
       protected var stageRef:Stage;
       
-      private var holder:Sprite;
+      protected var holder:Sprite;
       
       public var displayCode:int;
       
@@ -66,7 +66,7 @@ package levelEditor
          addEventListener(Event.ADDED,this.addedHandler,false,0,true);
       }
       
-      private function addedHandler(param1:Event) : *
+      protected function addedHandler(param1:Event) : *
       {
          this.holder = Sprite(parent);
       }
@@ -97,7 +97,7 @@ package levelEditor
          scaleY = _loc2_;
       }
       
-      private function onDrag(param1:MouseEvent) : *
+      protected function onDrag(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.holder.globalToLocal(new Point(param1.stageX,param1.stageY));
          _loc2_.x += this.var_621;
@@ -169,13 +169,13 @@ package levelEditor
          this.remove();
       }
       
-      private function onResizePress(param1:MouseEvent) : *
+      protected function onResizePress(param1:MouseEvent) : *
       {
          this.stageRef.addEventListener(MouseEvent.MOUSE_MOVE,this.resize);
          this.stageRef.addEventListener(MouseEvent.MOUSE_UP,this.onResizeUp);
       }
       
-      private function resize(param1:MouseEvent) : *
+      protected function resize(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.holder.globalToLocal(new Point(param1.stageX,param1.stageY));
          var _loc3_:Number = _loc2_.x - x;
@@ -184,7 +184,7 @@ package levelEditor
          scaleY = _loc4_ * (100 / this.startHeight) / 100;
       }
       
-      private function onResizeUp(param1:MouseEvent) : *
+      protected function onResizeUp(param1:MouseEvent) : *
       {
          this.stageRef.removeEventListener(MouseEvent.MOUSE_MOVE,this.resize);
          this.stageRef.removeEventListener(MouseEvent.MOUSE_UP,this.onResizeUp);
@@ -194,7 +194,7 @@ package levelEditor
          this.editor.cur.recordResize(this);
       }
       
-      private function showDeleteButton() : *
+      protected function showDeleteButton() : *
       {
          this.deleteButton = new DeleteButton();
          this.deleteButton.addEventListener(MouseEvent.MOUSE_DOWN,this.deleteObject,false,0,true);
@@ -211,7 +211,7 @@ package levelEditor
          }
       }
       
-      private function showResizeButton() : *
+      protected function showResizeButton() : *
       {
          this.resizeButton = new ResizeButton();
          addChild(this.resizeButton);
@@ -228,7 +228,7 @@ package levelEditor
          }
       }
       
-      private function setButtonScale() : *
+      protected function setButtonScale() : *
       {
          this.buttonScaleX = 1 / scaleX * (1 / parent.scaleX) * (1 / parent.parent.scaleX) * (1 / parent.parent.parent.scaleX);
          this.buttonScaleY = 1 / scaleY * (1 / parent.scaleY) * (1 / parent.parent.scaleY) * (1 / parent.parent.parent.scaleY);

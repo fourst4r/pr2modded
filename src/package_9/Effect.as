@@ -7,7 +7,7 @@ package package_9
    {
        
       
-      private var var_529:uint;
+      protected var var_529:uint;
       
       public function Effect(param1:Number = 0, param2:Number = 0)
       {

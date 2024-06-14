@@ -8,17 +8,17 @@ package package_4
    {
        
       
-      private var m:CreateGuildPopupGraphic;
+      protected var m:CreateGuildPopupGraphic;
       
-      private var guildId:int;
+      protected var guildId:int;
       
-      private var loading:Boolean = false;
+      protected var loading:Boolean = false;
       
-      private var loader:SuperLoader;
+      protected var loader:SuperLoader;
       
-      private var infoLoader:SuperLoader;
+      protected var infoLoader:SuperLoader;
       
-      private var emblem:EmblemLoader;
+      protected var emblem:EmblemLoader;
       
       public function CreateGuildPopup(param1:int = 0)
       {
@@ -61,7 +61,7 @@ package package_4
          }
       }
       
-      private function clickTransfer(param1:MouseEvent) : *
+      protected function clickTransfer(param1:MouseEvent) : *
       {
          if(Main.remember == true)
          {
@@ -74,7 +74,7 @@ package package_4
          }
       }
       
-      private function clickDeleteEmblem(param1:MouseEvent) : *
+      protected function clickDeleteEmblem(param1:MouseEvent) : *
       {
          this.emblem.getImage("default-emblem.jpg");
          this.m.deleteEmblem_bt.visible = false;
@@ -82,7 +82,7 @@ package package_4
          new MessagePopup("Once you press Confirm, this change will be final. To revert this change, click Cancel.");
       }
       
-      private function populateResult(param1:Event) : *
+      protected function populateResult(param1:Event) : *
       {
          var _loc2_:Object = this.infoLoader.parsedData.guild;
          this.m.nameBox.text = _loc2_.guild_name;
@@ -96,17 +96,17 @@ package package_4
          this.loading = false;
       }
       
-      private function clickChangeEmblem(param1:MouseEvent) : *
+      protected function clickChangeEmblem(param1:MouseEvent) : *
       {
          this.emblem.openBrowse();
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      private function clickConfirm(param1:MouseEvent) : *
+      protected function clickConfirm(param1:MouseEvent) : *
       {
          if(!this.loading)
          {
@@ -123,13 +123,13 @@ package package_4
          }
       }
       
-      private function emblemFinished(param1:Event) : *
+      protected function emblemFinished(param1:Event) : *
       {
          this.emblem.removeEventListener(EmblemLoader.FINISH_LOADING,this.emblemFinished);
          this.doConfirm();
       }
       
-      private function doConfirm() : *
+      protected function doConfirm() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          if(this.guildId != 0)
@@ -150,13 +150,13 @@ package package_4
          this.loader.load(_loc3_);
       }
       
-      private function confirmResponseError(param1:Event) : *
+      protected function confirmResponseError(param1:Event) : *
       {
          this.loading = false;
          this.m.confirm_bt.alpha = 1;
       }
       
-      private function accChangeHandler(param1:Event) : *
+      protected function accChangeHandler(param1:Event) : *
       {
          if(Boolean(this.loading) && Main.guild != this.guildId)
          {

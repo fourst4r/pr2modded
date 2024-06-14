@@ -11,29 +11,29 @@ package package_18.PartInfo
       public static var instance:PartInfoPopup;
        
       
-      private var m:StorePopupGraphic;
+      protected var m:StorePopupGraphic;
       
-      private var mode:String;
+      protected var mode:String;
       
-      private var ownedParts:Array;
+      protected var ownedParts:Array;
       
-      private var ownedEpics:Array;
+      protected var ownedEpics:Array;
       
-      private var hasEE:Boolean = false;
+      protected var hasEE:Boolean = false;
       
-      private var allParts:Array;
+      protected var allParts:Array;
       
-      private var var_513:int = 3;
+      protected var var_513:int = 3;
       
-      private var var_640:int = 137;
+      protected var var_640:int = 137;
       
-      private var var_632:int = 160;
+      protected var var_632:int = 160;
       
-      private var listings:Vector.<PartInfoListing>;
+      protected var listings:Vector.<PartInfoListing>;
       
-      private var scroll:CustomScrollBar;
+      protected var scroll:CustomScrollBar;
       
-      private var var_289:LoadingGraphic;
+      protected var var_289:LoadingGraphic;
       
       public var epicFlash:EpicFlash;
       
@@ -75,7 +75,7 @@ package package_18.PartInfo
          this.populateParts();
       }
       
-      private function populateParts() : *
+      protected function populateParts() : *
       {
          var _loc1_:Object = null;
          for each(_loc1_ in this.allParts)
@@ -88,7 +88,7 @@ package package_18.PartInfo
          }
       }
       
-      private function createListing(param1:Object) : PartInfoListing
+      protected function createListing(param1:Object) : PartInfoListing
       {
          var _loc2_:PartInfoListing = null;
          param1.has = false;
@@ -113,12 +113,12 @@ package package_18.PartInfo
          return _loc2_;
       }
       
-      private function onClose(param1:MouseEvent) : *
+      protected function onClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      private function clear() : *
+      protected function clear() : *
       {
          var _loc1_:PartInfoListing = null;
          for each(_loc1_ in this.listings)

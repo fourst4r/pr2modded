@@ -10,26 +10,26 @@ package package_14
    public class Tools extends SideBar
    {
       
-      private static var color:Number = 0;
+      protected static var color:Number = 0;
       
-      private static var size:Number = 4;
+      protected static var size:Number = 4;
        
       
-      private var stageRef:Stage;
+      protected var stageRef:Stage;
       
-      private var colorPicker:ColorPicker;
+      protected var colorPicker:ColorPicker;
       
-      private var brush:Brush;
+      protected var brush:Brush;
       
-      private var eraser:Eraser;
+      protected var eraser:Eraser;
       
-      private var sizePicker:SizePicker;
+      protected var sizePicker:SizePicker;
       
-      private var brushButton:BrushButtonGraphic;
+      protected var brushButton:BrushButtonGraphic;
       
-      private var eraserButton:EraserButtonGraphic;
+      protected var eraserButton:EraserButtonGraphic;
       
-      private var active:Boolean = false;
+      protected var active:Boolean = false;
       
       public function Tools()
       {
@@ -70,19 +70,19 @@ package package_14
          this.brush.setZoom(param1);
       }
       
-      private function onBrushDown(param1:MouseEvent) : *
+      protected function onBrushDown(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(this.brush);
       }
       
-      private function onEraserDown(param1:MouseEvent) : *
+      protected function onEraserDown(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(this.eraser);
       }
       
-      private function chooseColor(param1:Event) : *
+      protected function chooseColor(param1:Event) : *
       {
          Tools.color = this.colorPicker.getColor();
          this.brush.setColor(Tools.color);

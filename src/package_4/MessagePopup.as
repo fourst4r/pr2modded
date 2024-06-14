@@ -6,7 +6,7 @@ package package_4
    {
        
       
-      private var m:MessagePopupGraphic;
+      protected var m:MessagePopupGraphic;
       
       public function MessagePopup(param1:String)
       {
@@ -17,7 +17,7 @@ package package_4
          this.m.ok_bt.addEventListener(MouseEvent.CLICK,this.clickOk);
       }
       
-      private function clickOk(param1:MouseEvent) : *
+      protected function clickOk(param1:MouseEvent) : *
       {
          startFadeOut();
       }

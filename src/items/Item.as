@@ -16,9 +16,9 @@ package items
       
       protected var reloading:Boolean = false;
       
-      private var reloadListener:uint;
+      protected var reloadListener:uint;
       
-      private var available:Boolean = false;
+      protected var available:Boolean = false;
       
       public function Item(param1:LocalCharacter)
       {
@@ -70,7 +70,7 @@ package items
          }
       }
       
-      private function reloadingOnComplete() : *
+      protected function reloadingOnComplete() : *
       {
          this.reloading = false;
       }

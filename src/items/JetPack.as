@@ -7,7 +7,7 @@ package items
    {
        
       
-      private var spaceDown:Boolean = false;
+      protected var spaceDown:Boolean = false;
       
       public function JetPack(param1:LocalCharacter)
       {

@@ -7,7 +7,7 @@ package package_15
    {
        
       
-      private var m:ChooseLevelsModePopupGraphic;
+      protected var m:ChooseLevelsModePopupGraphic;
       
       public function ChooseLevelsModePopup()
       {
@@ -19,19 +19,19 @@ package package_15
          addChild(this.m);
       }
       
-      private function clickLevelReports(param1:MouseEvent) : *
+      protected function clickLevelReports(param1:MouseEvent) : *
       {
          new GetLevelReports();
          startFadeOut();
       }
       
-      private function clickMyLevels(param1:MouseEvent) : *
+      protected function clickMyLevels(param1:MouseEvent) : *
       {
          new GetLevels();
          startFadeOut();
       }
       
-      private function clickCancel(param1:MouseEvent) : *
+      protected function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

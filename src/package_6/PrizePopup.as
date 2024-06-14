@@ -11,11 +11,11 @@ package package_6
       public static var instance:PrizePopup;
        
       
-      private var m:PrizePopupGraphic;
+      protected var m:PrizePopupGraphic;
       
-      private var target:MovieClip;
+      protected var target:MovieClip;
       
-      private var var_207:EpicFlash;
+      protected var var_207:EpicFlash;
       
       public function PrizePopup(param1:String, param2:int, param3:String, param4:String = "", param5:Boolean = false, param6:Boolean = false)
       {
@@ -132,14 +132,14 @@ package package_6
          PrizePopup.instance = this;
       }
       
-      private function activateEpicAnimation() : *
+      protected function activateEpicAnimation() : *
       {
          this.var_207.addItem(this.target.colorMC2);
          this.var_207.method_580(300);
          this.var_207.start();
       }
       
-      private function clickClose(param1:MouseEvent) : *
+      protected function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

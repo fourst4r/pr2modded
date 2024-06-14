@@ -9,17 +9,17 @@ package lobby
       public static var lobbyRight:LobbyRight;
        
       
-      private var campaignTab:LobbyTab;
+      protected var campaignTab:LobbyTab;
       
-      private var atbTab:LobbyTab;
+      protected var atbTab:LobbyTab;
       
-      private var wbTab:LobbyTab;
+      protected var wbTab:LobbyTab;
       
-      private var newTab:LobbyTab;
+      protected var newTab:LobbyTab;
       
-      private var searchTab:LobbyTab;
+      protected var searchTab:LobbyTab;
       
-      private var favsTab:LobbyTab;
+      protected var favsTab:LobbyTab;
       
       public function LobbyRight()
       {
@@ -44,32 +44,32 @@ package lobby
          }
       }
       
-      private function clickCampaign() : *
+      protected function clickCampaign() : *
       {
          changePage(new Campaign());
       }
       
-      private function clickBest() : *
+      protected function clickBest() : *
       {
          changePage(new Best());
       }
       
-      private function clickBestWeek() : *
+      protected function clickBestWeek() : *
       {
          changePage(new BestWeek());
       }
       
-      private function clickNew() : *
+      protected function clickNew() : *
       {
          changePage(new Newest());
       }
       
-      private function clickSearch() : *
+      protected function clickSearch() : *
       {
          changePage(new Search());
       }
       
-      private function clickFavs() : *
+      protected function clickFavs() : *
       {
          changePage(new Favorites());
       }

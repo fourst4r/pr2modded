@@ -11,40 +11,40 @@ package package_9
    public class Egg extends class_81
    {
       
-      private static var var_406:int = 0;
+      protected static var var_406:int = 0;
       
-      private static var var_466:int = 1;
+      protected static var var_466:int = 1;
       
-      private static var var_474:int = 2;
+      protected static var var_474:int = 2;
       
-      private static var var_491:int = 3;
+      protected static var var_491:int = 3;
       
-      private static var rand:Random = new Random(1);
+      protected static var rand:Random = new Random(1);
       
-      private static var var_223:int = 1;
+      protected static var var_223:int = 1;
       
-      private static var mode:int = 3;
+      protected static var mode:int = 3;
        
       
-      private var var_486:int;
+      protected var var_486:int;
       
-      private var m:EggGraphic;
+      protected var m:EggGraphic;
       
-      private var scale:Number = 0.12;
+      protected var scale:Number = 0.12;
       
-      private var maxX:int;
+      protected var maxX:int;
       
-      private var minX:int;
+      protected var minX:int;
       
-      private var maxY:int;
+      protected var maxY:int;
       
-      private var minY:int;
+      protected var minY:int;
       
-      private var var_286:int = 0;
+      protected var var_286:int = 0;
       
-      private var id:int;
+      protected var id:int;
       
-      private var var_382:int = 0;
+      protected var var_382:int = 0;
       
       public function Egg()
       {
@@ -121,7 +121,7 @@ package package_9
          }
       }
       
-      private function method_723() : *
+      protected function method_723() : *
       {
          if(posX > this.maxX)
          {

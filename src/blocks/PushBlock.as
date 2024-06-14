@@ -66,7 +66,7 @@ package blocks
          }
       }
       
-      private function push(param1:int, param2:int) : *
+      protected function push(param1:int, param2:int) : *
       {
          var _loc3_:Point = Data.method_9(param1,param2,map.rotation);
          move(_loc3_.x,_loc3_.y,map);
