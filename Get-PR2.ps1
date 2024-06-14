@@ -48,6 +48,20 @@ function Edit-Scripts {
     # Testing mode allows the game to actually initialize in the debugger.
     $main = "$SrcFolder\Main.as"
     (Get-Content $main) -replace "testing:Boolean = false","testing:Boolean = true" | Set-Content $main
+
+    # "private" -> "protected" so we can hook classes properly.
+    $excludeFiles = @("IceWaveShot.as", "Map.as", "class_229.as", "PlayersTabListHolder.as", "Removable.as")
+    $files = Get-ChildItem . *.as -rec
+    foreach ($file in $files)
+    {
+        if ($excludeFiles -notcontains $file.Name) {
+            $content = Get-Content $file.PSPath
+            $updatedContent = $content | ForEach-Object {
+                $_ -replace "\bprivate\b", "protected"
+            }
+            $updatedContent | Set-Content $file.PSPath
+        }
+    }
 }
 
 function Publish-App {

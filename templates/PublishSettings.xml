@@ -97,7 +97,7 @@
       <AS3Dialect>AS3</AS3Dialect>
       <AS3ExportFrame>1</AS3ExportFrame>
       <AS3Optimize>1</AS3Optimize>
-      <ExportSwc>0</ExportSwc>
+      <ExportSwc>1</ExportSwc>
       <ScriptStuckDelay>15</ScriptStuckDelay>
       <IncludeXMP>1</IncludeXMP>
       <HardwareAcceleration>1</HardwareAcceleration>
