@@ -1,0 +1,7 @@
+bin/
+version.txt
+*.swf
+*.exe
+*.swc
+src/RECOVER_pr2/**
+src/pr2/
