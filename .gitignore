@@ -3,5 +3,5 @@ version.txt
 *.swf
 *.exe
 *.swc
-src/RECOVER_pr2/**
-src/pr2/
+clientsrc/RECOVER_pr2/
+clientsrc/pr2/
