@@ -3,7 +3,7 @@
 --class-path lib/ui
 --define swf-direct-blit
 --define network-sandbox
---swf-lib src/pr2.swc
+--swf-lib clientsrc/pr2.swc
 # --swf-lib-extern src/pr2.swf
 --swf-version 11.4
 --swf bin/loader.swf
