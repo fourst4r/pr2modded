@@ -10,7 +10,7 @@ package background
    {
        
       
-      protected var segSize:Number = 30;
+      private var segSize:Number = 30;
       
       protected var blockArray:Array;
       

@@ -7,14 +7,14 @@ package package_9
    public class IceWaveShot extends ShotEffect
    {
       
-      private static var var_168:int = 0;
+      protected static var var_168:int = 0;
        
       
-      private var m:IceWaveGraphic;
+      protected var m:IceWaveGraphic;
       
-      private var var_322:Number;
+      protected var var_322:Number;
       
-      private var var_278:Number;
+      protected var var_278:Number;
       
       public function IceWaveShot(param1:Number, param2:Number, param3:Number, param4:int, param5:int, param6:Number, param7:int = 75)
       {
@@ -29,7 +29,7 @@ package package_9
          this.method_219();
       }
       
-      private function method_219() : *
+      protected function method_219() : *
       {
          if(!isRemoved())
          {

@@ -12,13 +12,13 @@ package background
    {
        
       
-      private var startBlockNum:int = 0;
+      protected var startBlockNum:int = 0;
       
-      private var miniMap:MiniMap;
+      protected var miniMap:MiniMap;
       
-      private var moveInterval:uint;
+      protected var moveInterval:uint;
       
-      private var segSize:Number = 30;
+      protected var segSize:Number = 30;
       
       public var maxY:Number = -9999999;
       
@@ -28,19 +28,19 @@ package background
       
       public var minX:Number = 9999999;
       
-      private var moveBlocksArray:Vector.<MoveBlock>;
+      protected var moveBlocksArray:Vector.<MoveBlock>;
       
-      private var startTime:int;
+      protected var startTime:int;
       
-      private var moves:int = 0;
+      protected var moves:int = 0;
       
-      private var moveTime:int = 5000;
+      protected var moveTime:int = 5000;
       
-      private var rand:Random;
+      protected var rand:Random;
       
-      private var placedEggs:int = 0;
+      protected var placedEggs:int = 0;
       
-      private var eggPtsArray:Array;
+      protected var eggPtsArray:Array;
       
       public function Map(param1:MiniMap, param2:Course)
       {
@@ -146,7 +146,7 @@ package background
          }
       }
       
-      private function placeEggs() : *
+      protected function placeEggs() : *
       {
          var _loc1_:Point = null;
          for each(_loc1_ in this.eggPtsArray)
@@ -156,7 +156,7 @@ package background
          this.eggPtsArray = new Array();
       }
       
-      private function attachEgg(param1:int, param2:int) : *
+      protected function attachEgg(param1:int, param2:int) : *
       {
          var _loc3_:Egg = null;
          if(this.placedEggs < 25)
@@ -170,12 +170,12 @@ package background
          }
       }
       
-      private function setStartPos(param1:int, param2:int, param3:int) : *
+      protected function setStartPos(param1:int, param2:int, param3:int) : *
       {
          Course.course.addStartPos(param1,new Point(param2,param3));
       }
       
-      private function addFinish(param1:int, param2:int, param3:int) : *
+      protected function addFinish(param1:int, param2:int, param3:int) : *
       {
          Course.course.finishBlocks.push({
             "id":param1,
@@ -200,7 +200,7 @@ package background
          this.placeEggs();
       }
       
-      private function determineMoveBlockDirection() : *
+      protected function determineMoveBlockDirection() : *
       {
          var _loc3_:MoveBlock = null;
          var _loc4_:int = 0;
@@ -216,7 +216,7 @@ package background
          this.setMoveInterval(this.doMoveBlocks,1000);
       }
       
-      private function doMoveBlocks() : *
+      protected function doMoveBlocks() : *
       {
          var _loc3_:MoveBlock = null;
          var _loc1_:int = 0;
@@ -256,7 +256,7 @@ package background
          return false;
       }
       
-      private function setMoveInterval(param1:Function, param2:int) : *
+      protected function setMoveInterval(param1:Function, param2:int) : *
       {
          this.clearMoveInterval();
          this.moveInterval = setTimeout(param1,param2);
