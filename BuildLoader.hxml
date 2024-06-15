@@ -9,5 +9,10 @@
 --swf bin/loader.swf
 --define swf-header=550:400:27:ffffff
 # --dce full
+--debug
 
 --cmd haxe --run bundler/Bundle.hx
+
+modding
+api
+fl.controls.listClasses.ICellRenderer

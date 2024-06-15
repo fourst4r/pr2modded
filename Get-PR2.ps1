@@ -46,8 +46,8 @@ function Edit-Scripts {
     )
 
     # Testing mode allows the game to actually initialize in the debugger.
-    $main = "$SrcFolder\Main.as"
-    (Get-Content $main) -replace "testing:Boolean = false","testing:Boolean = true" | Set-Content $main
+    # $main = "$SrcFolder\Main.as"
+    # (Get-Content $main) -replace "testing:Boolean = false","testing:Boolean = true" | Set-Content $main
 
     # "private" -> "protected" so we can hook classes properly.
     $excludeFiles = @("ShotEffect.as", "BlockBackground.as", "class_229.as", "PlayersTabListHolder.as", "Removable.as")

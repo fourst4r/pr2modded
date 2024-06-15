@@ -26,7 +26,7 @@ package
       
       public static const beta:Boolean = false;
       
-      public static const testing:Boolean = true;
+      public static const testing:Boolean = false;
       
       public static const build:String = "29-oct-2023-v168_2_1";
       
