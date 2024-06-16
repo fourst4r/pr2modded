@@ -5,3 +5,4 @@ version.txt
 *.swc
 clientsrc/RECOVER_pr2/
 clientsrc/pr2/
+dump/

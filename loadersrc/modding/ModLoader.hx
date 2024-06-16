@@ -1,6 +1,5 @@
 package modding;
 
-import flash.system.Security;
 import flash.events.EventDispatcher;
 import flash.events.IOErrorEvent;
 import flash.events.Event;
@@ -40,16 +39,6 @@ class ModLoader extends EventDispatcher {
     function onComplete(e:Event) {
         trace("Loaded mod successfully "+_ctx.current?.name);
         final loaderInfo:LoaderInfo = e.target;
-        Security.allowDomain(loaderInfo.loaderURL);
-        Security.allowInsecureDomain(loaderInfo.loaderURL);
-        Security.allowDomain(loaderInfo.url);
-        Security.allowInsecureDomain(loaderInfo.url);
-        // loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e:UncaughtErrorEvent) -> {
-        //     trace("UNCAUGHT ERROR! "+e.error);
-        //     new MessagePopup("inmodloaderERROR FFS: "+e.error);
-        // });
-
-        // Lib.current.stage.addChild(loaderInfo.content);
 
         try {
             final modClass = loaderInfo.applicationDomain.getDefinition('${_ctx.current.pkg}::Mod');
