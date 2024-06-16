@@ -1,0 +1,7 @@
+--class-path .
+--swf bin/skinning.swf
+--swf-lib-extern ../../bin/loader.swf
+--define network-sandbox
+--swf-version 11.4
+--debug
+skinning.Mod

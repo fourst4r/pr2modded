@@ -1,8 +1,0 @@
---class-path .
---swf bin/example8.swf
-# --swf-lib-extern ../../clientsrc/pr2.swc
---swf-lib-extern ../../bin/loader.swf
---dce std
---main Example
---define network-sandbox
---swf-version 11.4

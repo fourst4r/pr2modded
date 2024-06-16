@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Modhub",
+        "author": "oxy",
+        "description": "Handles loading and updating of mods.",
+        "version": "1.0.0",
+        "file": "example/bin/modhub.swf",
+        "pkg": "modhub"
+    },
+    {
+        "name": "Block Skinning Example",
+        "author": "oxy",
+        "description": "Turns certain blocks to dark mode.",
+        "version": "1.0.0",
+        "file": "example/bin/skinning.swf",
+        "pkg": "skinning"
+    }
+]

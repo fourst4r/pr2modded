@@ -1,14 +1,12 @@
---main ModLoader
+--main ModLoaderMain
 --class-path loadersrc
 --class-path lib/ui
 --define swf-direct-blit
 --define network-sandbox
 --swf-lib clientsrc/pr2.swc
-# --swf-lib-extern src/pr2.swf
 --swf-version 11.4
 --swf bin/loader.swf
 --define swf-header=550:400:27:ffffff
-# --dce full
 --debug
 
 --cmd haxe --run bundler/Bundle.hx
