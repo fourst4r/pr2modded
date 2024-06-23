@@ -1,0 +1,8 @@
+--class-path .
+--swf bin/betterle.swf
+--swf-lib-extern ../../bin/loader.swf
+--swf-lib modhub/assets.swf
+--define network-sandbox
+--swf-version 11.4
+--debug
+betterle

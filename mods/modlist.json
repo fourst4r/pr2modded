@@ -14,5 +14,13 @@
         "version": "1.0.0",
         "file": "example/bin/skinning.swf",
         "pkg": "skinning"
+    },
+    {
+        "name": "Better LE",
+        "author": "oxy",
+        "description": "Turns certain blocks to dark mode.",
+        "version": "1.0.0",
+        "file": "example/bin/betterle.swf",
+        "pkg": "betterle"
     }
 ]

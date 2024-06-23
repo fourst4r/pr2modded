@@ -57,7 +57,7 @@ function Edit-Scripts {
         if ($excludeFiles -notcontains $file.Name) {
             $content = Get-Content $file.PSPath
             $updatedContent = $content | ForEach-Object {
-                $_ -replace "\bprivate\b", "protected"
+                $_ -replace "\b(private|protected)\b", "public"
             }
             $updatedContent | Set-Content $file.PSPath
         }

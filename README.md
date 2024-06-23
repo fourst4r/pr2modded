@@ -4,9 +4,11 @@ Platform Racing 2, with mods.
 # Authoring mods
 PR2's decompiled source code is provided as reference for mods in `clientsrc/`.
 
+Class/fields accessibility is modified for greater freedom. `protected` -> `public` and `private` -> `internal` (to retain a meagering sense of privacy)
+
 # Building ModLoader
 Requires dependencies:
-- Adobe Animate 2021 (other versions untested)
+- Adobe Animate 2021 (other versions untested) TODO: replace this dep with something better
 - FFDec.exe (latest version)
 - Haxe v4.0.0+
 
