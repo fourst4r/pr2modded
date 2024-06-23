@@ -1,25 +1,17 @@
 package;
 
-import api.Game;
-import haxe.CallStack;
 import haxe.io.Path;
 import haxe.Json;
 import modding.*;
 import menu.LoginPage;
 import page.HookedPageHolder;
 import flash.net.URLRequestHeader;
-import flash.events.UncaughtErrorEvent;
 import flash.events.SecurityErrorEvent;
 import flash.net.URLLoader;
-import flash.system.ApplicationDomain;
-import flash.system.LoaderContext;
-import flash.display.LoaderInfo;
 import flash.events.IOErrorEvent;
 import flash.events.Event;
 import flash.net.URLRequest;
-import flash.display.Loader;
 import package_4.MessagePopup;
-import flash.system.Security;
 import flash.Lib;
 
 class ModLoaderMain {
@@ -51,12 +43,10 @@ class ModLoaderMain {
 
     static function loadModList() {
         final urlloader = new URLLoader();
-        
         urlloader.addEventListener(Event.COMPLETE, (e:Event) -> {
             final modlist:Array<ModInfo> = Json.parse(urlloader.data);
             final modhub = modlist.find(m -> m.name == "Modhub");
-            trace("modhub="+modhub);
-            loadMod3(modhub, modlist);
+            loadMod(modhub, modlist);
         });
         urlloader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, errorHandler,false,0,true);
         urlloader.addEventListener(IOErrorEvent.IO_ERROR, e -> {
@@ -78,7 +68,7 @@ class ModLoaderMain {
         loader.load(uri, ctx);
     }
 
-    static function loadMod3(info:ModInfo, allMods:Array<ModInfo>) {
+    static function loadMod(info:ModInfo, allMods:Array<ModInfo>) {
         final loader = new modding.ModLoader();
         loader.addWeakListener(Event.COMPLETE, (e:Event) -> {
             Main.stage.addChild(loader.getContent());
