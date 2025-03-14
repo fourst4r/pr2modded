@@ -8,15 +8,15 @@ package package_8
    {
        
       
-      protected var var_416:uint;
+      public var var_416:uint;
       
-      protected var var_444:int;
+      public var var_444:int;
       
-      protected var duration:int;
+      public var duration:int;
       
-      protected var life:int;
+      public var life:int;
       
-      protected var target:DisplayObject;
+      public var target:DisplayObject;
       
       public function class_125(param1:int, param2:int, param3:DisplayObject)
       {
@@ -28,7 +28,7 @@ package package_8
          this.var_416 = setInterval(this.method_571,param1);
       }
       
-      protected function method_571() : *
+      public function method_571() : *
       {
          var _loc1_:Number = Number(this.makeX());
          var _loc2_:Number = Number(this.makeY());
@@ -40,17 +40,17 @@ package package_8
          }
       }
       
-      protected function makeX() : Number
+      public function makeX() : Number
       {
          return this.target.x + Math.random() * 20 - 10;
       }
       
-      protected function makeY() : Number
+      public function makeY() : Number
       {
          return this.target.y - Math.random() * 55;
       }
       
-      protected function createParticle(param1:Number, param2:Number) : DisplayObject
+      public function createParticle(param1:Number, param2:Number) : DisplayObject
       {
          return new class_178(param1,param2);
       }

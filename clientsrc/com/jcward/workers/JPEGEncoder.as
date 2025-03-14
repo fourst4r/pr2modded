@@ -8,61 +8,61 @@ package com.jcward.workers
    {
        
       
-      protected var ZigZag:Array;
+      public var ZigZag:Array;
       
-      protected var quality:Number;
+      public var quality:Number;
       
-      protected var asyncOutstanding:Boolean = false;
+      public var asyncOutstanding:Boolean = false;
       
-      protected var YTable:Array;
+      public var YTable:Array;
       
-      protected var UVTable:Array;
+      public var UVTable:Array;
       
-      protected var fdtbl_Y:Array;
+      public var fdtbl_Y:Array;
       
-      protected var fdtbl_UV:Array;
+      public var fdtbl_UV:Array;
       
-      protected var YDC_HT:Array;
+      public var YDC_HT:Array;
       
-      protected var UVDC_HT:Array;
+      public var UVDC_HT:Array;
       
-      protected var YAC_HT:Array;
+      public var YAC_HT:Array;
       
-      protected var UVAC_HT:Array;
+      public var UVAC_HT:Array;
       
-      protected var std_dc_luminance_nrcodes:Array;
+      public var std_dc_luminance_nrcodes:Array;
       
-      protected var std_dc_luminance_values:Array;
+      public var std_dc_luminance_values:Array;
       
-      protected var std_ac_luminance_nrcodes:Array;
+      public var std_ac_luminance_nrcodes:Array;
       
-      protected var std_ac_luminance_values:Array;
+      public var std_ac_luminance_values:Array;
       
-      protected var std_dc_chrominance_nrcodes:Array;
+      public var std_dc_chrominance_nrcodes:Array;
       
-      protected var std_dc_chrominance_values:Array;
+      public var std_dc_chrominance_values:Array;
       
-      protected var std_ac_chrominance_nrcodes:Array;
+      public var std_ac_chrominance_nrcodes:Array;
       
-      protected var std_ac_chrominance_values:Array;
+      public var std_ac_chrominance_values:Array;
       
-      protected var bitcode:Array;
+      public var bitcode:Array;
       
-      protected var category:Array;
+      public var category:Array;
       
-      protected var byteout:ByteArray;
+      public var byteout:ByteArray;
       
-      protected var bytenew:int = 0;
+      public var bytenew:int = 0;
       
-      protected var bytepos:int = 7;
+      public var bytepos:int = 7;
       
-      protected var DU:Array;
+      public var DU:Array;
       
-      protected var YDU:Array;
+      public var YDU:Array;
       
-      protected var UDU:Array;
+      public var UDU:Array;
       
-      protected var VDU:Array;
+      public var VDU:Array;
       
       public function JPEGEncoder(param1:Number = 50)
       {
@@ -252,7 +252,7 @@ package com.jcward.workers
          return this.byteout;
       }
       
-      protected function initQuantTables(param1:int) : void
+      public function initQuantTables(param1:int) : void
       {
          var _loc2_:int = 0;
          var _loc3_:Number = NaN;
@@ -306,7 +306,7 @@ package com.jcward.workers
          }
       }
       
-      protected function computeHuffmanTbl(param1:Array, param2:Array) : Array
+      public function computeHuffmanTbl(param1:Array, param2:Array) : Array
       {
          var _loc7_:int = 0;
          var _loc3_:int = 0;
@@ -331,7 +331,7 @@ package com.jcward.workers
          return _loc5_;
       }
       
-      protected function initHuffmanTbl() : void
+      public function initHuffmanTbl() : void
       {
          this.YDC_HT = this.computeHuffmanTbl(this.std_dc_luminance_nrcodes,this.std_dc_luminance_values);
          this.UVDC_HT = this.computeHuffmanTbl(this.std_dc_chrominance_nrcodes,this.std_dc_chrominance_values);
@@ -339,7 +339,7 @@ package com.jcward.workers
          this.UVAC_HT = this.computeHuffmanTbl(this.std_ac_chrominance_nrcodes,this.std_ac_chrominance_values);
       }
       
-      protected function initCategoryNumber() : void
+      public function initCategoryNumber() : void
       {
          var _loc3_:int = 0;
          var _loc1_:* = 1;
@@ -371,7 +371,7 @@ package com.jcward.workers
          }
       }
       
-      protected function writeBits(param1:BitString) : void
+      public function writeBits(param1:BitString) : void
       {
          var _loc2_:int = param1.val;
          var _loc3_:int = param1.len - 1;
@@ -400,18 +400,18 @@ package com.jcward.workers
          }
       }
       
-      protected function writeByte(param1:int) : void
+      public function writeByte(param1:int) : void
       {
          this.byteout.writeByte(param1);
       }
       
-      protected function writeWord(param1:int) : void
+      public function writeWord(param1:int) : void
       {
          this.writeByte(param1 >> 8 & 255);
          this.writeByte(param1 & 255);
       }
       
-      protected function fDCTQuant(param1:Array, param2:Array) : Array
+      public function fDCTQuant(param1:Array, param2:Array) : Array
       {
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -516,7 +516,7 @@ package com.jcward.workers
          return param1;
       }
       
-      protected function writeAPP0() : void
+      public function writeAPP0() : void
       {
          this.writeWord(65504);
          this.writeWord(16);
@@ -534,7 +534,7 @@ package com.jcward.workers
          this.writeByte(0);
       }
       
-      protected function writeSOF0(param1:int, param2:int) : void
+      public function writeSOF0(param1:int, param2:int) : void
       {
          this.writeWord(65472);
          this.writeWord(17);
@@ -553,7 +553,7 @@ package com.jcward.workers
          this.writeByte(1);
       }
       
-      protected function writeDQT() : void
+      public function writeDQT() : void
       {
          var _loc1_:int = 0;
          this.writeWord(65499);
@@ -574,7 +574,7 @@ package com.jcward.workers
          }
       }
       
-      protected function writeDHT() : void
+      public function writeDHT() : void
       {
          var _loc1_:int = 0;
          this.writeWord(65476);
@@ -633,7 +633,7 @@ package com.jcward.workers
          }
       }
       
-      protected function writeSOS() : void
+      public function writeSOS() : void
       {
          this.writeWord(65498);
          this.writeWord(12);
@@ -649,7 +649,7 @@ package com.jcward.workers
          this.writeByte(0);
       }
       
-      protected function processDU(param1:Array, param2:Array, param3:Number, param4:Array, param5:Array) : Number
+      public function processDU(param1:Array, param2:Array, param3:Number, param4:Array, param5:Array) : Number
       {
          var _loc8_:int = 0;
          var _loc12_:int = 0;
@@ -714,7 +714,7 @@ package com.jcward.workers
          return param3;
       }
       
-      protected function RGB2YUV(param1:BitmapData, param2:int, param3:int) : void
+      public function RGB2YUV(param1:BitmapData, param2:int, param3:int) : void
       {
          var _loc6_:int = 0;
          var _loc7_:uint = 0;

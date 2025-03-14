@@ -9,17 +9,17 @@ package com.hurlant.crypto.prng
    {
        
       
-      protected var state:IPRNG;
+      public var state:IPRNG;
       
-      protected var ready:Boolean = false;
+      public var ready:Boolean = false;
       
-      protected var pool:ByteArray;
+      public var pool:ByteArray;
       
-      protected var psize:int;
+      public var psize:int;
       
-      protected var pptr:int;
+      public var pptr:int;
       
-      protected var seeded:Boolean = false;
+      public var seeded:Boolean = false;
       
       public function Random(param1:Class = null)
       {

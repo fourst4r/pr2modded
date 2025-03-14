@@ -6,7 +6,7 @@ package package_9
    {
        
       
-      protected var m:TeleportAnimation;
+      public var m:TeleportAnimation;
       
       public function TeleportPop(param1:Number, param2:Number)
       {

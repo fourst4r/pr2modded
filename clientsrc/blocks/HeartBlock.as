@@ -12,7 +12,7 @@ package blocks
          super(Objects.BLOCK_HEART);
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          super.useSupply(param1);
          param1.gainHeart();

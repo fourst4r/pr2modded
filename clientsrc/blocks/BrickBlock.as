@@ -33,7 +33,7 @@ package blocks
          }
       }
       
-      override protected function activate(param1:String = "") : *
+      override public function activate(param1:String = "") : *
       {
          var _loc3_:int = 0;
          var _loc4_:BrickPieceGraphic = null;

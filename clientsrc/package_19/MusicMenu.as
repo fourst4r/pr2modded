@@ -9,9 +9,9 @@ package package_19
    {
        
       
-      protected var list:GameSound;
+      public var list:GameSound;
       
-      protected var target:MusicMenuButton;
+      public var target:MusicMenuButton;
       
       public function MusicMenu(param1:MusicMenuButton, param2:String)
       {
@@ -26,7 +26,7 @@ package package_19
          this.list.addEventListener(Event.CHANGE,this.changeSong,false,0,true);
       }
       
-      protected function changeSong(param1:Event) : *
+      public function changeSong(param1:Event) : *
       {
          LevelEditor.editor.setSong(param1.target.selectedItem.id);
       }

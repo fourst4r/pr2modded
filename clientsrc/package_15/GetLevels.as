@@ -11,9 +11,9 @@ package package_15
    {
        
       
-      protected var dataURL:String = "/levels_get.php";
+      public var dataURL:String = "/levels_get.php";
       
-      protected var loader:SuperLoader;
+      public var loader:SuperLoader;
       
       public function GetLevels(param1:String = null)
       {
@@ -29,7 +29,7 @@ package package_15
          this.loader.load(_loc2_);
       }
       
-      protected function onComplete(param1:Event) : *
+      public function onComplete(param1:Event) : *
       {
          var _loc2_:Object = null;
          var _loc3_:Object = null;
@@ -46,14 +46,14 @@ package package_15
          this.hideLoadingGraphic();
       }
       
-      override protected function loadListing(param1:class_229) : *
+      override public function loadListing(param1:class_229) : *
       {
          var _loc2_:GetLevelsPopupItem = GetLevelsPopupItem(param1);
          new LoadingLevelPopup(_loc2_.level.level_id,_loc2_.level.version);
          startFadeOut();
       }
       
-      override protected function deleteListing(param1:class_229) : *
+      override public function deleteListing(param1:class_229) : *
       {
          var _loc2_:GetLevelsPopupItem = GetLevelsPopupItem(param1);
          new ConfirmPopup(this.confirmDelete,"Are you sure you want to delete \"" + Data.escapeString(_loc2_.level.title) + "\"?");

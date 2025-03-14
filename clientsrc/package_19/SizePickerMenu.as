@@ -8,9 +8,9 @@ package package_19
    {
        
       
-      protected var m:SizePickerMenuGraphic;
+      public var m:SizePickerMenuGraphic;
       
-      protected var target:SizePicker;
+      public var target:SizePicker;
       
       public function SizePickerMenu(param1:SizePicker, param2:Number = 4)
       {
@@ -23,17 +23,17 @@ package package_19
          this.m.textBox.addEventListener(Event.CHANGE,this.textChange);
       }
       
-      protected function slideChange(param1:SliderEvent) : *
+      public function slideChange(param1:SliderEvent) : *
       {
          this.setSize(param1.value);
       }
       
-      protected function textChange(param1:Event) : *
+      public function textChange(param1:Event) : *
       {
          this.setSize(param1.target.text);
       }
       
-      protected function setSize(param1:Number) : *
+      public function setSize(param1:Number) : *
       {
          param1 = Math.round(param1);
          param1 = param1 < 1 ? 1 : param1;

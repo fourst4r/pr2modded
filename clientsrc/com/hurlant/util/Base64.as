@@ -5,7 +5,7 @@ package com.hurlant.util
    public class Base64
    {
       
-      protected static const BASE64_CHARS:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+      public static const BASE64_CHARS:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
       
       public static const version:String = "1.0.0";
        

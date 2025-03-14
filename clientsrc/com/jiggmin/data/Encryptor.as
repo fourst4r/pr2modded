@@ -8,9 +8,9 @@ package com.jiggmin.data
    {
        
       
-      protected var mode:CBCMode;
+      public var mode:CBCMode;
       
-      protected var iv:String;
+      public var iv:String;
       
       public function Encryptor()
       {
@@ -48,12 +48,12 @@ package com.jiggmin.data
          return _loc2_.readUTFBytes(_loc2_.bytesAvailable);
       }
       
-      protected function byteArrayToString(param1:ByteArray) : String
+      public function byteArrayToString(param1:ByteArray) : String
       {
          return Base64.encodeByteArray(param1);
       }
       
-      protected function stringToByteArray(param1:String) : ByteArray
+      public function stringToByteArray(param1:String) : ByteArray
       {
          return Base64.decodeToByteArray(param1);
       }

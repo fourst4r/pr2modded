@@ -7,9 +7,9 @@ package blocks
    {
        
       
-      protected var arrow:MoveArrow;
+      public var arrow:MoveArrow;
       
-      protected var dir:int;
+      public var dir:int;
       
       public function MoveBlock()
       {
@@ -45,7 +45,7 @@ package blocks
          }
       }
       
-      protected function displayArrow() : *
+      public function displayArrow() : *
       {
          addChild(this.arrow);
          this.arrow.x = this.arrow.y = 15;
@@ -67,7 +67,7 @@ package blocks
          }
       }
       
-      protected function removeArrow() : *
+      public function removeArrow() : *
       {
          if(this.arrow.parent != null)
          {

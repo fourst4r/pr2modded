@@ -8,7 +8,7 @@ package menu
    {
        
       
-      protected var m:ConnectingPopupGraphic;
+      public var m:ConnectingPopupGraphic;
       
       public function ConnectingPopup()
       {
@@ -33,12 +33,12 @@ package menu
          startFadeOut();
       }
       
-      protected function method_99(param1:Event) : *
+      public function method_99(param1:Event) : *
       {
          startFadeOut();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
          if(Main.socket != null)

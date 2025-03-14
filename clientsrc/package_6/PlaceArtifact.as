@@ -12,21 +12,21 @@ package package_6
       public static var instance:PlaceArtifact;
        
       
-      protected var levelId:int;
+      public var levelId:int;
       
-      protected var xPos:int;
+      public var xPos:int;
       
-      protected var yPos:int;
+      public var yPos:int;
       
-      protected var rot:int;
+      public var rot:int;
       
-      protected var setTime:int = 0;
+      public var setTime:int = 0;
       
-      protected var overrideSched:Boolean = false;
+      public var overrideSched:Boolean = false;
       
-      protected var uploading:UploadingPopup;
+      public var uploading:UploadingPopup;
       
-      protected var m:PlaceArtifactGraphic;
+      public var m:PlaceArtifactGraphic;
       
       public function PlaceArtifact(param1:int, param2:int, param3:int, param4:int)
       {
@@ -53,7 +53,7 @@ package package_6
          this.m.cancel_bt.addEventListener(MouseEvent.CLICK,this.clickCancel,false,0,true);
       }
       
-      protected function populateOptions(param1:Boolean = false) : *
+      public function populateOptions(param1:Boolean = false) : *
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
@@ -120,23 +120,23 @@ package package_6
          }
       }
       
-      protected function validateText(param1:* = null) : *
+      public function validateText(param1:* = null) : *
       {
          this.m.hourBox.text = Data.numLimit(int(this.m.hourBox.text),1,12);
          this.m.minBox.text = (int(this.m.minBox.text) < 10 ? "0" : "") + Data.numLimit(int(this.m.minBox.text),0,59);
       }
       
-      protected function selChange(param1:Event) : *
+      public function selChange(param1:Event) : *
       {
          this.populateOptions();
       }
       
-      protected function checkNowBox(param1:Event) : *
+      public function checkNowBox(param1:Event) : *
       {
          this.m.monthSel.enabled = this.m.daySel.enabled = this.m.yearSel.enabled = this.m.hourBox.enabled = this.m.minBox.enabled = this.m.meridSel.enabled = !this.m.now_chk.selected;
       }
       
-      protected function showTime(param1:Date) : *
+      public function showTime(param1:Date) : *
       {
          var _loc2_:int = param1.month;
          var _loc3_:int = param1.date;
@@ -152,7 +152,7 @@ package package_6
          this.m.meridSel.selectedIndex = _loc6_;
       }
       
-      protected function getDateFromInput() : *
+      public function getDateFromInput() : *
       {
          this.validateText();
          var _loc1_:int = int(this.m.hourBox.text) + int(this.m.meridSel.selectedItem.data) * 12;
@@ -161,7 +161,7 @@ package package_6
          return new Date(this.m.yearSel.selectedItem.data,this.m.monthSel.selectedItem.data,this.m.daySel.selectedItem.data,_loc1_,Data.numLimit(int(this.m.minBox.text),0,59));
       }
       
-      protected function clickPlace(param1:MouseEvent) : *
+      public function clickPlace(param1:MouseEvent) : *
       {
          var _loc2_:Date = this.getDateFromInput();
          this.setTime = _loc2_.time / 1000 < Data.getTimestamp() || Boolean(this.m.now_chk.selected) ? 0 : int(_loc2_.time / 1000);
@@ -169,7 +169,7 @@ package package_6
          new ConfirmPopup(this.placeArtifact,"Are you sure you want to place the artifact " + _loc3_ + "?");
       }
       
-      protected function placeArtifact() : *
+      public function placeArtifact() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.level_id = this.levelId;
@@ -185,7 +185,7 @@ package package_6
          this.uploading.addEventListener(SuperLoader.d,this.handleResponse,false,0,true);
       }
       
-      protected function handleResponse(param1:Event) : *
+      public function handleResponse(param1:Event) : *
       {
          var e:Event = param1;
          var ret:Object = this.uploading.parsedData;
@@ -201,7 +201,7 @@ package package_6
          startFadeOut();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

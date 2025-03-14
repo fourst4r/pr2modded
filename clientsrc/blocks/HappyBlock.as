@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      protected var changeAmt:int = 5;
+      public var changeAmt:int = 5;
       
       public function HappyBlock()
       {
@@ -29,7 +29,7 @@ package blocks
          options = this.changeAmt > 5 ? String(this.changeAmt) : "";
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          super.useSupply(param1);
          param1.statsChange(this.changeAmt);

@@ -6,7 +6,7 @@ package com.hurlant.crypto.symmetric
    {
        
       
-      protected var blockSize:uint;
+      public var blockSize:uint;
       
       public function PKCS5(param1:uint = 0)
       {

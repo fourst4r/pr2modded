@@ -6,19 +6,19 @@ package com.jiggmin.data
    {
        
       
-      protected var _inext:int;
+      public var _inext:int;
       
-      protected var _inextp:int;
+      public var _inextp:int;
       
-      protected const MBIG:int = 2147483647;
+      public const MBIG:int = 2147483647;
       
-      protected const MSEED:int = 161803398;
+      public const MSEED:int = 161803398;
       
-      protected const MZ:int = 0;
+      public const MZ:int = 0;
       
-      protected var _seed:int;
+      public var _seed:int;
       
-      protected var _seedArray:Vector.<int>;
+      public var _seedArray:Vector.<int>;
       
       public function Random(param1:int)
       {
@@ -68,7 +68,7 @@ package com.jiggmin.data
          return this._seed;
       }
       
-      protected function getSampleForLargeRange() : Number
+      public function getSampleForLargeRange() : Number
       {
          var _loc1_:int = int(this.internalSample());
          if(this.internalSample() % 2 == 0)
@@ -80,7 +80,7 @@ package com.jiggmin.data
          return _loc2_ / 4294967293;
       }
       
-      protected function internalSample() : int
+      public function internalSample() : int
       {
          var _loc1_:int = int(this._inext);
          var _loc2_:int = int(this._inextp);
@@ -150,7 +150,7 @@ package com.jiggmin.data
          return this.sample();
       }
       
-      protected function sample() : Number
+      public function sample() : Number
       {
          return this.internalSample() * 4.656612875245797e-10;
       }

@@ -6,7 +6,7 @@ package package_6
    {
        
       
-      protected var m:MusicSelectionGraphic;
+      public var m:MusicSelectionGraphic;
       
       public var dropdown:GameSound;
       

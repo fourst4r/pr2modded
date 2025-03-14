@@ -7,17 +7,17 @@ package package_23
    {
        
       
-      protected var m:PlayersTabListGraphic;
+      public var m:PlayersTabListGraphic;
       
-      protected var names:Array;
+      public var names:Array;
       
-      protected var sortInterval:uint;
+      public var sortInterval:uint;
       
-      protected var sortMode:String = "rank";
+      public var sortMode:String = "rank";
       
-      protected var sortOrder:String = "desc";
+      public var sortOrder:String = "desc";
       
-      protected var updateSort:Boolean = false;
+      public var updateSort:Boolean = false;
       
       public function PlayersTabList()
       {
@@ -31,22 +31,22 @@ package package_23
          this.sortInterval = setInterval(this.sortListener,500);
       }
       
-      protected function clickName(param1:MouseEvent) : *
+      public function clickName(param1:MouseEvent) : *
       {
          this.sortPlayersBy("userName");
       }
       
-      protected function clickRank(param1:MouseEvent) : *
+      public function clickRank(param1:MouseEvent) : *
       {
          this.sortPlayersBy("rank");
       }
       
-      protected function clickHats(param1:MouseEvent) : *
+      public function clickHats(param1:MouseEvent) : *
       {
          this.sortPlayersBy("hats");
       }
       
-      protected function method_138(param1:String, param2:String, param3:Number, param4:int, param5:String = "") : *
+      public function method_138(param1:String, param2:String, param3:Number, param4:int, param5:String = "") : *
       {
          if(this.names.indexOf(param1) > -1)
          {
@@ -58,7 +58,7 @@ package package_23
          this.updateSort = true;
       }
       
-      protected function sortListener() : *
+      public function sortListener() : *
       {
          if(this.updateSort)
          {
@@ -67,7 +67,7 @@ package package_23
          }
       }
       
-      protected function sortPlayersBy(param1:String = null) : *
+      public function sortPlayersBy(param1:String = null) : *
       {
          var _loc2_:String = null;
          var _loc3_:String = null;

@@ -73,7 +73,7 @@ package com.jiggmin.ColorPicker
          return _loc1_;
       }
       
-      protected static function makeColorArray(param1:int, param2:int) : Array
+      public static function makeColorArray(param1:int, param2:int) : Array
       {
          var _loc5_:Array = null;
          var _loc6_:int = 0;

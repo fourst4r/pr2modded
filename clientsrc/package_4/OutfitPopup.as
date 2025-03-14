@@ -8,9 +8,9 @@ package package_4
       public static var instance:OutfitPopup;
        
       
-      protected var confirmFunction:Function;
+      public var confirmFunction:Function;
       
-      protected var m:OutfitPopupGraphic;
+      public var m:OutfitPopupGraphic;
       
       public function OutfitPopup(param1:Function, param2:Object, param3:String = "Are you sure?")
       {
@@ -28,13 +28,13 @@ package package_4
          this.m.main.cancel_bt.addEventListener(MouseEvent.CLICK,this.clickCancel);
       }
       
-      protected function clickOK(param1:MouseEvent) : *
+      public function clickOK(param1:MouseEvent) : *
       {
          this.confirmFunction();
          startFadeOut();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

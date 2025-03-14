@@ -27,29 +27,29 @@ package package_8
       public static const GravityMultiplied:String = "grm";
        
       
-      protected var socket:PR2Socket;
+      public var socket:PR2Socket;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
-      protected var course:Course;
+      public var course:Course;
       
-      protected var map:Map;
+      public var map:Map;
       
-      protected var mapDot:MiniMapDot;
+      public var mapDot:MiniMapDot;
       
-      protected var itemDisplay:ItemDisplay;
+      public var itemDisplay:ItemDisplay;
       
-      protected var var_573:uint;
+      public var var_573:uint;
       
-      protected var var_535:uint;
+      public var var_535:uint;
       
-      protected var var_390:DisplayObject;
+      public var var_390:DisplayObject;
       
-      protected var speedStat:int;
+      public var speedStat:int;
       
-      protected var accelStat:int;
+      public var accelStat:int;
       
-      protected var jumpnStat:int;
+      public var jumpnStat:int;
       
       public var accel:Number;
       
@@ -59,9 +59,9 @@ package package_8
       
       public var var_669:Number = 0;
       
-      protected var var_523:Number = 0.35;
+      public var var_523:Number = 0.35;
       
-      protected var var_599:Number = 1;
+      public var var_599:Number = 1;
       
       public var var_147:Number;
       
@@ -81,7 +81,7 @@ package package_8
       
       public var var_157:Number = 28;
       
-      protected var initialized:Boolean = false;
+      public var initialized:Boolean = false;
       
       public var testMode:Boolean = false;
       
@@ -99,73 +99,73 @@ package package_8
       
       public var space:Boolean = false;
       
-      protected var friction:Number = 0.985;
+      public var friction:Number = 0.985;
       
-      protected var var_281:Boolean = false;
+      public var var_281:Boolean = false;
       
-      protected var var_150:Number = 0;
+      public var var_150:Number = 0;
       
-      protected var segSize:Number = 30;
+      public var segSize:Number = 30;
       
-      protected var hurtTime:Number = 0;
+      public var hurtTime:Number = 0;
       
-      protected var squashedTime:Number = 0;
+      public var squashedTime:Number = 0;
       
-      protected var stingCooldown:int = 135;
+      public var stingCooldown:int = 135;
       
       public var var_240:Number = 0;
       
-      protected var var_630:Block = null;
+      public var var_630:Block = null;
       
-      protected var var_469:Block = null;
+      public var var_469:Block = null;
       
-      protected var var_657:Block = null;
+      public var var_657:Block = null;
       
-      protected var var_329:Block = null;
+      public var var_329:Block = null;
       
-      protected var var_658:Block = null;
+      public var var_658:Block = null;
       
-      protected var var_296:Block = null;
+      public var var_296:Block = null;
       
-      protected var var_654:Block = null;
+      public var var_654:Block = null;
       
-      protected var var_262:Block = null;
+      public var var_262:Block = null;
       
-      protected var var_631:Block = null;
+      public var var_631:Block = null;
       
-      protected var var_306:Block = null;
+      public var var_306:Block = null;
       
-      protected var var_297:Block = null;
+      public var var_297:Block = null;
       
       public var mode:String = "wait";
       
-      protected var curItem:Item;
+      public var curItem:Item;
       
-      protected var speedBurst:SpeedBurst;
+      public var speedBurst:SpeedBurst;
       
-      protected var life:int = 3;
+      public var life:int = 3;
       
-      protected var invincible:Boolean = false;
+      public var invincible:Boolean = false;
       
-      protected var frozenSolid:Boolean = false;
+      public var frozenSolid:Boolean = false;
       
-      protected var unfreezeTimer:uint;
+      public var unfreezeTimer:uint;
       
-      protected var var_530:Number;
+      public var var_530:Number;
       
-      protected var exactX:int;
+      public var exactX:int;
       
-      protected var exactY:int;
+      public var exactY:int;
       
-      protected var var_577:String;
+      public var var_577:String;
       
-      protected var var_623:int;
+      public var var_623:int;
       
-      protected var exactPosNextUpdate:Boolean = false;
+      public var exactPosNextUpdate:Boolean = false;
       
-      protected var altCtrl:Object;
+      public var altCtrl:Object;
       
-      protected var startingStats:Array = null;
+      public var startingStats:Array = null;
       
       public function LocalCharacter(param1:int, param2:Course, param3:Map, param4:MovieClip, param5:ItemDisplay, param6:Number, param7:int = 50, param8:int = 50, param9:int = 50, param10:int = 1, param11:int = 1, param12:int = 1, param13:int = 1, param14:String = "0")
       {
@@ -279,7 +279,7 @@ package package_8
          var_4.setNumber(GravityMultiplied,var_4.getNumber(DefaultGravity) * param1);
       }
       
-      protected function resetGravity() : *
+      public function resetGravity() : *
       {
          var_4.setNumber(GravityMultiplied,var_4.getNumber(DefaultGravity) * GamePage.course.gravity);
       }
@@ -330,7 +330,7 @@ package package_8
          }
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          var _loc4_:Point = null;
          var _loc5_:int = 0;
@@ -407,12 +407,12 @@ package package_8
          }
       }
       
-      protected function setEPNU() : *
+      public function setEPNU() : *
       {
          this.exactPosNextUpdate = true;
       }
       
-      protected function maybeSquash() : *
+      public function maybeSquash() : *
       {
          var _loc1_:Character = null;
          for each(_loc1_ in this.course.playerArray)
@@ -428,7 +428,7 @@ package package_8
          }
       }
       
-      protected function maybeSting() : *
+      public function maybeSting() : *
       {
          var _loc1_:Character = null;
          for each(_loc1_ in this.course.playerArray)
@@ -441,13 +441,13 @@ package package_8
          }
       }
       
-      protected function waitGo(param1:Event) : *
+      public function waitGo(param1:Event) : *
       {
          this.position();
          this.method_76();
       }
       
-      protected function hurtGo(param1:Event) : *
+      public function hurtGo(param1:Event) : *
       {
          this.var_24 = 0;
          this.position();
@@ -458,7 +458,7 @@ package package_8
          }
       }
       
-      protected function frozenSolidGo(param1:Event) : *
+      public function frozenSolidGo(param1:Event) : *
       {
          this.var_24 = 0;
          this.position();
@@ -481,7 +481,7 @@ package package_8
          }
       }
       
-      protected function squashedGo(param1:Event) : *
+      public function squashedGo(param1:Event) : *
       {
          this.crouching = true;
          this.landGo(param1);
@@ -493,11 +493,11 @@ package package_8
          }
       }
       
-      protected function freezeGo(param1:Event) : *
+      public function freezeGo(param1:Event) : *
       {
       }
       
-      protected function waterGo(param1:Event) : *
+      public function waterGo(param1:Event) : *
       {
          this.updateKeys();
          if(this.right)
@@ -541,7 +541,7 @@ package package_8
          }
       }
       
-      protected function landGo(param1:Event) : *
+      public function landGo(param1:Event) : *
       {
          this.updateKeys();
          if(this.right)
@@ -633,7 +633,7 @@ package package_8
          }
       }
       
-      protected function updateKeys() : *
+      public function updateKeys() : *
       {
          var _loc1_:Boolean = false;
          this.up = this.down = this.right = this.left = this.space = false;
@@ -674,7 +674,7 @@ package package_8
          }
       }
       
-      protected function position() : *
+      public function position() : *
       {
          var _loc1_:Number = NaN;
          var _loc2_:Point = null;
@@ -730,7 +730,7 @@ package package_8
          this.bumpPlayer();
       }
       
-      protected function checkLooseHats() : *
+      public function checkLooseHats() : *
       {
          var _loc1_:Hat = null;
          var _loc2_:Point = null;
@@ -747,7 +747,7 @@ package package_8
          }
       }
       
-      protected function returnHatToStart(param1:int) : *
+      public function returnHatToStart(param1:int) : *
       {
          var _loc2_:Hat = this.course.looseHats[param1];
          if(_loc2_ != null)
@@ -757,7 +757,7 @@ package package_8
          }
       }
       
-      protected function method_76() : *
+      public function method_76() : *
       {
          var _loc1_:Block = null;
          var _loc2_:Block = null;
@@ -856,7 +856,7 @@ package package_8
          }
       }
       
-      protected function method_261() : *
+      public function method_261() : *
       {
          if(this.var_469 != null && this.var_262 == null)
          {
@@ -870,7 +870,7 @@ package package_8
          }
       }
       
-      protected function method_41() : *
+      public function method_41() : *
       {
          if(y < 0)
          {
@@ -889,7 +889,7 @@ package package_8
          this.var_297 = this.getBlock(x,y - this.var_325);
       }
       
-      protected function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false) : Block
+      public function getBlock(param1:Number, param2:Number, param3:Boolean = true, param4:Boolean = false) : Block
       {
          var _loc5_:Block = null;
          if(this.map != null)
@@ -928,7 +928,7 @@ package package_8
          }
       }
       
-      protected function bumpPlayer() : *
+      public function bumpPlayer() : *
       {
          if(this.hurtTime <= 0)
          {
@@ -967,7 +967,7 @@ package package_8
          this.invincible = true;
       }
       
-      override protected function endRecovery() : *
+      override public function endRecovery() : *
       {
          super.endRecovery();
          this.invincible = false;
@@ -1083,7 +1083,7 @@ package package_8
          this.exactPosNextUpdate = true;
       }
       
-      protected function playersInPosUpdateRange() : Boolean
+      public function playersInPosUpdateRange() : Boolean
       {
          return Course.course.playerArray.length > 1;
       }
@@ -1200,7 +1200,7 @@ package package_8
          }
       }
       
-      protected function ensureCowboyStats() : *
+      public function ensureCowboyStats() : *
       {
          if(var_4.getBool(COWBOY))
          {
@@ -1210,7 +1210,7 @@ package package_8
          }
       }
       
-      protected function ensureSantaStats() : *
+      public function ensureSantaStats() : *
       {
          if(var_4.getBool(SANTA))
          {
@@ -1234,7 +1234,7 @@ package package_8
          }
       }
       
-      protected function unfreeze() : *
+      public function unfreeze() : *
       {
          clearTimeout(this.unfreezeTimer);
          this.frozenSolid = false;
@@ -1245,7 +1245,7 @@ package package_8
          return this.course is TestCourse;
       }
       
-      override protected function removeListeners() : *
+      override public function removeListeners() : *
       {
          super.removeListeners();
          removeEventListener(Event.ENTER_FRAME,this.landGo);

@@ -11,7 +11,7 @@ package package_19
    {
        
       
-      protected var displayCode:int;
+      public var displayCode:int;
       
       public function StampButton(param1:int)
       {
@@ -29,7 +29,7 @@ package package_19
          addEventListener(MouseEvent.MOUSE_DOWN,this.select);
       }
       
-      protected function fit(param1:DisplayObject) : *
+      public function fit(param1:DisplayObject) : *
       {
          var _loc2_:Number = NaN;
          _loc2_ = 24;
@@ -38,7 +38,7 @@ package package_19
          param1.y = (_loc2_ - param1.height) / 2 + 3;
       }
       
-      protected function select(param1:MouseEvent) : *
+      public function select(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(new class_269(this.displayCode));

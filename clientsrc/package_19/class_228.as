@@ -14,11 +14,11 @@ package package_19
          super(param1);
       }
       
-      override protected function fit(param1:DisplayObject) : *
+      override public function fit(param1:DisplayObject) : *
       {
       }
       
-      override protected function select(param1:MouseEvent) : *
+      override public function select(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(new class_275(displayCode));

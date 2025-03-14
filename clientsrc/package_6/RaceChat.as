@@ -13,7 +13,7 @@ package package_6
       public static var textBox:TextField;
        
       
-      protected var m:RaceChatGraphic;
+      public var m:RaceChatGraphic;
       
       public function RaceChat()
       {
@@ -35,12 +35,12 @@ package package_6
          displayMessage("<i><font color=\'#3E8697\'>" + param1[0] + "</font></i><br/>");
       }
       
-      protected function ensureBottom(param1:MouseEvent) : *
+      public function ensureBottom(param1:MouseEvent) : *
       {
          this.m.top.textBox1.scrollV = this.m.bg.textBox2.scrollV = this.m.top.textBox1.maxScrollV;
       }
       
-      protected function mouseDownHandler(param1:MouseEvent) : *
+      public function mouseDownHandler(param1:MouseEvent) : *
       {
          if(param1.target != this && param1.target != this.m.chatInput && Main.stage.focus == this.m.chatInput)
          {
@@ -48,7 +48,7 @@ package package_6
          }
       }
       
-      protected function focusOrSend(param1:KeyboardEvent) : *
+      public function focusOrSend(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13 && !(param1.target.parent is TextArea))
          {
@@ -73,19 +73,19 @@ package package_6
          }
       }
       
-      override protected function sendMessage(param1:String) : *
+      override public function sendMessage(param1:String) : *
       {
          this.m.chatInput.text = "";
          super.sendMessage(param1);
       }
       
-      override protected function showMessages() : *
+      override public function showMessages() : *
       {
          this.m.top.textBox1.htmlText = this.m.bg.textBox2.htmlText = existingMessages;
          this.m.top.textBox1.scrollV = this.m.bg.textBox2.scrollV = this.m.top.textBox1.maxScrollV;
       }
       
-      protected function focusOnRace() : *
+      public function focusOnRace() : *
       {
          Main.stage.focus = Main.stage;
       }

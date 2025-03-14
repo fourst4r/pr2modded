@@ -17,7 +17,7 @@ package page
       public static var course:GamePage;
        
       
-      protected var segSize:int = 30;
+      public var segSize:int = 30;
       
       public var allowedItems:Vector.<int>;
       
@@ -25,11 +25,11 @@ package page
       
       public var var_14:Sprite;
       
-      protected var color:Number = 12303325;
+      public var color:Number = 12303325;
       
-      protected var var_133:Array;
+      public var var_133:Array;
       
-      protected var zoom:Number = 1;
+      public var zoom:Number = 1;
       
       public var scale:Number = 1;
       
@@ -53,13 +53,13 @@ package page
       
       public var cowboyChance:String = "5";
       
-      protected var accel:Number = 10;
+      public var accel:Number = 10;
       
-      protected var friction:Number = 0.6;
+      public var friction:Number = 0.6;
       
-      protected var velX:Number = 0;
+      public var velX:Number = 0;
       
-      protected var velY:Number = 0;
+      public var velY:Number = 0;
       
       public var posX:Number = -20000;
       
@@ -71,9 +71,9 @@ package page
       
       public var drawing:Boolean = false;
       
-      protected var altCtrl:Object;
+      public var altCtrl:Object;
       
-      protected var rasterStopNotified:Boolean = false;
+      public var rasterStopNotified:Boolean = false;
       
       public function GamePage()
       {
@@ -100,11 +100,11 @@ package page
          }
       }
       
-      protected function attachBackgrounds() : *
+      public function attachBackgrounds() : *
       {
       }
       
-      protected function removeBackgrounds() : *
+      public function removeBackgrounds() : *
       {
       }
       
@@ -335,7 +335,7 @@ package page
          return _loc3_;
       }
       
-      protected function method_645(param1:String) : String
+      public function method_645(param1:String) : String
       {
          var _loc2_:Array = param1.split("`");
          var _loc3_:String = String(_loc2_[0]);
@@ -375,7 +375,7 @@ package page
          return param1;
       }
       
-      protected function decodeObjectString(param1:String) : String
+      public function decodeObjectString(param1:String) : String
       {
          var _loc7_:int = 0;
          var _loc8_:Number = NaN;
@@ -405,7 +405,7 @@ package page
          return _loc2_.join(",");
       }
       
-      protected function decodeObjectString2(param1:String, param2:int = 1) : String
+      public function decodeObjectString2(param1:String, param2:int = 1) : String
       {
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -469,7 +469,7 @@ package page
          return _loc6_;
       }
       
-      protected function decodeBlockString(param1:String) : *
+      public function decodeBlockString(param1:String) : *
       {
          var _loc3_:String = null;
          var _loc4_:int = 0;
@@ -508,7 +508,7 @@ package page
          return _loc3_;
       }
       
-      protected function glideToScale(param1:Event) : *
+      public function glideToScale(param1:Event) : *
       {
          Main.stage.quality = StageQuality.LOW;
          this.scale += (this.zoom - this.scale) * 0.3;
@@ -519,7 +519,7 @@ package page
          scaleX = scaleY = this.scale;
       }
       
-      protected function finishGlide() : *
+      public function finishGlide() : *
       {
          Main.stage.quality = StageQuality.HIGH;
          this.scale = this.zoom;
@@ -536,7 +536,7 @@ package page
          }
       }
       
-      protected function keyScroll(param1:Event) : *
+      public function keyScroll(param1:Event) : *
       {
          if(!(Main.stage.focus is TextField))
          {

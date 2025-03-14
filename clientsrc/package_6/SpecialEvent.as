@@ -9,9 +9,9 @@ package package_6
    {
        
       
-      protected var stageRef:Stage;
+      public var stageRef:Stage;
       
-      protected var gameRef:Game;
+      public var gameRef:Game;
       
       public function SpecialEvent(param1:Stage, param2:Game)
       {
@@ -21,7 +21,7 @@ package package_6
          param1.addEventListener(MouseEvent.CLICK,this.clickHandler,false,0,true);
       }
       
-      protected function clickHandler(param1:MouseEvent) : *
+      public function clickHandler(param1:MouseEvent) : *
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;

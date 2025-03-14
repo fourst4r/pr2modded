@@ -1,5 +1,6 @@
 package;
 
+import flash.events.UncaughtErrorEvent;
 import haxe.io.Path;
 import haxe.Json;
 import modding.*;
@@ -14,7 +15,7 @@ import flash.net.URLRequest;
 import package_4.MessagePopup;
 import flash.Lib;
 
-class ModLoaderMain {
+final class ModLoaderMain {
     #if debug
     static var MODS_LOCATION = "file:///" + Macro.cwd() + "/mods/";
     #else
@@ -22,17 +23,21 @@ class ModLoaderMain {
     #end
 
     static function main() {
-
-        // Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e:UncaughtErrorEvent) -> {
-        //     // THIS ONE CAUGHT AN ERROR BEFORE! YIPPEEE!
-        //     new MessagePopup("Uncaught Error: "+e.error);
-        // });
+        Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, (e:UncaughtErrorEvent) -> {
+            // THIS ONE CAUGHT AN ERROR BEFORE! YIPPEEE!
+            new MessagePopup("Uncaught Error: "+e.error);
+        });
         Lib.current.stage.addChild(new Main());
-
+        Lib.fscommand("exec", "echo.bat");
         // Hook useful classes
         hookPageHolder();
+        hookCreateGame();
 
         bootstrap();
+    }
+
+    static function hookCreateGame() {
+        Main.commandHandler.defineCommand("startGame", api.Game.onCreateGame);
     }
 
     static function hookPageHolder() {
@@ -80,6 +85,6 @@ class ModLoaderMain {
     }
 
     static function errorHandler(param1:IOErrorEvent)  {
-        trace("error: "+param1.toString());
+        new MessagePopup("error: "+param1.toString());
     }
 }

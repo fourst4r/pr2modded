@@ -6,9 +6,9 @@ package package_4
    {
        
       
-      protected var m:GuildMemberNameGraphic;
+      public var m:GuildMemberNameGraphic;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
       public function GuildMemberName(param1:Object, param2:Boolean)
       {

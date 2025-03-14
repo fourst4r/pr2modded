@@ -9,11 +9,11 @@ package package_6
    {
        
       
-      protected var bg:BlueSquareButton;
+      public var bg:BlueSquareButton;
       
-      protected var img:Loader;
+      public var img:Loader;
       
-      protected var id:int;
+      public var id:int;
       
       public function class_101(param1:int)
       {
@@ -31,7 +31,7 @@ package package_6
          return this.id;
       }
       
-      protected function getImg() : *
+      public function getImg() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.img = this.id;
@@ -41,7 +41,7 @@ package package_6
          this.img.load(_loc2_);
       }
       
-      protected function method_566(param1:* = null) : *
+      public function method_566(param1:* = null) : *
       {
          Data.method_314(this.img,200,200);
          this.img.x = Math.round((200 - this.img.width) / 2) + 5;

@@ -15,7 +15,7 @@ package package_15
          m.delete_bt.label = "Handle";
       }
       
-      override protected function onComplete(param1:Event) : *
+      override public function onComplete(param1:Event) : *
       {
          var _loc2_:Object = null;
          var _loc3_:Object = null;
@@ -32,14 +32,14 @@ package package_15
          this.hideLoadingGraphic();
       }
       
-      override protected function loadListing(param1:class_229) : *
+      override public function loadListing(param1:class_229) : *
       {
          var _loc2_:GetReportedLevelsPopupItem = GetReportedLevelsPopupItem(param1);
          new LoadingLevelPopup(_loc2_.level.level_id,_loc2_.level.version,true);
          startFadeOut();
       }
       
-      override protected function deleteListing(param1:class_229) : *
+      override public function deleteListing(param1:class_229) : *
       {
          new HandleLevelReportPopup(this,param1.level);
       }

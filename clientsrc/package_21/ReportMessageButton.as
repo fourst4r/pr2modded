@@ -4,7 +4,7 @@ package package_21
    {
        
       
-      protected var m:ReportMessageButtonGraphic;
+      public var m:ReportMessageButtonGraphic;
       
       public function ReportMessageButton()
       {

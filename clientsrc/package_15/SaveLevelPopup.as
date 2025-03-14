@@ -8,9 +8,9 @@ package package_15
    {
        
       
-      protected var editor:LevelEditor;
+      public var editor:LevelEditor;
       
-      protected var m:SaveLevelPopupGraphic;
+      public var m:SaveLevelPopupGraphic;
       
       public function SaveLevelPopup()
       {
@@ -33,23 +33,23 @@ package package_15
          addChild(this.m);
       }
       
-      protected function countChars(param1:* = null) : *
+      public function countChars(param1:* = null) : *
       {
          this.m.titleCharsRemaining.text = this.m.titleBox.length + " / 50";
          this.m.noteCharsRemaining.text = this.m.noteBox.length + " / 255";
       }
       
-      protected function updateChks(param1:Event) : *
+      public function updateChks(param1:Event) : *
       {
          this.m.newest_chk.enabled = this.m.newest_chk.selected = this.m.publish_chk.selected;
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      protected function clickSave(param1:MouseEvent) : *
+      public function clickSave(param1:MouseEvent) : *
       {
          if(this.m.titleBox.text == "")
          {

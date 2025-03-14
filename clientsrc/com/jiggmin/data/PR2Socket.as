@@ -14,15 +14,15 @@ package com.jiggmin.data
    {
        
       
-      protected var pingInterval:uint;
+      public var pingInterval:uint;
       
       public var sendNum:int = 0;
       
-      protected var endChar:String;
+      public var endChar:String;
       
-      protected var md5:MD5;
+      public var md5:MD5;
       
-      protected var var_363:Time;
+      public var var_363:Time;
       
       public function PR2Socket()
       {
@@ -93,17 +93,17 @@ package com.jiggmin.data
          }
       }
       
-      protected function read(param1:* = null) : *
+      public function read(param1:* = null) : *
       {
          CommandHandler.commandHandler.addText(readUTFBytes(bytesAvailable));
       }
       
-      protected function requestLoginId(param1:Event) : *
+      public function requestLoginId(param1:Event) : *
       {
          this.write("request_login_id`");
       }
       
-      protected function closeHandler(param1:Event) : *
+      public function closeHandler(param1:Event) : *
       {
          if(!(Main.pageHolder.getCurrentPage() is LoginPage))
          {
@@ -114,7 +114,7 @@ package com.jiggmin.data
          delete Memory.memory["campaignInfo" + Campaign.campaignPage];
       }
       
-      protected function anyErrorHandler(param1:*) : *
+      public function anyErrorHandler(param1:*) : *
       {
          new MessagePopup("Could not connect. This could be because: \n A: My server is broken. \n B: The internet is broken. \n C: Evil aliens.");
          this.remove();

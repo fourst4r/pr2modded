@@ -124,53 +124,53 @@ package com.adobe.crypto
          return IntUtil.toHex(_loc2_) + IntUtil.toHex(_loc3_) + IntUtil.toHex(_loc4_) + IntUtil.toHex(_loc5_);
       }
       
-      protected static function f(param1:int, param2:int, param3:int) : int
+      public static function f(param1:int, param2:int, param3:int) : int
       {
          return param1 & param2 | ~param1 & param3;
       }
       
-      protected static function g(param1:int, param2:int, param3:int) : int
+      public static function g(param1:int, param2:int, param3:int) : int
       {
          return param1 & param3 | param2 & ~param3;
       }
       
-      protected static function h(param1:int, param2:int, param3:int) : int
+      public static function h(param1:int, param2:int, param3:int) : int
       {
          return param1 ^ param2 ^ param3;
       }
       
-      protected static function i(param1:int, param2:int, param3:int) : int
+      public static function i(param1:int, param2:int, param3:int) : int
       {
          return param2 ^ (param1 | ~param3);
       }
       
-      protected static function transform(param1:Function, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int, param8:int) : int
+      public static function transform(param1:Function, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int, param8:int) : int
       {
          var _loc9_:int = param2 + int(param1(param3,param4,param5)) + param6 + param8;
          return IntUtil.rol(_loc9_,param7) + param3;
       }
       
-      protected static function ff(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
+      public static function ff(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
       {
          return transform(f,param1,param2,param3,param4,param5,param6,param7);
       }
       
-      protected static function gg(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
+      public static function gg(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
       {
          return transform(g,param1,param2,param3,param4,param5,param6,param7);
       }
       
-      protected static function hh(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
+      public static function hh(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
       {
          return transform(h,param1,param2,param3,param4,param5,param6,param7);
       }
       
-      protected static function ii(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
+      public static function ii(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int) : int
       {
          return transform(i,param1,param2,param3,param4,param5,param6,param7);
       }
       
-      protected static function createBlocks(param1:ByteArray) : Array
+      public static function createBlocks(param1:ByteArray) : Array
       {
          var _loc2_:Array = new Array();
          var _loc3_:int = param1.length * 8;

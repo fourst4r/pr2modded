@@ -7,7 +7,7 @@ package package_9
    {
        
       
-      protected var var_529:uint;
+      public var var_529:uint;
       
       public function Effect(param1:Number = 0, param2:Number = 0)
       {
@@ -17,7 +17,7 @@ package package_9
          EffectBackground.instance.addChild(this);
       }
       
-      protected function method_2(param1:int) : *
+      public function method_2(param1:int) : *
       {
          var _loc2_:int = int(param1 * (1 / 24) * 1000);
          this.var_529 = setTimeout(this.remove,_loc2_);

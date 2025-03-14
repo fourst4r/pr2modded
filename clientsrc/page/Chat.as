@@ -7,17 +7,17 @@ package page
    {
        
       
-      protected var existingMessages:String = "";
+      public var existingMessages:String = "";
       
-      protected var maxMessages:int = 40;
+      public var maxMessages:int = 40;
       
-      protected var messages:int = 0;
+      public var messages:int = 0;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
-      protected var hint:ArtifactHint;
+      public var hint:ArtifactHint;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
       public function Chat()
       {
@@ -68,7 +68,7 @@ package page
          this.displayMessage("<br/><i><font color=\'#3E8697\'>" + param1[0] + "</font></i><br/><br/>");
       }
       
-      protected function sendMessage(param1:String) : *
+      public function sendMessage(param1:String) : *
       {
          var _loc4_:String = null;
          var _loc2_:* = param1.toLowerCase();
@@ -109,7 +109,7 @@ package page
          }
       }
       
-      protected function displayMessage(param1:String) : *
+      public function displayMessage(param1:String) : *
       {
          ++this.messages;
          if(this.messages > this.maxMessages)
@@ -120,7 +120,7 @@ package page
          this.showMessages();
       }
       
-      protected function showMessages() : *
+      public function showMessages() : *
       {
       }
       

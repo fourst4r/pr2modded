@@ -1,4 +1,4 @@
-package background
+﻿package background
 {
    import com.jiggmin.data.*;
    import flash.display.DisplayObject;
@@ -25,7 +25,7 @@ package background
          var_379 = -100;
       }
       
-      protected function addStartPositions() : *
+      public function addStartPositions() : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
@@ -47,7 +47,7 @@ package background
          }
       }
       
-      override protected function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
+      override public function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
       {
          param1 += param1 < 100 ? 100 : 0;
          var _loc5_:BlockObject = new BlockObject(param1,param2,param3,param4);
@@ -148,7 +148,7 @@ package background
          }
       }
       
-      override protected function moveDrawObject(param1:String) : *
+      override public function moveDrawObject(param1:String) : *
       {
          var _loc5_:Number = NaN;
          var _loc6_:Number = NaN;
@@ -163,7 +163,7 @@ package background
          }
       }
       
-      override protected function drawText(param1:String) : *
+      override public function drawText(param1:String) : *
       {
       }
       

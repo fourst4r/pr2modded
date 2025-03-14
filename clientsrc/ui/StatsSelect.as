@@ -8,19 +8,19 @@ package ui
    {
        
       
-      protected var m:PointsRemainingGraphic;
+      public var m:PointsRemainingGraphic;
       
-      protected var speedSlider:StatSlider;
+      public var speedSlider:StatSlider;
       
-      protected var accelSlider:StatSlider;
+      public var accelSlider:StatSlider;
       
-      protected var jumpnSlider:StatSlider;
+      public var jumpnSlider:StatSlider;
       
-      protected var totalPoints:int;
+      public var totalPoints:int;
       
-      protected var character:LocalCharacter;
+      public var character:LocalCharacter;
       
-      protected var stageRef:Stage;
+      public var stageRef:Stage;
       
       public var updateSavedLEStats:Boolean = false;
       

@@ -6,7 +6,7 @@ package com.jiggmin.data
    {
        
       
-      protected var items:Object;
+      public var items:Object;
       
       public function class_20()
       {
@@ -72,7 +72,7 @@ package com.jiggmin.data
          return _loc3_.decrypt(_loc2_.hidden);
       }
       
-      protected function method_350(param1:String, param2:*, param3:*) : *
+      public function method_350(param1:String, param2:*, param3:*) : *
       {
          var _loc4_:Object = null;
          if((_loc4_ = this.method_162(param1)) != null)
@@ -88,7 +88,7 @@ package com.jiggmin.data
          }
       }
       
-      protected function method_162(param1:String) : Object
+      public function method_162(param1:String) : Object
       {
          return this.items[param1];
       }

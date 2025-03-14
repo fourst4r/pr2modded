@@ -12,47 +12,47 @@ package com.jiggmin.ColorPicker
    {
        
       
-      protected var eyedropper:CursorEyedropper;
+      public var eyedropper:CursorEyedropper;
       
-      protected var palette:Sprite;
+      public var palette:Sprite;
       
-      protected var colorChoices:Array;
+      public var colorChoices:Array;
       
-      protected var outlineCC:Sprite;
+      public var outlineCC:Sprite;
       
-      protected var outlinePC:Sprite;
+      public var outlinePC:Sprite;
       
-      protected var initialColor:int;
+      public var initialColor:int;
       
-      protected var previewColor:int = -1;
+      public var previewColor:int = -1;
       
-      protected var color:int = -1;
+      public var color:int = -1;
       
-      protected var hue:Number = 0;
+      public var hue:Number = 0;
       
-      protected var saturation:Number = 0;
+      public var saturation:Number = 0;
       
-      protected var brightness:Number = 50;
+      public var brightness:Number = 50;
       
-      protected var spectrum:Sprite;
+      public var spectrum:Sprite;
       
-      protected var hueSlider:Sprite;
+      public var hueSlider:Sprite;
       
-      protected var colorPreviewBox:Sprite;
+      public var colorPreviewBox:Sprite;
       
-      protected var spectrumBG:BitmapData;
+      public var spectrumBG:BitmapData;
       
-      protected var hueArrow:ColorPickerHueArrowGraphic;
+      public var hueArrow:ColorPickerHueArrowGraphic;
       
-      protected var crosshairs:ColorPickerCrosshairsGraphic;
+      public var crosshairs:ColorPickerCrosshairsGraphic;
       
-      protected var priorCursor:CustomCursor;
+      public var priorCursor:CustomCursor;
       
-      protected var priorCursorActive:Boolean;
+      public var priorCursorActive:Boolean;
       
-      protected var me:MouseEvent;
+      public var me:MouseEvent;
       
-      protected var m:ColorPickerPopupGraphic;
+      public var m:ColorPickerPopupGraphic;
       
       public function ColorPickerPopup(param1:int)
       {
@@ -161,7 +161,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function updateColorPreview(param1:int = -1) : *
+      public function updateColorPreview(param1:int = -1) : *
       {
          if(param1 == -1)
          {
@@ -185,13 +185,13 @@ package com.jiggmin.ColorPicker
          this.eyedropper.method_101(param1);
       }
       
-      protected function changePreviewBoxColor(param1:DisplayObject, param2:int) : *
+      public function changePreviewBoxColor(param1:DisplayObject, param2:int) : *
       {
          var _loc3_:Object = ColorUtil.hex24ToRGB(param2);
          param1.transform.colorTransform = new ColorTransform(0,0,0,1,_loc3_.red,_loc3_.green,_loc3_.blue,0);
       }
       
-      protected function highlightCurrentColorIfInPalette() : *
+      public function highlightCurrentColorIfInPalette() : *
       {
          var _loc3_:int = 0;
          var _loc1_:int = 10;
@@ -213,7 +213,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function mouseUpHandler(param1:MouseEvent) : *
+      public function mouseUpHandler(param1:MouseEvent) : *
       {
          Mouse.show();
          Mouse.cursor = MouseCursor.ARROW;
@@ -222,21 +222,21 @@ package com.jiggmin.ColorPicker
          stage.removeEventListener(MouseEvent.MOUSE_MOVE,this.dragHueSlider);
       }
       
-      protected function onSpectrumDown(param1:MouseEvent) : *
+      public function onSpectrumDown(param1:MouseEvent) : *
       {
          Mouse.hide();
          this.previewColorAtMouse(param1);
          stage.addEventListener(MouseEvent.MOUSE_MOVE,this.previewColorAtMouse,false,0,true);
       }
       
-      protected function clickHueSlider(param1:MouseEvent) : *
+      public function clickHueSlider(param1:MouseEvent) : *
       {
          Mouse.hide();
          this.dragHueSlider(param1);
          stage.addEventListener(MouseEvent.MOUSE_MOVE,this.dragHueSlider,false,0,true);
       }
       
-      protected function previewColorAtMouse(param1:MouseEvent) : *
+      public function previewColorAtMouse(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.spectrum.globalToLocal(new Point(param1.stageX,param1.stageY));
          var _loc3_:int = int(Data.numLimit(Math.round(_loc2_.x),0,60));
@@ -250,7 +250,7 @@ package com.jiggmin.ColorPicker
          this.outlineCC.visible = false;
       }
       
-      protected function dragHueSlider(param1:MouseEvent) : *
+      public function dragHueSlider(param1:MouseEvent) : *
       {
          var _loc3_:int = 0;
          var _loc2_:Point = this.hueSlider.globalToLocal(new Point(param1.stageX,param1.stageY));
@@ -263,13 +263,13 @@ package com.jiggmin.ColorPicker
          this.outlineCC.visible = false;
       }
       
-      protected function onEyedropperMove(param1:Event) : *
+      public function onEyedropperMove(param1:Event) : *
       {
          this.previewColor = this.eyedropper.color;
          this.updateColorPreview(this.previewColor);
       }
       
-      protected function applyColor(param1:Event) : *
+      public function applyColor(param1:Event) : *
       {
          this.previewColor = -1;
          this.setColor(this.eyedropper.color);
@@ -277,7 +277,7 @@ package com.jiggmin.ColorPicker
          method_136();
       }
       
-      protected function hoverOverPalette(param1:MouseEvent) : *
+      public function hoverOverPalette(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.palette.globalToLocal(new Point(param1.stageX,param1.stageY));
          var _loc3_:int = int(Data.numLimit(Math.floor(_loc2_.x / 10),0,21));
@@ -289,7 +289,7 @@ package com.jiggmin.ColorPicker
          this.updateColorPreview(this.previewColor);
       }
       
-      protected function clickPalette(param1:MouseEvent) : *
+      public function clickPalette(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          var _loc2_:int = this.outlinePC.x / 10;
@@ -301,14 +301,14 @@ package com.jiggmin.ColorPicker
          this.remove();
       }
       
-      protected function hoverOutPalette(param1:MouseEvent) : *
+      public function hoverOutPalette(param1:MouseEvent) : *
       {
          this.previewColor = -1;
          this.outlinePC.visible = false;
          this.updateColorPreview();
       }
       
-      protected function setColorFromText(param1:Event) : *
+      public function setColorFromText(param1:Event) : *
       {
          var _loc2_:String = null;
          var _loc3_:int = 0;
@@ -330,19 +330,19 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function clickOK(param1:MouseEvent) : *
+      public function clickOK(param1:MouseEvent) : *
       {
          this.remove();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          this.color = this.initialColor;
          dispatchEvent(new Event(Event.CHANGE));
          this.remove();
       }
       
-      protected function initPalette() : *
+      public function initPalette() : *
       {
          var _loc3_:Array = null;
          var _loc4_:int = 0;
@@ -373,7 +373,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function makePickedColorBox() : Sprite
+      public function makePickedColorBox() : Sprite
       {
          var _loc1_:Sprite = new Sprite();
          _loc1_.graphics.lineStyle(1,16777215,1,true);
@@ -381,7 +381,7 @@ package com.jiggmin.ColorPicker
          return _loc1_;
       }
       
-      protected function initHueSlider(param1:int, param2:int) : Sprite
+      public function initHueSlider(param1:int, param2:int) : Sprite
       {
          var _loc7_:int = 0;
          var _loc8_:Number = NaN;
@@ -409,7 +409,7 @@ package com.jiggmin.ColorPicker
          return _loc6_;
       }
       
-      protected function initSpectrum(param1:int, param2:int) : Sprite
+      public function initSpectrum(param1:int, param2:int) : Sprite
       {
          this.spectrumBG = new BitmapData(param1,param2,false,0);
          this.crosshairs = new ColorPickerCrosshairsGraphic();
@@ -421,7 +421,7 @@ package com.jiggmin.ColorPicker
          return _loc3_;
       }
       
-      protected function updateSpectrumGradient() : *
+      public function updateSpectrumGradient() : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:int = 0;
@@ -443,7 +443,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function showOutline(param1:DisplayObject) : Sprite
+      public function showOutline(param1:DisplayObject) : Sprite
       {
          var _loc2_:Sprite = this.makeOutline(Math.round(param1.width),Math.round(param1.height));
          _loc2_.x = param1.x;
@@ -451,7 +451,7 @@ package com.jiggmin.ColorPicker
          addChild(_loc2_);
       }
       
-      protected function makeOutline(param1:int, param2:int) : Sprite
+      public function makeOutline(param1:int, param2:int) : Sprite
       {
          var _loc3_:Sprite = new Sprite();
          _loc3_.graphics.lineStyle(1,3355443,1,true);

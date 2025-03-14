@@ -4,7 +4,7 @@ package package_18
    {
        
       
-      protected var m:RandomizeStyleButtonGraphic;
+      public var m:RandomizeStyleButtonGraphic;
       
       public function RandomizeStyleButton()
       {

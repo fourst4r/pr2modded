@@ -10,7 +10,7 @@ package blocks
       public static var var_228:int = 1;
        
       
-      protected var id:int;
+      public var id:int;
       
       public function FinishBlock()
       {
@@ -23,7 +23,7 @@ package blocks
          return this.id;
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          var _loc2_:int = getPosX() + 15;
          var _loc3_:int = getPosY() + 15;

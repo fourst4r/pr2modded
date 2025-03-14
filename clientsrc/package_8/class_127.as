@@ -4,21 +4,21 @@ package package_8
    {
        
       
-      protected var character:Character;
+      public var character:Character;
       
-      protected var hat:class_125;
+      public var hat:class_125;
       
-      protected var head:class_125;
+      public var head:class_125;
       
-      protected var body:class_125;
+      public var body:class_125;
       
-      protected var foot1:class_125;
+      public var foot1:class_125;
       
-      protected var foot2:class_125;
+      public var foot2:class_125;
       
-      protected var djinnBody:Object;
+      public var djinnBody:Object;
       
-      protected var djinnFeet:Object;
+      public var djinnFeet:Object;
       
       public function class_127(param1:Character)
       {

@@ -22,6 +22,11 @@ private class SelectionCursorGraphic extends Shape {
     }
 }
 
+private enum Action {
+    Cut;
+    Copy;
+}
+
 class SelectionCursor extends CustomCursor {
     var _le:BetterLevelEditor;
     var _shape:Shape;
@@ -32,20 +37,23 @@ class SelectionCursor extends CustomCursor {
     public function new(le:BetterLevelEditor) {
         super();
         CustomCursor.stageRef.addEventListener(Event.CUT, onCut);
+        CustomCursor.stageRef.addEventListener(Event.COPY, onCopy);
         hideMouse();
         applyCursorGraphic(new SelectionCursorGraphic());
         _le = le;
         _le.cur.addChild(_shape = new Shape());
     }
 
-    function onCut(e) {
-        if (_region == null) {
-            trace("region was null");
+    function onCut(e) selectionAction(Cut);
+    function onCopy(e) selectionAction(Copy);
+
+    function selectionAction(action:Action) {
+        if (_region == null)
             return;
-        }
         final blocks = _le.getBlocksInRegion(_region);
-        for (b in blocks)
-            b.remove();
+        if (action == Cut)
+            for (b in blocks)
+                b.remove();
         if (blocks.length > 0)
             CustomCursor.change(new ObjectGroupCursor(_le, blocks));
     }

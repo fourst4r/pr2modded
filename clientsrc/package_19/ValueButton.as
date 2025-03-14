@@ -6,23 +6,23 @@ package package_19
    {
        
       
-      protected var value:String;
+      public var value:String;
       
-      protected var title:String;
+      public var title:String;
       
-      protected var description:String;
+      public var description:String;
       
-      protected var defineCommand:Function;
+      public var defineCommand:Function;
       
-      protected var maxChars:Number;
+      public var maxChars:Number;
       
-      protected var restrictTo:String;
+      public var restrictTo:String;
       
-      protected var defaultVal:String;
+      public var defaultVal:String;
       
-      protected var displayAsPassword:Boolean;
+      public var displayAsPassword:Boolean;
       
-      protected var m:ValueButtonGraphic;
+      public var m:ValueButtonGraphic;
       
       public function ValueButton(param1:String, param2:String, param3:String, param4:String, param5:Function, param6:Number = 9, param7:String = "0123456789", param8:String = "0", param9:Boolean = false)
       {
@@ -48,7 +48,7 @@ package package_19
          this.m.valueBox.text = param1;
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          new ValueMenu(this,this.title,this.description,this.value,this.defineCommand,this.maxChars,this.restrictTo,this.defaultVal,this.displayAsPassword);

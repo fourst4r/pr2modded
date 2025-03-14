@@ -3,7 +3,7 @@ package com.adobe.utils
    public class IntUtil
    {
       
-      protected static var hexChars:String = "0123456789abcdef";
+      public static var hexChars:String = "0123456789abcdef";
        
       
       public function IntUtil()

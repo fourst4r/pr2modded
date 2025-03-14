@@ -53,6 +53,8 @@ class ObjectGroupCursor extends CustomCursor {
             if (_le.blockBG.isOpen(x, y))
                 _le.blockBG.attachObject(bo.displayCode, x, y, bo.getOptionsString());
         }
+
+        e.stopImmediatePropagation();
         return null;
     }
 }

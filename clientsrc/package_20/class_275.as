@@ -10,7 +10,7 @@ package package_20
    {
        
       
-      protected var blockBackground:BlockBackground;
+      public var blockBackground:BlockBackground;
       
       public function class_275(param1:int)
       {
@@ -18,7 +18,7 @@ package package_20
          super(param1);
       }
       
-      override protected function dropObject(param1:int, param2:int) : *
+      override public function dropObject(param1:int, param2:int) : *
       {
          var _loc3_:ObjectBackground = null;
          var _loc4_:Point = null;
@@ -36,7 +36,7 @@ package package_20
          }
       }
       
-      override protected function mouseMoveHandler(param1:MouseEvent) : *
+      override public function mouseMoveHandler(param1:MouseEvent) : *
       {
          super.mouseMoveHandler(param1);
          if(isMouseDown())
@@ -48,7 +48,7 @@ package package_20
          }
       }
       
-      protected function getBlock(param1:int, param2:int) : BlockObject
+      public function getBlock(param1:int, param2:int) : BlockObject
       {
          var _loc3_:Point = new Point(param1,param2);
          _loc3_ = this.blockBackground.globalToLocal(_loc3_);

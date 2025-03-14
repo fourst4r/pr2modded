@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      protected var var_484:Boolean = false;
+      public var var_484:Boolean = false;
       
       public function WaterBlock()
       {
@@ -55,7 +55,7 @@ package blocks
          this.method_339();
       }
       
-      protected function method_339() : *
+      public function method_339() : *
       {
          alpha -= 0.1;
          if(alpha < 0.5)
@@ -69,7 +69,7 @@ package blocks
          }
       }
       
-      protected function method_117(param1:Event) : *
+      public function method_117(param1:Event) : *
       {
          alpha += 0.03;
          if(alpha >= 1)

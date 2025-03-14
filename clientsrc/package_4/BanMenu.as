@@ -9,15 +9,15 @@ package package_4
    {
        
       
-      protected var m:BanMenuGraphic;
+      public var m:BanMenuGraphic;
       
-      protected var target:Popup;
+      public var target:Popup;
       
-      protected var userName:String;
+      public var userName:String;
       
-      protected var banSecs:int;
+      public var banSecs:int;
       
-      protected var uploading:UploadingPopup;
+      public var uploading:UploadingPopup;
       
       public function BanMenu(param1:String, param2:Popup)
       {
@@ -66,7 +66,7 @@ package package_4
          addChild(this.m);
       }
       
-      protected function viewPriors(param1:MouseEvent) : *
+      public function viewPriors(param1:MouseEvent) : *
       {
          if(Main.socket.connected)
          {
@@ -78,7 +78,7 @@ package package_4
          }
       }
       
-      protected function confirmBan(param1:MouseEvent) : *
+      public function confirmBan(param1:MouseEvent) : *
       {
          this.banSecs = this.m.duration.selectedItem.data;
          if(this.banSecs == 0)
@@ -124,40 +124,40 @@ package package_4
          this.uploading.addEventListener(SuperLoader.e,this.method_238,false,0,true);
       }
       
-      protected function method_238(param1:Event) : *
+      public function method_238(param1:Event) : *
       {
          this.target.startFadeOut();
       }
       
-      protected function onBanSuccess(param1:Event) : *
+      public function onBanSuccess(param1:Event) : *
       {
          var _loc2_:int = this.uploading.parsedData.ban_id != null ? int(this.uploading.parsedData.ban_id) : 0;
          Main.socket.write("ban`" + this.userName + "`" + this.banSecs + "`" + this.m.scope.selectedItem.data + "`" + _loc2_ + "`" + this.m.reason.text);
          this.target.startFadeOut();
       }
       
-      protected function clickWarning1(param1:MouseEvent) : *
+      public function clickWarning1(param1:MouseEvent) : *
       {
          this.warnUser(1);
       }
       
-      protected function clickWarning2(param1:MouseEvent) : *
+      public function clickWarning2(param1:MouseEvent) : *
       {
          this.warnUser(2);
       }
       
-      protected function clickWarning3(param1:MouseEvent) : *
+      public function clickWarning3(param1:MouseEvent) : *
       {
          this.warnUser(3);
       }
       
-      protected function warnUser(param1:int) : *
+      public function warnUser(param1:int) : *
       {
          Main.socket.write("warn`" + this.userName + "`" + param1);
          this.target.startFadeOut();
       }
       
-      protected function clickKick(param1:MouseEvent) : *
+      public function clickKick(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.kickUser,"Are you sure you want to kick " + Data.escapeString(this.userName) + "? They will not be able to re-enter this server for 30 minutes.");
       }

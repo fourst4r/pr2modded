@@ -7,13 +7,13 @@ package package_23
    {
        
       
-      protected var m:PlayersTabListGraphic;
+      public var m:PlayersTabListGraphic;
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var sortMode:String = "gpToday";
+      public var sortMode:String = "gpToday";
       
-      protected var sortOrder:String = "desc";
+      public var sortOrder:String = "desc";
       
       public function Guilds()
       {
@@ -28,22 +28,22 @@ package package_23
          this.load();
       }
       
-      protected function clickNameButton(param1:MouseEvent) : *
+      public function clickNameButton(param1:MouseEvent) : *
       {
          this.sortGuildsBy("guildName");
       }
       
-      protected function clickActiveButton(param1:MouseEvent) : *
+      public function clickActiveButton(param1:MouseEvent) : *
       {
          this.sortGuildsBy("activeMembers");
       }
       
-      protected function clickGPButton(param1:MouseEvent) : *
+      public function clickGPButton(param1:MouseEvent) : *
       {
          this.sortGuildsBy("gpToday");
       }
       
-      protected function sortGuildsBy(param1:String = null) : *
+      public function sortGuildsBy(param1:String = null) : *
       {
          var _loc2_:String = null;
          var _loc3_:String = null;
@@ -81,7 +81,7 @@ package package_23
          }
       }
       
-      protected function load() : *
+      public function load() : *
       {
          var _loc1_:URLRequest = new URLRequest(Main.baseURL + "/guilds_top.php");
          this.superLoader.addEventListener(SuperLoader.d,this.populateList,false,0,true);
@@ -90,7 +90,7 @@ package package_23
          this.sortGuildsBy();
       }
       
-      protected function populateList(param1:Event) : *
+      public function populateList(param1:Event) : *
       {
          var _loc2_:Object = null;
          var _loc3_:PlayersTabGuildListItem = null;

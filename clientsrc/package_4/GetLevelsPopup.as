@@ -7,15 +7,15 @@ package package_4
    {
        
       
-      protected var m:GetLevelsPopupGraphic;
+      public var m:GetLevelsPopupGraphic;
       
-      protected var var_454:int = 25;
+      public var var_454:int = 25;
       
-      protected var listings:Vector.<class_229>;
+      public var listings:Vector.<class_229>;
       
-      protected var scroll:CustomScrollBar;
+      public var scroll:CustomScrollBar;
       
-      protected var selected:class_229;
+      public var selected:class_229;
       
       public function GetLevelsPopup()
       {
@@ -43,19 +43,19 @@ package package_4
          return this.selected;
       }
       
-      protected function hideLoadingGraphic() : *
+      public function hideLoadingGraphic() : *
       {
          this.m.removeChild(this.m.loadingGraphic);
       }
       
-      protected function method_455(param1:class_229) : *
+      public function method_455(param1:class_229) : *
       {
          param1.y = this.listings.length * this.var_454;
          this.m.levelsHolder.addChild(param1);
          this.listings.push(param1);
       }
       
-      protected function method_539() : *
+      public function method_539() : *
       {
          var _loc1_:class_229 = null;
          for each(_loc1_ in this.listings)
@@ -64,7 +64,7 @@ package package_4
          }
       }
       
-      protected function method_825() : *
+      public function method_825() : *
       {
          var _loc1_:class_229 = null;
          for each(_loc1_ in this.listings)
@@ -74,7 +74,7 @@ package package_4
          this.listings = new Vector.<class_229>();
       }
       
-      protected function method_491(param1:class_229) : *
+      public function method_491(param1:class_229) : *
       {
          this.selected = param1;
          this.method_539();
@@ -90,20 +90,20 @@ package package_4
          this.method_394();
       }
       
-      protected function loadListing(param1:class_229) : *
+      public function loadListing(param1:class_229) : *
       {
       }
       
-      protected function deleteListing(param1:class_229) : *
+      public function deleteListing(param1:class_229) : *
       {
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      protected function clickLoad(param1:MouseEvent) : *
+      public function clickLoad(param1:MouseEvent) : *
       {
          if(this.selected != null)
          {
@@ -111,7 +111,7 @@ package package_4
          }
       }
       
-      protected function clickDelete(param1:MouseEvent) : *
+      public function clickDelete(param1:MouseEvent) : *
       {
          if(this.selected != null)
          {
@@ -119,7 +119,7 @@ package package_4
          }
       }
       
-      protected function method_401(param1:MouseEvent) : *
+      public function method_401(param1:MouseEvent) : *
       {
          var _loc2_:class_229 = null;
          if(param1.target is class_229)
@@ -129,7 +129,7 @@ package package_4
          }
       }
       
-      protected function method_222(param1:MouseEvent) : *
+      public function method_222(param1:MouseEvent) : *
       {
          var _loc2_:class_229 = null;
          if(param1.target is class_229)
@@ -139,7 +139,7 @@ package package_4
          }
       }
       
-      protected function method_394() : *
+      public function method_394() : *
       {
          this.m.load_bt.enabled = this.m.delete_bt.enabled = this.selected != null;
       }

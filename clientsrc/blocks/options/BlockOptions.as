@@ -7,12 +7,12 @@ package blocks.options
    public class BlockOptions extends class_264
    {
       
-      protected static var instance:BlockOptions;
+      public static var instance:BlockOptions;
        
       
-      protected var block:Block;
+      public var block:Block;
       
-      protected var m:MovieClip;
+      public var m:MovieClip;
       
       public function BlockOptions(param1:Block)
       {

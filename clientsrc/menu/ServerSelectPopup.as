@@ -10,7 +10,7 @@ package menu
    {
        
       
-      protected var m:ServerSelectPopupGraphic;
+      public var m:ServerSelectPopupGraphic;
       
       public function ServerSelectPopup(param1:Boolean = true, param2:Boolean = false)
       {
@@ -64,7 +64,7 @@ package menu
          this.m.userSelect.dispatchEvent(new Event(Event.CHANGE));
       }
       
-      protected function toggleUserButton(param1:Boolean) : *
+      public function toggleUserButton(param1:Boolean) : *
       {
          if(param1)
          {
@@ -80,7 +80,7 @@ package menu
          }
       }
       
-      protected function userChange(param1:Event) : *
+      public function userChange(param1:Event) : *
       {
          var _loc2_:Object = this.m.userSelect.selectedItem;
          if(_loc2_.token === "")
@@ -98,7 +98,7 @@ package menu
          }
       }
       
-      protected function clickUserDelete(param1:MouseEvent) : *
+      public function clickUserDelete(param1:MouseEvent) : *
       {
          var _loc2_:String = String(Data.escapeString(this.m.userSelect.selectedItem.label));
          new ConfirmPopup(this.doUserDelete,"Are you sure you want to delete \"" + _loc2_ + "\" from your saved accounts?");
@@ -125,7 +125,7 @@ package menu
          this.userSelectPopulate();
       }
       
-      protected function clickLogIn(param1:MouseEvent) : *
+      public function clickLogIn(param1:MouseEvent) : *
       {
          if(this.m.serverSelect.length > 0)
          {
@@ -135,7 +135,7 @@ package menu
          }
       }
       
-      protected function clickReload(param1:MouseEvent) : *
+      public function clickReload(param1:MouseEvent) : *
       {
          if(this.m.reload_bt.enabled == true)
          {
@@ -146,13 +146,13 @@ package menu
          }
       }
       
-      protected function enableReload() : *
+      public function enableReload() : *
       {
          this.m.reload_bt.enabled = true;
          this.m.reload_bt.alpha = 1;
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          Main.token = "";
          Main.remember = false;

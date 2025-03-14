@@ -6,7 +6,7 @@ package package_4
    public class Popup extends Removable
    {
       
-      protected static var OPEN_POPUPS:Array = new Array();
+      public static var OPEN_POPUPS:Array = new Array();
       
       public static var LOADED:* = "loaded";
       
@@ -44,7 +44,7 @@ package package_4
          return OPEN_POPUPS;
       }
       
-      protected function fadeIn(param1:Event) : *
+      public function fadeIn(param1:Event) : *
       {
          alpha += 0.15;
          if(alpha >= 1)
@@ -55,7 +55,7 @@ package package_4
          }
       }
       
-      protected function fadeOut(param1:Event) : *
+      public function fadeOut(param1:Event) : *
       {
          alpha -= 0.15;
          if(alpha <= 0)

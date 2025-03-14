@@ -6,7 +6,7 @@ package background
    {
        
       
-      protected var segSize:Number = 30;
+      public var segSize:Number = 30;
       
       public function BlockGridLines(param1:GamePage)
       {
@@ -19,7 +19,7 @@ package background
          this.drawGrid(param1);
       }
       
-      protected function drawGrid(param1:Number) : *
+      public function drawGrid(param1:Number) : *
       {
          var _loc2_:Number = 550 / param1 + this.segSize;
          var _loc3_:Number = 400 / param1 + this.segSize;

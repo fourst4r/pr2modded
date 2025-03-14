@@ -12,23 +12,23 @@ package package_4
       public static var instance:GuildPopup;
        
       
-      protected var m:GuildPopupGraphic;
+      public var m:GuildPopupGraphic;
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var loader:Loader;
+      public var loader:Loader;
       
-      protected var guildMembers:Vector.<GuildMemberName>;
+      public var guildMembers:Vector.<GuildMemberName>;
       
-      protected var scroll:CustomScrollBar;
+      public var scroll:CustomScrollBar;
       
-      protected var guildName:String;
+      public var guildName:String;
       
-      protected var guildId:int;
+      public var guildId:int;
       
-      protected var guildIdShown:Boolean = false;
+      public var guildIdShown:Boolean = false;
       
-      protected var ownerId:int;
+      public var ownerId:int;
       
       public function GuildPopup(param1:int = 0, param2:String = "")
       {
@@ -57,7 +57,7 @@ package package_4
          this.superLoader.load(_loc4_);
       }
       
-      protected function determineVisuals() : *
+      public function determineVisuals() : *
       {
          this.m.gotoAndStop("nonMember");
          this.m.edit_bt.visible = this.m.delete_bt.visible = false;
@@ -80,7 +80,7 @@ package package_4
          this.scroll.y = -28;
       }
       
-      protected function parseReturn(param1:Event) : *
+      public function parseReturn(param1:Event) : *
       {
          var _loc4_:Object = null;
          var _loc5_:GuildMemberName = null;
@@ -116,23 +116,23 @@ package package_4
          Main.stage.focus = Main.stage;
       }
       
-      protected function clickMessage(param1:MouseEvent) : *
+      public function clickMessage(param1:MouseEvent) : *
       {
          new SendMessagePopup("guild","",true);
       }
       
-      protected function clickClose(param1:*) : *
+      public function clickClose(param1:*) : *
       {
          startFadeOut();
       }
       
-      protected function clickEdit(param1:MouseEvent) : *
+      public function clickEdit(param1:MouseEvent) : *
       {
          startFadeOut();
          new CreateGuildPopup(this.guildId);
       }
       
-      protected function clickDelete(param1:MouseEvent) : *
+      public function clickDelete(param1:MouseEvent) : *
       {
          var _loc2_:* = "Are you sure you want to delete this guild?";
          if(this.guildName != "")
@@ -154,7 +154,7 @@ package package_4
          startFadeOut();
       }
       
-      protected function toggleGuildIdShown(param1:KeyboardEvent) : *
+      public function toggleGuildIdShown(param1:KeyboardEvent) : *
       {
          if(param1.keyCode !== 16 || param1.type !== KeyboardEvent.KEY_DOWN)
          {

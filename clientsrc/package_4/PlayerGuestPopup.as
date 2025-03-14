@@ -6,9 +6,9 @@ package package_4
    {
        
       
-      protected var m:PlayerGuestPopupGraphic;
+      public var m:PlayerGuestPopupGraphic;
       
-      protected var banMenu:BanMenu;
+      public var banMenu:BanMenu;
       
       public function PlayerGuestPopup(param1:String)
       {
@@ -26,7 +26,7 @@ package package_4
          }
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

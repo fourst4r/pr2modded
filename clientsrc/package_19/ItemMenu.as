@@ -11,9 +11,9 @@ package package_19
    {
        
       
-      protected var m:ItemMenuGraphic;
+      public var m:ItemMenuGraphic;
       
-      protected var numItems:int;
+      public var numItems:int;
       
       public function ItemMenu(param1:ItemMenuButton)
       {

@@ -18,9 +18,9 @@ package package_6
       public static var course:Course;
        
       
-      protected var courseID:int;
+      public var courseID:int;
       
-      protected var version:int;
+      public var version:int;
       
       public var startPosArray:Array;
       
@@ -34,37 +34,37 @@ package package_6
       
       public var playerSpectating:Character;
       
-      protected var holder:Sprite;
+      public var holder:Sprite;
       
       public var timer:CourseTimer;
       
       public var statsDisplay:StatsDisplay;
       
-      protected var miniMap:MiniMap;
+      public var miniMap:MiniMap;
       
-      protected var itemDisplay:ItemDisplay;
+      public var itemDisplay:ItemDisplay;
       
-      protected var canSpectate:Boolean = false;
+      public var canSpectate:Boolean = false;
       
       public var chatBox:RaceChat;
       
       public var musicSelection:MusicSelection;
       
-      protected var countdown:CountdownGraphic;
+      public var countdown:CountdownGraphic;
       
-      protected var hearts:Hearts;
+      public var hearts:Hearts;
       
-      protected var bg:class_10;
+      public var bg:class_10;
       
       public var bg1:DrawableBackground;
       
-      protected var bg2:DrawableBackground;
+      public var bg2:DrawableBackground;
       
-      protected var bg3:DrawableBackground;
+      public var bg3:DrawableBackground;
       
-      protected var bg4:DrawableBackground;
+      public var bg4:DrawableBackground;
       
-      protected var bg5:DrawableBackground;
+      public var bg5:DrawableBackground;
       
       public var blockBackground:Map;
       
@@ -74,17 +74,17 @@ package package_6
       
       public var backBackground:Background;
       
-      protected var var_689:Number = 0;
+      public var var_689:Number = 0;
       
-      protected var var_678:Number = 0;
+      public var var_678:Number = 0;
       
-      protected var rotateDirection:String;
+      public var rotateDirection:String;
       
-      protected var varsSet:Boolean = false;
+      public var varsSet:Boolean = false;
       
       public var countdownFinished:Boolean = false;
       
-      protected var playerDone:Boolean = false;
+      public var playerDone:Boolean = false;
       
       public var looseHats:Array;
       
@@ -148,7 +148,7 @@ package package_6
          this.positionPlayersAtStart();
       }
       
-      protected function positionPlayersAtStart() : *
+      public function positionPlayersAtStart() : *
       {
          var _loc1_:int = 0;
          var _loc2_:Point = null;
@@ -166,7 +166,7 @@ package package_6
          }
       }
       
-      protected function getStartPos(param1:int) : Point
+      public function getStartPos(param1:int) : Point
       {
          param1 = Main.server.tournament == 1 ? 0 : param1;
          return this.startPosArray[param1] != null ? this.startPosArray[param1] : new Point();
@@ -224,7 +224,7 @@ package package_6
          return this.courseID;
       }
       
-      protected function maybeEndIntro(param1:Event) : *
+      public function maybeEndIntro(param1:Event) : *
       {
          if(Boolean(this.varsSet) && var_133.length <= 0)
          {
@@ -232,12 +232,12 @@ package package_6
          }
       }
       
-      protected function endIntro() : *
+      public function endIntro() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.maybeEndIntro);
       }
       
-      protected function cameraFollowPlayer(param1:Event) : *
+      public function cameraFollowPlayer(param1:Event) : *
       {
          var _loc3_:Number = NaN;
          var _loc4_:Number = NaN;
@@ -260,7 +260,7 @@ package package_6
          }
       }
       
-      protected function toggleSpectatePossible(param1:Boolean) : *
+      public function toggleSpectatePossible(param1:Boolean) : *
       {
          if(this.canSpectate == param1)
          {
@@ -280,12 +280,12 @@ package package_6
          this.toggleKeyScroll(this.playerSpectating == null);
       }
       
-      protected function onSpectateKeyPress(param1:Event) : *
+      public function onSpectateKeyPress(param1:Event) : *
       {
          this.changeSpectate(-1);
       }
       
-      protected function toggleKeyScroll(param1:Boolean) : *
+      public function toggleKeyScroll(param1:Boolean) : *
       {
          removeEventListener(Event.ENTER_FRAME,keyScroll);
          removeEventListener(Event.ENTER_FRAME,this.cameraFollowPlayer);
@@ -323,12 +323,12 @@ package package_6
          }
       }
       
-      protected function onCountdownCount(param1:Event) : *
+      public function onCountdownCount(param1:Event) : *
       {
          SoundEffects.playSound(new ReadySound(),0.4 * (Settings.soundLevel / 100));
       }
       
-      protected function onCountdownFinish(param1:Event) : *
+      public function onCountdownFinish(param1:Event) : *
       {
          SoundEffects.playSound(new GoSound(),0.5 * (Settings.soundLevel / 100));
          if(this.var_9 != null)
@@ -365,7 +365,7 @@ package package_6
          }
       }
       
-      override protected function attachBackgrounds() : *
+      override public function attachBackgrounds() : *
       {
          this.bg = new class_10(this);
          this.bg1 = new DrawableBackground(this);
@@ -395,7 +395,7 @@ package package_6
          this.setColor(12303325);
       }
       
-      override protected function removeBackgrounds() : *
+      override public function removeBackgrounds() : *
       {
          this.bg.remove();
          this.bg1.remove();
@@ -465,7 +465,7 @@ package package_6
          this.musicSelection.setSong(param1);
       }
       
-      override protected function glideToScale(param1:Event) : *
+      override public function glideToScale(param1:Event) : *
       {
          super.glideToScale(param1);
          this.bg.scaleX = this.bg.scaleY = this.holder.scaleX = this.holder.scaleY = 1 / scale;
@@ -483,7 +483,7 @@ package package_6
          Main.stage.quality = StageQuality.LOW;
       }
       
-      protected function rotate(param1:Event) : *
+      public function rotate(param1:Event) : *
       {
          var _loc2_:* = false;
          var _loc4_:Character = null;

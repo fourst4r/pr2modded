@@ -1,5 +1,7 @@
 package betterle;
 
+import betterle.package_19.BlockButton.MyObjects;
+import com.jiggmin.data.Objects;
 import levelEditor.BlockObject;
 import api.Game;
 import flash.geom.Point;
@@ -81,6 +83,7 @@ class BetterLevelEditor extends LevelEditor {
 
     public override function initialize():Dynamic {
         super.initialize();
+        menu.blocks.addItem(new BlockButton(MyObjects.DUMMY), "Dummy", "Ye");
         return null;
     }
 }

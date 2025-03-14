@@ -24,7 +24,7 @@ package levelEditor
       
       public var sideBar:SideBar;
       
-      protected var editor:LevelEditor;
+      public var editor:LevelEditor;
       
       public var m:LevelEditorMenuGraphic;
       
@@ -69,13 +69,13 @@ package levelEditor
          }
       }
       
-      protected function moveGlow(param1:Object) : *
+      public function moveGlow(param1:Object) : *
       {
          this.m.selectedGlow.x = param1.x + param1.width / 2;
          this.m.selectedGlow.width = param1.width + 6;
       }
       
-      protected function clickBlocks(param1:MouseEvent) : *
+      public function clickBlocks(param1:MouseEvent) : *
       {
          this.changeSideBar(this.blocks);
          this.editor.focusOn(this.editor.blockBG);
@@ -84,37 +84,37 @@ package levelEditor
          this.moveGlow(this.m.blocksButton);
       }
       
-      protected function clickLayer00(param1:MouseEvent) : *
+      public function clickLayer00(param1:MouseEvent) : *
       {
          this.setLayer(5);
          this.moveGlow(param1.target);
       }
       
-      protected function clickLayer0(param1:MouseEvent) : *
+      public function clickLayer0(param1:MouseEvent) : *
       {
          this.setLayer(4);
          this.moveGlow(param1.target);
       }
       
-      protected function clickLayer1(param1:MouseEvent) : *
+      public function clickLayer1(param1:MouseEvent) : *
       {
          this.setLayer(1);
          this.moveGlow(param1.target);
       }
       
-      protected function clickLayer2(param1:MouseEvent) : *
+      public function clickLayer2(param1:MouseEvent) : *
       {
          this.setLayer(2);
          this.moveGlow(param1.target);
       }
       
-      protected function clickLayer3(param1:MouseEvent) : *
+      public function clickLayer3(param1:MouseEvent) : *
       {
          this.setLayer(3);
          this.moveGlow(param1.target);
       }
       
-      protected function clickBG(param1:MouseEvent) : *
+      public function clickBG(param1:MouseEvent) : *
       {
          this.changeSideBar(this.bg);
          this.editor.focusNone();
@@ -122,7 +122,7 @@ package levelEditor
          this.moveGlow(param1.target);
       }
       
-      protected function clickSettings(param1:MouseEvent) : *
+      public function clickSettings(param1:MouseEvent) : *
       {
          this.changeSideBar(this.settings);
          this.editor.focusNone();
@@ -130,7 +130,7 @@ package levelEditor
          this.moveGlow(param1.target);
       }
       
-      protected function setLayer(param1:Number) : *
+      public function setLayer(param1:Number) : *
       {
          if(this.sideBar != this.stamps && this.sideBar != this.tools)
          {
@@ -148,12 +148,12 @@ package levelEditor
          }
       }
       
-      protected function clickSave(param1:MouseEvent) : *
+      public function clickSave(param1:MouseEvent) : *
       {
          new SaveLevelPopup();
       }
       
-      protected function clickLoad(param1:MouseEvent) : *
+      public function clickLoad(param1:MouseEvent) : *
       {
          if(this.editor.canViewLevelReports() === true)
          {
@@ -171,7 +171,7 @@ package levelEditor
          this.editor.setReportsMode(param1);
       }
       
-      protected function clickTest(param1:MouseEvent) : *
+      public function clickTest(param1:MouseEvent) : *
       {
          if(!this.editor.drawing)
          {
@@ -179,7 +179,7 @@ package levelEditor
          }
       }
       
-      protected function clickNew(param1:MouseEvent) : *
+      public function clickNew(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.clearEditor,"Are you sure you want to clear this level? All unsaved data will be lost.");
       }
@@ -190,7 +190,7 @@ package levelEditor
          this.bg.cp_btn.updateColor();
       }
       
-      protected function clickExit(param1:MouseEvent) : *
+      public function clickExit(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.exitEditor,"Are you sure you want exit? All unsaved data will be lost.");
       }
@@ -200,19 +200,19 @@ package levelEditor
          new ConnectingPopup();
       }
       
-      protected function clickUndo(param1:MouseEvent) : *
+      public function clickUndo(param1:MouseEvent) : *
       {
          this.editor.var_225.undo();
          this.changeUndoRedoState();
       }
       
-      protected function clickRedo(param1:MouseEvent) : *
+      public function clickRedo(param1:MouseEvent) : *
       {
          this.editor.var_225.redo();
          this.changeUndoRedoState();
       }
       
-      protected function chooseZoom(param1:Event) : *
+      public function chooseZoom(param1:Event) : *
       {
          var _loc2_:Number = Number(param1.target.selectedItem.data);
          _loc2_ /= 100;

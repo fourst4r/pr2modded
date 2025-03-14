@@ -7,11 +7,11 @@ package package_19
    {
        
       
-      protected var m:ValueMenuGraphic;
+      public var m:ValueMenuGraphic;
       
-      protected var defineCommand:Function;
+      public var defineCommand:Function;
       
-      protected var defaultVal:String;
+      public var defaultVal:String;
       
       public function ValueMenu(param1:ValueButton, param2:String, param3:String, param4:String, param5:Function, param6:Number = 9, param7:String = "0123456789", param8:String = "0", param9:Boolean = false)
       {
@@ -29,7 +29,7 @@ package package_19
          super(param1);
       }
       
-      protected function method_65(param1:Event) : *
+      public function method_65(param1:Event) : *
       {
          var _loc2_:String = String(param1.target.text);
          if(_loc2_ == "")

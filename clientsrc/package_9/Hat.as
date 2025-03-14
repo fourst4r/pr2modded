@@ -8,11 +8,11 @@ package package_9
    {
        
       
-      protected var m:HatGraphic;
+      public var m:HatGraphic;
       
-      protected var id:int;
+      public var id:int;
       
-      protected var sentReturnToStart:Boolean = false;
+      public var sentReturnToStart:Boolean = false;
       
       public function Hat(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:int)
       {
@@ -42,7 +42,7 @@ package package_9
          CommandHandler.commandHandler.defineCommand("removeHat" + this.id,this.remoteRemove);
       }
       
-      override protected function onTouchLocalPlayer() : *
+      override public function onTouchLocalPlayer() : *
       {
          if(!Course.course.isDonePlaying())
          {

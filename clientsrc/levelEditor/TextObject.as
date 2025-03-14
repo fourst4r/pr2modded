@@ -11,19 +11,19 @@ package levelEditor
       public static var var_380:int = 0;
        
       
-      protected var textField:TextField;
+      public var textField:TextField;
       
-      protected var editableTextField:TextField;
+      public var editableTextField:TextField;
       
-      protected var editButton:EditTextButton;
+      public var editButton:EditTextButton;
       
-      protected var cp:ColorPicker;
+      public var cp:ColorPicker;
       
-      protected var editing:Boolean = false;
+      public var editing:Boolean = false;
       
-      protected var text:String;
+      public var text:String;
       
-      protected var color:int;
+      public var color:int;
       
       public function TextObject(param1:String, param2:int, param3:int, param4:int)
       {
@@ -59,7 +59,7 @@ package levelEditor
          return param1.replace(/#35/g,"#");
       }
       
-      override protected function onDelPress(param1:KeyboardEvent) : *
+      override public function onDelPress(param1:KeyboardEvent) : *
       {
          if((this.editing === false || this.editableTextField.text === "") && (param1.keyCode === 46 || param1.keyCode === 8))
          {
@@ -134,7 +134,7 @@ package levelEditor
          this.removeEditButton();
       }
       
-      protected function stopEditing() : *
+      public function stopEditing() : *
       {
          if(this.editableTextField != null)
          {
@@ -149,7 +149,7 @@ package levelEditor
          }
       }
       
-      protected function addEditBox() : *
+      public function addEditBox() : *
       {
          this.removeEditBox();
          this.editing = true;
@@ -175,7 +175,7 @@ package levelEditor
          this.editableTextField.addEventListener(Event.CHANGE,this.method_169,false,0,true);
       }
       
-      protected function removeEditBox() : *
+      public function removeEditBox() : *
       {
          this.editing = false;
          if(this.editableTextField != null)
@@ -189,7 +189,7 @@ package levelEditor
          Main.stage.focus = Main.stage;
       }
       
-      protected function addEditButton() : *
+      public function addEditButton() : *
       {
          this.removeEditButton();
          this.editButton = new EditTextButton();
@@ -197,7 +197,7 @@ package levelEditor
          addChild(this.editButton);
       }
       
-      protected function removeEditButton() : *
+      public function removeEditButton() : *
       {
          if(this.editButton != null)
          {
@@ -207,7 +207,7 @@ package levelEditor
          }
       }
       
-      protected function addColorPicker() : *
+      public function addColorPicker() : *
       {
          if(this.cp == null)
          {
@@ -219,7 +219,7 @@ package levelEditor
          addChild(this.cp);
       }
       
-      protected function removeColorPicker() : *
+      public function removeColorPicker() : *
       {
          if(this.cp != null)
          {
@@ -230,27 +230,27 @@ package levelEditor
          }
       }
       
-      protected function openColorPicker(param1:MouseEvent) : *
+      public function openColorPicker(param1:MouseEvent) : *
       {
          this.editing = true;
          param1.stopImmediatePropagation();
       }
       
-      protected function closeColorPicker(param1:Event) : *
+      public function closeColorPicker(param1:Event) : *
       {
          this.editing = false;
          TextObject.var_380 = this.cp.getColor();
          this.setColor(this.cp.getColor());
       }
       
-      protected function method_169(param1:Event) : *
+      public function method_169(param1:Event) : *
       {
          recordRealDimensions();
          hideHighlight();
          this.positionInternals();
       }
       
-      override protected function mouseDownHandler(param1:MouseEvent) : *
+      override public function mouseDownHandler(param1:MouseEvent) : *
       {
          if(param1.target != this.editableTextField)
          {
@@ -258,7 +258,7 @@ package levelEditor
          }
       }
       
-      override protected function positionInternals() : *
+      override public function positionInternals() : *
       {
          super.positionInternals();
          if(this.editButton != null)
@@ -291,7 +291,7 @@ package levelEditor
          }
       }
       
-      protected function clickEdit(param1:MouseEvent) : *
+      public function clickEdit(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          this.startEditing();

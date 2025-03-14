@@ -51,7 +51,7 @@ package blocks
          localActivate();
       }
       
-      override protected function activate(param1:String = "") : *
+      override public function activate(param1:String = "") : *
       {
          var _loc3_:int = 0;
          var _loc4_:MinePieceGraphic = null;
@@ -71,7 +71,7 @@ package blocks
          remove();
       }
       
-      protected function method_81(param1:LocalCharacter) : *
+      public function method_81(param1:LocalCharacter) : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;

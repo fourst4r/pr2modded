@@ -12,57 +12,57 @@ package package_22
    {
        
       
-      protected var m:LevelItemGraphic;
+      public var m:LevelItemGraphic;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
-      protected var infoPopup:HoverPopup;
+      public var infoPopup:HoverPopup;
       
-      protected var favBtPopup:HoverPopup;
+      public var favBtPopup:HoverPopup;
       
-      protected var favBtTimer:uint;
+      public var favBtTimer:uint;
       
-      protected var slotArray:Array;
+      public var slotArray:Array;
       
-      protected var coverActive:* = true;
+      public var coverActive:* = true;
       
       public var courseID:int;
       
       public var version:int;
       
-      protected var title:String;
+      public var title:String;
       
-      protected var rating:Number;
+      public var rating:Number;
       
-      protected var playCount:Number;
+      public var playCount:Number;
       
-      protected var myRank:Number;
+      public var myRank:Number;
       
-      protected var minRank:Number;
+      public var minRank:Number;
       
-      protected var note:String;
+      public var note:String;
       
-      protected var userName:String;
+      public var userName:String;
       
-      protected var group:String;
+      public var group:String;
       
-      protected var pass:Boolean;
+      public var pass:Boolean;
       
-      protected var passOK:Boolean = false;
+      public var passOK:Boolean = false;
       
-      protected var type:String;
+      public var type:String;
       
-      protected var badHats:Vector.<int>;
+      public var badHats:Vector.<int>;
       
-      protected var lastUpdated:int;
+      public var lastUpdated:int;
       
-      protected var maxSlots:Number = 4;
+      public var maxSlots:Number = 4;
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var uploading:UploadingPopup;
+      public var uploading:UploadingPopup;
       
       public function LevelItem(param1:int, param2:int, param3:String, param4:Number, param5:int, param6:int, param7:String, param8:String, param9:String, param10:Boolean, param11:String, param12:String, param13:int)
       {
@@ -208,7 +208,7 @@ package package_22
          this.toggleCover(false);
       }
       
-      protected function toggleCover(param1:Boolean) : *
+      public function toggleCover(param1:Boolean) : *
       {
          if(param1 && !this.m.contains(this.m.accessCover))
          {
@@ -225,7 +225,7 @@ package package_22
          this.coverActive = param1;
       }
       
-      protected function clickPassEnter(param1:MouseEvent) : *
+      public function clickPassEnter(param1:MouseEvent) : *
       {
          var _loc2_:String = null;
          var _loc3_:String = null;
@@ -248,7 +248,7 @@ package package_22
          }
       }
       
-      protected function validatePassResponse(param1:Event) : *
+      public function validatePassResponse(param1:Event) : *
       {
          var _loc3_:Encryptor = null;
          var _loc4_:String = null;
@@ -281,7 +281,7 @@ package package_22
          this.superLoader = null;
       }
       
-      protected function passResponseError(param1:Event) : *
+      public function passResponseError(param1:Event) : *
       {
          this.m.accessCover.passBox.text = "";
          this.m.accessCover.passButton.enabled = this.m.accessCover.passBox.enabled = true;
@@ -291,7 +291,7 @@ package package_22
          this.superLoader = null;
       }
       
-      protected function addSlots() : *
+      public function addSlots() : *
       {
          var _loc3_:Slot = null;
          var _loc1_:Number = 0;
@@ -308,7 +308,7 @@ package package_22
          }
       }
       
-      protected function removeSlots() : *
+      public function removeSlots() : *
       {
          var _loc1_:Slot = null;
          var _loc2_:int = 0;
@@ -320,7 +320,7 @@ package package_22
          }
       }
       
-      protected function clickPlus(param1:MouseEvent) : *
+      public function clickPlus(param1:MouseEvent) : *
       {
          if(this.uploading == null)
          {
@@ -328,7 +328,7 @@ package package_22
          }
       }
       
-      protected function clickMinus(param1:MouseEvent) : *
+      public function clickMinus(param1:MouseEvent) : *
       {
          if(this.uploading == null)
          {
@@ -336,7 +336,7 @@ package package_22
          }
       }
       
-      protected function handleFavorite(param1:String) : *
+      public function handleFavorite(param1:String) : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.mode = param1;
@@ -348,7 +348,7 @@ package package_22
          this.uploading.addEventListener(SuperLoader.d,this.onFavoriteResult,false,0,true);
       }
       
-      protected function onFavoriteResult(param1:Event) : *
+      public function onFavoriteResult(param1:Event) : *
       {
          var _loc2_:Object = this.uploading.parsedData;
          if(_loc2_.mode === "add")
@@ -383,12 +383,12 @@ package package_22
          }
       }
       
-      protected function overFavBt(param1:MouseEvent) : *
+      public function overFavBt(param1:MouseEvent) : *
       {
          this.favBtTimer = setTimeout(this.showFavHover,500);
       }
       
-      protected function showFavHover() : *
+      public function showFavHover() : *
       {
          clearTimeout(this.favBtTimer);
          var _loc1_:DisplayObject = !!this.m.contains(this.m.plusButton) ? this.m.plusButton : this.m.minusButton;
@@ -398,7 +398,7 @@ package package_22
          this.favBtPopup = new HoverPopup(_loc3_,_loc4_,_loc1_);
       }
       
-      protected function outFavBt(param1:MouseEvent) : *
+      public function outFavBt(param1:MouseEvent) : *
       {
          clearTimeout(this.favBtTimer);
          if(this.favBtPopup != null)
@@ -424,7 +424,7 @@ package package_22
          Main.socket.write("confirm_slot`");
       }
       
-      protected function fillSlot(param1:Array) : *
+      public function fillSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = NaN;
@@ -450,7 +450,7 @@ package package_22
          }
       }
       
-      protected function confirmSlot(param1:Array) : *
+      public function confirmSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = Number(param1[0]);
@@ -461,7 +461,7 @@ package package_22
          }
       }
       
-      protected function clearSlot(param1:Array) : *
+      public function clearSlot(param1:Array) : *
       {
          var _loc2_:Slot = null;
          var _loc3_:Number = Number(param1[0]);
@@ -472,7 +472,7 @@ package package_22
          }
       }
       
-      protected function overInfoHandler(param1:MouseEvent) : *
+      public function overInfoHandler(param1:MouseEvent) : *
       {
          var _loc2_:* = "-- " + Data.escapeString(this.title) + " --";
          var _loc3_:* = "By: " + Data.escapeString(this.userName) + "<br/>";
@@ -491,13 +491,13 @@ package package_22
          this.infoPopup = new HoverPopup(_loc2_,_loc11_,this.m.infoButton);
       }
       
-      protected function outInfoHandler(param1:MouseEvent) : *
+      public function outInfoHandler(param1:MouseEvent) : *
       {
          this.infoPopup.remove();
          this.infoPopup = null;
       }
       
-      protected function clickInfoHandler(param1:MouseEvent) : *
+      public function clickInfoHandler(param1:MouseEvent) : *
       {
          new LevelInfoPopup(this.courseID);
       }

@@ -36,15 +36,15 @@ package package_8
       public static const CHEESE:String = "ch";
        
       
-      protected var var_387:class_127;
+      public var var_387:class_127;
       
-      protected var var_140:SoundChannel;
+      public var var_140:SoundChannel;
       
       public var m:CharacterGraphic;
       
       public var var_301:MovieClip;
       
-      protected var characterStatesArray:Array;
+      public var characterStatesArray:Array;
       
       public var curWeapon:MovieClip;
       
@@ -108,7 +108,7 @@ package package_8
       
       public var var_670:Number;
       
-      protected var reversedControls:Boolean = false;
+      public var reversedControls:Boolean = false;
       
       public var state:String;
       
@@ -116,17 +116,17 @@ package package_8
       
       public var tempID:int;
       
-      protected var var_448:int = 5;
+      public var var_448:int = 5;
       
-      protected var var_215:int = 0;
+      public var var_215:int = 0;
       
-      protected var fadeOutStarted:Boolean = false;
+      public var fadeOutStarted:Boolean = false;
       
       public var removed:Boolean = false;
       
       public var var_4:class_20;
       
-      protected var var_375:class_125;
+      public var var_375:class_125;
       
       public function Character(param1:int = 1, param2:int = 1, param3:int = 1, param4:int = 1)
       {
@@ -157,7 +157,7 @@ package package_8
          this.setFeetColors(param7,param8);
       }
       
-      protected function resetHats() : *
+      public function resetHats() : *
       {
          this.var_4.setBool(PROP,false);
          this.var_4.setBool(CROWN,false);
@@ -327,7 +327,7 @@ package package_8
          this.applyItem();
       }
       
-      protected function applyAppearance() : *
+      public function applyAppearance() : *
       {
          this.updatePartMC("head","head");
          this.updatePartMC("body","body");
@@ -342,7 +342,7 @@ package package_8
          this.var_387.update();
       }
       
-      protected function updatePartMC(param1:String, param2:String) : *
+      public function updatePartMC(param1:String, param2:String) : *
       {
          var _loc3_:MovieClip = null;
          var _loc4_:int = 0;
@@ -394,7 +394,7 @@ package package_8
          }
       }
       
-      protected function hideHeadFeetIfFredBody() : *
+      public function hideHeadFeetIfFredBody() : *
       {
          var _loc1_:MovieClip = null;
          for each(_loc1_ in this.characterStatesArray)
@@ -414,14 +414,14 @@ package package_8
          }
       }
       
-      protected function applyPartColor(param1:MovieClip, param2:int) : *
+      public function applyPartColor(param1:MovieClip, param2:int) : *
       {
          var _loc3_:ColorTransform = new ColorTransform();
          _loc3_.color = param2;
          param1.transform.colorTransform = _loc3_;
       }
       
-      protected function applyItem() : *
+      public function applyItem() : *
       {
          var _loc1_:MovieClip = null;
          for each(_loc1_ in this.characterStatesArray)
@@ -440,7 +440,7 @@ package package_8
          return this.groupStr;
       }
       
-      protected function setNameColor(param1:int) : *
+      public function setNameColor(param1:int) : *
       {
          this.m.nameHolder.nameBox.textColor = param1;
       }
@@ -477,7 +477,7 @@ package package_8
          y = _loc3_;
       }
       
-      protected function method_58(param1:Number) : *
+      public function method_58(param1:Number) : *
       {
          var _loc2_:Point = new Point(Math.floor(x / 30),Math.floor(y / 30));
          this.seg1 = Data.method_9(_loc2_.x,_loc2_.y,param1);
@@ -508,7 +508,7 @@ package package_8
          addEventListener(Event.ENTER_FRAME,this.method_106,false,0,true);
       }
       
-      protected function method_106(param1:Event) : *
+      public function method_106(param1:Event) : *
       {
          var _loc2_:Number = this.var_269 % 8;
          if(!this.fadeOutStarted)
@@ -522,7 +522,7 @@ package package_8
          }
       }
       
-      protected function endRecovery() : *
+      public function endRecovery() : *
       {
          alpha = 1;
          removeEventListener(Event.ENTER_FRAME,this.method_106);
@@ -601,18 +601,18 @@ package package_8
          this.method_190();
       }
       
-      protected function method_623() : *
+      public function method_623() : *
       {
          addEventListener(Event.ENTER_FRAME,this.method_156,false,0,true);
       }
       
-      protected function method_820() : *
+      public function method_820() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.method_156);
          scaleY = 1;
       }
       
-      protected function method_156(param1:Event) : *
+      public function method_156(param1:Event) : *
       {
          var _loc2_:Number = this.m.superJumpAnim.currentFrame / 2;
          scaleY = (Math.random() * _loc2_ + (100 - _loc2_ / 2)) / 100;
@@ -650,7 +650,7 @@ package package_8
          }
       }
       
-      protected function method_207(param1:Event) : *
+      public function method_207(param1:Event) : *
       {
          var _loc2_:MovieClip = null;
          if(this.curWeapon != null && this.curWeapon.jetPack != null && this.curWeapon.jetPack.anim != null && this.var_140 != null)
@@ -665,7 +665,7 @@ package package_8
          }
       }
       
-      protected function getHighestHat() : Object
+      public function getHighestHat() : Object
       {
          var _loc3_:int = 0;
          var _loc4_:int = 0;
@@ -693,13 +693,13 @@ package package_8
          this.method_200(new class_129(33,5000,this));
       }
       
-      protected function method_200(param1:class_125) : *
+      public function method_200(param1:class_125) : *
       {
          this.method_190();
          this.var_375 = param1;
       }
       
-      protected function method_190() : *
+      public function method_190() : *
       {
          if(this.var_375 != null)
          {
@@ -708,7 +708,7 @@ package package_8
          }
       }
       
-      protected function fadeOut(param1:Event) : *
+      public function fadeOut(param1:Event) : *
       {
          alpha -= 0.02;
          if(alpha <= 0)
@@ -727,7 +727,7 @@ package package_8
          }
       }
       
-      protected function removeListeners() : *
+      public function removeListeners() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.method_106);
          removeEventListener(Event.ENTER_FRAME,this.method_156);

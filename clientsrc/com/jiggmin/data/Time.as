@@ -4,9 +4,9 @@ package com.jiggmin.data
    {
        
       
-      protected var var_624:Number = 0;
+      public var var_624:Number = 0;
       
-      protected var var_568:Number = 0;
+      public var var_568:Number = 0;
       
       public function Time()
       {

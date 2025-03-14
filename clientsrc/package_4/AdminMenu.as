@@ -6,13 +6,13 @@ package package_4
    {
        
       
-      protected var m:AdminMenuGraphic;
+      public var m:AdminMenuGraphic;
       
-      protected var target:Popup;
+      public var target:Popup;
       
-      protected var userName:String;
+      public var userName:String;
       
-      protected var mode:String;
+      public var mode:String;
       
       public function AdminMenu(param1:String, param2:Popup)
       {
@@ -27,37 +27,37 @@ package package_4
          addChild(this.m);
       }
       
-      protected function clickTemp(param1:MouseEvent) : *
+      public function clickTemp(param1:MouseEvent) : *
       {
          this.mode = "temporary";
          new ConfirmPopup(this.promoteModerator,"Are you sure you want to promote " + this.userName + " to a temporary moderator? They will be a moderator on this server until they log off. They will be able to administer 30 minute server kicks.");
       }
       
-      protected function clickTrial(param1:MouseEvent) : *
+      public function clickTrial(param1:MouseEvent) : *
       {
          this.mode = "trial";
          new ConfirmPopup(this.promoteModerator,"Are you sure you want to promote " + this.userName + " to a trial moderator? They will only be able to ban for up to a day.");
       }
       
-      protected function clickPerma(param1:MouseEvent) : *
+      public function clickPerma(param1:MouseEvent) : *
       {
          this.mode = "permanent";
          new ConfirmPopup(this.promoteModerator,"Are you sure you want to promote " + this.userName + " to a permanent moderator? They will be able to ban for up to a year, see IP addresses, unpublish levels, edit guilds, and use the PR2 Hub moderation tools.");
       }
       
-      protected function clickDemote(param1:MouseEvent) : *
+      public function clickDemote(param1:MouseEvent) : *
       {
          this.mode = null;
          new ConfirmPopup(this.demoteModerator,"Are you sure you want to demote " + this.userName + "?");
       }
       
-      protected function promoteModerator() : *
+      public function promoteModerator() : *
       {
          Main.socket.write("promote_to_moderator`" + this.userName + "`" + this.mode);
          this.target.startFadeOut();
       }
       
-      protected function demoteModerator() : *
+      public function demoteModerator() : *
       {
          Main.socket.write("demote_moderator`" + this.userName);
          this.target.startFadeOut();

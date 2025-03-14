@@ -13,7 +13,7 @@ package package_8
          super(param1,param2,param3);
       }
       
-      override protected function createParticle(param1:Number, param2:Number) : DisplayObject
+      override public function createParticle(param1:Number, param2:Number) : DisplayObject
       {
          var _loc3_:class_178 = new class_178(param1,param2);
          _loc3_.rotation = Math.random() * 360;

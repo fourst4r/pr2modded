@@ -8,9 +8,9 @@ package menu
    {
        
       
-      protected var m:LoginPopupGraphic;
+      public var m:LoginPopupGraphic;
       
-      protected var ssPopup:ServerSelectPopup = null;
+      public var ssPopup:ServerSelectPopup = null;
       
       public function LoginPopup(param1:ServerSelectPopup = null)
       {
@@ -31,7 +31,7 @@ package menu
          }
       }
       
-      protected function listenForEnter(param1:KeyboardEvent) : *
+      public function listenForEnter(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -39,7 +39,7 @@ package menu
          }
       }
       
-      protected function login(param1:MouseEvent) : *
+      public function login(param1:MouseEvent) : *
       {
          if(this.m.dropdown.length > 0)
          {
@@ -56,7 +56,7 @@ package menu
          }
       }
       
-      protected function clickReload(param1:MouseEvent) : *
+      public function clickReload(param1:MouseEvent) : *
       {
          if(this.m.reload_bt.enabled == true)
          {
@@ -67,13 +67,13 @@ package menu
          }
       }
       
-      protected function enableReload() : *
+      public function enableReload() : *
       {
          this.m.reload_bt.enabled = true;
          this.m.reload_bt.alpha = 1;
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          if(this.ssPopup != null)
          {
@@ -82,7 +82,7 @@ package menu
          startFadeOut();
       }
       
-      protected function clickForgotPass(param1:MouseEvent) : *
+      public function clickForgotPass(param1:MouseEvent) : *
       {
          new ForgotPassPopup(this.m.nameBox.text);
       }

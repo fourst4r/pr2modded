@@ -8,13 +8,13 @@ package package_8
    {
        
       
-      protected var var_128:Object;
+      public var var_128:Object;
       
-      protected var var_567:Number;
+      public var var_567:Number;
       
-      protected var var_608:Number;
+      public var var_608:Number;
       
-      protected var holder:DisplayObjectContainer;
+      public var holder:DisplayObjectContainer;
       
       public function class_179(param1:int, param2:int, param3:DisplayObject, param4:DisplayObjectContainer, param5:Object, param6:Number = 0, param7:Number = 0)
       {
@@ -25,7 +25,7 @@ package package_8
          this.var_608 = param7;
       }
       
-      override protected function createParticle(param1:Number, param2:Number) : DisplayObject
+      override public function createParticle(param1:Number, param2:Number) : DisplayObject
       {
          if(!target.parent)
          {
@@ -40,17 +40,17 @@ package package_8
          return _loc3_;
       }
       
-      override protected function makeX() : Number
+      override public function makeX() : Number
       {
          return this.method_470().x;
       }
       
-      override protected function makeY() : Number
+      override public function makeY() : Number
       {
          return this.method_470().y;
       }
       
-      protected function method_470() : Object
+      public function method_470() : Object
       {
          if(!this.holder || !target || !target.parent)
          {

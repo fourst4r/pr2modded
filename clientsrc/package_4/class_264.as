@@ -8,7 +8,7 @@ package package_4
    {
        
       
-      protected var initTimeout:uint;
+      public var initTimeout:uint;
       
       public function class_264(param1:DisplayObject)
       {
@@ -16,12 +16,12 @@ package package_4
          super(param1);
       }
       
-      protected function init() : *
+      public function init() : *
       {
          Main.stage.addEventListener(MouseEvent.MOUSE_DOWN,this.downHandler);
       }
       
-      protected function downHandler(param1:MouseEvent) : *
+      public function downHandler(param1:MouseEvent) : *
       {
          if(!this.hitTestPoint(param1.stageX,param1.stageY,true))
          {

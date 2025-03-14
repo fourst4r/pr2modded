@@ -10,15 +10,15 @@ package items
    {
        
       
-      protected var character:LocalCharacter;
+      public var character:LocalCharacter;
       
-      protected var space:Boolean = false;
+      public var space:Boolean = false;
       
-      protected var reloading:Boolean = false;
+      public var reloading:Boolean = false;
       
-      protected var reloadListener:uint;
+      public var reloadListener:uint;
       
-      protected var available:Boolean = false;
+      public var available:Boolean = false;
       
       public function Item(param1:LocalCharacter)
       {
@@ -42,13 +42,13 @@ package items
          }
       }
       
-      protected function setUses(param1:int) : *
+      public function setUses(param1:int) : *
       {
          class_33.setNumber("uses",param1);
          this.character.setAmmo(param1);
       }
       
-      protected function setReloadTime(param1:int) : *
+      public function setReloadTime(param1:int) : *
       {
          class_33.setNumber("reloadTime",param1);
       }
@@ -70,12 +70,12 @@ package items
          }
       }
       
-      protected function reloadingOnComplete() : *
+      public function reloadingOnComplete() : *
       {
          this.reloading = false;
       }
       
-      protected function method_37() : Point
+      public function method_37() : Point
       {
          var _loc1_:Point = new Point(this.character.curWeapon.x,this.character.curWeapon.y);
          _loc1_ = this.character.curWeapon.parent.localToGlobal(_loc1_);

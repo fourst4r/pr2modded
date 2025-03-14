@@ -11,15 +11,15 @@ package menu
    {
        
       
-      protected var loader:SuperLoader;
+      public var loader:SuperLoader;
       
-      protected var m:LoggingInPopupGraphic;
+      public var m:LoggingInPopupGraphic;
       
-      protected var socketOK:Boolean = false;
+      public var socketOK:Boolean = false;
       
-      protected var httpOK:Boolean = false;
+      public var httpOK:Boolean = false;
       
-      protected var socket:PR2Socket;
+      public var socket:PR2Socket;
       
       public function LoggingInPopup(param1:String)
       {
@@ -66,7 +66,7 @@ package menu
          this.maybeSwitchToLobby();
       }
       
-      protected function onHttpSuccess(param1:Event) : *
+      public function onHttpSuccess(param1:Event) : *
       {
          var _loc2_:Object = null;
          _loc2_ = this.loader.parsedData;
@@ -85,7 +85,7 @@ package menu
          this.maybeSwitchToLobby();
       }
       
-      protected function onError(param1:Event) : *
+      public function onError(param1:Event) : *
       {
          var _loc2_:Object = null;
          startFadeOut();
@@ -104,7 +104,7 @@ package menu
          Main.clearUserData();
       }
       
-      protected function maybeSwitchToLobby() : *
+      public function maybeSwitchToLobby() : *
       {
          if(Boolean(this.socketOK) && Boolean(this.httpOK))
          {
@@ -119,7 +119,7 @@ package menu
          }
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
          Main.socket.remove();

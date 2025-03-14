@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      protected var var_602:uint;
+      public var var_602:uint;
       
       public function VanishBlock()
       {
@@ -48,7 +48,7 @@ package blocks
          this.activate();
       }
       
-      protected function method_594() : *
+      public function method_594() : *
       {
          var _loc1_:Point = getSeg();
          if(!map.characterOccupiesSpace(_loc1_.x,_loc1_.y))
@@ -65,7 +65,7 @@ package blocks
          }
       }
       
-      protected function fadeOut(param1:Event) : *
+      public function fadeOut(param1:Event) : *
       {
          alpha -= 0.1;
          if(alpha <= 0)
@@ -77,7 +77,7 @@ package blocks
          }
       }
       
-      protected function method_117(param1:Event) : *
+      public function method_117(param1:Event) : *
       {
          alpha += 0.1;
          if(alpha >= 1)
@@ -87,7 +87,7 @@ package blocks
          }
       }
       
-      override protected function activate(param1:String = "") : *
+      override public function activate(param1:String = "") : *
       {
          if(!frozen)
          {
@@ -96,7 +96,7 @@ package blocks
          }
       }
       
-      protected function clear() : *
+      public function clear() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.fadeOut);
          removeEventListener(Event.ENTER_FRAME,this.method_117);

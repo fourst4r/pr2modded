@@ -16,7 +16,7 @@ package levelEditor
       public static var editor:LevelEditor;
        
       
-      protected var drawingPop:DrawingPopup;
+      public var drawingPop:DrawingPopup;
       
       public var var_364:Sprite;
       
@@ -64,11 +64,11 @@ package levelEditor
       
       public var toNewest:Boolean = true;
       
-      protected var variables:URLVariables;
+      public var variables:URLVariables;
       
-      protected var isMod:Boolean = false;
+      public var isMod:Boolean = false;
       
-      protected var reportsMode:Boolean = false;
+      public var reportsMode:Boolean = false;
       
       public function LevelEditor(param1:URLVariables, param2:Boolean = false, param3:Boolean = false)
       {
@@ -100,7 +100,7 @@ package levelEditor
          addEventListener(Event.ENTER_FRAME,this.keyScroll);
       }
       
-      override protected function keyScroll(param1:Event) : *
+      override public function keyScroll(param1:Event) : *
       {
          super.keyScroll(param1);
          var _loc2_:Number = 275 * (1 / scaleX);
@@ -110,7 +110,7 @@ package levelEditor
          this.setPos(posX,posY);
       }
       
-      override protected function attachBackgrounds() : *
+      override public function attachBackgrounds() : *
       {
          this.bg1 = new ObjectBackground(this);
          this.bg2 = new ObjectBackground(this);
@@ -160,7 +160,7 @@ package levelEditor
          this.menu.reset();
       }
       
-      override protected function removeBackgrounds() : *
+      override public function removeBackgrounds() : *
       {
          this.bg1.remove();
          this.bg2.remove();
@@ -265,7 +265,7 @@ package levelEditor
          return _loc1_.join("`");
       }
       
-      protected function setStartPos() : *
+      public function setStartPos() : *
       {
          var _loc1_:Point = this.blockBG.getStartPos();
          posX = -_loc1_.x - 100;
@@ -418,13 +418,13 @@ package levelEditor
          this.blockGrid.setZoom(param1);
       }
       
-      override protected function finishGlide() : *
+      override public function finishGlide() : *
       {
          Main.stage.quality = StageQuality.HIGH;
          super.finishGlide();
       }
       
-      override protected function glideToScale(param1:Event) : *
+      override public function glideToScale(param1:Event) : *
       {
          super.glideToScale(param1);
          this.menu.scaleX = this.menu.scaleY = this.bg.scaleX = this.bg.scaleY = 1 / scale;

@@ -9,19 +9,19 @@ package package_15
    {
        
       
-      protected var reportsPop:GetLevelReports;
+      public var reportsPop:GetLevelReports;
       
-      protected var level:Object;
+      public var level:Object;
       
-      protected var htmlNM:HTMLNameMaker;
+      public var htmlNM:HTMLNameMaker;
       
-      protected var uploading:UploadingPopup;
+      public var uploading:UploadingPopup;
       
-      protected var banRet:Object;
+      public var banRet:Object;
       
-      protected var info:HoverPopup;
+      public var info:HoverPopup;
       
-      protected var m:HandleLevelReportPopupGraphic;
+      public var m:HandleLevelReportPopupGraphic;
       
       public function HandleLevelReportPopup(param1:GetLevelReports, param2:Object)
       {
@@ -44,7 +44,7 @@ package package_15
          addChild(this.m);
       }
       
-      protected function addInfoHover(param1:MouseEvent) : *
+      public function addInfoHover(param1:MouseEvent) : *
       {
          var _loc2_:* = "-- " + Data.escapeString(this.level.title) + " --";
          var _loc3_:* = "Creator: " + Data.escapeString(this.level.creator) + "<br/>";
@@ -61,7 +61,7 @@ package package_15
          this.info.x += this.info.width + 23;
       }
       
-      protected function removeInfoHover(param1:MouseEvent = null) : *
+      public function removeInfoHover(param1:MouseEvent = null) : *
       {
          if(this.info)
          {
@@ -70,7 +70,7 @@ package package_15
          }
       }
       
-      protected function reopenReportedLevelsPopup(param1:Event = null) : *
+      public function reopenReportedLevelsPopup(param1:Event = null) : *
       {
          this.uploading.removeEventListener(SuperLoader.d,this.reopenReportedLevelsPopup);
          this.reportsPop.startFadeOut();
@@ -82,7 +82,7 @@ package package_15
          startFadeOut();
       }
       
-      protected function checkIfSelectedOther(param1:*) : *
+      public function checkIfSelectedOther(param1:*) : *
       {
          if(param1 is MouseEvent)
          {
@@ -101,7 +101,7 @@ package package_15
          this.m.otherReasonBox.visible = this.m.other_cancel_bt.visible = param1;
       }
       
-      protected function clickBan(param1:MouseEvent) : *
+      public function clickBan(param1:MouseEvent) : *
       {
          var _loc2_:String = this.m.reason.selectedIndex == 0 || this.m.reason.selectedIndex == this.m.reason.length - 1 ? String(this.m.otherReasonBox.text) : String(this.m.reason.selectedItem.data);
          if(_loc2_ == "")
@@ -117,7 +117,7 @@ package package_15
          new ConfirmPopup(this.banUser,"Are you sure you want to socially ban " + _loc4_ + "? This will also unpublish the reported level.");
       }
       
-      protected function banUser() : *
+      public function banUser() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.level_id = this.level.level_id;
@@ -133,17 +133,17 @@ package package_15
          this.uploading.addEventListener(SuperLoader.d,this.confirmArchive,false,0,true);
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }
       
-      protected function clickArchive(param1:MouseEvent) : *
+      public function clickArchive(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.confirmArchive,"Are you sure you want to archive this report?");
       }
       
-      protected function confirmArchive(param1:* = null) : *
+      public function confirmArchive(param1:* = null) : *
       {
          if(this.uploading != null)
          {

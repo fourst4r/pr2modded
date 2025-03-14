@@ -15,11 +15,11 @@ package background
    {
        
       
-      protected var course:GamePage;
+      public var course:GamePage;
       
-      protected var var_394:uint;
+      public var var_394:uint;
       
-      protected var bgColor:Number = 13092571;
+      public var bgColor:Number = 13092571;
       
       public var scale:Number = 1;
       
@@ -27,15 +27,15 @@ package background
       
       public var redoArray:Array;
       
-      protected var var_39:Number = 0;
+      public var var_39:Number = 0;
       
-      protected var var_104:int;
+      public var var_104:int;
       
-      protected var var_141:int;
+      public var var_141:int;
       
-      protected var var_118:int;
+      public var var_118:int;
       
-      protected var var_120:int;
+      public var var_120:int;
       
       public function Background(param1:GamePage)
       {
@@ -98,7 +98,7 @@ package background
          }
       }
       
-      protected function method_59() : *
+      public function method_59() : *
       {
          var _loc1_:Object = ColorUtil.hex24ToRGB(this.bgColor);
          var _loc2_:Number = (1 - this.scale) * 0.4 + 0.1;
@@ -195,7 +195,7 @@ package background
          parent.removeChild(this);
       }
       
-      protected function method_118(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:DisplayObjectContainer, param8:Array) : *
+      public function method_118(param1:int, param2:int, param3:int, param4:int, param5:int, param6:int, param7:DisplayObjectContainer, param8:Array) : *
       {
          var _loc9_:int = 0;
          var _loc10_:Point = Data.method_9(param3,param5,rotation);
@@ -291,7 +291,7 @@ package background
          this.var_120 = _loc16_;
       }
       
-      protected function method_94(param1:int, param2:int, param3:int, param4:DisplayObjectContainer, param5:Array, param6:String) : *
+      public function method_94(param1:int, param2:int, param3:int, param4:DisplayObjectContainer, param5:Array, param6:String) : *
       {
          var _loc7_:int = param2;
          while(_loc7_ <= param3)
@@ -301,7 +301,7 @@ package background
          }
       }
       
-      protected function method_64(param1:int, param2:int, param3:int, param4:DisplayObjectContainer, param5:Array, param6:String) : *
+      public function method_64(param1:int, param2:int, param3:int, param4:DisplayObjectContainer, param5:Array, param6:String) : *
       {
          var _loc7_:int = param2;
          while(_loc7_ <= param3)
@@ -311,7 +311,7 @@ package background
          }
       }
       
-      protected function method_447(param1:int, param2:int, param3:DisplayObjectContainer, param4:String, param5:Array = null) : *
+      public function method_447(param1:int, param2:int, param3:DisplayObjectContainer, param4:String, param5:Array = null) : *
       {
          var _loc6_:DisplayObject = null;
          if(param5[param1] != null && param5[param1][param2] != null)

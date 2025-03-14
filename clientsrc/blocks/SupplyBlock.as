@@ -7,7 +7,7 @@ package blocks
    {
        
       
-      protected var uses:int = 1;
+      public var uses:int = 1;
       
       public function SupplyBlock(param1:int)
       {
@@ -23,7 +23,7 @@ package blocks
          }
       }
       
-      protected function maybeUseSupply(param1:LocalCharacter) : *
+      public function maybeUseSupply(param1:LocalCharacter) : *
       {
          if(!frozen)
          {
@@ -39,17 +39,17 @@ package blocks
          }
       }
       
-      protected function useSupply(param1:LocalCharacter) : *
+      public function useSupply(param1:LocalCharacter) : *
       {
       }
       
-      protected function resetSupply(param1:int = 1) : *
+      public function resetSupply(param1:int = 1) : *
       {
          this.uses = param1;
          transform.colorTransform = new ColorTransform();
       }
       
-      protected function method_789() : *
+      public function method_789() : *
       {
          transform.colorTransform = new ColorTransform(0.5,0.5,0.5);
       }

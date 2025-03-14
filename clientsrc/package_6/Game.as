@@ -17,25 +17,25 @@ package package_6
    {
        
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var quitButton:QuitButton;
+      public var quitButton:QuitButton;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
-      protected var spectatePicker:SpectatePicker;
+      public var spectatePicker:SpectatePicker;
       
-      protected var drawingInfo:DrawingInfo;
+      public var drawingInfo:DrawingInfo;
       
       public var prize:Object;
       
-      protected var luxPop:LuxPopup;
+      public var luxPop:LuxPopup;
       
-      protected var levelHash:String = "";
+      public var levelHash:String = "";
       
-      protected var specialEvent:SpecialEvent;
+      public var specialEvent:SpecialEvent;
       
-      protected var var_634:Array;
+      public var var_634:Array;
       
       public var var_202:FinishedPage;
       
@@ -47,7 +47,7 @@ package package_6
       
       public var var_347:int;
       
-      protected var hatCountdown:uint;
+      public var hatCountdown:uint;
       
       public function Game(param1:int, param2:int)
       {
@@ -94,7 +94,7 @@ package package_6
          this.getLevelData();
       }
       
-      protected function initSpectate() : *
+      public function initSpectate() : *
       {
          this.spectatePicker = new SpectatePicker();
          this.spectatePicker.x = -265;
@@ -104,14 +104,14 @@ package package_6
          this.toggleSpectatePossible(true);
       }
       
-      override protected function toggleSpectatePossible(param1:Boolean) : *
+      override public function toggleSpectatePossible(param1:Boolean) : *
       {
          super.changeSpectate(-1);
          this.spectatePicker.toggleVisibility(param1);
          super.toggleSpectatePossible(param1);
       }
       
-      override protected function onSpectateKeyPress(param1:Event) : *
+      override public function onSpectateKeyPress(param1:Event) : *
       {
          if(!(Main.stage.focus is TextField) && (Keys.isPressed(Keyboard.DOWN) || Keys.isPressed(altCtrl.down) || Keys.isPressed(Keyboard.UP) || Keys.isPressed(altCtrl.up) || Keys.isPressed(Keyboard.LEFT) || Keys.isPressed(altCtrl.left) || Keys.isPressed(Keyboard.RIGHT) || Keys.isPressed(altCtrl.right)))
          {
@@ -120,7 +120,7 @@ package package_6
          }
       }
       
-      override protected function onCountdownFinish(param1:Event) : *
+      override public function onCountdownFinish(param1:Event) : *
       {
          if(PrizePopup.instance != null)
          {
@@ -129,14 +129,14 @@ package package_6
          super.onCountdownFinish(param1);
       }
       
-      protected function getLevelData() : *
+      public function getLevelData() : *
       {
          var _loc1_:URLRequest = new URLRequest(Main.levelsURL + "/" + courseID + ".txt?version=" + version);
          this.superLoader.addEventListener(Event.COMPLETE,this.loadHandler,false,0,true);
          this.superLoader.load(_loc1_);
       }
       
-      protected function loadHandler(param1:Event) : *
+      public function loadHandler(param1:Event) : *
       {
          var _loc7_:URLVariables = null;
          this.superLoader.removeEventListener(Event.COMPLETE,this.loadHandler);
@@ -230,14 +230,14 @@ package package_6
          addChild(new HappyHour());
       }
       
-      protected function superBooster(param1:Array) : *
+      public function superBooster(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:Character = playerArray[_loc2_];
          _loc3_.method_576();
       }
       
-      protected function maybeReturnHatToStart(param1:Array) : *
+      public function maybeReturnHatToStart(param1:Array) : *
       {
          var _loc3_:Point = null;
          var _loc4_:int = 0;
@@ -254,7 +254,7 @@ package package_6
          }
       }
       
-      protected function returnHatToStart(param1:Hat) : *
+      public function returnHatToStart(param1:Hat) : *
       {
          var _loc2_:Object = param1.getInfo();
          param1.remove();
@@ -264,24 +264,24 @@ package package_6
          }
       }
       
-      protected function startHatCountdown(param1:Array = null) : *
+      public function startHatCountdown(param1:Array = null) : *
       {
          this.cm.defineCommand("cancelHatCountdown",this.cancelHatCountdown);
          this.hatCountdown = setInterval(this.checkHatCountdown,1000);
       }
       
-      protected function checkHatCountdown() : *
+      public function checkHatCountdown() : *
       {
          Main.socket.write("check_hat_countdown`");
       }
       
-      protected function cancelHatCountdown(param1:Array = null) : *
+      public function cancelHatCountdown(param1:Array = null) : *
       {
          this.cm.defineCommand("cancelHatCountdown",null);
          clearInterval(this.hatCountdown);
       }
       
-      protected function createRemoteCharacter(param1:Array) : *
+      public function createRemoteCharacter(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:String = String(param1[1]);
@@ -305,7 +305,7 @@ package package_6
          positionPlayersAtStart();
       }
       
-      protected function createLocalCharacter(param1:Array) : *
+      public function createLocalCharacter(param1:Array) : *
       {
          var _loc2_:int = int(param1[0]);
          var _loc3_:Number = Number(param1[1]);
@@ -350,13 +350,13 @@ package package_6
          }
       }
       
-      override protected function endIntro() : *
+      override public function endIntro() : *
       {
          Main.socket.write("finish_drawing`" + this.levelHash + "`" + this.gameMode + "`" + this.getFinishBlockPositions() + "`" + finishBlocks.length + "`" + cowboyChance + "`" + badHats.join(","));
          super.endIntro();
       }
       
-      protected function getFinishBlockPositions() : String
+      public function getFinishBlockPositions() : String
       {
          return finishBlocks.length > 5 ? "all" : JSON.stringify(finishBlocks);
       }
@@ -419,7 +419,7 @@ package package_6
          this.method_196();
       }
       
-      protected function method_682() : *
+      public function method_682() : *
       {
          var _loc1_:int = 0;
          var _loc2_:int = 0;
@@ -442,7 +442,7 @@ package package_6
          }
       }
       
-      protected function method_185() : *
+      public function method_185() : *
       {
          if(!playerDone)
          {

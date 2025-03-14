@@ -5,13 +5,13 @@ package com.jiggmin.data
    public class UnreadNotif
    {
       
-      protected static var lastReadTime:Number = 0;
+      public static var lastReadTime:Number = 0;
       
-      protected static var unreadMessages:Array = new Array();
+      public static var unreadMessages:Array = new Array();
       
-      protected static var m:UnreadNotifGraphic = new UnreadNotifGraphic();
+      public static var m:UnreadNotifGraphic = new UnreadNotifGraphic();
       
-      protected static var pmTab:DisplayObjectContainer;
+      public static var pmTab:DisplayObjectContainer;
        
       
       public function UnreadNotif()
@@ -56,7 +56,7 @@ package com.jiggmin.data
          }
       }
       
-      protected static function addNotif() : *
+      public static function addNotif() : *
       {
          if(pmTab != null)
          {
@@ -66,7 +66,7 @@ package com.jiggmin.data
          }
       }
       
-      protected static function removeNotif() : *
+      public static function removeNotif() : *
       {
          if(m.parent != null)
          {

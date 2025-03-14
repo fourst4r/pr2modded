@@ -6,9 +6,10 @@
 --swf-lib clientsrc/pr2.swc
 --swf-version 11.4
 --swf bin/loader.swf
+--define advanced-telemetry
 --define swf-header=550:400:27:ffffff
+--define fdb
 --debug
-
 --cmd haxe --run bundler/Bundle.hx
 
 modding

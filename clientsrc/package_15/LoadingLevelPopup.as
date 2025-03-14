@@ -10,11 +10,11 @@ package package_15
    {
        
       
-      protected var levelID:int;
+      public var levelID:int;
       
-      protected var version:int;
+      public var version:int;
       
-      protected var report:Boolean = false;
+      public var report:Boolean = false;
       
       public function LoadingLevelPopup(param1:int, param2:int, param3:Boolean = false)
       {
@@ -31,7 +31,7 @@ package package_15
          loader.load(_loc4_);
       }
       
-      override protected function onComplete(param1:Event) : *
+      override public function onComplete(param1:Event) : *
       {
          var _loc7_:LevelEditor = null;
          var _loc8_:URLVariables = null;

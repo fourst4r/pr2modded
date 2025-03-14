@@ -12,9 +12,9 @@ package levelEditor
       
       public var level:Object;
       
-      protected var info:HoverPopup;
+      public var info:HoverPopup;
       
-      protected var m:GetLevelsPopupItemGraphic;
+      public var m:GetLevelsPopupItemGraphic;
       
       public function GetLevelsPopupItem(param1:Object)
       {
@@ -31,7 +31,7 @@ package levelEditor
          addChild(this.m);
       }
       
-      protected function onMouseOver(param1:MouseEvent) : *
+      public function onMouseOver(param1:MouseEvent) : *
       {
          var _loc2_:* = "-- " + Data.escapeString(this.level.title) + " --";
          var _loc3_:* = "Game Mode: " + Modes.getFullName(this.level.type) + "<br/>";
@@ -48,7 +48,7 @@ package levelEditor
          this.info.x = 550 - this.info.width;
       }
       
-      protected function onMouseOut(param1:MouseEvent = null) : *
+      public function onMouseOut(param1:MouseEvent = null) : *
       {
          if(this.info != null)
          {

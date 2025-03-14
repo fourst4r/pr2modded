@@ -14,7 +14,7 @@ package blocks
          super(Objects.BLOCK_TIME);
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          super.useSupply(param1);
          SoundEffects.playSound(new TickTockSound(),1 * (Settings.soundLevel / 100));

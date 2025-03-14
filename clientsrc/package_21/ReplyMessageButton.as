@@ -4,7 +4,7 @@ package package_21
    {
        
       
-      protected var m:ReplyMessageButtonGraphic;
+      public var m:ReplyMessageButtonGraphic;
       
       public function ReplyMessageButton()
       {

@@ -13,15 +13,15 @@ package package_17
       
       public var totalCost:int = 0;
       
-      protected var item:StoreListing;
+      public var item:StoreListing;
       
-      protected var slug:String;
+      public var slug:String;
       
-      protected var singlePrice:int;
+      public var singlePrice:int;
       
-      protected var maxQuantity:int;
+      public var maxQuantity:int;
       
-      protected var m:QuantityPopupGraphic;
+      public var m:QuantityPopupGraphic;
       
       public function QuantityPopup(param1:StoreListing)
       {
@@ -45,7 +45,7 @@ package package_17
          addChild(this.m);
       }
       
-      protected function onSliderChange(param1:Event) : *
+      public function onSliderChange(param1:Event) : *
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
@@ -68,7 +68,7 @@ package package_17
          this.m.buy_bt.enabled = _loc3_;
       }
       
-      protected function onClickBuy(param1:MouseEvent) : *
+      public function onClickBuy(param1:MouseEvent) : *
       {
          if(this.m.buy_bt.enabled)
          {
@@ -76,7 +76,7 @@ package package_17
          }
       }
       
-      protected function onClickCancel(param1:MouseEvent) : *
+      public function onClickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

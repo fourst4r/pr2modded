@@ -26,7 +26,7 @@ package package_4
          }
       }
       
-      protected function generateTextBox() : TextField
+      public function generateTextBox() : TextField
       {
          var _loc1_:TextField = null;
          _loc1_ = new TextField();

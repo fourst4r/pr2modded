@@ -9,13 +9,13 @@ package package_22
    {
        
       
-      protected var m:SearchGraphic;
+      public var m:SearchGraphic;
       
-      protected var memory:Object;
+      public var memory:Object;
       
-      protected var var_421:uint;
+      public var var_421:uint;
       
-      protected var firstRun:Boolean = true;
+      public var firstRun:Boolean = true;
       
       public function Search(param1:String = "", param2:String = "user")
       {
@@ -51,7 +51,7 @@ package package_22
          }
       }
       
-      protected function setSearchMode(param1:String = "user") : *
+      public function setSearchMode(param1:String = "user") : *
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;
@@ -67,7 +67,7 @@ package package_22
          this.m.mode_cb.selectedIndex = _loc2_;
       }
       
-      override protected function requestCourses() : *
+      override public function requestCourses() : *
       {
          if(Data.trimWhitespace(this.m.searchBox.text) == "")
          {
@@ -104,7 +104,7 @@ package package_22
          loadingGraphic.visible = true;
       }
       
-      override protected function loadHandler(param1:Event) : *
+      override public function loadHandler(param1:Event) : *
       {
          super.loadHandler(param1);
          if(param1.target.data == "")
@@ -112,7 +112,7 @@ package package_22
          }
       }
       
-      protected function doSearch(param1:Event) : *
+      public function doSearch(param1:Event) : *
       {
          if(param1 is KeyboardEvent)
          {
@@ -128,7 +128,7 @@ package package_22
          }
       }
       
-      protected function focusStage(param1:Event) : *
+      public function focusStage(param1:Event) : *
       {
          Main.stage.focus = Main.stage;
       }

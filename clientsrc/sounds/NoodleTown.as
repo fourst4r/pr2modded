@@ -8,27 +8,27 @@ package sounds
    {
        
       
-      protected var song1:Sound;
+      public var song1:Sound;
       
-      protected var song2:Sound;
+      public var song2:Sound;
       
-      protected var channel1:SoundChannel;
+      public var channel1:SoundChannel;
       
-      protected var channel2:SoundChannel;
+      public var channel2:SoundChannel;
       
-      protected var perc1:Number;
+      public var perc1:Number;
       
-      protected var perc2:Number;
+      public var perc2:Number;
       
-      protected var var_327:Number;
+      public var var_327:Number;
       
-      protected var waitTimeout:uint;
+      public var waitTimeout:uint;
       
-      protected var var_551:Number = 0.05;
+      public var var_551:Number = 0.05;
       
-      protected var volume:Number = 0;
+      public var volume:Number = 0;
       
-      protected var var_187:Number = 1;
+      public var var_187:Number = 1;
       
       public function NoodleTown()
       {
@@ -60,12 +60,12 @@ package sounds
          }
       }
       
-      protected function method_305() : *
+      public function method_305() : *
       {
          this.waitTimeout = setTimeout(this.method_625,Math.random() * 80000);
       }
       
-      protected function method_625() : *
+      public function method_625() : *
       {
          this.var_327 = Math.random() * 0.004 + 0.002;
          if(this.perc1 > this.perc2)
@@ -76,7 +76,7 @@ package sounds
          this.method_305();
       }
       
-      protected function name_3(param1:Event) : *
+      public function name_3(param1:Event) : *
       {
          this.perc1 += this.var_327;
          this.perc2 -= this.var_327;
@@ -95,7 +95,7 @@ package sounds
          this.method_186(this.volume);
       }
       
-      protected function method_186(param1:Number) : *
+      public function method_186(param1:Number) : *
       {
          this.volume = param1;
          if(this.channel1 != null)
@@ -111,7 +111,7 @@ package sounds
          addEventListener(Event.ENTER_FRAME,this.method_124);
       }
       
-      protected function method_124(param1:Event) : *
+      public function method_124(param1:Event) : *
       {
          if(this.volume < this.var_187)
          {
@@ -138,7 +138,7 @@ package sounds
          }
       }
       
-      protected function stop() : *
+      public function stop() : *
       {
          if(this.channel1 != null)
          {

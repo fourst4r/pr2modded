@@ -23,11 +23,11 @@ package
       
       public var parsedData:Object;
       
-      protected var readMode:String;
+      public var readMode:String;
       
-      protected var toURL:String;
+      public var toURL:String;
       
-      protected var autoEchoMessage:Boolean = true;
+      public var autoEchoMessage:Boolean = true;
       
       public function SuperLoader(param1:Boolean = true, param2:String = "url", param3:Boolean = true)
       {
@@ -84,7 +84,7 @@ package
          }
       }
       
-      protected function onComplete(param1:Event) : *
+      public function onComplete(param1:Event) : *
       {
          var event:Event = param1;
          if(data != "")
@@ -125,13 +125,13 @@ package
          }
       }
       
-      protected function securityErrorHandler(param1:SecurityErrorEvent) : *
+      public function securityErrorHandler(param1:SecurityErrorEvent) : *
       {
          new MessagePopup("Error: A security error occurred. :(");
          dispatchEvent(new Event(param1));
       }
       
-      protected function IOErrorHandler(param1:ErrorEvent) : *
+      public function IOErrorHandler(param1:ErrorEvent) : *
       {
          var _loc2_:String = null;
          if(param1.text.indexOf("Error #") == 0)

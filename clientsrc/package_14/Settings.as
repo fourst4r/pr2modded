@@ -7,59 +7,59 @@ package package_14
    {
        
       
-      protected var editor:LevelEditor;
+      public var editor:LevelEditor;
       
-      protected var musicTitle:String = "Music";
+      public var musicTitle:String = "Music";
       
-      protected var musicDesc:String = "This song will play by default for users playing your course.";
+      public var musicDesc:String = "This song will play by default for users playing your course.";
       
       public var musicButton:MusicMenuButton;
       
-      protected var itemsTitle:String = "Items";
+      public var itemsTitle:String = "Items";
       
-      protected var itemsDesc:String = "These items will be available to players in your course\'s item boxes.";
+      public var itemsDesc:String = "These items will be available to players in your course\'s item boxes.";
       
       public var itemsButton:ItemMenuButton;
       
-      protected var hatsTitle:String = "Hats Allowed";
+      public var hatsTitle:String = "Hats Allowed";
       
-      protected var hatsDesc:String = "Players may use these hats in your level.";
+      public var hatsDesc:String = "Players may use these hats in your level.";
       
       public var hatsButton:HatsMenuButton;
       
-      protected var rankTitle:String = "Minimum Rank";
+      public var rankTitle:String = "Minimum Rank";
       
-      protected var rankDesc:String = "Players below this rank will not be able to race on this course.";
+      public var rankDesc:String = "Players below this rank will not be able to race on this course.";
       
       public var minRankButton:ValueButton;
       
-      protected var gravityTitle:String = "Gravity Multiplier";
+      public var gravityTitle:String = "Gravity Multiplier";
       
-      protected var gravityDesc:String = "Normal gravity will be multiplied by the number you provide.";
+      public var gravityDesc:String = "Normal gravity will be multiplied by the number you provide.";
       
       public var gravityButton:ValueButton;
       
-      protected var timeTitle:String = "Time Limit";
+      public var timeTitle:String = "Time Limit";
       
-      protected var timeDesc:String = "Racers will have this amount of seconds to complete this course. Enter 0 for infinite time.";
+      public var timeDesc:String = "Racers will have this amount of seconds to complete this course. Enter 0 for infinite time.";
       
       public var timeButton:ValueButton;
       
-      protected var passTitle:String = "Secret Password";
+      public var passTitle:String = "Secret Password";
       
-      protected var passDesc:String = "This password lets players play your course while unpublished.";
+      public var passDesc:String = "This password lets players play your course while unpublished.";
       
       public var passButton:ValueButton;
       
-      protected var modeTitle:String = "Game Mode";
+      public var modeTitle:String = "Game Mode";
       
-      protected var modeDesc:String = "Each game mode has a different goal and method of winning.";
+      public var modeDesc:String = "Each game mode has a different goal and method of winning.";
       
       public var modeButton:ModeMenuButton;
       
-      protected var sfcmTitle:String = "Chance of Cowboy Mode";
+      public var sfcmTitle:String = "Chance of Cowboy Mode";
       
-      protected var sfcmDesc:String = "Super Flying Cowboy Mode will appear this often out of 100.";
+      public var sfcmDesc:String = "Super Flying Cowboy Mode will appear this often out of 100.";
       
       public var sfcmButton:ValueButton;
       

@@ -4,7 +4,7 @@ package package_6
    {
        
       
-      protected var m:ItemDisplayGraphic;
+      public var m:ItemDisplayGraphic;
       
       public function ItemDisplay()
       {

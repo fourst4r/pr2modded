@@ -9,7 +9,7 @@ package package_6
    {
        
       
-      protected var m:LuxPopupGraphic;
+      public var m:LuxPopupGraphic;
       
       public function LuxPopup(param1:int)
       {
@@ -26,7 +26,7 @@ package package_6
          addChild(this.m);
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

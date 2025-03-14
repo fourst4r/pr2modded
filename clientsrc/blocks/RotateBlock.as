@@ -7,7 +7,7 @@ package blocks
    {
        
       
-      protected var dir:String;
+      public var dir:String;
       
       public function RotateBlock(param1:int)
       {

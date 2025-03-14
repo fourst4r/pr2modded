@@ -8,7 +8,7 @@ package package_21
    {
        
       
-      protected var m:ChatRoomInfoPopupGraphic;
+      public var m:ChatRoomInfoPopupGraphic;
       
       public function ChatRoomInfoPopup(param1:DisplayObject)
       {

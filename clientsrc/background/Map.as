@@ -12,13 +12,13 @@ package background
    {
        
       
-      protected var startBlockNum:int = 0;
+      public var startBlockNum:int = 0;
       
-      protected var miniMap:MiniMap;
+      public var miniMap:MiniMap;
       
-      protected var moveInterval:uint;
+      public var moveInterval:uint;
       
-      protected var segSize:Number = 30;
+      public var segSize:Number = 30;
       
       public var maxY:Number = -9999999;
       
@@ -28,19 +28,19 @@ package background
       
       public var minX:Number = 9999999;
       
-      protected var moveBlocksArray:Vector.<MoveBlock>;
+      public var moveBlocksArray:Vector.<MoveBlock>;
       
-      protected var startTime:int;
+      public var startTime:int;
       
-      protected var moves:int = 0;
+      public var moves:int = 0;
       
-      protected var moveTime:int = 5000;
+      public var moveTime:int = 5000;
       
-      protected var rand:Random;
+      public var rand:Random;
       
-      protected var placedEggs:int = 0;
+      public var placedEggs:int = 0;
       
-      protected var eggPtsArray:Array;
+      public var eggPtsArray:Array;
       
       public function Map(param1:MiniMap, param2:Course)
       {
@@ -64,7 +64,7 @@ package background
          }
       }
       
-      override protected function addStartPositions() : *
+      override public function addStartPositions() : *
       {
       }
       
@@ -73,7 +73,7 @@ package background
          this.attachObject(param1,param2,param3);
       }
       
-      override protected function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
+      override public function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
       {
          var _loc6_:Block = null;
          var _loc7_:FinishBlock = null;
@@ -146,7 +146,7 @@ package background
          }
       }
       
-      protected function placeEggs() : *
+      public function placeEggs() : *
       {
          var _loc1_:Point = null;
          for each(_loc1_ in this.eggPtsArray)
@@ -156,7 +156,7 @@ package background
          this.eggPtsArray = new Array();
       }
       
-      protected function attachEgg(param1:int, param2:int) : *
+      public function attachEgg(param1:int, param2:int) : *
       {
          var _loc3_:Egg = null;
          if(this.placedEggs < 25)
@@ -170,12 +170,12 @@ package background
          }
       }
       
-      protected function setStartPos(param1:int, param2:int, param3:int) : *
+      public function setStartPos(param1:int, param2:int, param3:int) : *
       {
          Course.course.addStartPos(param1,new Point(param2,param3));
       }
       
-      protected function addFinish(param1:int, param2:int, param3:int) : *
+      public function addFinish(param1:int, param2:int, param3:int) : *
       {
          Course.course.finishBlocks.push({
             "id":param1,
@@ -200,7 +200,7 @@ package background
          this.placeEggs();
       }
       
-      protected function determineMoveBlockDirection() : *
+      public function determineMoveBlockDirection() : *
       {
          var _loc3_:MoveBlock = null;
          var _loc4_:int = 0;
@@ -216,7 +216,7 @@ package background
          this.setMoveInterval(this.doMoveBlocks,1000);
       }
       
-      protected function doMoveBlocks() : *
+      public function doMoveBlocks() : *
       {
          var _loc3_:MoveBlock = null;
          var _loc1_:int = 0;
@@ -256,7 +256,7 @@ package background
          return false;
       }
       
-      protected function setMoveInterval(param1:Function, param2:int) : *
+      public function setMoveInterval(param1:Function, param2:int) : *
       {
          this.clearMoveInterval();
          this.moveInterval = setTimeout(param1,param2);

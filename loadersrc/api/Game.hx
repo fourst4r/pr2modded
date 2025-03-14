@@ -3,6 +3,15 @@ package api;
 import flash.display.Stage;
 
 final class Game {
+    /**
+        Called when a new `Game` is requested, e.g. when you enter a race.
+        Extend `package_6.Game` and instantiate it in this callback for additional functionality.
+    **/
+    public static dynamic function onCreateGame(args:Array<Dynamic>):Dynamic {
+        new package_6.Game(Std.parseInt(args[0]), Std.parseInt(args[1]));
+        return null;
+    }
+
     // public static var build(get, never):String;
     public static function getBuild() 
         return Main.build;
@@ -35,4 +44,6 @@ final class Game {
             isPrizer: Main.isPrizer,
         };
     }
+
+    
 }

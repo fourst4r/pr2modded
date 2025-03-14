@@ -18,13 +18,13 @@ package ui
       public static var instance:CustomCursor;
        
       
-      protected var active:Boolean = false;
+      public var active:Boolean = false;
       
-      protected var me:MouseEvent;
+      public var me:MouseEvent;
       
-      protected var mouseDown:Boolean;
+      public var mouseDown:Boolean;
       
-      protected var mouseHidden:Boolean = false;
+      public var mouseHidden:Boolean = false;
       
       public var var_411:Boolean = true;
       
@@ -102,7 +102,7 @@ package ui
          stageRef.addEventListener(KeyboardEvent.KEY_UP,this.keyUpHandler);
       }
       
-      protected function touchHandler(param1:TouchEvent) : *
+      public function touchHandler(param1:TouchEvent) : *
       {
          var _loc2_:String = null;
          if(param1.type == TouchEvent.TOUCH_MOVE)
@@ -168,13 +168,13 @@ package ui
          return this.mouseDown;
       }
       
-      protected function hideMouse() : *
+      public function hideMouse() : *
       {
          this.mouseHidden = true;
          Mouse.hide();
       }
       
-      protected function showMouse() : *
+      public function showMouse() : *
       {
          this.mouseHidden = false;
          Mouse.show();
@@ -182,20 +182,20 @@ package ui
          Mouse.cursor = MouseCursor.AUTO;
       }
       
-      protected function mouseMoveHandler(param1:MouseEvent) : *
+      public function mouseMoveHandler(param1:MouseEvent) : *
       {
          this.me = param1;
          this.x = param1.stageX;
          this.y = param1.stageY;
       }
       
-      protected function mouseDownHandler(param1:MouseEvent) : *
+      public function mouseDownHandler(param1:MouseEvent) : *
       {
          this.me = param1;
          this.mouseDown = true;
       }
       
-      protected function mouseUpHandler(param1:MouseEvent) : *
+      public function mouseUpHandler(param1:MouseEvent) : *
       {
          this.me = param1;
          this.mouseDown = false;
@@ -231,12 +231,12 @@ package ui
          }
       }
       
-      protected function mouseFocusHandler(param1:MouseEvent) : *
+      public function mouseFocusHandler(param1:MouseEvent) : *
       {
          this.me = param1;
       }
       
-      protected function applyCursorGraphic(param1:DisplayObject) : *
+      public function applyCursorGraphic(param1:DisplayObject) : *
       {
          param1.x = -(param1.width / 2);
          param1.y = -(param1.height / 2);

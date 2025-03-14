@@ -8,7 +8,7 @@ package package_4
    {
        
       
-      protected var m:SetEmailPopupGraphic;
+      public var m:SetEmailPopupGraphic;
       
       public function SetEmailPopup()
       {
@@ -21,7 +21,7 @@ package package_4
          addChild(this.m);
       }
       
-      protected function listenForEnterKey(param1:KeyboardEvent) : *
+      public function listenForEnterKey(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -29,7 +29,7 @@ package package_4
          }
       }
       
-      protected function clickOk(param1:MouseEvent) : *
+      public function clickOk(param1:MouseEvent) : *
       {
          var _loc2_:Object = null;
          var _loc3_:String = null;
@@ -62,7 +62,7 @@ package package_4
          }
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

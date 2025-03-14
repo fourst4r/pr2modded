@@ -6,9 +6,9 @@ package package_23
    {
        
       
-      protected var m:PlayersTabListItemGraphic;
+      public var m:PlayersTabListItemGraphic;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
       public function PlayersTabListItem()
       {

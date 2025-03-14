@@ -1,4 +1,4 @@
-package package_9
+﻿package package_9
 {
    import blocks.Block;
    import com.jiggmin.data.*;
@@ -63,7 +63,7 @@ package package_9
          this.method_389();
       }
       
-      protected function method_152(param1:Event) : *
+      public function method_152(param1:Event) : *
       {
          this.move();
          this.position();
@@ -75,13 +75,13 @@ package package_9
          }
       }
       
-      protected function move() : *
+      public function move() : *
       {
          this.posX += this.velX;
          this.posY += this.velY;
       }
       
-      protected function position() : *
+      public function position() : *
       {
          var _loc1_:Point = Data.method_9(this.posX,this.posY,-(this.course.blockBackground.rotation - this.var_377));
          x = _loc1_.x;
@@ -102,7 +102,7 @@ package package_9
          }
       }
       
-      protected function method_782(param1:int, param2:int) : Character
+      public function method_782(param1:int, param2:int) : Character
       {
          var _loc3_:Character = null;
          for each(_loc3_ in this.course.playerArray)
@@ -118,20 +118,20 @@ package package_9
          return null;
       }
       
-      protected function method_389() : *
+      public function method_389() : *
       {
          var _loc1_:Number = this.var_278 * Data.DEG_RAD;
          this.velX = Math.cos(_loc1_) * this.var_154;
          this.velY = Math.sin(_loc1_) * this.var_154;
       }
       
-      protected function hitBlock(param1:Block) : *
+      public function hitBlock(param1:Block) : *
       {
          param1.onDamage(this.velX);
          this.hitAnything();
       }
       
-      protected function hitPlayer(param1:Character) : *
+      public function hitPlayer(param1:Character) : *
       {
          if(param1.type == "local")
          {
@@ -141,11 +141,11 @@ package package_9
          this.hitAnything();
       }
       
-      protected function hitAnything() : *
+      public function hitAnything() : *
       {
       }
       
-      protected function method_601() : *
+      public function method_601() : *
       {
          this.remove();
       }

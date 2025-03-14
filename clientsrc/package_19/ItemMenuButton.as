@@ -12,7 +12,7 @@ package package_19
          addChild(new ItemButtonGraphic());
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          new ItemMenu(this);

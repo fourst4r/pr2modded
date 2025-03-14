@@ -7,7 +7,7 @@ package package_9
    {
        
       
-      protected var m:LaserShotGraphic;
+      public var m:LaserShotGraphic;
       
       public function LaserShot(param1:Number, param2:Number, param3:String, param4:int, param5:int)
       {
@@ -23,7 +23,7 @@ package package_9
          SoundEffects.playGameSound(new LaserSound(),param1,param2,1.5);
       }
       
-      override protected function hitAnything() : *
+      override public function hitAnything() : *
       {
          super.hitAnything();
          this.m.gotoAndPlay("hit");

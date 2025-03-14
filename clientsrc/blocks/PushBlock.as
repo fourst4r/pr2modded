@@ -38,7 +38,7 @@ package blocks
          this.localActivate("left");
       }
       
-      override protected function localActivate(param1:String = "") : *
+      override public function localActivate(param1:String = "") : *
       {
          if(!frozen)
          {
@@ -46,7 +46,7 @@ package blocks
          }
       }
       
-      override protected function activate(param1:String = "") : *
+      override public function activate(param1:String = "") : *
       {
          if(param1 == "down")
          {
@@ -66,7 +66,7 @@ package blocks
          }
       }
       
-      protected function push(param1:int, param2:int) : *
+      public function push(param1:int, param2:int) : *
       {
          var _loc3_:Point = Data.method_9(param1,param2,map.rotation);
          move(_loc3_.x,_loc3_.y,map);

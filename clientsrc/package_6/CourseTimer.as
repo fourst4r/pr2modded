@@ -8,19 +8,19 @@ package package_6
    {
        
       
-      protected var m:TimerGraphic;
+      public var m:TimerGraphic;
       
-      protected var time:int = 120;
+      public var time:int = 120;
       
-      protected var startTime:Number;
+      public var startTime:Number;
       
-      protected var var_308:uint;
+      public var var_308:uint;
       
-      protected var target:Course;
+      public var target:Course;
       
-      protected var racing:Boolean = false;
+      public var racing:Boolean = false;
       
-      protected var var_480:Boolean = true;
+      public var var_480:Boolean = true;
       
       public function CourseTimer(param1:Course)
       {
@@ -43,18 +43,18 @@ package package_6
          return this.time;
       }
       
-      protected function method_189() : Number
+      public function method_189() : Number
       {
          return (Main.socket.getMS() - this.startTime) / 1000;
       }
       
-      protected function method_362() : Number
+      public function method_362() : Number
       {
          var _loc1_:Number = Number(this.method_189());
          return Math.round(this.time - _loc1_);
       }
       
-      protected function method_467() : *
+      public function method_467() : *
       {
          var _loc1_:Number = NaN;
          if(this.racing)
@@ -73,7 +73,7 @@ package package_6
          }
       }
       
-      protected function display(param1:Number) : *
+      public function display(param1:Number) : *
       {
          var _loc2_:Number = Math.round(param1);
          if(_loc2_ < 0)
@@ -136,14 +136,14 @@ package package_6
          this.method_467();
       }
       
-      protected function method_588() : *
+      public function method_588() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.go);
          addEventListener(Event.ENTER_FRAME,this.go);
          this.m.holder.scaleX = this.m.holder.scaleY = 3;
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          this.m.holder.scaleX = this.m.holder.scaleY = this.m.holder.scaleX * 0.9;
          if(this.m.holder.scaleX <= 1)

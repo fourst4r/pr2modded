@@ -9,7 +9,7 @@ package package_19
    {
        
       
-      protected var cp:ColorPicker;
+      public var cp:ColorPicker;
       
       public function BackgroundColorPickerButton()
       {
@@ -27,7 +27,7 @@ package package_19
          this.cp.setColor(LevelEditor.editor.getColor());
       }
       
-      protected function onClose(param1:Event) : *
+      public function onClose(param1:Event) : *
       {
          LevelEditor.editor.setColor(this.cp.getColor());
          Main.stage.focus = Main.stage;

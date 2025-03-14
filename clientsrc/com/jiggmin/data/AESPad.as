@@ -7,9 +7,9 @@ package com.jiggmin.data
    {
        
       
-      protected var blockSize:uint;
+      public var blockSize:uint;
       
-      protected var char0:String;
+      public var char0:String;
       
       public function AESPad(param1:uint = 0)
       {

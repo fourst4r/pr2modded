@@ -16,9 +16,9 @@ package
    public class Main extends Sprite
    {
       
-      protected static var initialized:Boolean = false;
+      public static var initialized:Boolean = false;
       
-      protected static const clientWidth:int = 550;
+      public static const clientWidth:int = 550;
       
       public static const clientHeight:int = 400;
       
@@ -106,9 +106,9 @@ package
       
       public static var domain:String;
       
-      protected static var url:String;
+      public static var url:String;
       
-      protected static var protocol:String;
+      public static var protocol:String;
        
       
       public var kongAPI:*;
@@ -153,7 +153,7 @@ package
          }
       }
       
-      protected function init(param1:Event = null) : *
+      public function init(param1:Event = null) : *
       {
          removeEventListener(Event.ADDED_TO_STAGE,this.init);
          Main.betaLoader = !!LoaderInfo(root.loaderInfo).parameters.hasOwnProperty("betaLoader") ? Boolean(int(LoaderInfo(root.loaderInfo).parameters.betaLoader)) : false;
@@ -185,14 +185,14 @@ package
          }
       }
       
-      protected function hideContextMenu() : *
+      public function hideContextMenu() : *
       {
          var _loc1_:ContextMenu = new ContextMenu();
          _loc1_.hideBuiltInItems();
          contextMenu = _loc1_;
       }
       
-      protected function determineSite() : *
+      public function determineSite() : *
       {
          var _loc2_:Number = NaN;
          var _loc1_:String = "local";
@@ -227,7 +227,7 @@ package
          }
       }
       
-      protected function getKongApiOnTesting() : *
+      public function getKongApiOnTesting() : *
       {
          var _loc1_:Object = null;
          var _loc2_:String = null;
@@ -245,7 +245,7 @@ package
          }
       }
       
-      protected function receiveKongAPI(param1:Event) : *
+      public function receiveKongAPI(param1:Event) : *
       {
          var _loc2_:* = param1.target.content;
          Main.instance.kongAPI = _loc2_;

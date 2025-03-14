@@ -18,7 +18,7 @@ package package_4
          m.textBox.text = "Joining guild...";
       }
       
-      override protected function parsedDataHandler(param1:Event) : *
+      override public function parsedDataHandler(param1:Event) : *
       {
          var _loc2_:Object = loader.parsedData;
          Main.guild = _loc2_.guild_id;

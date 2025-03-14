@@ -22,7 +22,7 @@ package package_15
          loader.load(_loc3_);
       }
       
-      override protected function onComplete(param1:Event) : *
+      override public function onComplete(param1:Event) : *
       {
          new GetLevels();
          super.onComplete(param1);

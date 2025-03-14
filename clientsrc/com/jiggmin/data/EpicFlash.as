@@ -8,13 +8,13 @@ package com.jiggmin.data
    {
        
       
-      protected var items:Vector.<DisplayObject>;
+      public var items:Vector.<DisplayObject>;
       
-      protected var var_416:int;
+      public var var_416:int;
       
-      protected var var_444:int;
+      public var var_444:int;
       
-      protected var active:Boolean = false;
+      public var active:Boolean = false;
       
       public function EpicFlash(param1:int = 500)
       {
@@ -59,7 +59,7 @@ package com.jiggmin.data
          this.items.push(param1);
       }
       
-      protected function method_554() : *
+      public function method_554() : *
       {
          var _loc1_:DisplayObject = null;
          var _loc2_:ColorTransform = new ColorTransform();

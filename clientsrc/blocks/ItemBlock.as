@@ -59,7 +59,7 @@ package blocks
          }
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          var _loc3_:Number = NaN;
          var _loc4_:int = 0;

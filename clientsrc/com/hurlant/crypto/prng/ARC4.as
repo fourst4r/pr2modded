@@ -8,13 +8,13 @@ package com.hurlant.crypto.prng
    {
        
       
-      protected var i:int = 0;
+      public var i:int = 0;
       
-      protected var j:int = 0;
+      public var j:int = 0;
       
-      protected var S:ByteArray;
+      public var S:ByteArray;
       
-      protected const psize:uint = 256;
+      public const psize:uint = 256;
       
       public function ARC4(param1:ByteArray = null)
       {

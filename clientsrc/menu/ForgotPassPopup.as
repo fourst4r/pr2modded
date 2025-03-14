@@ -8,7 +8,7 @@ package menu
    {
        
       
-      protected var m:ForgotPassPopupGraphic;
+      public var m:ForgotPassPopupGraphic;
       
       public function ForgotPassPopup(param1:String = "")
       {
@@ -22,7 +22,7 @@ package menu
          addChild(this.m);
       }
       
-      protected function listenForEnter(param1:KeyboardEvent) : *
+      public function listenForEnter(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -30,7 +30,7 @@ package menu
          }
       }
       
-      protected function sendForgotPass(param1:*) : *
+      public function sendForgotPass(param1:*) : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.name = this.m.nameBox.text;
@@ -42,7 +42,7 @@ package menu
          startFadeOut();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

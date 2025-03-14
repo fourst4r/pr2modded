@@ -9,22 +9,22 @@ package menu
    public class IntroPage extends Page
    {
       
-      protected static const JIGG_INTRO:int = 1;
+      public static const JIGG_INTRO:int = 1;
       
-      protected static const ARMOR_INTRO:int = 2;
+      public static const ARMOR_INTRO:int = 2;
       
-      protected static const BUBBOX_INTRO:int = 3;
+      public static const BUBBOX_INTRO:int = 3;
       
-      protected static const KONG_INTRO:int = 4;
+      public static const KONG_INTRO:int = 4;
        
       
-      protected var toPlay:Array;
+      public var toPlay:Array;
       
-      protected var m:IntroPageGraphic;
+      public var m:IntroPageGraphic;
       
-      protected var currentIntro:MovieClip;
+      public var currentIntro:MovieClip;
       
-      protected var mute:SoundTransform;
+      public var mute:SoundTransform;
       
       public function IntroPage()
       {
@@ -54,12 +54,12 @@ package menu
          this.method_302();
       }
       
-      protected function onClick(param1:MouseEvent) : *
+      public function onClick(param1:MouseEvent) : *
       {
          this.endIntro();
       }
       
-      protected function method_302() : *
+      public function method_302() : *
       {
          var _loc1_:int = 0;
          var _loc2_:PixelEffect1 = null;
@@ -94,7 +94,7 @@ package menu
          }
       }
       
-      protected function method_322() : *
+      public function method_322() : *
       {
          if(this.currentIntro != null)
          {
@@ -106,12 +106,12 @@ package menu
          }
       }
       
-      protected function onComplete(param1:Event) : *
+      public function onComplete(param1:Event) : *
       {
          this.method_302();
       }
       
-      protected function endIntro() : *
+      public function endIntro() : *
       {
          this.method_322();
          Main.pageHolder.changePage(new LoginPage());

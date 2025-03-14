@@ -5,7 +5,7 @@ package menu
    public class class_4
    {
       
-      protected static var hashing:class_20 = new class_20();
+      public static var hashing:class_20 = new class_20();
        
       
       public function class_4()

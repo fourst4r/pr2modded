@@ -11,9 +11,9 @@ package package_9
    {
        
       
-      protected var velX:Number = 0;
+      public var velX:Number = 0;
       
-      protected var velY:Number = 0;
+      public var velY:Number = 0;
       
       public var posX:Number;
       
@@ -21,13 +21,13 @@ package package_9
       
       public var rot:int;
       
-      protected var time:Number;
+      public var time:Number;
       
-      protected var var_681:Number;
+      public var var_681:Number;
       
-      protected var var_683:Number;
+      public var var_683:Number;
       
-      protected var grounded:Boolean = false;
+      public var grounded:Boolean = false;
       
       public function class_81(param1:int, param2:int, param3:int)
       {
@@ -48,7 +48,7 @@ package package_9
          removeEventListener(Event.ENTER_FRAME,this.go);
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          var _loc2_:Block = null;
          var _loc3_:Point = null;
@@ -110,7 +110,7 @@ package package_9
          y = _loc4_.y;
       }
       
-      protected function method_181(param1:int, param2:int) : Boolean
+      public function method_181(param1:int, param2:int) : Boolean
       {
          var _loc3_:LocalCharacter = Course.course.var_9;
          if(_loc3_ != null && !_loc3_.removed)
@@ -123,11 +123,11 @@ package package_9
          return false;
       }
       
-      protected function onTouchLocalPlayer() : *
+      public function onTouchLocalPlayer() : *
       {
       }
       
-      protected function onTouchWall() : *
+      public function onTouchWall() : *
       {
       }
       

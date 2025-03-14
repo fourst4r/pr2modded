@@ -14,38 +14,38 @@ package package_4
    public class PlayerPopup extends Popup
    {
       
-      protected static var instance:PlayerPopup;
+      public static var instance:PlayerPopup;
        
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var m:PlayerPopupGraphic;
+      public var m:PlayerPopupGraphic;
       
-      protected var banMenu:BanMenu;
+      public var banMenu:BanMenu;
       
-      protected var adminMenu:AdminMenu;
+      public var adminMenu:AdminMenu;
       
-      protected var tempModMenu:TempModMenu;
+      public var tempModMenu:TempModMenu;
       
-      protected var guildName:GuildName;
+      public var guildName:GuildName;
       
-      protected var userId:int;
+      public var userId:int;
       
-      protected var userName:String;
+      public var userName:String;
       
-      protected var userIdShown:Boolean = false;
+      public var userIdShown:Boolean = false;
       
-      protected var expGain:ExpGain;
+      public var expGain:ExpGain;
       
-      protected var times:Array;
+      public var times:Array;
       
-      protected var dataMode:String;
+      public var dataMode:String;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
-      protected var hoverPopup:HoverPopup;
+      public var hoverPopup:HoverPopup;
       
-      protected var hoverTimer:uint;
+      public var hoverTimer:uint;
       
       public function PlayerPopup(param1:String)
       {
@@ -95,7 +95,7 @@ package package_4
          }
       }
       
-      protected function playerInfoFromSocket(param1:Array) : *
+      public function playerInfoFromSocket(param1:Array) : *
       {
          var ret:String = null;
          var data:Object = null;
@@ -118,7 +118,7 @@ package package_4
          }
       }
       
-      protected function playerInfoFromHTTP() : *
+      public function playerInfoFromHTTP() : *
       {
          this.dataMode = "http";
          this.superLoader = new SuperLoader(true,SuperLoader.j);
@@ -131,7 +131,7 @@ package package_4
          this.superLoader.addEventListener(SuperLoader.e,this.clickClose,false,0,true);
       }
       
-      protected function applyReturnData(param1:*) : *
+      public function applyReturnData(param1:*) : *
       {
          var _loc2_:Object = null;
          var _loc4_:Character = null;
@@ -311,7 +311,7 @@ package package_4
          Main.stage.focus = Main.stage;
       }
       
-      protected function iconEvent(param1:MouseEvent) : *
+      public function iconEvent(param1:MouseEvent) : *
       {
          var _loc3_:Object = null;
          var _loc4_:Object = null;
@@ -346,95 +346,95 @@ package package_4
          }
       }
       
-      protected function mouseOverRankBox(param1:MouseEvent) : *
+      public function mouseOverRankBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplBg.visible = true;
          this.m.playerInfo.addChild(this.expGain);
       }
       
-      protected function mouseOutRankBox(param1:MouseEvent) : *
+      public function mouseOutRankBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplBg.visible = false;
          this.m.playerInfo.removeChild(this.expGain);
       }
       
-      protected function mouseOverRegisterBox(param1:MouseEvent) : *
+      public function mouseOverRegisterBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplBg.visible = true;
          this.m.playerInfo.supplText.text = Data.getDateTimeStr(this.times[0],["long","medium"]);
       }
       
-      protected function mouseOutRegisterBox(param1:MouseEvent) : *
+      public function mouseOutRegisterBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplText.text = "";
          this.m.playerInfo.supplBg.visible = false;
       }
       
-      protected function mouseOverActiveBox(param1:MouseEvent) : *
+      public function mouseOverActiveBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplBg.visible = true;
          this.m.playerInfo.supplText.text = Data.getDateTimeStr(this.times[1],["long","medium"]);
       }
       
-      protected function mouseOutActiveBox(param1:MouseEvent) : *
+      public function mouseOutActiveBox(param1:MouseEvent) : *
       {
          this.m.playerInfo.supplText.text = "";
          this.m.playerInfo.supplBg.visible = false;
       }
       
-      protected function clickInvite(param1:MouseEvent) : *
+      public function clickInvite(param1:MouseEvent) : *
       {
          this.handleURL(Main.baseURL + "/guild_invite.php");
       }
       
-      protected function clickKick(param1:MouseEvent) : *
+      public function clickKick(param1:MouseEvent) : *
       {
          this.handleURL(Main.baseURL + "/guild_kick.php");
       }
       
-      protected function clickSendPM(param1:MouseEvent) : *
+      public function clickSendPM(param1:MouseEvent) : *
       {
          startFadeOut();
          new SendMessagePopup(this.userName);
       }
       
-      protected function clickFollow(param1:MouseEvent) : *
+      public function clickFollow(param1:MouseEvent) : *
       {
          this.handleUserListURL("following","add");
          Main.socket.write("follow_user`" + this.userName);
       }
       
-      protected function clickUnfollow(param1:MouseEvent) : *
+      public function clickUnfollow(param1:MouseEvent) : *
       {
          this.handleUserListURL("following","remove");
          Main.socket.write("unfollow_user`" + this.userName);
       }
       
-      protected function clickAddFriend(param1:MouseEvent) : *
+      public function clickAddFriend(param1:MouseEvent) : *
       {
          this.handleUserListURL("friends","add");
          Main.socket.write("add_friend`" + this.userName);
       }
       
-      protected function clickRemoveFriend(param1:MouseEvent) : *
+      public function clickRemoveFriend(param1:MouseEvent) : *
       {
          this.handleUserListURL("friends","remove");
          Main.socket.write("remove_friend`" + this.userName);
       }
       
-      protected function clickIgnore(param1:MouseEvent) : *
+      public function clickIgnore(param1:MouseEvent) : *
       {
          this.handleUserListURL("ignored","add");
          Main.socket.write("ignore_user`" + this.userName);
       }
       
-      protected function clickUnignore(param1:MouseEvent) : *
+      public function clickUnignore(param1:MouseEvent) : *
       {
          this.handleUserListURL("ignored","remove");
          Main.socket.write("unignore_user`" + this.userName);
       }
       
-      protected function overSendPMBt(param1:MouseEvent) : *
+      public function overSendPMBt(param1:MouseEvent) : *
       {
          var e:MouseEvent = param1;
          this.hoverTimer = setTimeout(function():*
@@ -443,7 +443,7 @@ package package_4
          },500);
       }
       
-      protected function outHover(param1:MouseEvent = null) : *
+      public function outHover(param1:MouseEvent = null) : *
       {
          clearTimeout(this.hoverTimer);
          if(this.hoverPopup != null)
@@ -453,7 +453,7 @@ package package_4
          }
       }
       
-      protected function clickViewLevels(param1:MouseEvent) : *
+      public function clickViewLevels(param1:MouseEvent) : *
       {
          if(LobbyRight.lobbyRight != null)
          {
@@ -478,12 +478,12 @@ package package_4
          startFadeOut();
       }
       
-      protected function clickClose(param1:*) : *
+      public function clickClose(param1:*) : *
       {
          startFadeOut();
       }
       
-      protected function handleUserListURL(param1:String, param2:String) : *
+      public function handleUserListURL(param1:String, param2:String) : *
       {
          var _loc3_:* = Main.baseURL + "/user_list_modify.php";
          var _loc4_:URLVariables;
@@ -497,7 +497,7 @@ package package_4
          startFadeOut();
       }
       
-      protected function handleURL(param1:String) : *
+      public function handleURL(param1:String) : *
       {
          var _loc2_:URLVariables = new URLVariables();
          _loc2_.target_name = this.userName;
@@ -509,7 +509,7 @@ package package_4
          startFadeOut();
       }
       
-      protected function toggleUserIdShown(param1:KeyboardEvent) : *
+      public function toggleUserIdShown(param1:KeyboardEvent) : *
       {
          if(param1.keyCode !== 16 || param1.type !== KeyboardEvent.KEY_DOWN)
          {

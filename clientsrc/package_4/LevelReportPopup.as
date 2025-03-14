@@ -8,11 +8,11 @@ package package_4
    {
        
       
-      protected var levelId:int = 0;
+      public var levelId:int = 0;
       
-      protected var version:int = 0;
+      public var version:int = 0;
       
-      protected var m:LevelReportPopupGraphic;
+      public var m:LevelReportPopupGraphic;
       
       public function LevelReportPopup(param1:int = 0, param2:int = 0)
       {
@@ -25,7 +25,7 @@ package package_4
          addChild(this.m);
       }
       
-      protected function clickReport(param1:MouseEvent) : *
+      public function clickReport(param1:MouseEvent) : *
       {
          if(this.m.reasonBox.text == null || Data.trimWhitespace(this.m.reasonBox.text) == "")
          {
@@ -35,7 +35,7 @@ package package_4
          new ConfirmPopup(this.confirmReport,"Are you sure you want to report this level to the moderators? If it contains something inappropriate or mean, then please do report this level.");
       }
       
-      protected function confirmReport() : *
+      public function confirmReport() : *
       {
          if(LevelInfoPopup.instance != null)
          {
@@ -52,7 +52,7 @@ package package_4
          startFadeOut();
       }
       
-      protected function clickCancel(param1:*) : *
+      public function clickCancel(param1:*) : *
       {
          startFadeOut();
       }

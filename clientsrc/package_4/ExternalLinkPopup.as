@@ -6,12 +6,12 @@ package package_4
    public class ExternalLinkPopup extends Popup
    {
       
-      protected static var instance:ExternalLinkPopup;
+      public static var instance:ExternalLinkPopup;
        
       
-      protected var m:ExternalLinkPopupGraphic;
+      public var m:ExternalLinkPopupGraphic;
       
-      protected var url:String;
+      public var url:String;
       
       public function ExternalLinkPopup(param1:String)
       {
@@ -29,13 +29,13 @@ package package_4
          addChild(this.m);
       }
       
-      protected function clickGo(param1:MouseEvent) : *
+      public function clickGo(param1:MouseEvent) : *
       {
          navigateToURL(new URLRequest(this.url),"_blank");
          startFadeOut();
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

@@ -18,15 +18,15 @@ package lobby
       public static var lobbyEntrances:int = 0;
        
       
-      protected var left:LobbyLeft;
+      public var left:LobbyLeft;
       
-      protected var right:LobbyRight;
+      public var right:LobbyRight;
       
-      protected var m:LobbyGraphic;
+      public var m:LobbyGraphic;
       
-      protected var hover:HoverPopup;
+      public var hover:HoverPopup;
       
-      protected var bottom_bts:LobbyBottomButtonsGraphic;
+      public var bottom_bts:LobbyBottomButtonsGraphic;
       
       public function Lobby()
       {
@@ -60,7 +60,7 @@ package lobby
          addChild(this.bottom_bts);
       }
       
-      protected function clickLogout(param1:MouseEvent = null) : *
+      public function clickLogout(param1:MouseEvent = null) : *
       {
          var _loc2_:URLVariables = null;
          var _loc3_:URLRequest = null;
@@ -87,7 +87,7 @@ package lobby
          Main.socket.close();
       }
       
-      protected function clickLE(param1:MouseEvent = null) : *
+      public function clickLE(param1:MouseEvent = null) : *
       {
          if(Main.isTempMod && Main.server.guild_id == 0)
          {
@@ -103,32 +103,32 @@ package lobby
          Main.socket.close();
       }
       
-      protected function clickKong(param1:MouseEvent) : *
+      public function clickKong(param1:MouseEvent) : *
       {
          navigateToURL(new URLRequest("http://www.kongregate.com/games/jiggmin/platform-racing-2/?gamereferral=platformracing2"),"_blank");
       }
       
-      protected function clickOptions(param1:MouseEvent) : *
+      public function clickOptions(param1:MouseEvent) : *
       {
          new OptionsPopup();
       }
       
-      protected function clickStore(param1:MouseEvent) : *
+      public function clickStore(param1:MouseEvent) : *
       {
          new StorePopup();
       }
       
-      protected function clickCredits(param1:MouseEvent) : *
+      public function clickCredits(param1:MouseEvent) : *
       {
          new CreditsPopup();
       }
       
-      protected function hoverKong(param1:MouseEvent) : *
+      public function hoverKong(param1:MouseEvent) : *
       {
          this.hover = new HoverPopup("Kong Hat","Players from Kongregate automatically get a hat that doubles guild points won in each race!",this.bottom_bts.moreGamesButton);
       }
       
-      protected function hoverOutKong(param1:MouseEvent) : *
+      public function hoverOutKong(param1:MouseEvent) : *
       {
          this.hover.remove();
          this.hover = null;

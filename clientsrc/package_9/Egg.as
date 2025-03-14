@@ -11,40 +11,40 @@ package package_9
    public class Egg extends class_81
    {
       
-      protected static var var_406:int = 0;
+      public static var var_406:int = 0;
       
-      protected static var var_466:int = 1;
+      public static var var_466:int = 1;
       
-      protected static var var_474:int = 2;
+      public static var var_474:int = 2;
       
-      protected static var var_491:int = 3;
+      public static var var_491:int = 3;
       
-      protected static var rand:Random = new Random(1);
+      public static var rand:Random = new Random(1);
       
-      protected static var var_223:int = 1;
+      public static var var_223:int = 1;
       
-      protected static var mode:int = 3;
+      public static var mode:int = 3;
        
       
-      protected var var_486:int;
+      public var var_486:int;
       
-      protected var m:EggGraphic;
+      public var m:EggGraphic;
       
-      protected var scale:Number = 0.12;
+      public var scale:Number = 0.12;
       
-      protected var maxX:int;
+      public var maxX:int;
       
-      protected var minX:int;
+      public var minX:int;
       
-      protected var maxY:int;
+      public var maxY:int;
       
-      protected var minY:int;
+      public var minY:int;
       
-      protected var var_286:int = 0;
+      public var var_286:int = 0;
       
-      protected var id:int;
+      public var id:int;
       
-      protected var var_382:int = 0;
+      public var var_382:int = 0;
       
       public function Egg()
       {
@@ -121,7 +121,7 @@ package package_9
          }
       }
       
-      protected function method_723() : *
+      public function method_723() : *
       {
          if(posX > this.maxX)
          {
@@ -141,7 +141,7 @@ package package_9
          }
       }
       
-      override protected function go(param1:Event) : *
+      override public function go(param1:Event) : *
       {
          var _loc2_:int = 0;
          var _loc3_:String = null;
@@ -217,7 +217,7 @@ package package_9
          }
       }
       
-      override protected function onTouchLocalPlayer() : *
+      override public function onTouchLocalPlayer() : *
       {
          this.beginRemove();
          SoundEffects.playGameSound(new CollectEggSound(),x,y,1.5);
@@ -229,7 +229,7 @@ package package_9
          this.remove();
       }
       
-      override protected function onTouchWall() : *
+      override public function onTouchWall() : *
       {
          if(method_311())
          {

@@ -19,7 +19,7 @@ package package_19
          addEventListener(MouseEvent.CLICK,this.onClick);
       }
       
-      protected function onClick(param1:MouseEvent) : *
+      public function onClick(param1:MouseEvent) : *
       {
       }
       

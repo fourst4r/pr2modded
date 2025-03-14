@@ -6,11 +6,11 @@ package ui
    {
        
       
-      protected var m:LobbyTabGraphic;
+      public var m:LobbyTabGraphic;
       
-      protected var tabsHolder:TabsHolder;
+      public var tabsHolder:TabsHolder;
       
-      protected var tabFunction:Function;
+      public var tabFunction:Function;
       
       public function LobbyTab(param1:Function, param2:String)
       {
@@ -29,18 +29,18 @@ package ui
          this.tabsHolder = param1;
       }
       
-      protected function onClick(param1:MouseEvent) : *
+      public function onClick(param1:MouseEvent) : *
       {
          this.select();
       }
       
-      protected function onHover(param1:MouseEvent) : *
+      public function onHover(param1:MouseEvent) : *
       {
          this.m.bg.gotoAndStop("over");
          this.tabsHolder.moveToFront(this);
       }
       
-      protected function onHoverOut(param1:MouseEvent) : *
+      public function onHoverOut(param1:MouseEvent) : *
       {
          this.m.bg.gotoAndStop("up");
       }
@@ -61,7 +61,7 @@ package ui
          addEventListener(MouseEvent.MOUSE_OUT,this.onHoverOut);
       }
       
-      protected function deactivate() : *
+      public function deactivate() : *
       {
          this.m.bg.gotoAndStop("up");
          removeEventListener(MouseEvent.CLICK,this.onClick);

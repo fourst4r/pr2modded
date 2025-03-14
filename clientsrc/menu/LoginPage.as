@@ -12,15 +12,15 @@ package menu
    {
        
       
-      protected var m:LoginPageGraphic;
+      public var m:LoginPageGraphic;
       
-      protected var buttons:Array;
+      public var buttons:Array;
       
-      protected var posX:Number = 275;
+      public var posX:Number = 275;
       
-      protected var posY:Number = 228;
+      public var posY:Number = 228;
       
-      protected var showHideInterval:uint;
+      public var showHideInterval:uint;
       
       public function LoginPage()
       {
@@ -68,7 +68,7 @@ package menu
          super.initialize();
       }
       
-      protected function addToMenu(param1:LoginPageMenuButton) : *
+      public function addToMenu(param1:LoginPageMenuButton) : *
       {
          this.buttons.push(param1);
          param1.x = this.posX;
@@ -116,7 +116,7 @@ package menu
          new CreditsPopup();
       }
       
-      protected function clickKong(param1:MouseEvent) : *
+      public function clickKong(param1:MouseEvent) : *
       {
          new KongOutfitPopup();
       }

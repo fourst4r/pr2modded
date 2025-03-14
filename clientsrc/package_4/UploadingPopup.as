@@ -8,11 +8,11 @@ package package_4
    {
        
       
-      protected var loader:SuperLoader;
+      public var loader:SuperLoader;
       
-      protected var progressBar:ProgressBar;
+      public var progressBar:ProgressBar;
       
-      protected var m:UploadingPopupGraphic;
+      public var m:UploadingPopupGraphic;
       
       public var data:String;
       
@@ -41,32 +41,32 @@ package package_4
          }
       }
       
-      protected function onComplete(param1:Event) : *
+      public function onComplete(param1:Event) : *
       {
          this.progressBar.incProgress(1);
          this.data = param1.target.data;
          dispatchEvent(param1);
       }
       
-      protected function parsedDataHandler(param1:Event) : *
+      public function parsedDataHandler(param1:Event) : *
       {
          this.parsedData = this.loader.parsedData;
          dispatchEvent(param1);
          startFadeOut();
       }
       
-      protected function errorHandler(param1:Event) : *
+      public function errorHandler(param1:Event) : *
       {
          dispatchEvent(param1);
          startFadeOut();
       }
       
-      protected function onProgress(param1:ProgressEvent) : *
+      public function onProgress(param1:ProgressEvent) : *
       {
          this.progressBar.incProgress(param1.bytesLoaded / param1.bytesTotal);
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

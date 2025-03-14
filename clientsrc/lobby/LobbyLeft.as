@@ -33,22 +33,22 @@ package lobby
          UnreadNotif.addNotifContainer(_loc2_);
       }
       
-      protected function changeTabChat() : *
+      public function changeTabChat() : *
       {
          changePage(new ChatInstance());
       }
       
-      protected function changeTabPMs() : *
+      public function changeTabPMs() : *
       {
          changePage(new Messages());
       }
       
-      protected function changeTabPlayers() : *
+      public function changeTabPlayers() : *
       {
          changePage(new PlayersTab());
       }
       
-      protected function changeTabAccount() : *
+      public function changeTabAccount() : *
       {
          changePage(new AccountInfo());
       }

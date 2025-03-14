@@ -11,17 +11,17 @@ package package_21
       public static var instance:ChatInstance;
        
       
-      protected var m:ChatGraphic;
+      public var m:ChatGraphic;
       
-      protected var lockBot:Boolean = true;
+      public var lockBot:Boolean = true;
       
-      protected var memory:Object;
+      public var memory:Object;
       
-      protected var infoPopup:ChatRoomInfoPopup;
+      public var infoPopup:ChatRoomInfoPopup;
       
-      protected var var_655:uint;
+      public var var_655:uint;
       
-      protected var updateMessages:Boolean = true;
+      public var updateMessages:Boolean = true;
       
       public function ChatInstance()
       {
@@ -49,7 +49,7 @@ package package_21
          Main.socket.write("set_chat_room`" + this.memory.chatRoom);
       }
       
-      protected function pauseListener(param1:KeyboardEvent) : *
+      public function pauseListener(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 17)
          {
@@ -63,7 +63,7 @@ package package_21
          return this.m.textBox.text;
       }
       
-      protected function chatInputListenForEnter(param1:KeyboardEvent) : *
+      public function chatInputListenForEnter(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -71,12 +71,12 @@ package package_21
          }
       }
       
-      protected function clickSend(param1:MouseEvent) : *
+      public function clickSend(param1:MouseEvent) : *
       {
          this.sendMessage(this.m.chatInput.text);
       }
       
-      override protected function sendMessage(param1:String) : *
+      override public function sendMessage(param1:String) : *
       {
          this.m.chatInput.text = "";
          super.sendMessage(param1);
@@ -84,7 +84,7 @@ package package_21
          this.lockBot = true;
       }
       
-      protected function roomBoxListenForEnter(param1:KeyboardEvent) : *
+      public function roomBoxListenForEnter(param1:KeyboardEvent) : *
       {
          if(param1.keyCode == 13)
          {
@@ -92,12 +92,12 @@ package package_21
          }
       }
       
-      protected function clickJoinRoom(param1:MouseEvent) : *
+      public function clickJoinRoom(param1:MouseEvent) : *
       {
          this.changeRoom();
       }
       
-      protected function changeRoom() : *
+      public function changeRoom() : *
       {
          if(this.m.roomBox.text == "")
          {
@@ -110,7 +110,7 @@ package package_21
          messages = 0;
       }
       
-      override protected function showMessages() : *
+      override public function showMessages() : *
       {
          if(this.updateMessages === true)
          {
@@ -123,7 +123,7 @@ package package_21
          }
       }
       
-      protected function maybeLockToBottom() : *
+      public function maybeLockToBottom() : *
       {
          var _loc1_:Number = Number(this.m.textBox.verticalScrollPosition);
          var _loc2_:Number = Number(this.m.textBox.maxVerticalScrollPosition);
@@ -137,18 +137,18 @@ package package_21
          }
       }
       
-      protected function lockToBottom(param1:FocusEvent = null) : *
+      public function lockToBottom(param1:FocusEvent = null) : *
       {
          this.lockBot = true;
          this.m.textBox.verticalScrollPosition = this.m.textBox.maxVerticalScrollPosition + 999;
       }
       
-      protected function overInfoHandler(param1:MouseEvent) : *
+      public function overInfoHandler(param1:MouseEvent) : *
       {
          this.infoPopup = new ChatRoomInfoPopup(this.m.infoButton);
       }
       
-      protected function outInfoHandler(param1:MouseEvent) : *
+      public function outInfoHandler(param1:MouseEvent) : *
       {
          this.infoPopup.remove();
          this.infoPopup = null;

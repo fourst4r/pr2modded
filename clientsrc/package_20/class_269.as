@@ -12,9 +12,9 @@ package package_20
    {
        
       
-      protected var displayCode:int;
+      public var displayCode:int;
       
-      protected var editor:LevelEditor;
+      public var editor:LevelEditor;
       
       public function class_269(param1:int)
       {
@@ -32,18 +32,18 @@ package package_20
          addEventListener(Event.ENTER_FRAME,this.method_152,false,0,true);
       }
       
-      protected function method_458() : *
+      public function method_458() : *
       {
          scaleX = this.editor.scaleX * this.editor.cur.scaleX;
          scaleY = this.editor.scaleY * this.editor.cur.scaleY;
       }
       
-      protected function method_152(param1:Event) : *
+      public function method_152(param1:Event) : *
       {
          this.method_458();
       }
       
-      override protected function mouseDownHandler(param1:MouseEvent) : *
+      override public function mouseDownHandler(param1:MouseEvent) : *
       {
          super.mouseDownHandler(param1);
          if(param1.target is BrushGraphic || Boolean(this.editor.menu.hitTestPoint(param1.stageX,param1.stageY,true)) || Boolean(this.editor.cur.hitTestPoint(param1.stageX,param1.stageY,true)))
@@ -57,7 +57,7 @@ package package_20
          }
       }
       
-      protected function dropObject(param1:int, param2:int) : *
+      public function dropObject(param1:int, param2:int) : *
       {
          var _loc3_:ObjectBackground = this.editor.cur;
          var _loc4_:DisplayObject = Objects.getFromCode(this.displayCode);

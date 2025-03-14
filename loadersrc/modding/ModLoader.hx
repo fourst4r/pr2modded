@@ -30,14 +30,15 @@ class ModLoader extends EventDispatcher {
     public function load(uri:String, ctx:ModContext) {
         _ctx = ctx;
         final loaderCtx = new LoaderContext();
-        loaderCtx.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
+        // loaderCtx.applicationDomain = new ApplicationDomain(ApplicationDomain.currentDomain);
+        loaderCtx.applicationDomain = ApplicationDomain.currentDomain;
         loaderCtx.allowCodeImport = true;
-        trace("loading uri="+uri);
+        // trace("loading uri="+uri);
         _loader.load(new URLRequest(uri), loaderCtx);
     }
 
     function onComplete(e:Event) {
-        trace("Loaded mod successfully "+_ctx.current?.name);
+        // trace("Loaded mod successfully "+_ctx.current?.name);
         final loaderInfo:LoaderInfo = e.target;
 
         try {

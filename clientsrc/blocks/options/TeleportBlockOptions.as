@@ -8,7 +8,7 @@ package blocks.options
    {
        
       
-      protected var cp:ColorPicker;
+      public var cp:ColorPicker;
       
       public function TeleportBlockOptions(param1:Block)
       {
@@ -23,7 +23,7 @@ package blocks.options
          this.cp.addEventListener(Event.CLOSE,this.chooseColor,false,0,true);
       }
       
-      protected function chooseColor(param1:* = null) : *
+      public function chooseColor(param1:* = null) : *
       {
          block.applyOptions(this.cp.getColor());
       }

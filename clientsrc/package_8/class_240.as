@@ -10,33 +10,33 @@ package package_8
    {
        
       
-      protected var velX:Number;
+      public var velX:Number;
       
-      protected var velY:Number;
+      public var velY:Number;
       
-      protected var fricX:Number;
+      public var fricX:Number;
       
-      protected var fricY:Number;
+      public var fricY:Number;
       
-      protected var accelX:Number;
+      public var accelX:Number;
       
-      protected var accelY:Number;
+      public var accelY:Number;
       
-      protected var var_578:int;
+      public var var_578:int;
       
-      protected var life:int;
+      public var life:int;
       
-      protected var targetAlpha:Number;
+      public var targetAlpha:Number;
       
-      protected var var_275:Number;
+      public var var_275:Number;
       
-      protected var velAlpha:Number;
+      public var velAlpha:Number;
       
-      protected var velScaleX:Number;
+      public var velScaleX:Number;
       
-      protected var velScaleY:Number;
+      public var velScaleY:Number;
       
-      protected var velRotation:Number;
+      public var velRotation:Number;
       
       public function class_240(param1:Object)
       {
@@ -89,7 +89,7 @@ package package_8
          return _loc2_;
       }
       
-      protected function method_38(param1:Number, param2:Number) : Number
+      public function method_38(param1:Number, param2:Number) : Number
       {
          if(Boolean(isNaN(param1)) || Boolean(isNaN(param2)))
          {
@@ -99,7 +99,7 @@ package package_8
          return Math.random() * _loc3_ + param1;
       }
       
-      protected function method_251(param1:Event) : *
+      public function method_251(param1:Event) : *
       {
          x += this.velX;
          y += this.velY;

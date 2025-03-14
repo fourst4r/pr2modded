@@ -8,13 +8,13 @@ package levelEditor
    {
        
       
-      protected var segSize:Number;
+      public var segSize:Number;
       
-      protected var optionsButton:BlockOptionsButton;
+      public var optionsButton:BlockOptionsButton;
       
-      protected var lastX:Number;
+      public var lastX:Number;
       
-      protected var lastY:Number;
+      public var lastY:Number;
       
       public var segX:int;
       
@@ -55,7 +55,7 @@ package levelEditor
          return new Point(this.segX,this.segY);
       }
       
-      override protected function endDrag(param1:MouseEvent) : *
+      override public function endDrag(param1:MouseEvent) : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
@@ -118,14 +118,14 @@ package levelEditor
          this.hideOptionsButton();
       }
       
-      protected function showOptionsButton() : *
+      public function showOptionsButton() : *
       {
          this.optionsButton = new BlockOptionsButton();
          this.optionsButton.addEventListener(MouseEvent.MOUSE_DOWN,this.onOptionsPress,false,0,true);
          addChild(this.optionsButton);
       }
       
-      protected function hideOptionsButton() : *
+      public function hideOptionsButton() : *
       {
          if(this.optionsButton != null)
          {
@@ -135,7 +135,7 @@ package levelEditor
          }
       }
       
-      override protected function positionInternals() : *
+      override public function positionInternals() : *
       {
          super.positionInternals();
          if(this.optionsButton != null)
@@ -147,7 +147,7 @@ package levelEditor
          }
       }
       
-      protected function method_103(param1:Number) : Number
+      public function method_103(param1:Number) : Number
       {
          return Math.round(param1 / this.segSize) * this.segSize;
       }

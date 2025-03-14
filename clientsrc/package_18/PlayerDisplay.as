@@ -12,9 +12,9 @@ package package_18
    {
        
       
-      protected var character:Character;
+      public var character:Character;
       
-      protected var yStart:Number = 24;
+      public var yStart:Number = 24;
       
       public var randomButton:RandomizeStyleButton;
       
@@ -26,9 +26,9 @@ package package_18
       
       public var feetSelect:PartSelector;
       
-      protected var hover:HoverPopup;
+      public var hover:HoverPopup;
       
-      protected var hoverTimer:uint;
+      public var hoverTimer:uint;
       
       public function PlayerDisplay(param1:Character, param2:Array, param3:Array, param4:Array, param5:Array, param6:int, param7:int, param8:int, param9:int, param10:int, param11:int, param12:int, param13:int, param14:Array, param15:Array, param16:Array, param17:Array, param18:int, param19:int, param20:int, param21:int)
       {
@@ -75,7 +75,7 @@ package package_18
          this.updateDisplay(new Event(Event.CHANGE));
       }
       
-      protected function onInfoMouseEvent(param1:* = null) : *
+      public function onInfoMouseEvent(param1:* = null) : *
       {
          var partType:String = null;
          var pluralType:String = null;
@@ -129,7 +129,7 @@ package package_18
          }
       }
       
-      protected function onRandomClick(param1:MouseEvent) : *
+      public function onRandomClick(param1:MouseEvent) : *
       {
          this.hatSelect.randomize();
          this.headSelect.randomize();
@@ -138,7 +138,7 @@ package package_18
          this.updateDisplay(param1);
       }
       
-      protected function updateDisplay(param1:Event) : *
+      public function updateDisplay(param1:Event) : *
       {
          this.character.setHatId(this.hatSelect.getValue());
          this.character.setHeadId(this.headSelect.getValue());
@@ -158,27 +158,27 @@ package package_18
          }
       }
       
-      protected function onHatInfoClick(param1:Event) : *
+      public function onHatInfoClick(param1:Event) : *
       {
          new PartInfoPopup("hat",this.hatSelect.partArray,this.hatSelect.epicArray);
       }
       
-      protected function onHeadInfoClick(param1:Event) : *
+      public function onHeadInfoClick(param1:Event) : *
       {
          new PartInfoPopup("head",this.headSelect.partArray,this.headSelect.epicArray);
       }
       
-      protected function onBodyInfoClick(param1:Event) : *
+      public function onBodyInfoClick(param1:Event) : *
       {
          new PartInfoPopup("body",this.bodySelect.partArray,this.bodySelect.epicArray);
       }
       
-      protected function onFeetInfoClick(param1:Event) : *
+      public function onFeetInfoClick(param1:Event) : *
       {
          new PartInfoPopup("feet",this.feetSelect.partArray,this.feetSelect.epicArray);
       }
       
-      protected function removePartSelector(param1:PartSelector) : *
+      public function removePartSelector(param1:PartSelector) : *
       {
          param1.removeEventListener(Event.CHANGE,this.updateDisplay);
          param1.remove();

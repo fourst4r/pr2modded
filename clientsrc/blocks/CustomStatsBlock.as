@@ -10,7 +10,7 @@ package blocks
    {
        
       
-      protected var customStats:Array;
+      public var customStats:Array;
       
       public function CustomStatsBlock()
       {
@@ -44,7 +44,7 @@ package blocks
          }
       }
       
-      override protected function useSupply(param1:LocalCharacter) : *
+      override public function useSupply(param1:LocalCharacter) : *
       {
          super.useSupply(param1);
          if(options == "reset")

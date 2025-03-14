@@ -7,9 +7,9 @@ package package_4
    {
        
       
-      protected var m:PMRFCodesPopupGraphic;
+      public var m:PMRFCodesPopupGraphic;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
       public function PMRFCodesPopup()
       {
@@ -22,7 +22,7 @@ package package_4
          addChild(this.m);
       }
       
-      protected function populateLinks() : *
+      public function populateLinks() : *
       {
          this.m.linksBox.htmlText = "";
          this.m.linksBox.htmlText += this.htmlNameMaker.makeLink("https://pr2hub.com/","https://pr2hub.com/") + "<br/>";
@@ -32,7 +32,7 @@ package package_4
          this.m.linksBox.htmlText += this.htmlNameMaker.makeGuild("PR2 Staff",183);
       }
       
-      protected function clickClose(param1:MouseEvent) : *
+      public function clickClose(param1:MouseEvent) : *
       {
          startFadeOut();
       }

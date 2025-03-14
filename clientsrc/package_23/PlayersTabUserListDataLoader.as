@@ -7,7 +7,7 @@ package package_23
    {
        
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
       public function PlayersTabUserListDataLoader(param1:String)
       {
@@ -21,7 +21,7 @@ package package_23
          this.superLoader.addEventListener(Event.COMPLETE,this.populateList);
       }
       
-      protected function populateList(param1:Event) : *
+      public function populateList(param1:Event) : *
       {
          var _loc3_:Object = null;
          var _loc2_:Array = this.superLoader.parsedData.users;

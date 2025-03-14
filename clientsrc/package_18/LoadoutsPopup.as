@@ -10,11 +10,11 @@ package package_18
    {
        
       
-      protected var character:Character;
+      public var character:Character;
       
-      protected var statsSelect:StatsSelect;
+      public var statsSelect:StatsSelect;
       
-      protected var playerDisplay:PlayerDisplay;
+      public var playerDisplay:PlayerDisplay;
       
       public function LoadoutsPopup(param1:Character, param2:StatsSelect, param3:PlayerDisplay)
       {
@@ -29,7 +29,7 @@ package package_18
          this.populate();
       }
       
-      protected function populate() : *
+      public function populate() : *
       {
          var _loc2_:Preset = null;
          var _loc3_:PresetListing = null;
@@ -41,7 +41,7 @@ package package_18
          }
       }
       
-      override protected function loadListing(param1:class_229) : *
+      override public function loadListing(param1:class_229) : *
       {
          if(!Settings.isNameSet())
          {
@@ -55,7 +55,7 @@ package package_18
          startFadeOut();
       }
       
-      override protected function deleteListing(param1:class_229) : *
+      override public function deleteListing(param1:class_229) : *
       {
          var _loc2_:PresetListing = PresetListing(param1);
          var _loc3_:Object = _loc2_.getPreset();

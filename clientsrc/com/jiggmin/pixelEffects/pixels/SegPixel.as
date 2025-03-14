@@ -8,21 +8,21 @@ package com.jiggmin.pixelEffects.pixels
    {
        
       
-      protected var bitmap:Bitmap;
+      public var bitmap:Bitmap;
       
-      protected var src:BitmapData;
+      public var src:BitmapData;
       
-      protected var product:BitmapData;
+      public var product:BitmapData;
       
-      protected var finalX:Number;
+      public var finalX:Number;
       
-      protected var finalY:Number;
+      public var finalY:Number;
       
-      protected var pull:Number;
+      public var pull:Number;
       
-      protected var glintFrames:int = 20;
+      public var glintFrames:int = 20;
       
-      protected var glintCounter:Number;
+      public var glintCounter:Number;
       
       public function SegPixel(param1:BitmapData, param2:BitmapData, param3:Number, param4:Number, param5:Number, param6:Number, param7:Number, param8:Number, param9:Number)
       {
@@ -43,7 +43,7 @@ package com.jiggmin.pixelEffects.pixels
          addEventListener(Event.ENTER_FRAME,this.go);
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          if(Math.abs(x - this.finalX) < 1 && Math.abs(y - this.finalY) < 1)
          {
@@ -59,7 +59,7 @@ package com.jiggmin.pixelEffects.pixels
          }
       }
       
-      protected function settle() : *
+      public function settle() : *
       {
          x = this.finalX;
          y = this.finalY;
@@ -73,7 +73,7 @@ package com.jiggmin.pixelEffects.pixels
          alpha = 0.25;
       }
       
-      protected function glint(param1:Event) : *
+      public function glint(param1:Event) : *
       {
          --this.glintCounter;
          if(this.glintCounter > 0)
@@ -86,7 +86,7 @@ package com.jiggmin.pixelEffects.pixels
          }
       }
       
-      protected function remove() : *
+      public function remove() : *
       {
          removeEventListener(Event.ENTER_FRAME,this.glint);
          removeEventListener(Event.ENTER_FRAME,this.go);

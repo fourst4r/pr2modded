@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      protected var m:TextToolButtonGraphic;
+      public var m:TextToolButtonGraphic;
       
       public function TextToolButton()
       {
@@ -17,7 +17,7 @@ package package_19
          addChild(this.m);
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(new TextTool());

@@ -11,31 +11,31 @@ package package_20
    {
        
       
-      protected var circle:Circle;
+      public var circle:Circle;
       
-      protected var drawableBG:DrawableBackground;
+      public var drawableBG:DrawableBackground;
       
-      protected var mousePos:Point;
+      public var mousePos:Point;
       
-      protected var rdInt:uint;
+      public var rdInt:uint;
       
-      protected var size:Number = 4;
+      public var size:Number = 4;
       
-      protected var color:Number = 0;
+      public var color:Number = 0;
       
-      protected var mode:String = "draw";
+      public var mode:String = "draw";
       
-      protected var zoomMultiplier:Number = 1;
+      public var zoomMultiplier:Number = 1;
       
-      protected var drawing:Boolean = false;
+      public var drawing:Boolean = false;
       
-      protected var lastX:Number = -1;
+      public var lastX:Number = -1;
       
-      protected var lastY:Number = -1;
+      public var lastY:Number = -1;
       
-      protected var drawStartX:int;
+      public var drawStartX:int;
       
-      protected var drawStartY:int;
+      public var drawStartY:int;
       
       public function Brush()
       {
@@ -62,7 +62,7 @@ package package_20
          clearInterval(this.rdInt);
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          var _loc2_:Point = null;
          if(this.drawing == true)
@@ -88,7 +88,7 @@ package package_20
          }
       }
       
-      protected function restartDrawing() : *
+      public function restartDrawing() : *
       {
          if(this.drawing == true)
          {
@@ -117,7 +117,7 @@ package package_20
          this.setSize(this.size);
       }
       
-      override protected function mouseDownHandler(param1:MouseEvent) : *
+      override public function mouseDownHandler(param1:MouseEvent) : *
       {
          var _loc2_:String = null;
          super.mouseDownHandler(param1);
@@ -135,7 +135,7 @@ package package_20
          }
       }
       
-      override protected function mouseUpHandler(param1:MouseEvent) : *
+      override public function mouseUpHandler(param1:MouseEvent) : *
       {
          super.mouseUpHandler(param1);
          if(this.drawing)
@@ -144,7 +144,7 @@ package package_20
          }
       }
       
-      override protected function mouseMoveHandler(param1:MouseEvent) : *
+      override public function mouseMoveHandler(param1:MouseEvent) : *
       {
          super.mouseMoveHandler(param1);
          this.mousePos.x = param1.stageX;
@@ -152,7 +152,7 @@ package package_20
          visible = !LevelEditor.editor.menu.hitTestPoint(param1.stageX,param1.stageY,true);
       }
       
-      protected function startDrawing() : *
+      public function startDrawing() : *
       {
          this.drawing = true;
          this.drawableBG = LevelEditor.editor.var_220;
@@ -165,13 +165,13 @@ package package_20
          this.drawStartY = _loc1_.y;
       }
       
-      protected function stopDrawing() : *
+      public function stopDrawing() : *
       {
          this.drawing = false;
          LevelEditor.editor.var_220.rasterize();
       }
       
-      protected function roundPoint(param1:Point) : Point
+      public function roundPoint(param1:Point) : Point
       {
          param1 = this.drawableBG.globalToLocal(param1);
          param1.x = Math.round(param1.x);

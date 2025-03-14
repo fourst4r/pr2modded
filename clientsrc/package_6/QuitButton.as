@@ -8,9 +8,9 @@ package package_6
    {
        
       
-      protected var m:QuitButtonGraphic;
+      public var m:QuitButtonGraphic;
       
-      protected var game:Game;
+      public var game:Game;
       
       public function QuitButton(param1:Game)
       {
@@ -22,7 +22,7 @@ package package_6
          this.m.quit_bt.addEventListener(MouseEvent.MOUSE_UP,this.invokeQuit);
       }
       
-      protected function invokeQuit(param1:*) : *
+      public function invokeQuit(param1:*) : *
       {
          if(param1 is KeyboardEvent)
          {

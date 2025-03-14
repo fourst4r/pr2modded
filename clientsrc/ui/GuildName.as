@@ -9,11 +9,11 @@ package ui
    {
        
       
-      protected var m:GuildNameGraphic;
+      public var m:GuildNameGraphic;
       
-      protected var loader:Loader;
+      public var loader:Loader;
       
-      protected var guildId:int;
+      public var guildId:int;
       
       public function GuildName(param1:int, param2:String, param3:String, param4:Boolean = false, param5:Boolean = false)
       {
@@ -41,7 +41,7 @@ package ui
          this.m.nameBox.width = param1;
       }
       
-      protected function clickHandler(param1:MouseEvent) : *
+      public function clickHandler(param1:MouseEvent) : *
       {
          new GuildPopup(this.guildId);
       }

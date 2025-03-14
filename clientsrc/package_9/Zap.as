@@ -9,9 +9,9 @@ package package_9
    {
        
       
-      protected var m:ZapGraphic;
+      public var m:ZapGraphic;
       
-      protected var character:Character;
+      public var character:Character;
       
       public function Zap(param1:Character, param2:Boolean = true, param3:Boolean = true, param4:Boolean = true)
       {
@@ -35,7 +35,7 @@ package package_9
          }
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          this.pos();
          alpha -= 0.1;
@@ -45,7 +45,7 @@ package package_9
          }
       }
       
-      protected function pos() : *
+      public function pos() : *
       {
          x = this.character.x;
          y = this.character.y;

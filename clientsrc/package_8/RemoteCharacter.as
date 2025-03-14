@@ -13,31 +13,31 @@ package package_8
    {
        
       
-      protected var var_19:Array;
+      public var var_19:Array;
       
-      protected var commandHandler:CommandHandler;
+      public var commandHandler:CommandHandler;
       
-      protected var mapDot:MiniMapDot;
+      public var mapDot:MiniMapDot;
       
-      protected var map:Map;
+      public var map:Map;
       
-      protected var var_180:Number = 1;
+      public var var_180:Number = 1;
       
-      protected var posX:Number = 0;
+      public var posX:Number = 0;
       
-      protected var posY:Number = 0;
+      public var posY:Number = 0;
       
-      protected var lastX:Number = 0;
+      public var lastX:Number = 0;
       
-      protected var lastY:Number = 0;
+      public var lastY:Number = 0;
       
-      protected var rot:int = 0;
+      public var rot:int = 0;
       
-      protected var rotMod:int = 0;
+      public var rotMod:int = 0;
       
-      protected var var_189:Number = 10;
+      public var var_189:Number = 10;
       
-      protected var var_325:Number = 55;
+      public var var_325:Number = 55;
       
       public function RemoteCharacter(param1:int, param2:MiniMapDot, param3:String, param4:int, param5:int, param6:int, param7:int, param8:String = "0")
       {
@@ -61,7 +61,7 @@ package package_8
          addEventListener(Event.ENTER_FRAME,this.go,false,0,true);
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          var _loc2_:int = 0;
          var _loc3_:Point = null;
@@ -240,7 +240,7 @@ package package_8
          method_58(this.map.rotation);
       }
       
-      protected function sting(param1:Array) : *
+      public function sting(param1:Array) : *
       {
          var _loc2_:Character = Course.course.playerArray[param1[0]];
          if(_loc2_ == null || _loc2_.tempID == this.tempID)
@@ -252,7 +252,7 @@ package package_8
          new Sting(this,_loc4_);
       }
       
-      protected function method_76() : *
+      public function method_76() : *
       {
          var _loc1_:Number = this.posX - this.lastX;
          var _loc2_:Number = this.posY - this.lastY;
@@ -274,7 +274,7 @@ package package_8
          }
       }
       
-      protected function method_128(param1:int, param2:int) : *
+      public function method_128(param1:int, param2:int) : *
       {
          var _loc4_:Block = null;
          var _loc3_:Point = Data.method_9(param1 / 30,param2 / 30,this.map.rotation);

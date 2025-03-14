@@ -12,25 +12,25 @@ package package_17
       public static var userCoins:int = 0;
        
       
-      protected var m:StorePopupGraphic;
+      public var m:StorePopupGraphic;
       
-      protected var var_513:int = 3;
+      public var var_513:int = 3;
       
-      protected var var_640:int = 137;
+      public var var_640:int = 137;
       
-      protected var var_632:int = 160;
+      public var var_632:int = 160;
       
-      protected var listings:Vector.<StoreListing>;
+      public var listings:Vector.<StoreListing>;
       
-      protected var scroll:CustomScrollBar;
+      public var scroll:CustomScrollBar;
       
-      protected var loading:LoadingGraphic;
+      public var loading:LoadingGraphic;
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var saleFlash:EpicFlash;
+      public var saleFlash:EpicFlash;
       
-      protected var uploading:UploadingPopup;
+      public var uploading:UploadingPopup;
       
       public function StorePopup()
       {
@@ -55,7 +55,7 @@ package package_17
          this.superLoader.load(new URLRequest(Main.baseURL + "/vault/vault.php"));
       }
       
-      protected function populateList(param1:Event) : *
+      public function populateList(param1:Event) : *
       {
          var _loc4_:Object = null;
          removeChild(this.loading);
@@ -83,7 +83,7 @@ package package_17
          }
       }
       
-      protected function addListing(param1:Object) : StoreListing
+      public function addListing(param1:Object) : StoreListing
       {
          var _loc2_:StoreListing = new StoreListing(param1,this.saleFlash);
          if(_loc2_.available)
@@ -99,12 +99,12 @@ package package_17
          return _loc2_;
       }
       
-      protected function quantityClick(param1:Event) : *
+      public function quantityClick(param1:Event) : *
       {
          this.clickItem(param1,true);
       }
       
-      protected function clickNeedMore(param1:TextEvent) : *
+      public function clickNeedMore(param1:TextEvent) : *
       {
          var e:TextEvent = param1;
          new ConfirmPopup(function():*
@@ -113,7 +113,7 @@ package package_17
          },"You will be routed to pr2hub.com in order to complete this transaction.");
       }
       
-      protected function clickItem(param1:Event, param2:Boolean = false) : *
+      public function clickItem(param1:Event, param2:Boolean = false) : *
       {
          var item:StoreListing = null;
          var e:Event = param1;
@@ -162,7 +162,7 @@ package package_17
          }
       }
       
-      protected function sendToBuyCoinsPage() : *
+      public function sendToBuyCoinsPage() : *
       {
          var _loc1_:Object = new Object();
          _loc1_.token = Main.token;
@@ -180,14 +180,14 @@ package package_17
          this.closePopup();
       }
       
-      protected function showFAQ(param1:Event) : *
+      public function showFAQ(param1:Event) : *
       {
          var _loc2_:StoreListing = StoreListing(param1.target);
          var _loc3_:Object = _loc2_.listing;
          new MessagePopup("<b>--- " + _loc3_.title + " FAQ ---</b> \n\n" + _loc3_.faq);
       }
       
-      protected function useSuperBooster() : *
+      public function useSuperBooster() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.server_id = Main.server.server_id;
@@ -198,7 +198,7 @@ package package_17
          _loc3_.addEventListener(SuperLoader.d,this.onPurchaseComplete,false,0,true);
       }
       
-      protected function purchaseItem(param1:String, param2:int) : *
+      public function purchaseItem(param1:String, param2:int) : *
       {
          if(QuantityPopup.instance !== null)
          {
@@ -214,7 +214,7 @@ package package_17
          (_loc5_ = new UploadingPopup(_loc4_,SuperLoader.j,"Purchasing item...")).addEventListener(SuperLoader.d,this.onPurchaseComplete,false,0,true);
       }
       
-      protected function onPurchaseComplete(param1:Event) : *
+      public function onPurchaseComplete(param1:Event) : *
       {
          if(param1.target.parsedData.success)
          {
@@ -222,12 +222,12 @@ package package_17
          }
       }
       
-      protected function closePopup(param1:Event = null) : *
+      public function closePopup(param1:Event = null) : *
       {
          startFadeOut();
       }
       
-      protected function clear() : *
+      public function clear() : *
       {
          var _loc1_:StoreListing = null;
          for each(_loc1_ in this.listings)

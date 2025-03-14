@@ -8,15 +8,15 @@ package menu
    public class CheckServers
    {
       
-      protected static var interval:uint;
+      public static var interval:uint;
       
-      protected static var target:ComboBox;
+      public static var target:ComboBox;
       
-      protected static var servers:Array;
+      public static var servers:Array;
       
-      protected static var superLoader:SuperLoader = new SuperLoader(true,SuperLoader.j);
+      public static var superLoader:SuperLoader = new SuperLoader(true,SuperLoader.j);
       
-      protected static var active:Boolean = false;
+      public static var active:Boolean = false;
        
       
       public function CheckServers()
@@ -46,7 +46,7 @@ package menu
          load();
       }
       
-      protected static function maybeLoad() : *
+      public static function maybeLoad() : *
       {
          if(servers == null || servers.length == 0)
          {
@@ -59,7 +59,7 @@ package menu
          }
       }
       
-      protected static function load() : *
+      public static function load() : *
       {
          if(target != null)
          {
@@ -72,7 +72,7 @@ package menu
          superLoader.load(_loc1_);
       }
       
-      protected static function parseData(param1:Event) : *
+      public static function parseData(param1:Event) : *
       {
          var _loc2_:Object = null;
          servers = superLoader.parsedData.servers;
@@ -100,7 +100,7 @@ package menu
          }
       }
       
-      protected static function handleError(param1:Event) : *
+      public static function handleError(param1:Event) : *
       {
          if(target != null)
          {
@@ -124,7 +124,7 @@ package menu
          target = null;
       }
       
-      protected static function selectServer(param1:ComboBox) : *
+      public static function selectServer(param1:ComboBox) : *
       {
          var _loc4_:Object = null;
          var _loc5_:Object = null;
@@ -169,7 +169,7 @@ package menu
          }
       }
       
-      protected static function sortServers(param1:Object, param2:Object) : int
+      public static function sortServers(param1:Object, param2:Object) : int
       {
          if(Main.guild != 0)
          {
@@ -208,7 +208,7 @@ package menu
          }
       }
       
-      protected static function addToList(param1:ComboBox, param2:Object) : *
+      public static function addToList(param1:ComboBox, param2:Object) : *
       {
          var _loc3_:Object = getServerFromId(param2.server_id,param1);
          var _loc4_:*;
@@ -238,7 +238,7 @@ package menu
          }
       }
       
-      protected static function getServerFromId(param1:int, param2:ComboBox) : Object
+      public static function getServerFromId(param1:int, param2:ComboBox) : Object
       {
          var _loc5_:Object = null;
          var _loc6_:Object = null;

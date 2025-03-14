@@ -8,17 +8,17 @@ package com.hurlant.crypto.symmetric
    {
        
       
-      protected var key:ISymmetricKey;
+      public var key:ISymmetricKey;
       
-      protected var padding:IPad;
+      public var padding:IPad;
       
-      protected var prng:Random;
+      public var prng:Random;
       
-      protected var iv:ByteArray;
+      public var iv:ByteArray;
       
-      protected var lastIV:ByteArray;
+      public var lastIV:ByteArray;
       
-      protected var blockSize:uint;
+      public var blockSize:uint;
       
       public function IVMode(param1:ISymmetricKey, param2:IPad = null)
       {
@@ -89,7 +89,7 @@ package com.hurlant.crypto.symmetric
          return this.lastIV;
       }
       
-      protected function getIV4e() : ByteArray
+      public function getIV4e() : ByteArray
       {
          var _loc1_:ByteArray = new ByteArray();
          if(this.iv)
@@ -105,7 +105,7 @@ package com.hurlant.crypto.symmetric
          return _loc1_;
       }
       
-      protected function getIV4d() : ByteArray
+      public function getIV4d() : ByteArray
       {
          var _loc1_:ByteArray = new ByteArray();
          if(this.iv)

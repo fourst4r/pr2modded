@@ -17,23 +17,23 @@ package package_22
       
       public var class_10:Sprite;
       
-      protected var loadingGraphic:LoadingGraphic;
+      public var loadingGraphic:LoadingGraphic;
       
-      protected var pageNavigation:PageNavigation;
+      public var pageNavigation:PageNavigation;
       
-      protected var var_280:uint;
+      public var var_280:uint;
       
-      protected var levelArray:Array;
+      public var levelArray:Array;
       
       public var levels:Object;
       
-      protected var pageNum:int = 1;
+      public var pageNum:int = 1;
       
-      protected var mode:String = "best";
+      public var mode:String = "best";
       
-      protected var superLoader:SuperLoader;
+      public var superLoader:SuperLoader;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
       public function LevelListing()
       {
@@ -70,7 +70,7 @@ package package_22
          }
       }
       
-      protected function showCourses(param1:Array) : *
+      public function showCourses(param1:Array) : *
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;
@@ -120,7 +120,7 @@ package package_22
          }
       }
       
-      protected function loadHandler(param1:Event) : *
+      public function loadHandler(param1:Event) : *
       {
          var _loc3_:Object = null;
          var _loc4_:String = null;
@@ -142,12 +142,12 @@ package package_22
          this.loadingGraphic.visible = false;
       }
       
-      protected function errorHandler(param1:Event) : *
+      public function errorHandler(param1:Event) : *
       {
          this.loadingGraphic.visible = false;
       }
       
-      protected function requestCourses() : *
+      public function requestCourses() : *
       {
          this.superLoader.load(new URLRequest(Main.levelsURL.substr(0,-7) + "/files/lists/" + this.mode + "/" + this.pageNum));
          this.loadingGraphic.visible = true;
@@ -182,7 +182,7 @@ package package_22
          }
       }
       
-      protected function testLevelAccess(param1:Event) : *
+      public function testLevelAccess(param1:Event) : *
       {
          var _loc2_:String = null;
          for(_loc2_ in this.levels)
@@ -196,7 +196,7 @@ package package_22
          Main.socket.write("refresh_highlights`");
       }
       
-      protected function removeLevels() : *
+      public function removeLevels() : *
       {
          var _loc1_:LevelItem = null;
          var _loc2_:int = 0;

@@ -6,9 +6,9 @@ package package_19
    {
        
       
-      protected var m:ValueButtonGraphic;
+      public var m:ValueButtonGraphic;
       
-      protected var value:String;
+      public var value:String;
       
       public function ModeMenuButton()
       {
@@ -25,7 +25,7 @@ package package_19
          this.m.valueBox.text = param1;
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          new ModeMenu(this);
       }

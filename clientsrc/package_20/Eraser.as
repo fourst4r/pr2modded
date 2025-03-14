@@ -13,7 +13,7 @@ package package_20
          mode = "erase";
       }
       
-      override protected function stopDrawing() : *
+      override public function stopDrawing() : *
       {
          drawing = false;
          LevelEditor.editor.var_220.erase();

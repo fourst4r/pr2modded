@@ -10,43 +10,43 @@ package levelEditor
    {
        
       
-      protected var var_621:Number;
+      public var var_621:Number;
       
-      protected var var_603:Number;
+      public var var_603:Number;
       
-      protected var var_625:Number;
+      public var var_625:Number;
       
-      protected var var_582:Number;
+      public var var_582:Number;
       
-      protected var startWidth:Number;
+      public var startWidth:Number;
       
-      protected var startHeight:Number;
+      public var startHeight:Number;
       
-      protected var textObj:Boolean = false;
+      public var textObj:Boolean = false;
       
       public var deleteable:Boolean = true;
       
-      protected var resizable:Boolean = true;
+      public var resizable:Boolean = true;
       
-      protected var deleteButton:DeleteButton;
+      public var deleteButton:DeleteButton;
       
-      protected var resizeButton:ResizeButton;
+      public var resizeButton:ResizeButton;
       
       public var m:DisplayObject;
       
-      protected var highlightOutline:Sprite;
+      public var highlightOutline:Sprite;
       
-      protected var editor:LevelEditor;
+      public var editor:LevelEditor;
       
-      protected var stageRef:Stage;
+      public var stageRef:Stage;
       
-      protected var holder:Sprite;
+      public var holder:Sprite;
       
       public var displayCode:int;
       
-      protected var buttonScaleX:Number = 1;
+      public var buttonScaleX:Number = 1;
       
-      protected var buttonScaleY:Number = 1;
+      public var buttonScaleY:Number = 1;
       
       public function DrawObject(param1:int, param2:Number, param3:Number)
       {
@@ -66,12 +66,12 @@ package levelEditor
          addEventListener(Event.ADDED,this.addedHandler,false,0,true);
       }
       
-      protected function addedHandler(param1:Event) : *
+      public function addedHandler(param1:Event) : *
       {
          this.holder = Sprite(parent);
       }
       
-      protected function beginDrag(param1:MouseEvent) : *
+      public function beginDrag(param1:MouseEvent) : *
       {
          this.stageRef.addEventListener(MouseEvent.MOUSE_MOVE,this.onDrag);
          this.stageRef.addEventListener(MouseEvent.MOUSE_UP,this.endDrag);
@@ -85,7 +85,7 @@ package levelEditor
          alpha = 0.75;
       }
       
-      protected function recordRealDimensions() : *
+      public function recordRealDimensions() : *
       {
          var _loc1_:Number = scaleX;
          var _loc2_:Number = scaleY;
@@ -97,7 +97,7 @@ package levelEditor
          scaleY = _loc2_;
       }
       
-      protected function onDrag(param1:MouseEvent) : *
+      public function onDrag(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.holder.globalToLocal(new Point(param1.stageX,param1.stageY));
          _loc2_.x += this.var_621;
@@ -106,7 +106,7 @@ package levelEditor
          y = _loc2_.y;
       }
       
-      protected function endDrag(param1:MouseEvent) : *
+      public function endDrag(param1:MouseEvent) : *
       {
          this.stageRef.removeEventListener(MouseEvent.MOUSE_MOVE,this.onDrag);
          this.stageRef.removeEventListener(MouseEvent.MOUSE_UP,this.endDrag);
@@ -150,12 +150,12 @@ package levelEditor
          this.hideResizeButton();
       }
       
-      protected function mouseDownHandler(param1:MouseEvent) : *
+      public function mouseDownHandler(param1:MouseEvent) : *
       {
          this.deselect();
       }
       
-      protected function onDelPress(param1:KeyboardEvent) : *
+      public function onDelPress(param1:KeyboardEvent) : *
       {
          if(this.deleteable === true && (param1.keyCode === 46 || param1.keyCode === 8))
          {
@@ -163,19 +163,19 @@ package levelEditor
          }
       }
       
-      protected function deleteObject(param1:MouseEvent = null) : *
+      public function deleteObject(param1:MouseEvent = null) : *
       {
          this.editor.cur.recordDelete(this);
          this.remove();
       }
       
-      protected function onResizePress(param1:MouseEvent) : *
+      public function onResizePress(param1:MouseEvent) : *
       {
          this.stageRef.addEventListener(MouseEvent.MOUSE_MOVE,this.resize);
          this.stageRef.addEventListener(MouseEvent.MOUSE_UP,this.onResizeUp);
       }
       
-      protected function resize(param1:MouseEvent) : *
+      public function resize(param1:MouseEvent) : *
       {
          var _loc2_:Point = this.holder.globalToLocal(new Point(param1.stageX,param1.stageY));
          var _loc3_:Number = _loc2_.x - x;
@@ -184,7 +184,7 @@ package levelEditor
          scaleY = _loc4_ * (100 / this.startHeight) / 100;
       }
       
-      protected function onResizeUp(param1:MouseEvent) : *
+      public function onResizeUp(param1:MouseEvent) : *
       {
          this.stageRef.removeEventListener(MouseEvent.MOUSE_MOVE,this.resize);
          this.stageRef.removeEventListener(MouseEvent.MOUSE_UP,this.onResizeUp);
@@ -194,14 +194,14 @@ package levelEditor
          this.editor.cur.recordResize(this);
       }
       
-      protected function showDeleteButton() : *
+      public function showDeleteButton() : *
       {
          this.deleteButton = new DeleteButton();
          this.deleteButton.addEventListener(MouseEvent.MOUSE_DOWN,this.deleteObject,false,0,true);
          addChild(this.deleteButton);
       }
       
-      protected function hideDeleteButton() : *
+      public function hideDeleteButton() : *
       {
          if(this.deleteButton != null)
          {
@@ -211,14 +211,14 @@ package levelEditor
          }
       }
       
-      protected function showResizeButton() : *
+      public function showResizeButton() : *
       {
          this.resizeButton = new ResizeButton();
          addChild(this.resizeButton);
          this.resizeButton.addEventListener(MouseEvent.MOUSE_DOWN,this.onResizePress,false,0,true);
       }
       
-      protected function hideResizeButton() : *
+      public function hideResizeButton() : *
       {
          if(this.resizeButton != null)
          {
@@ -228,13 +228,13 @@ package levelEditor
          }
       }
       
-      protected function setButtonScale() : *
+      public function setButtonScale() : *
       {
          this.buttonScaleX = 1 / scaleX * (1 / parent.scaleX) * (1 / parent.parent.scaleX) * (1 / parent.parent.parent.scaleX);
          this.buttonScaleY = 1 / scaleY * (1 / parent.scaleY) * (1 / parent.parent.scaleY) * (1 / parent.parent.parent.scaleY);
       }
       
-      protected function positionInternals() : *
+      public function positionInternals() : *
       {
          this.setButtonScale();
          if(this.deleteButton != null)
@@ -253,7 +253,7 @@ package levelEditor
          }
       }
       
-      protected function makeHighlightOutline() : *
+      public function makeHighlightOutline() : *
       {
          this.highlightOutline.graphics.clear();
          this.highlightOutline.graphics.lineStyle(3,16777215,1,false,"none");
@@ -264,7 +264,7 @@ package levelEditor
          this.highlightOutline.graphics.lineTo(0,0);
       }
       
-      protected function hideHighlight() : *
+      public function hideHighlight() : *
       {
          this.highlightOutline.graphics.clear();
       }

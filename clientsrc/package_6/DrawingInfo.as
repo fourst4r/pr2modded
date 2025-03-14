@@ -6,11 +6,11 @@ package package_6
    {
        
       
-      protected var m:DrawingInfoGraphic;
+      public var m:DrawingInfoGraphic;
       
-      protected var cm:CommandHandler;
+      public var cm:CommandHandler;
       
-      protected var names:Array;
+      public var names:Array;
       
       public function DrawingInfo()
       {

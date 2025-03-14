@@ -11,17 +11,17 @@ package package_22
       public static var instance:CourseMenu = null;
        
       
-      protected var m:CourseMenuGraphic;
+      public var m:CourseMenuGraphic;
       
-      protected var slot:Slot;
+      public var slot:Slot;
       
-      protected var secondInterval:uint;
+      public var secondInterval:uint;
       
-      protected var waitTimeout:uint;
+      public var waitTimeout:uint;
       
-      protected var confirmed:Boolean = false;
+      public var confirmed:Boolean = false;
       
-      protected var timer:int;
+      public var timer:int;
       
       public function CourseMenu(param1:Slot)
       {
@@ -61,7 +61,7 @@ package package_22
          }
       }
       
-      protected function decrementTimer() : *
+      public function decrementTimer() : *
       {
          --this.timer;
          if(this.timer < 0)
@@ -73,7 +73,7 @@ package package_22
          this.m.textBox.text = this.timer.toString();
       }
       
-      protected function clickPlay(param1:MouseEvent) : *
+      public function clickPlay(param1:MouseEvent) : *
       {
          this.confirmed = true;
          clearTimeout(this.waitTimeout);
@@ -85,7 +85,7 @@ package package_22
          this.remove();
       }
       
-      protected function closeMenu(param1:* = null) : *
+      public function closeMenu(param1:* = null) : *
       {
          this.confirmed = false;
          this.remove();

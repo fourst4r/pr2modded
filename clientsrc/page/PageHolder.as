@@ -4,7 +4,7 @@ package page
    {
        
       
-      protected var currentPage:Page;
+      public var currentPage:Page;
       
       public function PageHolder(param1:Page = null)
       {

@@ -10,25 +10,25 @@ package ui
    {
        
       
-      protected var m:CustomScrollBarGraphic;
+      public var m:CustomScrollBarGraphic;
       
-      protected var target:DisplayObject;
+      public var target:DisplayObject;
       
-      protected var stageRef:Stage;
+      public var stageRef:Stage;
       
-      protected var var_312:Number;
+      public var var_312:Number;
       
-      protected var var_353:Number;
+      public var var_353:Number;
       
-      protected var var_337:Number;
+      public var var_337:Number;
       
-      protected var var_610:Number;
+      public var var_610:Number;
       
-      protected var pos:Number = 0;
+      public var pos:Number = 0;
       
-      protected var var_586:Number = 5;
+      public var var_586:Number = 5;
       
-      protected var var_595:Number;
+      public var var_595:Number;
       
       public function CustomScrollBar()
       {
@@ -53,23 +53,23 @@ package ui
          scaleX = scaleY = 1;
       }
       
-      protected function method_457(param1:MouseEvent) : *
+      public function method_457(param1:MouseEvent) : *
       {
          this.stageRef.addEventListener(MouseEvent.MOUSE_UP,this.method_199,false,0,true);
          this.stageRef.addEventListener(MouseEvent.MOUSE_MOVE,this.method_183,false,0,true);
       }
       
-      protected function method_381(param1:MouseEvent) : *
+      public function method_381(param1:MouseEvent) : *
       {
          this.method_319(-this.var_586);
       }
       
-      protected function method_255(param1:MouseEvent) : *
+      public function method_255(param1:MouseEvent) : *
       {
          this.method_319(this.var_586);
       }
       
-      protected function method_319(param1:Number) : *
+      public function method_319(param1:Number) : *
       {
          removeEventListener(Event.ENTER_FRAME,this.scroll);
          addEventListener(Event.ENTER_FRAME,this.scroll,false,0,true);
@@ -77,23 +77,23 @@ package ui
          this.var_595 = param1;
       }
       
-      protected function method_347(param1:MouseEvent) : *
+      public function method_347(param1:MouseEvent) : *
       {
          removeEventListener(Event.ENTER_FRAME,this.scroll);
       }
       
-      protected function scroll(param1:Event) : *
+      public function scroll(param1:Event) : *
       {
          this.position(this.pos + this.var_595);
       }
       
-      protected function method_199(param1:MouseEvent) : *
+      public function method_199(param1:MouseEvent) : *
       {
          this.stageRef.removeEventListener(MouseEvent.MOUSE_UP,this.method_199);
          this.stageRef.removeEventListener(MouseEvent.MOUSE_MOVE,this.method_183);
       }
       
-      protected function method_183(param1:MouseEvent) : *
+      public function method_183(param1:MouseEvent) : *
       {
          var _loc2_:Number = param1.stageY;
          var _loc3_:Point = new Point(0,_loc2_);

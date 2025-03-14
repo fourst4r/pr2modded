@@ -9,11 +9,11 @@ package package_19
    {
        
       
-      protected var m:HatsMenuGraphic;
+      public var m:HatsMenuGraphic;
       
-      protected var highestHatID:int;
+      public var highestHatID:int;
       
-      protected var hover:HoverPopup = null;
+      public var hover:HoverPopup = null;
       
       public function HatsMenu(param1:HatsMenuButton)
       {
@@ -45,7 +45,7 @@ package package_19
          this.m.hat5.addEventListener(MouseEvent.MOUSE_OUT,this.removeHover,false,0,true);
       }
       
-      protected function maybeAddHover(param1:Event) : *
+      public function maybeAddHover(param1:Event) : *
       {
          var _loc2_:CheckBox = param1.currentTarget;
          if(_loc2_ == this.m.hat5)
@@ -73,7 +73,7 @@ package package_19
          }
       }
       
-      protected function removeHover(param1:MouseEvent = null) : *
+      public function removeHover(param1:MouseEvent = null) : *
       {
          if(this.hover != null)
          {

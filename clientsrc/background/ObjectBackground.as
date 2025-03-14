@@ -14,11 +14,11 @@ package background
       
       public var objArray:Array;
       
-      protected var objLimit:int = 50000;
+      public var objLimit:int = 50000;
       
-      protected var var_0379:int = 0;
+      public var var_0379:int = 0;
       
-      protected var segMult:int = 1;
+      public var segMult:int = 1;
       
       public function ObjectBackground(param1:GamePage)
       {
@@ -41,7 +41,7 @@ package background
          }
       }
       
-      protected function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
+      public function attachObject(param1:int, param2:int, param3:int, param4:String = "") : *
       {
          var _loc5_:DrawObject = new DrawObject(param1,param2,param3);
          this.objCanvas.addChild(_loc5_);
@@ -154,7 +154,7 @@ package background
          super.draw(param1);
       }
       
-      protected function drawText(param1:String) : *
+      public function drawText(param1:String) : *
       {
          var _loc2_:Array = null;
          var _loc3_:String = null;
@@ -178,7 +178,7 @@ package background
          }
       }
       
-      protected function placeObject(param1:String) : *
+      public function placeObject(param1:String) : *
       {
          var _loc2_:Array = null;
          if(this.objArray.length < this.objLimit)
@@ -192,7 +192,7 @@ package background
          }
       }
       
-      protected function moveDrawObject(param1:String) : *
+      public function moveDrawObject(param1:String) : *
       {
          var _loc2_:Array = param1.split(";");
          var _loc3_:DrawObject = DrawObject(this.objArray[Number(_loc2_[0])]);
@@ -203,7 +203,7 @@ package background
          }
       }
       
-      protected function updateText(param1:String) : *
+      public function updateText(param1:String) : *
       {
          var _loc2_:Array = param1.split(";");
          var _loc3_:int = int(_loc2_[0]);
@@ -214,7 +214,7 @@ package background
          _loc6_.setColor(_loc5_);
       }
       
-      protected function deleteObject(param1:String) : *
+      public function deleteObject(param1:String) : *
       {
          var _loc2_:DrawObject = DrawObject(this.objArray[int(param1)]);
          if(_loc2_.displayCode != Objects.BLOCK_START1 && _loc2_.displayCode != Objects.BLOCK_START2 && _loc2_.displayCode != Objects.BLOCK_START3 && _loc2_.displayCode != Objects.BLOCK_START4)
@@ -223,7 +223,7 @@ package background
          }
       }
       
-      protected function resizeObject(param1:String) : *
+      public function resizeObject(param1:String) : *
       {
          var _loc5_:Number = NaN;
          var _loc2_:Array = param1.split(";");

@@ -42,7 +42,7 @@ package package_18
          this.applyPresetData(param1);
       }
       
-      protected function applyPresetData(param1:Object) : *
+      public function applyPresetData(param1:Object) : *
       {
          var _loc2_:String = null;
          if(param1 != null)

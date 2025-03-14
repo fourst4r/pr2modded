@@ -13,7 +13,7 @@ package package_8
          super(param1,param2,param3);
       }
       
-      override protected function createParticle(param1:Number, param2:Number) : DisplayObject
+      override public function createParticle(param1:Number, param2:Number) : DisplayObject
       {
          var _loc3_:class_181 = new class_181(param1,param2);
          _loc3_.transform.colorTransform = new ColorTransform(Math.random(),Math.random(),Math.random(),Math.random(),Math.random(),Math.random(),Math.random(),Math.random());

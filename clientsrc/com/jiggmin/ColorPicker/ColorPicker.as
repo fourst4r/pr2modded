@@ -15,11 +15,11 @@ package com.jiggmin.ColorPicker
       
       public var direction:String = "right";
       
-      protected var color:int;
+      public var color:int;
       
-      protected var popup:ColorPickerPopup;
+      public var popup:ColorPickerPopup;
       
-      protected var m:ColorPickerGraphic;
+      public var m:ColorPickerGraphic;
       
       public function ColorPicker()
       {
@@ -50,7 +50,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function clickHandler(param1:MouseEvent) : *
+      public function clickHandler(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          if(this.popup != null && !this.popup.isRemoved())
@@ -63,7 +63,7 @@ package com.jiggmin.ColorPicker
          }
       }
       
-      protected function openPopup() : *
+      public function openPopup() : *
       {
          this.closePopup();
          var _loc1_:Point = this.localToGlobal(new Point(0,0));

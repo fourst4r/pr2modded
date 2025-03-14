@@ -8,17 +8,17 @@ package package_14
    {
        
       
-      protected var scrollBar:CustomScrollBar;
+      public var scrollBar:CustomScrollBar;
       
-      protected var scroll:Sprite;
+      public var scroll:Sprite;
       
-      protected var var_126:Sprite;
+      public var var_126:Sprite;
       
-      protected var posX:Number = 0;
+      public var posX:Number = 0;
       
-      protected var posY:Number = 0;
+      public var posY:Number = 0;
       
-      protected var var_388:Number = 10;
+      public var var_388:Number = 10;
       
       public function SideBar()
       {
@@ -38,7 +38,7 @@ package package_14
          this.method_711();
       }
       
-      protected function method_711() : *
+      public function method_711() : *
       {
          var _loc1_:Number = 0;
          var _loc2_:Number = 2;
@@ -56,7 +56,7 @@ package package_14
          this.scroll.mask = this.var_126;
       }
       
-      protected function addItem(param1:DisplayObject, param2:String = "", param3:String = "") : *
+      public function addItem(param1:DisplayObject, param2:String = "", param3:String = "") : *
       {
          var _loc4_:class_214 = null;
          _loc4_ = new class_214(param1,param2,param3);

@@ -9,15 +9,15 @@ package
    {
        
       
-      protected var title:String;
+      public var title:String;
       
-      protected var content:String;
+      public var content:String;
       
-      protected var time:int = 500;
+      public var time:int = 500;
       
-      protected var delayTimer:uint;
+      public var delayTimer:uint;
       
-      protected var hover:HoverPopup;
+      public var hover:HoverPopup;
       
       public function HoverDelayPopup(param1:String = "", param2:String = "", param3:int = 500)
       {
@@ -30,32 +30,32 @@ package
          addEventListener(MouseEvent.MOUSE_DOWN,this.downHandler,false,0,true);
       }
       
-      protected function overHandler(param1:MouseEvent) : *
+      public function overHandler(param1:MouseEvent) : *
       {
          clearTimeout(this.delayTimer);
          this.delayTimer = setTimeout(this.showPopup,this.time);
          this.hidePopupIfShown();
       }
       
-      protected function outHandler(param1:MouseEvent) : *
+      public function outHandler(param1:MouseEvent) : *
       {
          clearTimeout(this.delayTimer);
          this.hidePopupIfShown();
       }
       
-      protected function downHandler(param1:MouseEvent) : *
+      public function downHandler(param1:MouseEvent) : *
       {
          clearTimeout(this.delayTimer);
          this.hidePopupIfShown();
       }
       
-      protected function showPopup() : *
+      public function showPopup() : *
       {
          this.hidePopupIfShown();
          this.hover = new HoverPopup(this.title,this.content,this);
       }
       
-      protected function hidePopupIfShown() : *
+      public function hidePopupIfShown() : *
       {
          if(this.hover != null)
          {

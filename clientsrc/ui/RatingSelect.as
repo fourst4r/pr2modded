@@ -10,15 +10,15 @@ package ui
    {
        
       
-      protected var m:RatingSelectGraphic;
+      public var m:RatingSelectGraphic;
       
-      protected var star:HighlightStar;
+      public var star:HighlightStar;
       
-      protected var rating:Number = 3;
+      public var rating:Number = 3;
       
-      protected var starWidth:Number;
+      public var starWidth:Number;
       
-      protected var courseID:int;
+      public var courseID:int;
       
       public function RatingSelect(param1:int)
       {
@@ -40,13 +40,13 @@ package ui
          this.method_175(this.rating);
       }
       
-      protected function moveHandler(param1:MouseEvent) : *
+      public function moveHandler(param1:MouseEvent) : *
       {
          var _loc2_:Number = Number(this.method_274(param1.stageX));
          this.method_175(_loc2_);
       }
       
-      protected function clickHandler(param1:MouseEvent) : *
+      public function clickHandler(param1:MouseEvent) : *
       {
          var e:MouseEvent = param1;
          this.rating = this.method_274(e.stageX);
@@ -56,7 +56,7 @@ package ui
          },"Are you sure you want to rate this level " + this.rating + "?");
       }
       
-      protected function rateLevel() : *
+      public function rateLevel() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.level_id = this.courseID;
@@ -67,24 +67,24 @@ package ui
          new UploadingPopup(_loc2_,"json","Submitting rating...");
       }
       
-      protected function outHandler(param1:MouseEvent) : *
+      public function outHandler(param1:MouseEvent) : *
       {
          this.method_175(this.rating);
          this.star.gotoAndStop("off");
       }
       
-      protected function overHandler(param1:MouseEvent) : *
+      public function overHandler(param1:MouseEvent) : *
       {
          this.star.gotoAndStop("on");
       }
       
-      protected function method_175(param1:Number) : *
+      public function method_175(param1:Number) : *
       {
          this.m.bar.scaleX = param1 / 5;
          this.star.x = (param1 - 1) * this.starWidth;
       }
       
-      protected function method_274(param1:Number) : Number
+      public function method_274(param1:Number) : Number
       {
          var _loc2_:Point = new Point(0,0);
          _loc2_ = this.localToGlobal(_loc2_);

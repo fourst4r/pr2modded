@@ -6,7 +6,7 @@ package package_19
    {
        
       
-      protected var song:String = "random";
+      public var song:String = "random";
       
       public function MusicMenuButton()
       {
@@ -19,7 +19,7 @@ package package_19
          this.song = param1 === "" ? "random" : param1;
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          new MusicMenu(this,this.song);
       }

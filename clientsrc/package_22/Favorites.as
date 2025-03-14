@@ -13,7 +13,7 @@ package package_22
          this.requestCourses();
       }
       
-      override protected function requestCourses() : *
+      override public function requestCourses() : *
       {
          var _loc1_:URLVariables = new URLVariables();
          _loc1_.user_id = Main.userId;

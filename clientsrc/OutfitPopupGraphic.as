@@ -18,7 +18,7 @@ package
          outfit.hatIds = outfit.hatIds == null || !(outfit.hatIds is Array) || outfit.hatIds.length != 4 ? [1,1,1,1] : outfit.hatIds;
       }
       
-      protected function frame1(param1:Array, param2:int, param3:int, param4:int, param5:Object, param6:Object) : *
+      public function frame1(param1:Array, param2:int, param3:int, param4:int, param5:Object, param6:Object) : *
       {
          this.c = new Character(param1[0],param2,param3,param4);
          addChild(this.c);

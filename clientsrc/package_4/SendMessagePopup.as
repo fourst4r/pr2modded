@@ -7,11 +7,11 @@ package package_4
    {
        
       
-      protected var m:SendMessagePopupGraphic;
+      public var m:SendMessagePopupGraphic;
       
-      protected var isGuildMessage:Boolean = false;
+      public var isGuildMessage:Boolean = false;
       
-      protected var hover:HoverPopup = null;
+      public var hover:HoverPopup = null;
       
       public function SendMessagePopup(param1:String = "", param2:String = "", param3:Boolean = false, param4:Boolean = false)
       {
@@ -43,12 +43,12 @@ package package_4
          }
       }
       
-      protected function hoverOverCodes(param1:MouseEvent) : *
+      public function hoverOverCodes(param1:MouseEvent) : *
       {
          this.hover = new HoverPopup("Rich Formatting","Impress your friends by using rich formatting in PMs! Click to learn more.",this.m.codes_bt);
       }
       
-      protected function hoverOutCodes(param1:* = null) : *
+      public function hoverOutCodes(param1:* = null) : *
       {
          if(this.hover != null)
          {
@@ -57,29 +57,29 @@ package package_4
          }
       }
       
-      protected function clickCodes(param1:MouseEvent) : *
+      public function clickCodes(param1:MouseEvent) : *
       {
          new PMRFCodesPopup();
       }
       
-      protected function focusNameBox(param1:Event) : *
+      public function focusNameBox(param1:Event) : *
       {
          removeEventListener(LOADED,this.focusNameBox);
          Main.stage.focus = this.m.nameBox;
       }
       
-      protected function focusTextBox(param1:Event) : *
+      public function focusTextBox(param1:Event) : *
       {
          removeEventListener(LOADED,this.focusTextBox);
          Main.stage.focus = this.m.textBox;
       }
       
-      protected function countChars(param1:Event = null) : *
+      public function countChars(param1:Event = null) : *
       {
          this.m.messageCharsRemaining.text = this.m.textBox.length + " / 1000";
       }
       
-      protected function clickSend(param1:MouseEvent) : *
+      public function clickSend(param1:MouseEvent) : *
       {
          var _loc2_:URLVariables = null;
          var _loc3_:* = null;
@@ -110,11 +110,11 @@ package package_4
          }
       }
       
-      protected function onError(param1:*) : *
+      public function onError(param1:*) : *
       {
       }
       
-      protected function clickCancel(param1:*) : *
+      public function clickCancel(param1:*) : *
       {
          startFadeOut();
       }

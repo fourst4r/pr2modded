@@ -8,15 +8,15 @@ package ui
    {
        
       
-      protected var bar:ProgressBarGraphic;
+      public var bar:ProgressBarGraphic;
       
-      protected var totalPx:Number = 0;
+      public var totalPx:Number = 0;
       
-      protected var percentComplete:Number = 0;
+      public var percentComplete:Number = 0;
       
-      protected var widthPx:Number = 0;
+      public var widthPx:Number = 0;
       
-      protected var var_597:Number;
+      public var var_597:Number;
       
       public function ProgressBar(param1:Number = 200, param2:Number = 0.3)
       {
@@ -32,7 +32,7 @@ package ui
          addEventListener(Event.ENTER_FRAME,this.go,false,0,true);
       }
       
-      protected function go(param1:Event) : *
+      public function go(param1:Event) : *
       {
          this.widthPx += (this.percentComplete - this.widthPx) * this.var_597;
          this.bar.bar.width = this.widthPx;

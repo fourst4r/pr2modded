@@ -34,7 +34,7 @@ package package_22
          addChild(pageNavigation);
       }
       
-      override protected function showCourses(param1:Array) : *
+      override public function showCourses(param1:Array) : *
       {
          Memory.memory["campaignInfo" + Campaign.campaignPage] = param1;
          super.showCourses(param1);

@@ -1,5 +1,6 @@
 package betterle;
 
+import com.jiggmin.data.PR2Socket;
 import com.jiggmin.data.Settings;
 import ui.LoginPageMenuButton;
 import page.Page;
@@ -20,7 +21,10 @@ final class Mod extends modding.ModBase {
             }
         });
 
+        // initialize a few things to avoid errors
         Settings.init("Guest");
+        Main.socket = new PR2Socket(); 
+
         modifyLoginPage(Game.getPageHolder().getCurrentPage());
     }
 

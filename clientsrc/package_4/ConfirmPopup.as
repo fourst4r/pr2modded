@@ -6,9 +6,9 @@ package package_4
    {
        
       
-      protected var m:ConfirmPopupGraphic;
+      public var m:ConfirmPopupGraphic;
       
-      protected var confirmFunction:Function;
+      public var confirmFunction:Function;
       
       public function ConfirmPopup(param1:Function, param2:String = "Are you sure?")
       {
@@ -21,13 +21,13 @@ package package_4
          addChild(this.m);
       }
       
-      protected function clickOk(param1:MouseEvent) : *
+      public function clickOk(param1:MouseEvent) : *
       {
          this.confirmFunction();
          startFadeOut();
       }
       
-      protected function clickCancel(param1:MouseEvent) : *
+      public function clickCancel(param1:MouseEvent) : *
       {
          startFadeOut();
       }

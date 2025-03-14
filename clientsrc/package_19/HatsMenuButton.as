@@ -13,7 +13,7 @@ package package_19
          addChild(_loc2_);
       }
       
-      override protected function onClick(param1:MouseEvent) : *
+      override public function onClick(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          new HatsMenu(this);

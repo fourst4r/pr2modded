@@ -8,7 +8,7 @@ package package_19
    {
        
       
-      protected var m:ObjectDeleterButtonGraphic;
+      public var m:ObjectDeleterButtonGraphic;
       
       public function ObjectDeleterButton()
       {
@@ -18,7 +18,7 @@ package package_19
          addEventListener(MouseEvent.MOUSE_DOWN,this.select);
       }
       
-      protected function select(param1:MouseEvent) : *
+      public function select(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          CustomCursor.change(new ObjectDeleter());

@@ -9,9 +9,9 @@ package package_19
    {
        
       
-      protected var bg:MovieClip;
+      public var bg:MovieClip;
       
-      protected var m:DisplayObject;
+      public var m:DisplayObject;
       
       public function class_214(param1:DisplayObject, param2:String = "", param3:String = "")
       {
@@ -24,13 +24,13 @@ package package_19
          addChild(param1);
       }
       
-      override protected function overHandler(param1:MouseEvent) : *
+      override public function overHandler(param1:MouseEvent) : *
       {
          this.m.transform.colorTransform = new ColorTransform(0.5,0.5,0.5,1,128,128,128,0);
          super.overHandler(param1);
       }
       
-      override protected function outHandler(param1:MouseEvent) : *
+      override public function outHandler(param1:MouseEvent) : *
       {
          this.m.transform.colorTransform = new ColorTransform(1,1,1,1,0,0,0,0);
          super.outHandler(param1);

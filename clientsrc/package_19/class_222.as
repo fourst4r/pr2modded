@@ -7,7 +7,7 @@ package package_19
    {
        
       
-      protected var color:Number;
+      public var color:Number;
       
       public function class_222(param1:int, param2:Number = 0)
       {
@@ -15,7 +15,7 @@ package package_19
          this.color = param2;
       }
       
-      override protected function select(param1:MouseEvent) : *
+      override public function select(param1:MouseEvent) : *
       {
          param1.stopImmediatePropagation();
          LevelEditor.editor.setColor(this.color);

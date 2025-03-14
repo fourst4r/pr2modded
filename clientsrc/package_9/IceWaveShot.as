@@ -7,14 +7,14 @@ package package_9
    public class IceWaveShot extends ShotEffect
    {
       
-      protected static var var_168:int = 0;
+      public static var var_168:int = 0;
        
       
-      protected var m:IceWaveGraphic;
+      public var m:IceWaveGraphic;
       
-      protected var var_322:Number;
+      public var var_322:Number;
       
-      protected var var_278:Number;
+      public var var_278:Number;
       
       public function IceWaveShot(param1:Number, param2:Number, param3:Number, param4:int, param5:int, param6:Number, param7:int = 75)
       {
@@ -29,7 +29,7 @@ package package_9
          this.method_219();
       }
       
-      protected function method_219() : *
+      public function method_219() : *
       {
          if(!isRemoved())
          {
@@ -39,13 +39,13 @@ package package_9
          }
       }
       
-      override protected function move() : *
+      override public function move() : *
       {
          super.move();
          alpha = Math.random() * life / 100 + 0.25;
       }
       
-      override protected function hitBlock(param1:Block) : *
+      override public function hitBlock(param1:Block) : *
       {
          var _loc2_:Number = NaN;
          var _loc3_:Number = NaN;
@@ -74,7 +74,7 @@ package package_9
          }
       }
       
-      override protected function hitPlayer(param1:Character) : *
+      override public function hitPlayer(param1:Character) : *
       {
          var _loc2_:LocalCharacter = null;
          if(param1 is LocalCharacter)

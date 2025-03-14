@@ -9,27 +9,27 @@ package package_21
    {
        
       
-      protected var m:MessagesItemGraphic;
+      public var m:MessagesItemGraphic;
       
-      protected var reportButton:ReportMessageButton;
+      public var reportButton:ReportMessageButton;
       
-      protected var deleteButton:DeleteMessageButton;
+      public var deleteButton:DeleteMessageButton;
       
-      protected var replyButton:ReplyMessageButton;
+      public var replyButton:ReplyMessageButton;
       
-      protected var htmlNameMaker:HTMLNameMaker;
+      public var htmlNameMaker:HTMLNameMaker;
       
-      protected var userName:String;
+      public var userName:String;
       
       public var messageId:Number;
       
-      protected var target:Messages;
+      public var target:Messages;
       
-      protected var messageText:String;
+      public var messageText:String;
       
-      protected var time:int;
+      public var time:int;
       
-      protected var hover:HoverPopup;
+      public var hover:HoverPopup;
       
       public function MessagesItem(param1:Messages, param2:Number, param3:String, param4:String, param5:String, param6:Boolean, param7:Number, param8:Number)
       {
@@ -79,17 +79,17 @@ package package_21
          addChild(this.replyButton);
       }
       
-      protected function clickReport(param1:MouseEvent) : *
+      public function clickReport(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.confirmReport,"Are you sure you want to report this message to the moderators? If the sender of this message is asking for your password, being a rather mean jerk, or spamming your inbox, then please do report this message.");
       }
       
-      protected function clickDelete(param1:MouseEvent) : *
+      public function clickDelete(param1:MouseEvent) : *
       {
          new ConfirmPopup(this.confirmDelete,"Are you sure you want to delete this message from " + Data.escapeString(this.userName) + "?");
       }
       
-      protected function clickReply(param1:MouseEvent) : *
+      public function clickReply(param1:MouseEvent) : *
       {
          var _loc2_:* = "\n--- \n" + this.messageText;
          var _loc3_:int = 200;
@@ -100,7 +100,7 @@ package package_21
          new SendMessagePopup(this.userName,_loc2_);
       }
       
-      protected function confirmReport() : *
+      public function confirmReport() : *
       {
          this.target.doReport(this);
       }
@@ -110,14 +110,14 @@ package package_21
          this.target.doDelete(this);
       }
       
-      protected function hoverTime(param1:MouseEvent) : *
+      public function hoverTime(param1:MouseEvent) : *
       {
          Mouse.cursor = MouseCursor.BUTTON;
          this.m.timeBox.textColor = 6710886;
          this.hover = new HoverPopup("Sent Time","This message was sent on " + Data.getDateTimeStr(this.time,["long","medium"]) + ".",this.m.timeBox);
       }
       
-      protected function hoverOutTime(param1:* = null) : *
+      public function hoverOutTime(param1:* = null) : *
       {
          Mouse.cursor = MouseCursor.AUTO;
          this.m.timeBox.textColor = 0;

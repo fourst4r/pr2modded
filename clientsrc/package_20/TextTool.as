@@ -15,7 +15,7 @@ package package_20
          hideMouse();
       }
       
-      override protected function dropObject(param1:int, param2:int) : *
+      override public function dropObject(param1:int, param2:int) : *
       {
          var _loc3_:ObjectBackground = editor.cur;
          var _loc4_:Point = editor.cur.globalToLocal(new Point(param1 - 5,param2 - 16));

@@ -1,0 +1,9 @@
+--class-path .
+--swf bin/localtime.swf
+--swf-lib-extern ../../bin/loader.swf
+--define network-sandbox
+--swf-version 11.4
+--debug
+localtime.Mod
+
+--cmd ..\..\bin\loader.swf

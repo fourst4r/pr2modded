@@ -9,7 +9,7 @@ package blocks.options
    {
        
       
-      protected const NUM_ITEMS:int = Items.getAllCodes().length;
+      public const NUM_ITEMS:int = Items.getAllCodes().length;
       
       public function ItemBlockOptions(param1:Block)
       {

@@ -12,43 +12,43 @@ package blocks
    {
        
       
-      protected var size:Number = 30;
+      public var size:Number = 30;
       
-      protected var posX:Number;
+      public var posX:Number;
       
-      protected var posY:Number;
+      public var posY:Number;
       
-      protected var segX:int;
+      public var segX:int;
       
-      protected var segY:int;
+      public var segY:int;
       
-      protected var removed:Boolean = false;
+      public var removed:Boolean = false;
       
-      protected var var_177:Point;
+      public var var_177:Point;
       
-      protected var m:Bitmap;
+      public var m:Bitmap;
       
-      protected var blockCode:int = 0;
+      public var blockCode:int = 0;
       
-      protected var active:Boolean = true;
+      public var active:Boolean = true;
       
-      protected var safeStand:Boolean = true;
+      public var safeStand:Boolean = true;
       
-      protected var var_490:Boolean = true;
+      public var var_490:Boolean = true;
       
-      protected var map:Map;
+      public var map:Map;
       
-      protected var frozen:Boolean = false;
+      public var frozen:Boolean = false;
       
-      protected var optionsMenu:Class = null;
+      public var optionsMenu:Class = null;
       
-      protected var _options:String = "";
+      public var _options:String = "";
       
-      protected var var_110:Bitmap;
+      public var var_110:Bitmap;
       
-      protected var var_455:Number = 0.1;
+      public var var_455:Number = 0.1;
       
-      protected var var_600:int = 0;
+      public var var_600:int = 0;
       
       public function Block(param1:int)
       {
@@ -300,13 +300,13 @@ package blocks
          this.activate(param1);
       }
       
-      protected function localActivate(param1:String = "") : *
+      public function localActivate(param1:String = "") : *
       {
          Main.socket.write("activate`" + this.segX + "`" + this.segY + "`" + param1);
          this.activate(param1);
       }
       
-      protected function activate(param1:String = "") : *
+      public function activate(param1:String = "") : *
       {
       }
       
@@ -317,13 +317,13 @@ package blocks
          this.hit(_loc2_,_loc3_);
       }
       
-      protected function method_315(param1:Number, param2:Number) : *
+      public function method_315(param1:Number, param2:Number) : *
       {
          var _loc3_:Point = Data.method_9(param1,param2,this.map.rotation);
          this.hit(_loc3_.x,_loc3_.y);
       }
       
-      protected function hit(param1:Number, param2:Number) : *
+      public function hit(param1:Number, param2:Number) : *
       {
          var _loc4_:Point = null;
          this.var_177 = new Point(param1,param2);
@@ -336,7 +336,7 @@ package blocks
          }
       }
       
-      protected function method_153(param1:Event) : *
+      public function method_153(param1:Event) : *
       {
          if(this.var_110 != null)
          {
@@ -350,7 +350,7 @@ package blocks
          }
       }
       
-      protected function method_161(param1:Event) : *
+      public function method_161(param1:Event) : *
       {
          this.var_177.x *= 0.5;
          this.var_177.y *= 0.5;
@@ -366,7 +366,7 @@ package blocks
          }
       }
       
-      protected function move(param1:int, param2:int, param3:Map) : *
+      public function move(param1:int, param2:int, param3:Map) : *
       {
          if(this.map == null)
          {
@@ -382,7 +382,7 @@ package blocks
          this.map.moveBlock(_loc4_,_loc5_);
       }
       
-      protected function method_406() : *
+      public function method_406() : *
       {
          if(this.var_110 != null)
          {
